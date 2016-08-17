@@ -6,9 +6,12 @@ devSubCap: A Web Developer from
 location: Cincinnati, OH
 email: daveberning@icloud.com
 description: Dave Berning is a web developer and designer from Cincinnat, OH.
+
+# URLs
 baseurl: "/"
-url: "http://localhost:4000/" # the base hostname & protocol for your site
-images: "{{site.url}}images/"
+url: "https://daveberning.github.io/portfolio-site/" # the base hostname & protocol for your site
+projectURL: "/project/"
+imagesURL: "{{site.url}}images/"
 
 collections:
   testimonials:
