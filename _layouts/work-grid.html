@@ -1,0 +1,30 @@
+{% include head.html %}
+
+<body>
+
+{% include header.html %}
+
+<div class="hero">
+    <div class="container-fluid">
+        <div class="row">
+            {% for project in site.projects %}
+            <div class="col-sm-6 col-md-4 featured-work">
+                <div class="text-center">
+                    <div class="bkg"><img src="{{ project.featuredImage }}"></div>
+                    <div class="caption">
+                        <div class="cap-content">
+                            <a href="#">
+                                <span>{{ project.name }}</span><br>
+                                {{ project.caption }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% include footer.html %}

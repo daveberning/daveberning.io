@@ -1,0 +1,94 @@
+{% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="hero home">
+        <div class="container-fluid height-100">
+            <div class="row height-100">
+                <div class="col-sm-6 height-100 left">
+                    <div class="vertically-center col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                        <h1 class="text-center">{{site.firstName}} {{site.lastName}}<br>
+                            <span>{{site.devSubCap}} {{site.location}}</span>
+                        </h1>
+
+                        <a href="#" class="btn btn-primary btn-block text-center gutter-top btn-lg">Contact Me</a>
+
+                        {% include social-icons.html %}
+                    </div>
+                </div>
+
+                {% include featured-work.html %}
+            </div>
+        </div>
+    </div><!-- hero -->
+
+    <div class="section">
+        <div class="container">
+            <h2 class="gutter-bottom">About {{site.firstName}}</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>I'm {{site.firstName}} {{site.lastName}}, a web developer and designer from {{site.location}}. I specialize in front-end web development that adapts to all mobile and desktop devices. I graduated from the University of Cincinnati with a Bachelor's Degree of Fine Arts and certifications in web production, video production, and electronic design.</p>
+
+                    <p>Great websites start with simple and clean code. Every project I tackle is unique and is built in such a way for clients to easily update their content independently. I'm interested to learn more about you and your project. Contact me with any questions and let get started!</p>
+
+                    <p>{{testimonials.name}}<br>{{testimonial.title}}</p>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="#" class="btn btn-primary btn-block btn-lg gutter-top">Download Resume</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#" class="btn btn-secondary btn-block btn-lg gutter-top gutter-bottom">View Timeline</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <img class="img-responsive" src="{{site.url}}images/dave.jpg" alt="{{site.firstName}} {{site.lastName}}, {{site.devSubCap}} {{site.location}}">
+                </div>
+            </div>
+        </div>
+    </div><!-- section -->
+
+    <div class="cta-bar section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="text-left">Their Words, Not Mine</h2>
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <!-- {% for testimonial in site.testimonials %}
+                            <li>
+                                <div class="row">
+                                    {% for testimonial in site.testimonials limit: 1%}
+                                    <div class="col-md-6 testimonial gutter-bottom">
+                                        {{ testimonial.content }}
+
+                                        <p class="text-left gutter-top"><img src="{{site.url}}images/mark.jpg" width="50" height="50" alt="{{testimonial.name}}, {{testimonial.title}}" draggable="false" class="fadeInUp"><span>{{testimonial.name}}</span><br>{{testimonial.title}}</p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </li>
+                            {% endfor %} -->
+
+                            {% for testimonial in site.testimonials limit:2%}
+                              {% if forloop.first %}
+                              <p>This collection has {{ forloop.length }} products:</p>
+                              {% endif %}
+                              <p>{{ testimonial.name }}</p>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- section -->
+
+    {% include connect.html %}
+
+    {% include footer.html %}

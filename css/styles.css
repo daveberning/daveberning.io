@@ -1,0 +1,1280 @@
+/* IMPORTS, MISC, FONTS
+----------------------------------------- */
+/* fonts
+--------------------------*/
+/* colors
+--------------------------*/
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Oswald", sans-serif !important;
+  text-transform: uppercase;
+  margin-bottom: 25px !important; }
+
+.gutter-top {
+  margin-top: 15px; }
+
+.gutter-bottom {
+  margin-bottom: 15px; }
+
+.vertically-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.height-100 {
+  height: 100%; }
+
+.height-50 {
+  height: 50% !important; }
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  background: none;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+img {
+  border-radius: 2px; }
+
+.btn-lg {
+  padding: 15px 0; }
+
+.btn-primary {
+  background: #356a7a;
+  color: #fff;
+  border: 2px solid #356a7a; }
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background: #418396;
+  border: 2px solid #418396; }
+
+.btn-secondary {
+  background: #858585;
+  color: #fff;
+  border: 2px solid #858585; }
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+  background: #999999;
+  border: 2px solid #999999; }
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+  color: #fff; }
+
+.btn-ghost,
+.btn-ghost:hover {
+  background: none;
+  border: 2px solid;
+  color: #252525; }
+
+.btn-ghost-white,
+.btn-ghost-white:hover {
+  background: none;
+  border: 2px solid;
+  color: #fff; }
+
+.section:nth-child(odd) {
+  background: #f2f2f2; }
+
+.section:nth-child(even) {
+  background: #fff; }
+
+.section {
+  padding: 10rem 0; }
+
+.cta-bar {
+  text-align: center;
+  color: #fff;
+  background: #356a7a !important; }
+  .cta-bar a {
+    color: #fff;
+    text-decoration: underline; }
+  .cta-bar a:hover {
+    color: #e6e6e6; }
+
+.cta-sm {
+  padding: 6rem 0; }
+
+.social {
+  text-align: center; }
+  .social li {
+    display: inline;
+    margin-left: .5rem; }
+  .social a {
+    color: #252525;
+    font-size: 2.5rem; }
+  .social li:last-child {
+    margin-right: 0; }
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear; }
+
+.headroom--pinned {
+  transform: translateY(0%); }
+
+.headroom--unpinned {
+  transform: translateY(-100%); }
+
+.transition,
+.transition:hover {
+  background: none;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.color-white {
+  color: #fff; }
+
+body:after {
+  /* content: "DEFAULT (< 480px)"; */
+  content: "XS";
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  position: fixed;
+  top: 180px;
+  right: 0;
+  padding: 7px 10px;
+  background-color: rgba(102, 41, 163, 0.7);
+  color: #fff;
+  z-index: 9999;
+  border-radius: 5px 0 0 5px;
+  text-align: center;
+  margin: 0 auto; }
+
+/* EXTRA SMALL(xs) devices (480px and up)*/
+@media (min-width: 480px) {
+  body:after {
+    content: "XS";
+    background-color: rgba(102, 41, 163, 0.7); } }
+/* SMALL (sm) devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  body:after {
+    content: "SM";
+    background-color: rgba(102, 163, 41, 0.7); } }
+/* MEDIUM (md) devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  body:after {
+    /* content: "MD (992px)"; */
+    content: "MD";
+    background-color: rgba(41, 163, 163, 0.7); } }
+/* LARGE (lg) devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  body:after {
+    /* content: "LG (1200px)";*/
+    content: "LG";
+    background-color: rgba(163, 41, 41, 0.7); } }
+/* Copyright 2015. All Rights Reserved
+   Developed by Dave Berning for Upright Communications
+   Interactive form label floats that work with jQuery validate
+*/
+/* COLOR CODES: FIND AND REPLACE
+----------------------------------------
+    VALID FOCUS STATE: #366b7b; (demo: blue)
+    VALID NOT FOCUS STATE: #545454; (demo: dark grey)
+    INVALID FOCUS STATE: #DA5757; (demo: red)
+
+    SUBMIT BUTTON: #747474;
+    SUBMIT BUTTOB HOVER: #464646;
+
+    *NOTE: Any color you find and replace
+    will also replace the border color
+    for its respected states;
+--------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+form > div {
+  position: relative;
+  margin-bottom: 1rem; }
+
+input,
+input:valid,
+textarea,
+textarea:valid {
+  width: 100%;
+  border: 2px solid #545454;
+  /* COLOR CHANGE: default field border */
+  background-color: transparent !important;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  outline: 0;
+  padding: 3px 3px 20px 3px !important;
+  color: #545454; }
+
+label,
+input:focus label span,
+input:active label span {
+  padding: 5px !important;
+  background-color: transparent; }
+
+label.error,
+input.error + label span,
+input.error + label span + label span,
+input.error:active + label span + label span,
+input.error:focus + label span,
+input.error:active + label span,
+input.error:focus + label span + label span,
+input.error:active + label span + label span,
+textarea.error + label span,
+textarea.error + label span + label span,
+textarea.error:focus + label span,
+textarea.error:active + label span,
+textarea.error:focus + label span + label span,
+textarea.error:active + label span + label span {
+  /* Errors */
+  background: #DA5757 !important;
+  color: white !important;
+  width: 100%;
+  padding: 1px 3px;
+  display: block; }
+
+input.error,
+input.error:focus,
+input.error:active,
+textarea.error,
+textarea.error:focus,
+textarea.error:active,
+select.error,
+select.error:focus,
+select.error:active {
+  border: 2px solid #DA5757 !important;
+  /* Red border on errors */ }
+
+input.error + label,
+input.error + label + label,
+textarea.error,
+textarea.error + label,
+textarea.error + label + label {
+  text-transform: uppercase; }
+
+label {
+  transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s;
+  position: absolute;
+  color: #545454 !important;
+  margin-bottom: 0px;
+  padding: 5px !important;
+  top: 0 !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: transparent !important; }
+
+input:focus + label span {
+  font-size: 10px;
+  padding: 0; }
+
+.form-group {
+  padding: 0;
+  margin-bottom: 0; }
+
+input:focus,
+input:active,
+textarea:focus,
+textarea:active,
+select:focus {
+  padding: 4px 6px 20px 6px;
+  border-color: #366b7b !important;
+  /* Border color of focused/active field */ }
+
+/* DEFAULT LABEL SIZE
+--------------------------------------------------------*/
+label.error,
+input:focus + label span,
+input:focus:not(:required) + label span,
+input:valid + label span + label span,
+input:focus + label span + label span,
+textarea:focus + label span,
+textarea:focus + label span + label span,
+textarea:valid + label span + label span {
+  background: #366b7b !important;
+  /* Transformed label */
+  color: white !important;
+  font-size: 10px;
+  padding: 1px 3px;
+  z-index: 1;
+  text-transform: uppercase;
+  display: block; }
+
+/* LABEL WHEN FOCUSED/ACTIVE/VALID (transformed)
+--------------------------------------------------------*/
+label.error,
+input:active label,
+input:active:not(:focus) + label,
+input.error + label,
+input.error:focus + label,
+input.error:active + label,
+input.error + label + label,
+input.error:focus + label + label,
+input.error:active + label + label,
+textarea.error + label,
+textarea.error:focus + label,
+textarea.error:active + label,
+textarea.error + label + label,
+textarea.error:focus + label + label,
+textarea.error:active + label + label,
+input:focus + label,
+input:focus + label + label,
+input.valid:valid:not(:focus) + label,
+input.valid:valid:not(:focus) + label + label.valid,
+textarea:focus + label,
+textarea:focus + label + label,
+textarea:active:not(:focus) + label,
+textarea.valid:valid:not(:focus) + label,
+textarea.valid:valid:not(:focus) + label + label.valid,
+textarea:focus + label + label,
+textarea.valid:valid:not(:focus) + label,
+textarea.valid:valid:not(:focus) + label + label.valid {
+  /* This is what makes the label transform (don't tweak unless you know what you're doing) */
+  top: 100% !important;
+  padding: 3px 2px !important;
+  margin-top: -18px;
+  font-size: 10px !important;
+  z-index: 12; }
+
+textarea.error:focus + label,
+textarea.error:active + label,
+textarea.error + label + label,
+textarea.error:focus + label + label,
+textarea.error:active + label + label,
+textarea:focus + label,
+textarea:focus + label + label,
+textarea:active:not(:focus) + label,
+textarea.valid:valid:not(:focus) + label,
+textarea.valid:valid:not(:focus) + label + label.valid,
+textarea:focus + label + label,
+textarea.valid:valid:not(:focus) + label,
+textarea.valid:valid:not(:focus) + label + label.valid {
+  /* textarea border fix */
+  padding: 0 !important; }
+
+input.valid:valid:not(:focus) + label span,
+input.valid:valid:not(:focus) + label span + label, span
+textarea.valid:valid:not(:focus) + label span,
+textarea.valid:valid:not(:focus) + label span + label span,
+input.valid:not(:required) + label span,
+textarea.valid:valid:not(:focus) + label span {
+  /* If the field is valid and not focused or active */
+  background: #545454;
+  text-transform: uppercase;
+  color: white;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  padding: 1px 3px; }
+
+/* SUBMIT BUTTON
+------------------------------------------------------*/
+input[type="submit"] {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  background: #747474 !important;
+  line-height: normal;
+  padding: 15px !important;
+  border: none !important;
+  margin: 0 0 5% 0;
+  width: 150px; }
+
+input[type="submit"]:hover {
+  background: #464646 !important; }
+
+/* BOOTSTRAP RESETS
+-------------------------------------------------------------*/
+.bootstrap label span {
+  border-bottom-left-radius: 4px  !important;
+  border-bottom-right-radius: 4px !important; }
+
+.bootstrap label:focus {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.bootstrap textarea {
+  width: 100% !important; }
+
+.bootstrap .form-control {
+  height: auto;
+  border: 2px solid #545454; }
+
+.bootstrap label.error,
+.bootstrap input:focus + label span,
+.bootstrap input:focus:not(:required) + label span,
+.bootstrap input:valid + label span + label span,
+.bootstrap input:focus + label span + label span,
+.bootstrap textarea:focus + label span,
+.bootstrap textarea:focus + label span + label span,
+.bootstrap textarea:valid + label span + label span {
+  background: #366b7b;
+  /* Transformed label */
+  color: white !important;
+  font-size: 10px;
+  padding: 1px 3px;
+  margin: 0 !important;
+  z-index: 1;
+  text-transform: uppercase;
+  display: block; }
+
+.bootstrap label.error + label span,
+.bootstrap label.error + label span + label span {
+  background: #DA5757 !important; }
+
+.bootstrap label.error,
+.bootstrap input:active label,
+.bootstrap input:active:not(:focus) + label,
+.bootstrap input.error + label,
+.bootstrap input.error:focus + label,
+.bootstrap input.error:active + label,
+.bootstrap input.error + label + label,
+.bootstrap input.error:focus + label + label,
+.bootstrap input.error:active + label + label,
+.bootstrap textarea.error + label,
+.bootstrap textarea.error:focus + label,
+.bootstrap textarea.error:active + label,
+.bootstrap textarea.error + label + label,
+.bootstrap textarea.error:focus + label + label,
+.bootstrap textarea.error:active + label + label,
+.bootstrap input:focus + label,
+.bootstrap input:focus + label + label,
+.bootstrap input.valid:valid:not(:focus) + label,
+.bootstrap input.valid:valid:not(:focus) + label + label.valid,
+.bootstrap textarea:focus + label,
+.bootstrap textarea:focus + label + label,
+.bootstrap textarea:active:not(:focus) + label,
+.bootstrap textarea.valid:valid:not(:focus) + label,
+.bootstrap textarea.valid:valid:not(:focus) + label + label.valid,
+.bootstrap textarea:focus + label + label,
+.bootstrap textarea.valid:valid:not(:focus) + label,
+.bootstrap textarea.valid:valid:not(:focus) + label + label.valid {
+  /* This is what makes the label transform (don't tweak unless you know what you're doing) */
+  top: 100% !important;
+  padding: 0 15px !important;
+  margin-top: -18px;
+  font-size: 10px !important;
+  z-index: 12; }
+
+.bootstrap input.valid:valid:not(:focus) + label span,
+.bootstrap input.valid:valid:not(:focus) + label span + label, span
+.bootstrap textarea.valid:valid:not(:focus) + label span,
+.bootstrap textarea.valid:valid:not(:focus) + label span + label span,
+.bootstrap input.valid:not(:required) + label span,
+.bootstrap textarea.valid:valid:not(:focus) + label span {
+  /* If the field is valid and not focused or active */
+  background: #545454;
+  text-transform: uppercase;
+  color: white;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  padding: 1px 3px; }
+
+.bootstrap label,
+.bootstrap input:focus label span,
+.bootstrap input:active label span {
+  padding: 5px 20px !important;
+  background-color: transparent; }
+
+/* RADIO, CHECK, SELECT RESETS
+------------------------------------------------------*/
+input[type="radio"] + label,
+input[type="checkbox"] + label
+select + label {
+  background: none !important;
+  transition: none;
+  position: relative;
+  padding: 0 !important; }
+
+/* .lf-select {
+  border: 2px solid #545454;
+  padding: 5px 2px;
+} */
+.lf-select select {
+  background: transparent;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 0;
+  border: 2px solid #545454;
+  padding: 5px 2px; }
+
+.lf-select select:focus {
+  outline: none; }
+
+.lf-radio,
+.lf-checkbox {
+  position: relative;
+  margin: 5px 0; }
+
+.lf-radio input,
+.lf-checkbox input {
+  opacity: 0;
+  z-index: 100;
+  margin: 0 !important;
+  font-size: inherit !important;
+  position: absolute !important;
+  height: 100%; }
+
+.lf-radio input + label,
+.lf-checkbox input + label,
+.lf-radio input:checked + label,
+.lf-checkbox input:checked + label,
+.lf-radio input:focus + label,
+.lf-checkbox input:focus + label,
+.lf-radio input.error + label,
+.lf-checkbox input.error + label,
+.lf-radio input.error:checked + label,
+.lf-checkbox input.error:checked + label,
+.lf-radio input.error:focus + label,
+.lf-checkbox input.error:focus + label,
+.lf-radio input.valid:valid:not(:focus) + label,
+.lf-checkbox input.valid:valid:not(:focus) + label {
+  margin: 0 !important;
+  font-size: inherit !important;
+  padding: 0 !important; }
+
+.lf-radio input,
+.lf-radio label,
+.lf-checkbox input,
+.label-float-checkbox label {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  position: absolute; }
+
+.lf-radio label,
+.lf-checkbox label {
+  position: relative; }
+
+.lf-radio input + label::before,
+.lf-checkbox input + label::before,
+.lf-radio input.error + label + label::before,
+.lf-checkbox input.error + label::before {
+  content: '';
+  background: #545454;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  margin-right: 10px; }
+
+.lf-radio input + label::before,
+.lf-radio input.error + label + label::before {
+  border-radius: 50%; }
+
+.lf-radio input:checked + label::before,
+.lf-checkbox input:checked + label::before {
+  background: #366b7b; }
+
+.lf-radio input.error + label::before,
+.lf-checkbox input.error + label::before {
+  background: #DA5757; }
+
+.lf-radio input.error + label,
+.lf-checkbox input.error + label {
+  text-transform: inherit !important; }
+
+/* additional radio and checkboxes */
+.lf-radio.lf-radio-hollow input:checked + label::before {
+  background: white;
+  border: 6px solid #366b7b; }
+
+.lf-checkbox.lf-checkbox-check input:checked + label::before {
+  font-family: 'Glyphicons Halflings';
+  content: "\e013";
+  color: white;
+  padding: 0 0 0px 3px; }
+
+/* IE FIXES
+-------------------------------------*/
+.no-csstransitions input,
+.no-csstransitions textarea {
+  width: 100%;
+  padding: 5px !important;
+  border-top: 2px solid #545454;
+  border-right: 2px solid #545454;
+  border-bottom: none;
+  border-left: 2px solid #545454; }
+
+.no-csstransitions label {
+  position: relative !important;
+  background-color: #545454 !important;
+  padding: 4px !important;
+  font-size: 10px;
+  border-top: none;
+  border-right: 2px solid #545454;
+  border-bottom: 2px solid #545454;
+  border-left: 2px solid #545454; }
+
+.no-csstransitions label {
+  color: white !important; }
+
+.no-csstransitions .lf-checkbox label,
+.no-csstransitions .lf-checkbox label + label,
+.no-csstransitions .lf-radio label,
+.no-csstransitions .lf-radio label + label,
+.no-csstransitions .lf-radio input,
+.no-csstransitions .lf-checkbox input,
+.no-csstransitions .lf-radio input.error + label,
+.no-csstransitions .lf-radio input.error + label + label,
+.no-csstransitions .lf-checkbox input.error + label,
+.no-csstransitions .lf-checkbox input.error + label + label,
+.no-csstransitions .lf-radio input:focus + label,
+.no-csstransitions .lf-radio input:focus + label + label,
+.no-csstransitions .lf-checkbox input:focus + label,
+.no-csstransitions .lf-checkbox input:focus + label + label,
+.no-csstransitions .lf-radio input.error:focus + label,
+.no-csstransitions .lf-radio input.error:focus + label + label,
+.no-csstransitions .lf-checkbox input.error:focus + label,
+.no-csstransitions .lf-checkbox input.error:focus + label + label {
+  background-color: transparent !important;
+  border: none !important;
+  color: #545454 !important; }
+
+.no-csstransitions .lf-radio input.error + label,
+.no-csstransitions .lf-radio input.error + label + label,
+.no-csstransitions .lf-checkbox input.error + label,
+.no-csstransitions .lf-checkbox input.error + label + label {
+  border: none !important; }
+
+.no-csstransitions input.error,
+.no-csstransitions textarea.error {
+  padding: 0;
+  border-top: 2px solid #DA5757;
+  border-right: 2px solid #DA5757;
+  border-bottom: none !important;
+  border-left: 2px solid #DA5757; }
+
+.no-csstransitions input.error + label span,
+.no-csstransitions input.error + label span + label span,
+.no-csstransitions textarea.error + label span,
+.no-csstransitions textarea.error + label span + label span {
+  background: none !important;
+  font-size: 9px;
+  padding: 1px; }
+
+.no-csstransitions input.error + label,
+.no-csstransitions input.error + label + label {
+  /* errors */
+  background: #DA5757 !important;
+  border-top: none;
+  border-right: 2px solid #DA5757 !important;
+  border-bottom: none !important;
+  border-left: 2px solid #DA5757 !important; }
+
+.no-csstransitions input.error:focus {
+  /* active errors */
+  border-top: 2px solid #366b7b !important;
+  border-right: 2px solid #366b7b !important;
+  border-bottom: none !important;
+  border-left: 2px solid #366b7b !important; }
+
+.no-csstransitions input.error:focus + label {
+  /* active errors */
+  background: #366b7b !important;
+  border-top: none;
+  border-right: 2px solid #366b7b !important;
+  border-bottom: none !important;
+  border-left: 2px solid #366b7b !important; }
+
+.no-csstransitions input:focus + label,
+.no-csstransitions input:focus + label + label
+.no-csstransitions textarea:focus + label,
+.no-csstransitions textarea:focus + label + label {
+  background: #366b7b !important;
+  border-top: none;
+  border-right: 2px solid #366b7b;
+  border-bottom: 2px solid #366b7b;
+  border-left: 2px solid #366b7b; }
+
+/*
+ * jQuery FlexSlider v2.6.1
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ *
+ */
+/* ====================================================================================================================
+ * FONT-FACE
+ * ====================================================================================================================*/
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url("fonts/flexslider-icon.eot");
+  src: url("fonts/flexslider-icon.eot?#iefix") format("embedded-opentype"), url("fonts/flexslider-icon.woff") format("woff"), url("fonts/flexslider-icon.ttf") format("truetype"), url("fonts/flexslider-icon.svg#flexslider-icon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flex-container a:hover,
+.flex-slider a:hover {
+  outline: none; }
+
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.flex-pauseplay span {
+  text-transform: capitalize; }
+
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.flexslider {
+  margin: 0;
+  padding: 0; }
+
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden; }
+
+.flexslider .slides img {
+  width: 100%;
+  display: block; }
+
+.flexslider .slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+html[xmlns] .flexslider .slides {
+  display: block; }
+
+* html .flexslider .slides {
+  height: 1%; }
+
+.no-js .flexslider .slides > li:first-child {
+  display: block; }
+
+/* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+.flexslider {
+  margin: 0 0 60px;
+  background: #fff;
+  border: 4px solid #fff;
+  position: relative;
+  zoom: 1;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: "" 0 1px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: "" 0 1px 4px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: "" 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: "" 0 1px 4px rgba(0, 0, 0, 0.2); }
+
+.flexslider .slides {
+  zoom: 1; }
+
+.flexslider .slides img {
+  height: auto;
+  -moz-user-select: none; }
+
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+
+.loading .flex-viewport {
+  max-height: 300px; }
+
+.carousel li {
+  margin-right: 5px; }
+
+.flex-direction-nav {
+  *height: 0; }
+
+.flex-direction-nav a {
+  text-decoration: none;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+.flex-direction-nav a:before {
+  font-family: "flexslider-icon";
+  font-size: 40px;
+  display: inline-block;
+  content: '\f001';
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3); }
+
+.flex-direction-nav a.flex-next:before {
+  content: '\f002'; }
+
+.flex-direction-nav .flex-prev {
+  left: -50px; }
+
+.flex-direction-nav .flex-next {
+  right: -50px;
+  text-align: right; }
+
+.flexslider:hover .flex-direction-nav .flex-prev {
+  opacity: 0.7;
+  left: 10px; }
+
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+  opacity: 1; }
+
+.flexslider:hover .flex-direction-nav .flex-next {
+  opacity: 0.7;
+  right: 10px; }
+
+.flexslider:hover .flex-direction-nav .flex-next:hover {
+  opacity: 1; }
+
+.flex-direction-nav .flex-disabled {
+  opacity: 0 !important;
+  filter: alpha(opacity=0);
+  cursor: default;
+  z-index: -1; }
+
+.flex-pauseplay a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  opacity: 0.8;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000; }
+
+.flex-pauseplay a:before {
+  font-family: "flexslider-icon";
+  font-size: 20px;
+  display: inline-block;
+  content: '\f004'; }
+
+.flex-pauseplay a:hover {
+  opacity: 1; }
+
+.flex-pauseplay a.flex-play:before {
+  content: '\f003'; }
+
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -40px;
+  text-align: center; }
+
+.flex-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline; }
+
+.flex-control-paging li a {
+  width: 11px;
+  height: 11px;
+  display: block;
+  background: #666;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px; }
+
+.flex-control-paging li a:hover {
+  background: #333;
+  background: rgba(0, 0, 0, 0.7); }
+
+.flex-control-paging li a.flex-active {
+  background: #000;
+  background: rgba(0, 0, 0, 0.9);
+  cursor: default; }
+
+.flex-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden; }
+
+.flex-control-thumbs li {
+  width: 25%;
+  float: left;
+  margin: 0; }
+
+.flex-control-thumbs img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: .7;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+
+.flex-control-thumbs img:hover {
+  opacity: 1; }
+
+.flex-control-thumbs .flex-active {
+  opacity: 1;
+  cursor: default; }
+
+/* ====================================================================================================================
+ * RESPONSIVE
+ * ====================================================================================================================*/
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: 10px; }
+
+  .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 10px; } }
+* {
+  box-sizing: border-box; }
+
+body,
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  background: #356a7a; }
+  body p,
+  body .project-details {
+    line-height: 3.4rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 25px !important; }
+
+/* HEADER
+----------------------------------------- */
+header {
+  background: #252525;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; }
+  header a,
+  header a:hover {
+    color: #fff; }
+  header span.logo {
+    border: 3px solid #fff;
+    border-radius: 2px;
+    font-family: "Oswald", sans-serif;
+    margin: 1rem 0;
+    padding: .25rem .5rem;
+    font-size: 2.75rem;
+    display: inline-block; }
+  header nav {
+    margin-top: 1rem; }
+    header nav ul {
+      text-align: right;
+      margin: 0;
+      padding: 0; }
+      header nav ul li {
+        list-style: none;
+        display: inline;
+        margin-right: 4rem; }
+      header nav ul li:last-child {
+        margin-right: 0; }
+      header nav ul a {
+        color: #fff;
+        text-transform: uppercase;
+        display: inline-block;
+        line-height: 2.5rem;
+        font-size: 1.25rem;
+        text-align: center; }
+      header nav ul a span {
+        font-size: 2rem; }
+
+/* HERO
+----------------------------------------- */
+.hero {
+  margin-top: 7rem; }
+  .hero .left {
+    background: url("../images/hero-bkg.jpg") no-repeat center center;
+    box-shadow: 0 0 550px rgba(0, 0, 0, 0.24) inset;
+    background-size: cover;
+    height: 100%; }
+  .hero h1 {
+    text-transform: uppercase; }
+    .hero h1 span {
+      font-family: "Lato", sans-serif;
+      color: #e2e2e2;
+      font-size: 1.9rem; }
+  .hero .social li a {
+    color: #e2e2e2; }
+  .hero .work {
+    margin: 0;
+    padding: 0; }
+
+.hero.home {
+  height: 70%;
+  min-height: 506px; }
+  .hero.home .featured-work {
+    width: 50%; }
+  .hero.home .featured-work:first-child {
+    width: 100%; }
+  .hero.home h1 {
+    font-size: 5.28rem;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    line-height: 3rem;
+    margin: 0 !important; }
+
+.hero.work {
+  padding: 10rem 0;
+  box-shadow: 0 0 550px rgba(0, 0, 0, 0.24) inset;
+  background-size: cover !important; }
+  .hero.work h1 {
+    font-size: 42px; }
+
+.featured-work {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+  .featured-work .wrap {
+    position: relative;
+    text-align: center; }
+  .featured-work .bkg {
+    overflow: hidden;
+    background-size: cover;
+    height: 100%; }
+  .featured-work img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s; }
+  .featured-work .caption {
+    position: absolute;
+    top: 100%;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+    .featured-work .caption div {
+      display: table;
+      height: 100%;
+      width: 100%;
+      background: #252525;
+      opacity: .6; }
+    .featured-work .caption div a {
+      display: table-cell;
+      vertical-align: middle;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      color: white; }
+    .featured-work .caption div a {
+      font-family: 'Lato', sans-serif; }
+      .featured-work .caption div a span {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2rem;
+        text-transform: uppercase; }
+    .featured-work .caption div a:hover {
+      text-decoration: none; }
+
+.featured-work:hover .caption,
+.featured-work:hover .wrap {
+  top: 0;
+  -webkit-transform: all .3s;
+  -moz-transform: all .3s;
+  -ms-transform: all .3s;
+  -o-transform: all .3s;
+  transform: all .3s; }
+
+.featured-work:hover .bkg {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  -webkit-transform: all .3s;
+  -moz-transform: all .3s;
+  -ms-transform: all .3s;
+  -o-transform: all .3s;
+  transform: all .3s;
+  transition-delay: .1s; }
+
+.tweet ul {
+  margin: 0;
+  padding: 0; }
+  .tweet ul li {
+    list-style: none;
+    font-size: 2rem; }
+    .tweet ul li span {
+      margin-top: 15px;
+      display: block; }
+    .tweet ul li img {
+      border-radius: 50%;
+      margin-right: 15px; }
+    .tweet ul li a {
+      font-family: "Oswald", sans-serif;
+      color: #fff;
+      text-transform: uppercase; }
+.tweet .avatar {
+  margin: 2rem 0; }
+  .tweet .avatar img {
+    border-radius: 50%;
+    margin-right: .5rem;
+    box-shadow: 0 0 10px #252525; }
+
+.flexslider {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0; }
+  .flexslider .flex-control-nav {
+    display: none; }
+  .flexslider .flex-direction-nav a:before {
+    font-size: 35px; }
+  .flexslider .flexslider:hover .flex-direction-nav .flex-prev {
+    left: 0; }
+  .flexslider .flexslider:hover .flex-direction-nav .flex-next {
+    right: 0; }
+  .flexslider img[src$=".svg"] {
+    width: 15px;
+    height: 15px;
+    display: inline-block; }
+  .flexslider img[src$=".svg"]:first-child {
+    margin-right: .5rem; }
+  .flexslider img[src$=".svg"]:last-child {
+    margin-left: .5rem; }
+  .flexslider p:nth-child(2) {
+    line-height: 2.5rem; }
+  .flexslider p span {
+    font-family: "Oswald", sans-serif; }
+  .flexslider p:last-child img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    float: left;
+    border-radius: 50%; }
+
+#connect .social a {
+  color: #fff;
+  font-size: 4rem;
+  display: block;
+  padding: 3rem 0; }
+#connect .social .facebook {
+  background: #3b5998; }
+#connect .social .facebook:hover {
+  background: #4c70ba; }
+#connect .social .twitter {
+  background: #019FE9; }
+#connect .social .twitter:hover {
+  background: #1fb7fe; }
+#connect .social .linkedin {
+  background: #0074B1; }
+#connect .social .linkedin:hover {
+  background: #0095e4; }
+#connect .social .instagram {
+  background: #DA2979; }
+#connect .social .instagram:hover {
+  background: #e25494; }
+#connect .social .github {
+  background: #808080; }
+#connect .social .github:hover {
+  background: #9a9a9a; }
+#connect .social .codepen {
+  background: #000; }
+#connect .social .codepen:hover {
+  background: #1a1a1a; }
+#connect .social div > div:first-child {
+  padding-right: 7px; }
+#connect .social div > div:last-child {
+  padding-left: 7px; }
+
+.browser-support li {
+  display: inline;
+  margin-left: 15px; }
+  .browser-support li i {
+    color: #5c5c5c; }
+.browser-support li:first-child {
+  margin-left: 0; }
+
+/* FOOTER
+----------------------------------------- */
+footer {
+  background: #252525;
+  color: #fff;
+  padding: 2rem 0; }
+  footer .social {
+    margin: 0;
+    padding: 0; }
+    footer .social li a {
+      color: #fff;
+      font-size: 2rem; }
+
+/* SMALL (sm) devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .hero.home {
+    height: 70%;
+    min-height: 506px; }
+
+  header nav ul a {
+    line-height: 5rem;
+    font-size: 2rem; } }
+/* MEDIUM (md) devices (desktops, 992px and up) */
+/* LARGE (lg) devices (large desktops, 1200px and up) */
+
+/*# sourceMappingURL=styles.css.map */

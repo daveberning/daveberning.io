@@ -1,0 +1,51 @@
+    <footer>
+        <div class="container-fluid text-center">
+            <div class="row">
+                <ul class="social list-unstyled gutter-top">
+                    <li><a href="#" class="icon-hover"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <small>Copyright &copy; 2013-{{ site.time | date: '%Y' }}. All Rights Reversed</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/29081410fc.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+    <script src="{{site.url}}js/js-plugins.js"></script>
+    <script src="{{site.url}}js/tweetie.min.js"></script>
+    <script>
+        (function ($) {
+            $(window).on('load', function() {
+                $('.flexslider').flexslider({
+                    animation: "slide"
+                });
+            });
+            $('.tweet').twittie({
+                'count': 1,
+                'hideReplies': true,
+                'template': '{{tweet}}<br><span>{{avatar}}</div>{{user_name}}</span>'
+            });
+
+            $(document).ready(function() {
+                $("form").validate({
+            		errorPlacement: function(error, element) {
+            			error.appendTo(element.prev());
+            		}
+            	});
+            });
+        }(jQuery));
+
+        var myElement = document.querySelector("header");
+        var headroom  = new Headroom(myElement);
+        headroom.init();
+    </script>
+</body>
+</html>
