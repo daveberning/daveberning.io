@@ -13,7 +13,7 @@
                             <span>{{site.devSubCap}} {{site.location}}</span>
                         </h1>
 
-                        <a href="#" class="btn btn-primary btn-block text-center gutter-top btn-lg">Contact Me</a>
+                        <a href="/connect/" class="btn btn-primary btn-block text-center gutter-top btn-lg">Contact Me</a>
 
                         {% include social-icons.html %}
                     </div>
@@ -32,13 +32,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-
+                    <p>{{page.content}}</p>
                     <div class="row">
                         <div class="col-sm-6">
-                            <a href="#" class="btn btn-primary btn-block btn-lg gutter-top">Download Resume</a>
+                            <a href="{{page.downloadResume}}" class="btn btn-primary btn-block btn-lg gutter-top">Download Resume</a>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#" class="btn btn-secondary btn-block btn-lg gutter-top gutter-bottom">View Timeline</a>
+                            <a href="{{page.viewTimeline}}" class="btn btn-secondary btn-block btn-lg gutter-top gutter-bottom">View Timeline</a>
                         </div>
                     </div>
                 </div>
@@ -57,20 +57,6 @@
                     <h2 class="text-left">Their Words, Not Mine</h2>
                     <div class="flexslider">
                         <ul class="slides">
-                            <!-- {% for testimonial in site.testimonials %}
-                            <li>
-                                <div class="row">
-                                    {% for testimonial in site.testimonials limit: 1%}
-                                    <div class="col-md-6 testimonial gutter-bottom">
-                                        {{ testimonial.content }}
-
-                                        <p class="text-left gutter-top"><img src="{{site.url}}images/mark.jpg" width="50" height="50" alt="{{testimonial.name}}, {{testimonial.title}}" draggable="false" class="fadeInUp"><span>{{testimonial.name}}</span><br>{{testimonial.title}}</p>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </li>
-                            {% endfor %} -->
-
                             {% for testimonial in site.testimonials limit:2%}
                               {% if forloop.first %}
                               <p>This collection has {{ forloop.length }} products:</p>

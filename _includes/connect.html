@@ -1,6 +1,12 @@
 <div id="connect" class="section">
     <div class="container">
-        <h2 class="gutter-bottom">Connect With Me</h2>
+        {% if page.url == "/connect/" %}
+            <h1 class="gutter-bottom">Connect With Me</h1>
+
+            <p class="gutter-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eum ipsa sint, nostrum distinctio suscipit nam cumque maiores doloribus a dolores, dignissimos ad, quia molestias reiciendis non neque dolorem aut.</p>
+        {% else %}
+            <h2 class="gutter-bottom">Connect With Me</h2>
+        {% endif %}
     </div>
 
     <div class="container">
