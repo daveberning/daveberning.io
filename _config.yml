@@ -9,12 +9,13 @@ description: Dave Berning is a web developer and designer from Cincinnat, OH.
 
 # URLs
 baseurl: "/"
-url: "https://daveberning.github.io/portfolio-site/" # the base hostname & protocol for your site
-projectURL: "/project/"
-imagesURL: "{{site.url}}images/"
+url: "/" # the base hostname & protocol for your site
+projectURL: "http:/localhost:4000/project/"
+imagesURL: "http:/localhost:4000/images/"
 
 collections:
   testimonials:
+  content:
   projects:
       output: true
       permalink: '/:categories/:title'

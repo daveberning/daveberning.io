@@ -2,17 +2,17 @@
 # Project Information
 layout: project-single
 categories: work
-name: "Bearcast Media"
-caption: "Wordpress"
+name: "Caldwell University"
+caption: "Interactive Mico-Site"
 projectLink: http://www.bearcastmedia.com
 featuredOnHomepage: true
-index: 3
+index: 2
 
 # Images
-featuredImage: images/bearcast-bkg-thumbnail.jpg
-backgroundImage: images/bearcast-bkg.png
-topLeftImage: images/bearcast-responsive-devices.png
-bottomRightImage: images/bearcast-icons.png
+featuredImage: images/caldwell-bkg-thumbnail.jpg
+backgroundImage: caldwell-bkg.png
+topLeftImage: images/caldwell-responsive-devices.png
+bottomRightImage: images/caldwell-icons.png
 
 # TLDR Content
 tldr:
