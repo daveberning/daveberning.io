@@ -1,3 +1,5 @@
+include: ['_pages']
+
 # Site settings
 title: Dave Berning | Web Developer
 firstName: Dave
@@ -13,6 +15,15 @@ url: "/" # the base hostname & protocol for your site
 projectURL: "http:/localhost:4000/project/"
 imagesURL: "http:/localhost:4000/images/"
 
+# Social Media Accounts
+facebook: https://www.facebook.com/dave.berning.iii
+twitter: https://twitter.com/daveberning
+linkedin: https://www.linkedin.com/in/davidberning
+instagram: https://www.instagram.com/daveberning/
+github: https://github.com/daveberning
+codepen: https://codepen.io/daveberning
+
+# Collections
 collections:
   testimonials:
   content:

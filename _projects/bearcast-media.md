@@ -20,6 +20,8 @@ tldr:
     - Test
 ---
 
-Dave ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+During Bearcast Media's re-branding campaign I was handpicked and asked by it's General Manager to design and develop the new website. This new site replaced the outdated one by improving the user experience, user interface, and presentation. Bearcast Media's website launched in February, 2014 and has several new features including, mobile compatibility, social media integration, iOS/Android app icons, and Facebook OpenGraph support for sharing.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Users can share, save, and interact the Bearcast website in one seamless interaction. By using a Facebook or Twitter account readers can log into Bearcast and post comments and share opinions on various articles.
+
+Since launch, Bearcast's online and social presence has increased tremendously resulting in increase local and global recognition.

@@ -3,16 +3,16 @@
 layout: project-single
 categories: work
 name: "Caldwell University"
-caption: "Interactive Mico-Site"
-projectLink: http://www.bearcastmedia.com
+caption: "Interactive Mico-Site, Web Development"
+projectLink: http://www.choosecaldwell.net
 featuredOnHomepage: true
 index: 2
 
 # Images
 featuredImage: images/caldwell-bkg-thumbnail.jpg
-backgroundImage: caldwell-bkg.png
-topLeftImage: images/caldwell-responsive-devices.png
-bottomRightImage: images/caldwell-icons.png
+backgroundImage: images/caldwell-bkg-work.png
+topLeftImage: images/caldwell-macbook.png
+bottomRightImage: images/caldwell-demo.gif
 
 # TLDR Content
 tldr:
@@ -20,6 +20,6 @@ tldr:
     - Test
 ---
 
-Dave ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+During my time as a web developer at Hobsons Educational Solutions, I created various micro-sites like Caldwell University, University of Oregon, and Palm Beach Atlantic University. These micro-sites are single page websites that use JavaScript to animate between the different "pages."
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Interactive cards are used to provide the user with various information on enrollment, social life, and living expense for the college life at Caldwell. Transition and card flip animations are achieved using the GreenSock JavaScript Library. Caldwell University also utilizes Modernizr for greater browser support.

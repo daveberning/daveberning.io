@@ -1,0 +1,44 @@
+{% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <style>
+        .hero.work {
+            background: url("{{site.url}}{{page.backgroundImage}}") no-repeat center center;
+        }
+    </style>
+
+    <div class="hero work">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center color-white">My Thoughts for You To Read<h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    {% for post in site.posts limit:5 %}
+                        <h2><a href="{{post.slug}}">{{post.title}}</a></h2>
+                        {{ post.date | date: '%B %d, %Y' | prepend: '<p>' | append: '</p>' }}
+                        {{ post.excerpt }}
+                        <!-- <div class="row gutter-top">
+                            <div class="col-sm-4">
+                                <a href="{{post.slug}}" class="btn btn-secondary btn-block btn-lg gutter-top">Read More</a>
+                            </div>
+                        </div> -->
+                    {% endfor %}
+                </div>
+                <div class="col-sm-4">
+                    <h3>Categories</h3>
+                    <h3>Popular Topics</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% include footer.html %}
