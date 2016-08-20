@@ -2,17 +2,16 @@
 # Project Information
 layout: project-single
 categories: work
-name: "M80, Inc"
-caption: "Wordpress, Custom Theme"
-projectLink: http://www.m80inc.com
-featuredOnHomepage: true
-index: 1
+name: "Labelfloat.css"
+caption: "Plugin Development"
+projectLink: http://daveberning.github.io/labelfloat-css/
+index: 4
 
 # Images
-featuredImage: images/m80-bkg-thumbnail.jpg
-backgroundImage: images/m80-bkg-work.jpg
-topLeftImage: images/bearcast-responsive-devices.png
-bottomRightImage: images/bearcast-icons.png
+featuredImage: images/code.jpeg
+backgroundImage: images/code.jpeg
+topLeftImage: images/labelfloat-desktop.png
+bottomRightImage:
 
 # TLDR Content
 tldr:

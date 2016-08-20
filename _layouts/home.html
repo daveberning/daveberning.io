@@ -57,11 +57,14 @@
                     <h2 class="text-left">Their Words, Not Mine</h2>
                     <div class="flexslider">
                         <ul class="slides">
-                            {% for testimonial in site.testimonials limit:2%}
-                              {% if forloop.first %}
-                              <p>This collection has {{ forloop.length }} products:</p>
-                              {% endif %}
-                              <p>{{ testimonial.name }}</p>
+                            {% for testimonial in site.testimonials %}
+                                {% assign loopindex = forloop.index | modulo: 2 %}
+                                {% if loopindex == 1 %}
+                                    <li><a href="#">{{ testimonial.name }}</a>
+                                {% else %}
+                                    <li><a href="#">{{ testimonial.name }}</a></li>
+                                </div>
+                                {% endif %}
                             {% endfor %}
                         </ul>
                     </div>

@@ -2,7 +2,13 @@
 layout: post
 title:  "How This Site Was Made"
 date:   2016-08-20 00:06:05 -0400
-categories: web development, jekyll
+categories:
+    - web development
+    - jekyll
+tags:
+    - Dave
+    - test tag
+    - tag
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

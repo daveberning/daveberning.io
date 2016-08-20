@@ -50,11 +50,52 @@
                 <div class="row">
                     <div class="col-sm-8">
                         <h2>Project Details</h2>
-
                         {{ content }}
                     </div>
                     <div class="col-sm-4">
-                        <img class="img-responsive" src="{{site.url}}{{page.bottomRightImage}}" alt="Bearcast Media as saved on an iPhone homescreen.">
+                        {% if page.url == "/labelfloat-css" %}
+                        <h3 class="h2">Demo*</h3>
+                        <form class="bootstrap" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-sm-6 gutter-bottom">
+                                    <input class=" btn-block" type="text">
+                                    <label class="valid" for="input-name"><span>First Name</span></label>
+                                </div>
+
+                                <div class="col-sm-6 gutter-bottom">
+                                    <input class=" btn-block" type="text">
+                                    <label class="valid" for="input-name"><span>Last Name</span></label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container-fluid">
+                                    <div class="gutter-bottom">
+                                        <input class=" btn-block" type="email">
+                                        <label class="valid" for="input-name"><span>Email</span></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container-fluid">
+                                    <textarea rows="5"></textarea>
+                                    <label class="valid" for="input-name"><span>Message</span></label>
+                                </div>
+                            </div>
+
+                            <div class="row gutter-top">
+                                <div class="col-sm-6">
+                                    <button class="btn-primary btn btn-block btn-lg">Send</button>
+                                </div>
+                                <div class="col-sm-6 hidden-xs">
+                                    <button class="btn-secondary btn btn-block btn-lg">Clear</button>
+                                </div>
+                            </div>
+                        </form>
+                        {% else %}
+                            <img class="img-responsive" src="{{site.url}}{{page.bottomRightImage}}" alt="Bearcast Media as saved on an iPhone homescreen.">
+                        {% endif %}
                     </div>
                 </div>
             </div>
