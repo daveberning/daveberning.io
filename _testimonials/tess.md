@@ -1,8 +1,7 @@
 ---
 name: "Tess White"
-title: "Network Operations Manager at i-Wireless LLC"
-index: 6
+title: "Director of Marketing at Aniara Diagnostica"
+avatar: images/tess.jpg
+index: 3
 ---
-<img src="{{site.url}}images/open.svg" alt="open" draggable="false" class="fadeInUp">
-    David was an excellent web developer resource for INFODYNAMICS. He totally redesigned our site and was attentive and flexible to our input, while working independently and remotely! I'd highly recommend David as a top-notch development resource.
-<img src="{{site.url}}images/close.svg" alt="open" draggable="false" class="fadeInUp">
+David is a huge asset to Bearcast Media...His 'always on' work ethic is invaluable and he's never failed to make himself available whenever I've needed him. Such ease of communication is hard to find in a coworker, not to mention ambition.

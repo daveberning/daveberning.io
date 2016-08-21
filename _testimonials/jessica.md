@@ -1,8 +1,7 @@
 ---
 name: "Jessica Fox"
-title: "Network Operations Manager at i-Wireless LLC"
-index: 3
+title: "Account Manager at Scenario Learning"
+avatar: images/jessica.jpg
+index: 5
 ---
-<img src="{{site.url}}images/open.svg" alt="open" draggable="false" class="fadeInUp">
-    David was an excellent web developer resource for INFODYNAMICS. He totally redesigned our site and was attentive and flexible to our input, while working independently and remotely! I'd highly recommend David as a top-notch development resource.
-<img src="{{site.url}}images/close.svg" alt="open" draggable="false" class="fadeInUp">
+Dave exhibited a wide range of skills while building a record of outstanding performance in this role, specifically leadership and student involvement. Dave is also extremely talented and passionate

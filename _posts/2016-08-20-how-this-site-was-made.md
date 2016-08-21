@@ -10,22 +10,10 @@ tags:
     - test tag
     - tag
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+This article will be going over the technical side of the creation process. I'm not going to talk about the branding or even the UI because 1) I'm technical like that, and 2) I shouldn't have to explain a UI. So, do you even care? Well, if you don't I'm going to tell you anyway.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+It started with me realizing that I needed to give a much needed facelift to my website. My previous website was a little "cookie cutter" and dated. It got me through my first job interview, but I needed something with a better UI/UX. I also wanted to utilize a server side language, to better manage the code. However, upon research, there were better, more efficient ways of achieving this.
 
-Jekyll also offers powerful support for code snippets:
+## To server-side or not to server-side?
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+So, I immediately starting delving into PHP. My background is in Wordpress and PHP so this immediately seemed natural. I chose to use a server side language because, come on...who wants to the same navigation for each page.

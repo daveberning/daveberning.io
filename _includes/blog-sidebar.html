@@ -1,0 +1,12 @@
+<h3>Categories</h3>
+<ul class="list-unstyled">
+    {% for category in site.categories %}
+        <li><a name="{{ category | first }}">{{ category | first }}</a></li>
+    {% endfor %}
+</ul>
+<h3>Popular Topics</h3>
+<ul class="list-unstyled tags">
+    {% for tag in site.tags %}
+        <li><a name="{{ tag | first }}">{{ tag | first }}</a></li>
+    {% endfor %}
+</ul>

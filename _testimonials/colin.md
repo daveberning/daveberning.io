@@ -1,8 +1,7 @@
 ---
 name: "Colin Lutz"
-title: "Network Operations Manager at i-Wireless LLC"
+title: "Morning Show Producer/On-Air Talent at Cumulus Media"
+avatar: images/colin.jpg
 index: 2
 ---
-<img src="{{site.url}}images/open.svg" alt="open" draggable="false" class="fadeInUp">
-    David was an excellent web developer resource for INFODYNAMICS. He totally redesigned our site and was attentive and flexible to our input, while working independently and remotely! I'd highly recommend David as a top-notch development resource.
-<img src="{{site.url}}images/close.svg" alt="open" draggable="false" class="fadeInUp">
+I asked David to be a part of the Bearcast Media team...to help brand the new Bearcast Media and build/design the new website. I think David's work speaks for itself: clean, classic, and sexy! ...You will have a hard time not becoming friends with David.

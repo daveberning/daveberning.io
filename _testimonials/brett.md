@@ -1,8 +1,7 @@
 ---
 name: "Brett Valls"
-title: "Network Operations Manager at i-Wireless LLC"
-index: 5
+title: "Design Manager at M80 Inc."
+avatar: images/brett.jpg
+index: 4
 ---
-<img src="{{site.url}}images/open.svg" alt="open" draggable="false" class="fadeInUp">
-    David was an excellent web developer resource for INFODYNAMICS. He totally redesigned our site and was attentive and flexible to our input, while working independently and remotely! I'd highly recommend David as a top-notch development resource.
-<img src="{{site.url}}images/close.svg" alt="open" draggable="false" class="fadeInUp">
+Dave's desire for getting the job done correctly and to teach others is what separates him from being a production developer and a project leader. His efficient work style results in quick delivery of work without a compromise in quality.

@@ -32,19 +32,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <p>{{page.content}}</p>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <a href="{{page.downloadResume}}" class="btn btn-primary btn-block btn-lg gutter-top">Download Resume</a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="{{page.viewTimeline}}" class="btn btn-secondary btn-block btn-lg gutter-top gutter-bottom">View Timeline</a>
-                        </div>
-                    </div>
+                    {{page.content}}
                 </div>
 
                 <div class="col-sm-4">
-                    <img class="img-responsive" src="{{site.url}}images/dave.jpg" alt="{{site.firstName}} {{site.lastName}}, {{site.devSubCap}} {{site.location}}">
+                    <img class="img-responsive" src="{{site.avatar}}" alt="{{site.firstName}} {{site.lastName}}, {{site.devSubCap}} {{site.location}}">
                 </div>
             </div>
         </div>
@@ -57,17 +49,32 @@
                     <h2 class="text-left">Their Words, Not Mine</h2>
                     <div class="flexslider">
                         <ul class="slides">
-                            {% for testimonial in site.testimonials %}
+                            {% assign testimonialIndex = (site.testimonials | sort: 'index') %}
+                            {% for testimonial in testimonialIndex %}
                                 {% assign loopindex = forloop.index | modulo: 2 %}
                                 {% if loopindex == 1 %}
                                     <li>
                                         <div class="row">
-                                            <div class="col-sm-6">
-                                                {{testimonial.name}}
+                                            <div class="col-sm-6 text-left">
+                                                <p><img src="{{site.url}}images/open.svg" alt="open" draggable="false">
+                                                    {{testimonial.content | remove: '<p>' | remove: '</p>'}}
+                                                <img src="{{site.url}}images/close.svg" alt="open" draggable="false"></p>
+
+                                                <p class="gutter-top"><img src="{{testimonial.avatar}}" width="50" height="50" alt="{{testimonial.name}}, {{testimonial.title}}" draggable="false" class="fadeInUp">
+                                                    <span>{{testimonial.name}}</span><br>
+                                                    {{testimonial.title}}
+                                                </p>
                                             </div>
                                 {% else %}
-                                            <div class="col-sm-6">
-                                                {{testimonial.name}}
+                                            <div class="col-sm-6 text-left">
+                                                <p><img src="{{site.url}}images/open.svg" alt="open" draggable="false">
+                                                    {{testimonial.content | remove: '<p>' | remove: '</p>'}}
+                                                <img src="{{site.url}}images/close.svg" alt="open" draggable="false"></p>
+
+                                                <p class="gutter-top"><img src="{{testimonial.avatar}}" width="50" height="50" alt="{{testimonial.name}}, {{testimonial.title}}" draggable="false" class="fadeInUp">
+                                                    <span>{{testimonial.name}}</span><br>
+                                                    {{testimonial.title}}
+                                                </p>
                                             </div>
                                         </div>
                                     </li>
