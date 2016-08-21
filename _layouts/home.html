@@ -60,10 +60,17 @@
                             {% for testimonial in site.testimonials %}
                                 {% assign loopindex = forloop.index | modulo: 2 %}
                                 {% if loopindex == 1 %}
-                                    <li><a href="#">{{ testimonial.name }}</a>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                {{testimonial.name}}
+                                            </div>
                                 {% else %}
-                                    <li><a href="#">{{ testimonial.name }}</a></li>
-                                </div>
+                                            <div class="col-sm-6">
+                                                {{testimonial.name}}
+                                            </div>
+                                        </div>
+                                    </li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
