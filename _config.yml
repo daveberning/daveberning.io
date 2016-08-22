@@ -11,9 +11,9 @@ description: Dave Berning is a web developer and designer from Cincinnat, OH.
 avatar: images/dave.jpg
 # URLs
 baseurl: "/"
-url: "https:/daveberning.github.io/" # the base hostname & protocol for your site
-projectURL: "https:/daveberning.github.io/project/"
-imagesURL: "https:/daveberning.github.io/images/"
+url: "/" # the base hostname & protocol for your site
+projectURL: "localhost:4000/project/"
+imagesURL: "localhost:4000/images/"
 
 # Social Media Accounts
 facebook: https://www.facebook.com/dave.berning.iii
@@ -34,3 +34,6 @@ collections:
 # Build settings
 markdown: kramdown
 permalink: /:title
+sass_dir: public/_scss
+sass:
+  style: compressed
