@@ -5,18 +5,18 @@
     {% include header.html %}
 
         <style>
-            .hero.work {
+            .hero {
                 background: url("{{site.url}}{{page.backgroundImage}}") no-repeat center center;
             }
         </style>
 
-        <div class="hero work">
+        <div class="hero standard">
             <div class="container">
                 <div class="row">
                     <h1 class="text-center color-white">{{page.name}}<h1>
 
-                    <div class="row">
-                        <div class="col-xs-4 col-xs-offset-4">
+                    <div class="row gutter-top">
+                        <div class="col-xs-4 col-xs-offset-4 gutter-top">
                             <a href="{{site.url}}work/" class="btn btn-block color-white"><i class="fa fa-chevron-left"></i> More Work</a>
                         </div>
                     </div>

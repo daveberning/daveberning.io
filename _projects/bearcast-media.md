@@ -6,7 +6,7 @@ name: "Bearcast Media"
 caption: "Wordpress"
 projectLink: http://www.bearcastmedia.com
 featuredOnHomepage: true
-index: 3
+index: 2
 
 # Images
 featuredImage: images/bearcast-bkg-thumbnail.jpg

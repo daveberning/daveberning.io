@@ -6,7 +6,7 @@ name: "Caldwell University"
 caption: "Interactive Mico-Site, Web Development"
 projectLink: http://www.choosecaldwell.net
 featuredOnHomepage: true
-index: 2
+index: 3
 
 # Images
 featuredImage: images/caldwell-bkg-thumbnail.jpg
