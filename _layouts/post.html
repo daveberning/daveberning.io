@@ -20,7 +20,16 @@ layout: default
                 <div class="container-fluid">
                     <div class="row">
                         <h1 class="text-center color-white gutter-bottom" itemprop="name headline">{{ page.title }}</h1>
-                        <p class="text-center color-white gutter-top">Share on: <i class="fa fa-facebook-square"></i> <i class="fa fa-twitter-square"></i> <i class="fa fa-google-plus-square"></i> <i class="fa fa-reddit-square"></i></p>
+                        <p class="text-center color-white gutter-top">Share on:
+                            <a class="color-white" href="https://facebook.com/sharer.php?u={{site.url}}{{page.url}}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square"></i></a>
+
+                            <a class="color-white" href="https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}{{ page.url }}&via=daveberning&related={{site.twitter}}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter-square"></i></a>
+
+                            <a class="color-white" href="https://plus.google.com/share?url={{site.url}}{{page.url}}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square"></i></a>
+
+                            <a class="color-white"  href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}&title={{page.title}}&summary=<DESCRIPTION>&source={{site.url}}" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+
+                            <a class="color-white" href="http://www.reddit.com/submit?url={{site.url}}&title={{page.title}}" rel="nofollow" target="_blank" title="Share Reddit"><i class="fa fa-reddit-square"></i></a>
                     </div>
                 </div>
             </div>
@@ -35,7 +44,7 @@ layout: default
                                         <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
                                         <path d="M0 0h24v24H0z" fill="none"/>
                                     </svg>
-                                    {{ page.date | date: '%B %d, %Y' | prepend: '<p>Posted On: ' | append: '</p>' }}
+                                    {{ page.date | date: '%B %d, %Y' | prepend: '<p>' | append: '</p>' }}
                                 </div>
                             {{ content }}
                             </div>

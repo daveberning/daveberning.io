@@ -4,14 +4,14 @@
 
 {% include header.html %}
 
-<div class="hero work">
+<div class="hero">
     <div class="container-fluid">
         <div class="row">
             {% assign projectIndex = (site.projects | sort: 'index') %}
             {% for project in projectIndex %}
             <div class="col-sm-6 col-md-4 featured-work">
                 <div class="text-center">
-                    <div class="bkg" style="background: url('{{site.url}}{{project.featuredImage}}')no-repeat center center;
+                    <div class="bkg" style="background: url('{{site.url}}/{{project.featuredImage}}')no-repeat center center;
                     padding-top: 70.27%;
                     background-size: cover;"></div>
                     <div class="caption">
