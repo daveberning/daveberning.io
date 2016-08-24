@@ -4,14 +4,14 @@
 
     {% include header.html %}
 
-    <style>
-        .hero.work {
-            background: url("{{site.url}}{{page.backgroundImage}}") no-repeat center center;
-        }
-    </style>
-
     <div class="hero standard">
         <div class="container-fluid">
+
+            <div class='blurImg'>
+                <div style="background: url('{{site.url}}/{{page.backgroundImage}}') no-repeat center center"></div>
+                <div class="blur" style="background: url('{{site.url}}/{{page.backgroundImage}}') no-repeat center center"></div>
+            </div>
+
             <div class="row">
                 <h1 class="text-center color-white">My Thoughts for You To Read</h1>
             </div>
@@ -21,7 +21,7 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-9">
                     {% for post in site.posts limit:5 %}
                         <div class="post">
                             <h2><a href="{{site.url}}/{{post.slug}}">{{post.title}}</a></h2>
@@ -43,7 +43,7 @@
                         </div><!-- end post -->
                     {% endfor %}
                 </div>
-                <aside class="col-sm-4">
+                <aside class="col-sm-3">
                     {% include blog-sidebar.html %}
                 </aside>
             </div>

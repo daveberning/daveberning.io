@@ -4,14 +4,14 @@
 
     {% include header.html %}
 
-        <style>
-            .hero {
-                background: url("{{site.url}}/{{page.backgroundImage}}") no-repeat center center;
-            }
-        </style>
-
         <div class="hero standard">
             <div class="container">
+
+                <div class='blurImg'>
+                    <div style="background: url('{{site.url}}/{{page.backgroundImage}}') no-repeat center center"></div>
+                    <div class="blur" style="background: url('{{site.url}}/{{page.backgroundImage}}') no-repeat center center"></div>
+                </div>
+
                 <div class="row">
                     <h1 class="text-center color-white">{{page.name}}</h1>
 
@@ -39,7 +39,7 @@
                           {% endfor %}
                         </ul>
 
-                        <a href="{{page.projectLink}}" target="_blank" class="btn btn-block btn-primary btn-lg gutter-top">Visit Site</a>
+                        <a href="{{page.projectLink}}" target="_blank" class="btn btn-block btn-primary btn-lg gutter-top"><i class="material-icons">open_in_new</i> Visit Site</a>
                     </div>
                 </div>
             </div>

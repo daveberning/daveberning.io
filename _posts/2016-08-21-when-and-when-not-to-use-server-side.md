@@ -2,6 +2,7 @@
 layout: post
 title:  "When and When Not to Use a Server Side Language"
 date:   2016-08-20 00:06:05 -0400
+backgroundImage: m80-bkg.jpg
 categories:
     - web development
     - jekyll

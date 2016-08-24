@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $oswald;
     text-transform: uppercase;
     margin: 20px 0;
+    font-weight: 700;
 }
 
 
@@ -99,6 +100,7 @@ header {
 .hero {
     margin-top: 7rem;
     background-size: cover !important;
+    position: relative;
 
     .left {
         background: url(../images/hero-bkg.jpg) no-repeat center center;
@@ -200,6 +202,15 @@ header {
         transition: all .3s;
 
     }
+
+    .avatar img {
+        border-radius: 50%;
+        border: 5px solid $white;
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        margin: 0 0 0 -50px;
+    }
 }
 
 .featured-work:hover .bkg {
@@ -227,16 +238,46 @@ header {
     .featured-work {
         height: 50%;
         width: 50%;
+
+        .bkg {
+            height: 100%;
+        }
     }
 }
 
 .hero.standard {
-    padding: 15rem 0;
+    padding: 13rem 0;
+    box-shadow: 0 0 550px rgba(0, 0, 0, 0.24) inset;
 
     h1 {
         font-size: 4.5rem;
         line-height: 4.5rem;
     }
+}
+
+.blurImg {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.blurImg > div {
+    position: fixed;
+    width: 100%;
+    height: 650px;
+    top: 0;
+    background-size: cover !important;
+}
+
+.share-on i {
+    font-size: 2.2rem;
+    vertical-align: middle;
+}
+
+.share-on a:hover i {
+    color: darken($white, 20%);
 }
 
 .social li a {
@@ -273,6 +314,7 @@ header {
 
 .post {
     margin: 0;
+    padding: 3rem 0;
     border-bottom: 1px solid #ccc;
 
     h2 a {
@@ -287,6 +329,11 @@ header {
 
         p {
             line-height: 2.4rem;
+            font-weight: 700;
+        }
+
+        i {
+            margin-right: 5px;
         }
     }
 }

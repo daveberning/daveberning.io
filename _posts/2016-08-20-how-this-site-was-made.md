@@ -2,6 +2,7 @@
 layout: post
 title:  "How This Site Was Made"
 date:   2016-08-20 00:06:05 -0400
+backgroundImage: images/m80-bkg-thumbnail.jpg
 categories:
     - web development
     - jekyll

@@ -5,53 +5,49 @@ layout: default
 
   <body>
 
-  <style>
-      .hero {
-          background: url("{{site.url}}{{page.backgroundImage}}") no-repeat center center;
-      }
-  </style>
-
-
     {% include header.html %}
 
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post-single" itemscope itemtype="http://schema.org/BlogPosting">
 
             <div class="hero standard">
                 <div class="container-fluid">
+
+                    <div class='blurImg'>
+                      <div style="background-image: url('{{site.imagesURL}}{{page.backgroundImage}}')"></div>
+                      <div class="blur" style="background-image: url('{{site.imagesURL}}{{page.backgroundImage}}')"></div>
+                    </div>
+
                     <div class="row">
-                        <h1 class="text-center color-white gutter-bottom" itemprop="name headline">{{ page.title }}</h1>
-                        <p class="text-center color-white gutter-top">Share on:
-                            <a class="color-white" href="https://facebook.com/sharer.php?u={{site.url}}{{page.url}}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square"></i></a>
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <h1 class="text-center color-white" itemprop="name headline">{{ page.title }}</h1>
+                            <p class="text-center color-white gutter-top share-on">
+                                <a class="color-white transition" href="https://facebook.com/sharer.php?u={{site.url}}{{page.url}}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square"></i></a>
 
-                            <a class="color-white" href="https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}{{ page.url }}&via=daveberning&related={{site.twitter}}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter-square"></i></a>
+                                <a class="color-white transition" href="https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}{{ page.url }}&via=daveberning&related={{site.twitter}}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter-square"></i></a>
 
-                            <a class="color-white" href="https://plus.google.com/share?url={{site.url}}{{page.url}}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square"></i></a>
+                                <a class="color-white transition" href="https://plus.google.com/share?url={{site.url}}{{page.url}}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square"></i></a>
 
-                            <a class="color-white"  href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}&title={{page.title}}&summary=<DESCRIPTION>&source={{site.url}}" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+                                <a class="color-white transition"  href="http://www.linkedin.com/shareArticle?mini=true&url={{site.url}}{{page.url}}&title={{page.title}}&summary=<DESCRIPTION>&source={{site.url}}" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square"></i></a>
 
-                            <a class="color-white" href="http://www.reddit.com/submit?url={{site.url}}&title={{page.title}}" rel="nofollow" target="_blank" title="Share Reddit"><i class="fa fa-reddit-square"></i></a>
+                                <a class="color-white transition" href="http://www.reddit.com/submit?url={{site.url}}&title={{page.title}}" rel="nofollow" target="_blank" title="Share Reddit"><i class="fa fa-reddit-square"></i></a>
+
+                                <div class="date text-center color-white">
+                                    {{ page.date | date: '%B %d, %Y' | prepend: '<p><i class="material-icons">event</i>' | append: '</p>' }}
+                                </div>
+                        </div>
                     </div>
                 </div>
+                <div class="avatar"><img src="{{site.imagesURL}}dave.jpg" width="100" height="100"></div>
             </div>
 
             <div class="section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-10 col-sm-offset-1">
                             <div class="post-content" itemprop="articleBody">
-                                <div class="date">
-                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
-                                        <path d="M0 0h24v24H0z" fill="none"/>
-                                    </svg>
-                                    {{ page.date | date: '%B %d, %Y' | prepend: '<p>' | append: '</p>' }}
-                                </div>
                             {{ content }}
                             </div>
                         </div>
-                        <aside class="col-sm-4">
-                            {% include blog-sidebar.html %}
-                        </aside>
                     </div>
                 </div>
             </div>

@@ -21,11 +21,6 @@
                     animation: "slide"
                 });
             });
-            // $('.tweet').twittie({
-            //     'count': 1,
-            //     'hideReplies': true,
-            //     'template': '{{tweet}}<br><span>{{avatar}}</div>{{user_name}}</span>'
-            // });
 
             $(document).ready(function() {
                 $("form").validate({
@@ -33,6 +28,11 @@
             			error.appendTo(element.prev());
             		}
             	});
+            });
+
+            $(window).scroll(function(e) {
+                var distanceScrolled = $(this).scrollTop();
+                $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
             });
         }(jQuery));
 
