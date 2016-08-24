@@ -28,12 +28,12 @@
             			error.appendTo(element.prev());
             		}
             	});
-            });
 
-            $(window).scroll(function(e) {
-                var distanceScrolled = $(this).scrollTop();
-                $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
-            });
+                $(window).scroll(function(e) {
+                    var distanceScrolled = $(this).scrollTop();
+                    $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
+                });
+            })
         }(jQuery));
 
         var myElement = document.querySelector("header");
