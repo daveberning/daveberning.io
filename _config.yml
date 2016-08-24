@@ -12,8 +12,8 @@ avatar: images/dave.jpg
 # URLs
 baseurl: "/"
 url: "https://daveberning.github.io/portfolio-site/" # the base hostname & protocol for your site
-projectURL: "http://localhost:4000/project/"
-imagesURL: "http://localhost:4000/images/"
+projectURL: "https://daveberning.github.io/portfolio-site/project/"
+imagesURL: "https://daveberning.github.io/portfolio-site/images/"
 
 # Social Media Accounts
 facebook: https://www.facebook.com/dave.berning.iii
