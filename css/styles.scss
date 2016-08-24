@@ -27,15 +27,22 @@ body {
     p,
     ul {
         line-height: 3rem;
-        margin: 0 0 15px;
+        margin: 0 0 30px;
+        color: lighten($black, 15%);
+    }
+
+    strong {
+        font-weight: 700;
+        color: $black;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $oswald;
     text-transform: uppercase;
-    margin: 20px 0;
-    font-weight: 700;
+    margin: 0 0 25px 0;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 
@@ -256,6 +263,11 @@ header {
         font-size: 4.5rem;
         line-height: 4.5rem;
     }
+
+    p {
+        margin: 15px 0;
+        color: $white;
+    }
 }
 
 .blurImg {
@@ -332,7 +344,7 @@ header {
     .date {
         svg,
         i {
-            margin-right: .5rem;
+            margin-right: 1rem;
         }
 
         p {
@@ -347,7 +359,7 @@ header {
 }
 
 .post {
-    
+
     .date {
         svg,
         i {
