@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    {% for post in site.posts limit:5 %}
+                    {% for post in site.posts %}
                         <div class="post">
                             <h2><a href="{{site.url}}/{{post.slug}}">{{post.title}}</a></h2>
 
@@ -32,11 +32,6 @@
                             </div>
 
                             {{ post.excerpt }}
-                            <!-- <div class="row gutter-top">
-                                <div class="col-sm-4">
-                                    <a href="{{post.slug}}" class="btn btn-secondary btn-block btn-lg gutter-top">Read More</a>
-                                </div>
-                            </div> -->
                         </div><!-- end post -->
                     {% endfor %}
                 </div>

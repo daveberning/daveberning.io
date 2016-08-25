@@ -1,4 +1,8 @@
 ---
+#SEO
+title:
+description:
+
 # Project Information
 layout: project-single
 categories: work
@@ -21,7 +25,6 @@ tldr:
     - <strong>Role:</strong> Web Developer
     - <strong>Type:</strong> Web Development, Interactive
     - <strong>Date:</strong> August 2013
-    -  <br>
     - <strong>Features:</strong> Interactive CSS card flips, animations with GreenSock Library.
 ---
 During my time as a web developer at Hobsons Educational Solutions, I created various micro-sites like Caldwell University, University of Oregon, and Palm Beach Atlantic University. These micro-sites are single page websites that use JavaScript to animate between the different "pages."
