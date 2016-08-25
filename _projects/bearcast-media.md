@@ -21,7 +21,6 @@ tldr:
     - <strong>Role:</strong> Web Developer, Project Manager
     - <strong>Type:</strong> Wordpress, Custom Theme, Editorial
     - <strong>Date:</strong> February 2014
-    -  <br>
     - <strong>Features:</strong> iOS/Android icons, Microsoft Live Tile Integration, Radio Streaming, Live Sports Broadcasts, Dynamic Content, Responsive Design, Author Pages, and more
 ---
 

@@ -27,15 +27,26 @@ body {
     p,
     ul {
         line-height: 3rem;
-        margin: 0 0 15px;
+        margin: 0 0 25px;
+        color: lighten($black, 15%);
+    }
+
+    p.color-white {
+        color: darken($white, 15%);
+    }
+
+    strong {
+        font-weight: 700;
+        color: $black;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $oswald;
     text-transform: uppercase;
-    margin: 20px 0;
-    font-weight: 700;
+    margin: 0 0 25px 0;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 
@@ -124,7 +135,7 @@ header {
 
         span {
             font-family: $lato;
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
     }
 
@@ -256,6 +267,11 @@ header {
         font-size: 4.5rem;
         line-height: 4.5rem;
     }
+
+    p {
+        margin: 15px 0;
+        color: $white;
+    }
 }
 
 .blurImg {
@@ -332,7 +348,7 @@ header {
     .date {
         svg,
         i {
-            margin-right: .5rem;
+            margin-right: 1rem;
         }
 
         p {
@@ -347,7 +363,7 @@ header {
 }
 
 .post {
-    
+
     .date {
         svg,
         i {
@@ -369,6 +385,8 @@ header {
 }
 
 .post:last-child { border-bottom: 0; }
+
+.project-details li { margin-bottom: 7px; }
 
 .flexslider {
     background: transparent;
@@ -483,6 +501,8 @@ footer {
     background: $black;
     color: $white;
     padding: 1rem 0;
+
+    ul { margin-bottom: 0; }
 }
 
 @import "breakpoints";
