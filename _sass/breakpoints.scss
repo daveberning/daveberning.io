@@ -1,10 +1,21 @@
-@media screen and (min-width: 768px) {
-    header nav ul li {
-        display: inline;
+/* SMALL (sm) devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    nav ul li a {
+        line-height: 2.5;
+        font-size: 2rem;
+    }
+}
+/* MEDIUM (md) devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .hero.standard {
+        padding: 13rem 0;
 
-        a {
-            line-height: 5rem;
-            font-size: 1.8rem;
+        h1 {
+            font-size: 4.5rem;
         }
     }
+}
+/* LARGE (lg) devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }

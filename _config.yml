@@ -9,9 +9,6 @@ location: Cincinnati, OH
 email: daveberning@icloud.com
 description: Dave Berning is a web developer and designer from Cincinnat, OH.
 avatar: images/dave.jpg
-gems: [jekyll-paginate]
-paginate: 3
-paginate_path: "page:num"
 
 # URLs
 baseurl: "/"
