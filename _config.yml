@@ -9,6 +9,7 @@ location: Cincinnati, OH
 email: daveberning@icloud.com
 description: Dave Berning is a web developer and designer from Cincinnat, OH.
 avatar: images/dave.jpg
+
 # URLs
 baseurl: "/"
 url: "https://daveberning.github.io/daveberning.io" # the base hostname & protocol for your site
