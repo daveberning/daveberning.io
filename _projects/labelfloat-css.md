@@ -1,8 +1,4 @@
 ---
-#SEO
-title:
-description:
-
 # Project Information
 layout: project-single
 categories: work
@@ -12,8 +8,17 @@ projectLink: http://daveberning.github.io/labelfloat-css/
 hasDemoForm: true
 index: 4
 
+#SEO
+title: Labelfloat.css
+description:
+image:
+  twitter:
+  facebook:
+  height:
+  width:
+
 # Images
-featuredImage: images/code.jpeg
+featuredImage: images/m80-bkg-thumbnail.jpg
 backgroundImage: images/code.jpeg
 topLeftImage: images/labelfloat-desktop.png
 bottomRightImage:

@@ -4,4 +4,4 @@ title: "Account Manager at Upright Communications"
 avatar: images/colleen.jpg
 index: 6
 ---
-David was an excellent web developer resource for INFODYNAMICS. He totally redesigned our site and was attentive and flexible to our input, while working independently and remotely! I'd highly recommend David as a top-notch development resource.
+[Dave] is constantly upbeat and ready to tackle any job that comes his way. You're always met with a smile when working with [him]. I know that when Dave is in charge of a task...it will be done properly.

@@ -223,9 +223,18 @@ header {
     }
 }
 
+.featured-work .bkg {
+    -webkit-transform: all .3s;
+    -moz-transform: all .3s;
+    -ms-transform: all .3s;
+    -o-transform: all .3s;
+    transform: all .3s;
+    transition-delay: .1s;
+}
 .featured-work:hover .bkg {
     -webkit-filter: blur(5px);
     filter: blur(5px);
+
     -webkit-transform: all .3s;
     -moz-transform: all .3s;
     -ms-transform: all .3s;
