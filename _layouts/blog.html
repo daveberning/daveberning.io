@@ -45,9 +45,9 @@
                             {% if page == paginator.page %}
                                 <span class="page-link" >{{ page }}</span>
                             {% elsif page == 1 %}
-                                <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                                <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}">{{ page }}</a>
                             {% else %}
-                                <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+                                <a class="page-link" href="{{ site.paginate_path | prepend: site.url | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
                             {% endif %}
                         {% endfor %}
 
