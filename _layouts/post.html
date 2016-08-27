@@ -20,6 +20,7 @@ layout: default
                         <div class="col-sm-10 col-sm-offset-1">
                             <h1 class="text-center color-white" itemprop="name headline">{{ page.title }}</h1>
                             <p class="text-center color-white gutter-top share-on">
+
                                 <a class="color-white transition" href="https://facebook.com/sharer.php?u={{site.url}}{{page.url}}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square"></i></a>
 
                                 <a class="color-white transition" href="https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}{{ page.url }}&via=daveberning&related={{site.twitter}}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter-square"></i></a>
@@ -44,6 +45,23 @@ layout: default
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="post-content" itemprop="articleBody">
+                                  {% if page.previous.url %}
+                                    <div class="to-post prev transition hidden-xs">
+                                        <a class="btn-block" href="{{page.previous.url}}">
+                                            <span>{{page.previous.title}}</span>
+                                            <span class="arrow prev-arrow"><i class="fa fa-chevron-left"></i> Older</span>
+                                        </a>
+                                    </div>
+                                  {% endif %}
+                                  {% if page.next.url %}
+                                    <div class="to-post next transition hidden-xs">
+                                        <a class="btn-block" href="{{page.next.url}}">
+                                            <span class="arrow next-arrow">Newer <i class="fa fa-chevron-right"></i></span>
+                                            <span>{{page.next.title}}</span>
+                                        </a>
+                                    </div>
+                                  {% endif %}
+
                             {{ content }}
                             </div>
                         </div>
@@ -53,7 +71,7 @@ layout: default
 
       </article>
 
-    <div class="section">
+    <div class="section disqus">
         <div class="container">
             <div class="row">
                 <div class="container-fluid">
@@ -71,5 +89,6 @@ layout: default
                 </div>
             </div>
         </div>
+    </div>
 
     {% include footer.html %}

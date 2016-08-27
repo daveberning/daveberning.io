@@ -29,11 +29,41 @@
             		}
             	});
 
+                function showPostPagination() {
+                    var pastWidth = $(".prev-arrow").width();
+                    var recentWidth = $(".next-arrow").width();
+
+                    var prevWidth = $(".to-post.prev").width() -pastWidth -20;
+                    var nextWidth = $(".to-post.next").width() -recentWidth -20;
+
+                    $(".to-post.prev").css("left", -prevWidth);
+                    $(".to-post.next").css("right", -nextWidth);
+
+                    $(".to-post.prev").mouseenter(function() {
+                        $(this).css("left", 0);
+                    }).mouseleave(function() {
+                        $(this).css("left", -prevWidth);
+                    });
+
+                    $(".to-post.next").mouseenter(function() {
+                        $(this).css("right", 0);
+                    }).mouseleave(function() {
+                        $(this).css("right", -nextWidth);
+                    });
+                }
+
                 $(window).scroll(function(e) {
                     var distanceScrolled = $(this).scrollTop();
                     $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
+
+                    if ($(document).scrollTop() >= 500) {
+                        $(".to-post").css("opacity", 100);
+                    } else {
+                        $(".to-post").css("opacity", 0);
+                        showPostPagination();
+                    }
                 });
-            })
+            });
         }(jQuery));
 
         var myElement = document.querySelector("header");

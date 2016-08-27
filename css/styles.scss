@@ -31,10 +31,6 @@ body {
         color: lighten($black, 15%);
     }
 
-    // p.color-white {
-    //     color: darken($white, 15%);
-    // }
-
     strong {
         font-weight: 700;
         color: $black;
@@ -336,6 +332,11 @@ header {
     }
 }
 
+.disqus {
+    position: relative;
+    z-index: 1;
+}
+
 .post-single,
 .post {
     margin: 0;
@@ -386,7 +387,71 @@ header {
 
 .post:last-child { border-bottom: 0; }
 
+.page-link {
+    padding: 5px 10px;
+    border: 1px solid lighten($black, 20%);
+    background: $primary;
+    color: $white;
+    margin-right: 5px;
+    background: lighten($black, 20%);
+}
+
+.page-link:first-child {
+    margin-left: 5px;
+}
+
+a.page-link {
+    text-decoration: none;
+    border: 1px solid $black;
+    background: none;
+    color: $black;
+}
+
+a.page-link:hover {
+    text-decoration: none;
+    border: 1px solid lighten($black, 20%);
+    background: lighten($black, 60%);
+    color: lighten($black, 20%);
+}
+
+.paginate-arrows {
+    margin-right: 10px;
+}
+
+.paginate-arrows:last-child {
+    margin-left: 10px;
+}
+
 .project-details li { margin-bottom: 7px; }
+
+.to-post {
+    position: fixed;
+    top: 50%;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.to-post.prev {
+    left: 0;
+}
+
+.to-post.next {
+    right: 0;
+}
+
+.to-post a span {
+    padding: 20px 10px;
+    display: block;
+    float: left;
+    background: lighten($black, 70%);
+    color: $black;
+    z-index: 10000;
+}
+
+.to-post a span.arrow {
+    background: $primary;
+    color: $white;
+}
 
 .flexslider {
     background: transparent;
