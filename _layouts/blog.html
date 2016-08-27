@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    {% for post in site.posts %}
+                    {% for post in paginator.posts %}
                         <div class="post">
                             <h2><a href="{{site.url}}/{{post.slug}}">{{post.title}}</a></h2>
 
@@ -34,6 +34,28 @@
                             {{ post.excerpt }}
                         </div><!-- end post -->
                     {% endfor %}
+
+                    {% if paginator.total_pages > 1 %}
+                    <div class="pagination">
+                        {% if paginator.previous_page %}
+                            <a class="paginate-arrows" href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}"><i class="fa fa-chevron-left"></i></a>
+                        {% endif %}
+
+                        {% for page in (1..paginator.total_pages) %}
+                            {% if page == paginator.page %}
+                                <span class="page-link" >{{ page }}</span>
+                            {% elsif page == 1 %}
+                                <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}">{{ page }}</a>
+                            {% else %}
+                                <a class="page-link" href="{{ site.paginate_path | prepend: site.url | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if paginator.next_page %}
+                            <a class="paginate-arrows" href="{{ paginator.next_page_path | prepend: site.url | replace: '//', '/' }}"><i class="fa fa-chevron-right"></i></a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
                 </div>
                 <aside class="col-sm-3">
                     {% include blog-sidebar.html %}

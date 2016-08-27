@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/29081410fc.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
     <script src="{{site.url}}/js/js-plugins.js"></script>
     <!-- <script src="{{site.url}}js/tweetie.min.js"></script> -->
     <script>
@@ -29,11 +29,41 @@
             		}
             	});
 
+                function showPostPagination() {
+                    var pastWidth = $(".prev-arrow").width();
+                    var recentWidth = $(".next-arrow").width();
+
+                    var prevWidth = $(".to-post.prev").width() -pastWidth -20;
+                    var nextWidth = $(".to-post.next").width() -recentWidth -20;
+
+                    $(".to-post.prev").css("left", -prevWidth);
+                    $(".to-post.next").css("right", -nextWidth);
+
+                    $(".to-post.prev").mouseenter(function() {
+                        $(this).css("left", 0);
+                    }).mouseleave(function() {
+                        $(this).css("left", -prevWidth);
+                    });
+
+                    $(".to-post.next").mouseenter(function() {
+                        $(this).css("right", 0);
+                    }).mouseleave(function() {
+                        $(this).css("right", -nextWidth);
+                    });
+                }
+
                 $(window).scroll(function(e) {
                     var distanceScrolled = $(this).scrollTop();
                     $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
+
+                    if ($(document).scrollTop() >= 500) {
+                        $(".to-post").css("opacity", 100);
+                    } else {
+                        $(".to-post").css("opacity", 0);
+                        showPostPagination();
+                    }
                 });
-            })
+            });
         }(jQuery));
 
         var myElement = document.querySelector("header");
