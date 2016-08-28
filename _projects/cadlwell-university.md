@@ -12,6 +12,14 @@ projectLink: http://www.choosecaldwell.net
 featuredOnHomepage: true
 index: 3
 
+#SEO
+description:
+image:
+  twitter:
+  facebook:
+  height:
+  width:
+
 # Images
 featuredImage: images/caldwell-bkg-thumbnail.jpg
 backgroundImage: images/caldwell-bkg-work.png

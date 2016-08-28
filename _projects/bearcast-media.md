@@ -8,6 +8,14 @@ projectLink: http://www.bearcastmedia.com
 featuredOnHomepage: true
 index: 2
 
+#SEO
+description:
+image:
+  twitter:
+  facebook:
+  height:
+  width:
+
 # Images
 featuredImage: images/bearcast-bkg-thumbnail.jpg
 backgroundImage: images/bearcast-bkg.png
