@@ -300,8 +300,9 @@ header {
     -webkit-transform: translateZ(0) scale(1.0, 1.0); // fixes header glitch
 }
 
-.share-on i {
+.share-on a {
     font-size: 2.2rem;
+    margin: 0 5px;
     vertical-align: middle;
 }
 
