@@ -1,73 +1,96 @@
-    <footer>
-        <div class="container-fluid text-center">
-            <div class="row">
-                {% include social-icons.html %}
-                <small>Copyright &copy; 2013-{{ site.time | date: '%Y' }}. All Rights Reversed.</small>
-                <!-- <small>If I helped you at all...feel free to buy me a craft beer.</small> -->
+        <footer>
+            <div class="container-fluid text-center">
+                <div class="row">
+                    {% include social-icons.html %}
+                    <small>Copyright &copy; 2013-{{ site.time | date: '%Y' }}. All Rights Reversed.</small>
+                    <!-- <small>If I helped you at all...feel free to buy me a craft beer.</small> -->
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/29081410fc.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
-    <script src="{{site.url}}/js/js-plugins.js"></script>
-    <script>
-        (function ($) {
-            $(window).on('load', function() {
-                $('.flexslider').flexslider({
-                    animation: "slide"
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://use.fontawesome.com/29081410fc.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+        <script src="{{site.url}}/js/js-plugins.js"></script>
+        <script>
+            (function ($) {
+                $(window).on('load', function() {
+                    $('.flexslider').flexslider({
+                        animation: "slide"
+                    });
                 });
-            });
 
-            $(document).ready(function() {
-                $("form").validate({
-            		errorPlacement: function(error, element) {
-            			error.appendTo(element.prev());
-            		}
-            	});
+                $(document).ready(function() {
+                    $("form").validate({
+                		errorPlacement: function(error, element) {
+                			error.appendTo(element.prev());
+                		},
+                        submitHandler: function(form) {
+                            $.ajax({
+                                url: form.action,
+                                type: form.method,
+                                data: $(form).serialize(),
+                                success: function(response) {
+                                    $('.form').html("Thank You"); // update the DIV
+                                }
+                            });
+                        }
+                	});
 
-                function showPostPagination() {
-                    var pastWidth = $(".prev-arrow").width();
-                    var recentWidth = $(".next-arrow").width();
+                    // $("form").submit(function() { // catch the form's submit event
+                    //     $.ajax({ // create an AJAX call...
+                    //         data: $(this).serialize(), // get the form data
+                    //         type: $(this).attr('method'), // GET or POST
+                    //         url: $(this).attr('action'), // the file to call
+                    //         success: function(response) { // on success..
+                    //             $('.form').html("Thank You"); // update the DIV
+                    //         }
+                    //     });
+                    //     return false; // cancel original event to prevent form submitting
+                    // });
 
-                    var prevWidth = $(".to-post.prev").width() -pastWidth -20;
-                    var nextWidth = $(".to-post.next").width() -recentWidth -20;
+                    function showPostPagination() {
+                        var pastWidth = $(".prev-arrow").width();
+                        var recentWidth = $(".next-arrow").width();
 
-                    $(".to-post.prev").css("left", -prevWidth);
-                    $(".to-post.next").css("right", -nextWidth);
+                        var prevWidth = $(".to-post.prev").width() -pastWidth -20;
+                        var nextWidth = $(".to-post.next").width() -recentWidth -20;
 
-                    $(".to-post.prev").mouseenter(function() {
-                        $(this).css("left", 0);
-                    }).mouseleave(function() {
-                        $(this).css("left", -prevWidth);
-                    });
+                        $(".to-post.prev").css("left", -prevWidth);
+                        $(".to-post.next").css("right", -nextWidth);
 
-                    $(".to-post.next").mouseenter(function() {
-                        $(this).css("right", 0);
-                    }).mouseleave(function() {
-                        $(this).css("right", -nextWidth);
-                    });
-                }
+                        $(".to-post.prev").mouseenter(function() {
+                            $(this).css("left", 0);
+                        }).mouseleave(function() {
+                            $(this).css("left", -prevWidth);
+                        });
 
-                $(window).scroll(function(e) {
-                    var distanceScrolled = $(this).scrollTop();
-                    $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
-
-                    if ($(document).scrollTop() >= 500) {
-                        $(".to-post").css("opacity", 100);
-                    } else {
-                        $(".to-post").css("opacity", 0);
-                        showPostPagination();
+                        $(".to-post.next").mouseenter(function() {
+                            $(this).css("right", 0);
+                        }).mouseleave(function() {
+                            $(this).css("right", -nextWidth);
+                        });
                     }
-                });
-            });
-        }(jQuery));
 
-        var myElement = document.querySelector("header");
-        var headroom  = new Headroom(myElement);
-        headroom.init();
-    </script>
+                    $(window).scroll(function(e) {
+                        var distanceScrolled = $(this).scrollTop();
+                        $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
+
+                        if ($(document).scrollTop() >= 500) {
+                            $(".to-post").css("opacity", 100);
+                        } else {
+                            $(".to-post").css("opacity", 0);
+                            showPostPagination();
+                        }
+                    });
+                });
+            }(jQuery));
+
+            var myElement = document.querySelector("header");
+            var headroom  = new Headroom(myElement);
+            headroom.init();
+        </script>
+    </div><!-- #main -->
 </body>
 </html>

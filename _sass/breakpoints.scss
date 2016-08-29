@@ -19,3 +19,14 @@
 @media (min-width: 1200px) {
 
 }
+
+@media screen and (max-device-width: 768px) { // Mobile DEVICES only
+    .featured-work .caption {
+        top: 50%;
+        height: 50%;
+
+        .cap-content {
+            opacity: .7;
+        }
+    }
+}
