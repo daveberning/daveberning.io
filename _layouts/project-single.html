@@ -5,18 +5,20 @@
     {% include header.html %}
 
         <div class="hero standard">
-            <div class="container">
+            <div class="container-fluid">
 
                 <div class='blurImg'>
                     <div class="blur" style="background: url('{{site.url}}/{{page.backgroundImage}}') no-repeat center center"></div>
                 </div>
 
                 <div class="row">
-                    <h1 class="text-center color-white">{{page.name}}</h1>
+                    <div class="container-fluid">
+                        <h1 class="text-center color-white">{{page.name}}</h1>
 
-                    <div class="row gutter-top">
-                        <div class="col-xs-4 col-xs-offset-4">
-                            <a href="{{site.url}}/work/" class="btn btn-block btn-lg color-white link-hover"><i class="fa fa-chevron-left"></i> More Work</a>
+                        <div class="row gutter-top">
+                            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                                <a href="{{site.url}}/work/" class="btn btn-block btn-lg color-white link-hover"><i class="fa fa-chevron-left"></i> More Work</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -26,7 +28,7 @@
         <div class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-sm-8 gutter-bottom">
                         <img class="img-responsive" src="{{site.url}}/{{page.topLeftImage}}" alt="Bearcast Media on various devices.">
                     </div>
                     <div class="col-sm-4">
