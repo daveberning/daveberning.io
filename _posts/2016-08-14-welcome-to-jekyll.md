@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+author: Dave Berning
 date:   2016-08-14 00:06:05 -0400
 categories: jekyll update
 backgroundImage: images/m80-bkg-thumbnail.jpg

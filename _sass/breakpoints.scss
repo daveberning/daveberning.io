@@ -1,8 +1,78 @@
 /* SMALL (sm) devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    h1, h2, h3, h4, h5, h6 {
+        text-align: left;
+    }
+
+    .hero h1 span {
+        font-size: 1.6rem;
+    }
+
+    .hero .standard {
+        padding: 13rem 0;
+    }
+
     nav ul li a {
         line-height: 2.5;
         font-size: 2rem;
+    }
+
+    .flexslider ul.slides li div.row div:first-child {
+        margin-bottom: 0;
+    }
+
+    .flex-control-nav {
+        display: none !important;
+    }
+
+    .flex-direction-nav { display: block !important; }
+
+    .date {
+        text-align: left !important;
+
+        svg,
+        i {
+            float: left;
+        }
+
+        p {
+            display: block;
+        }
+    }
+
+     .hero .featured-work {
+        .caption {
+        	top: 100% !important;
+        	height: 100% !important;
+        }
+
+        .cap-content {
+        	height: 100% !important;
+            opacity: .6;
+        }
+    }
+
+    .hero .featured-work:hover .caption {
+        top: 0 !important;
+
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -ms-transition: all .3s;
+        transition: all .3s;
+
+    }
+
+    .hero .featured-work:hover .bkg {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+
+        -webkit-transform: all .3s;
+        -moz-transform: all .3s;
+        -ms-transform: all .3s;
+        -o-transform: all .3s;
+        transform: all .3s;
+        transition-delay: .1s;
     }
 }
 /* MEDIUM (md) devices (desktops, 992px and up) */
@@ -13,6 +83,10 @@
         h1 {
             font-size: 4.5rem;
         }
+    }
+
+    .section {
+        padding: 10rem 0;
     }
 }
 /* LARGE (lg) devices (large desktops, 1200px and up) */
