@@ -1,3 +1,7 @@
+/* BASE STYLES */
+
+/* MISC
+--------------------------------*/
 .gutter-top {
     margin-top: 15px;
 }
@@ -9,6 +13,7 @@
 .muted {
     color: lighten($black, 15%);
 }
+
 .vertically-center {
     position: relative;
     top: 50%;
@@ -35,6 +40,8 @@
     transition: all 0.3s;
 }
 
+/* BUTTONS
+-----------------------------*/
 .btn,
 .btn:hover {
     background: none;
@@ -45,33 +52,33 @@
 }
 
 .btn-lg {
-  padding: 15px 0;
+    padding: 15px 0;
 }
 
 .btn-primary {
-  background: #356a7a;
-  color: #fff;
-  border: 2px solid #356a7a;
+    background: #356a7a;
+    color: #fff;
+    border: 2px solid #356a7a;
 }
 
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background: #418396;
-  border: 2px solid #418396;
+    background: #418396;
+    border: 2px solid #418396;
 }
 
 .btn-secondary {
-  background: #858585;
-  color: #fff;
-  border: 2px solid #858585;
+    background: #858585;
+    color: #fff;
+    border: 2px solid #858585;
 }
 
 .btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:focus {
-  background: #999999;
-  border: 2px solid #999999;
+    background: #999999;
+    border: 2px solid #999999;
 }
 
 .btn-secondary,
@@ -81,6 +88,8 @@
   color: #fff;
 }
 
+/* FONTS & ICONS
+------------------------------------*/
 .color-white {
     color: $white;
 }
@@ -91,32 +100,6 @@ a.color-white:hover {
 
 .material-icons {
     vertical-align: middle !important;
-}
-.cta-bar {
-    text-align: center;
-    background: $primary !important;
-    color: $white;
-
-    a {
-        color: $white;
-        text-decoration: underline;
-    }
-}
-
-.section:nth-child(even) {
-    background: $white;
-}
-
-.section:nth-child(odd) {
-    background: #f2f2f2;
-}
-
-.cta-bar {
-    padding: 5rem 0;
-}
-
-.section {
-    padding: 8rem 0;
 }
 
 .social {
@@ -137,37 +120,25 @@ a.color-white:hover {
     }
 }
 
-.headroom {
-    will-change: transform;
-    transition: transform 200ms linear;
-}
-.headroom--pinned {
-    transform: translateY(0%);
-}
-.headroom--unpinned {
-    transform: translateY(-100%);
-}
-
-// Link hover effect
 .link-hover a {
 	padding: 8px 0;
 }
 
 .link-hover a::after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 4px;
-	background: rgba(0,0,0,0.1);
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0,0,0,0.1);
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    transform: translateY(10px);
 }
 
 .link-hover.color-white a::after {
@@ -176,10 +147,52 @@ a.color-white:hover {
 
 .link-hover a:hover::after,
 .link-hover a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+/* CONTENT ELEMENTS
+----------------------------------*/
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+    transform: translateY(0%);
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+.cta-bar {
+    text-align: center;
+    background: $primary !important;
+    color: $white;
+
+    a {
+        color: $white;
+        text-decoration: underline;
+    }
+}
+
+.cta-bar {
+    padding: 5rem 0;
+}
+
+.section:nth-child(even) {
+    background: $white;
+}
+
+.section:nth-child(odd) {
+    background: #f2f2f2;
+}
+
+.section {
+    padding: 8rem 0;
 }
 
 form>div {
