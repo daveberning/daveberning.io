@@ -1,10 +1,21 @@
 @media screen and (max-device-width: 768px) { // Mobile DEVICES only
     .featured-work .caption {
-        top: 25%;
-        height: 50%;
+        top: 25% !important;
+        height: 50% !important;
 
         div {
             opacity: .7;
+        }
+    }
+
+    .featured-work:hover {
+        .bkg {
+            -webkit-filter: initial; // resets blur filter
+            filter: initial;
+        }
+
+        .caption {
+            top: 25% !important;
         }
     }
 }
