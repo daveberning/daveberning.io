@@ -211,6 +211,41 @@ header {
     }
 }
 
+.featured-work {
+   .caption {
+       top: 100% !important;
+       height: 100% !important;
+   }
+
+   .cap-content {
+       height: 100% !important;
+       opacity: .6;
+   }
+}
+
+.featured-work:hover .caption {
+   top: 0 !important;
+
+   -webkit-transition: all .3s;
+   -moz-transition: all .3s;
+   -o-transition: all .3s;
+   -ms-transition: all .3s;
+   transition: all .3s;
+
+}
+
+.featured-work:hover .bkg {
+   -webkit-filter: blur(4px);
+   filter: blur(4px);
+
+   -webkit-transform: all .3s;
+   -moz-transform: all .3s;
+   -ms-transform: all .3s;
+   -o-transform: all .3s;
+   transform: all .3s;
+   transition-delay: .1s;
+}
+
 .featured-work .bkg {
     -webkit-transform: all .3s;
     -moz-transform: all .3s;
