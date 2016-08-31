@@ -13,12 +13,7 @@ featuredOnHomepage: true
 index: 3
 
 #SEO
-description:
-image:
-  twitter:
-  facebook:
-  height:
-  width:
+description: Caldwell University is a micro-site developed by Cincinnati web developer, Dave Berning. Caldwell features custom card flips and page animations.
 
 # Images
 featuredImage: images/caldwell-bkg-thumbnail.jpg
@@ -37,4 +32,4 @@ tldr:
 ---
 During my time as a web developer at Hobsons Educational Solutions, I created various micro-sites like Caldwell University, University of Oregon, and Palm Beach Atlantic University. These micro-sites are single page websites that use JavaScript to animate between the different "pages."
 
-Interactive cards are used to provide the user with various information on enrollment, social life, and living expense for the college life at Caldwell. Transition and card flip animations are achieved using the GreenSock JavaScript Library. Caldwell University also utilizes Modernizr for greater browser support.
+Interactive cards are used to provide the user with additional information about enrollment, social life, and living expenses for the college life at Caldwell. Transition and card flip animations are achieved using the GreenSock JavaScript Library. Caldwell University also utilizes Modernizr for greater browser support.

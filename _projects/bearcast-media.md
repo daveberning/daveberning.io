@@ -9,12 +9,7 @@ featuredOnHomepage: true
 index: 2
 
 #SEO
-description:
-image:
-  twitter:
-  facebook:
-  height:
-  width:
+description: Bearcast Media is the University of Cincinnati's college radio station. Bearcast was developed by Cincinnati web developer, Dave Berning.
 
 # Images
 featuredImage: images/bearcast-bkg-thumbnail.jpg
@@ -34,6 +29,6 @@ tldr:
 
 During Bearcast Media's re-branding campaign I was handpicked and asked by it's General Manager to design and develop the new website. This new site replaced the outdated one by improving the user experience, user interface, and presentation. Bearcast Media's website launched in February, 2014 and has several new features including, mobile compatibility, social media integration, iOS/Android app icons, and Facebook OpenGraph support for sharing.
 
-Users can share, save, and interact the Bearcast website in one seamless interaction. By using a Facebook or Twitter account readers can log into Bearcast and post comments and share opinions on various articles.
+Users can share, save, and interact the Bearcast website in one seamless interaction. By signing into either a Facebook or Twitter account, readers can log into Bearcast and post comments and share opinions on various articles.
 
-Since launch, Bearcast's online and social presence has increased tremendously resulting in increase local and global recognition.
+Since launch, Bearcast's online and social presence has increased tremendously resulting in increased local and global recognition.

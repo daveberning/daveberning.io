@@ -10,7 +10,7 @@ index: 4
 
 #SEO
 title: Labelfloat.css
-description:
+description: Labelfloat.css is a CSS plugin developed by Cincinnati web developer, Dave Berning. Easy form creation with full validation.
 image:
   twitter:
   facebook:
@@ -30,8 +30,8 @@ tldr:
     - <strong>Role:</strong> Web Developer
     - <strong>Type:</strong> Plugin Development
     - <strong>Date:</strong> September 2015
-    - <strong>Features:</strong> Floating labels as placeholders, Bootstrap and jQuery Validate support
+    - <strong>Features:</strong> Floating labels as placeholders, Bootstrap, Chrome, Safari, Firefox, Opera, IE, and Edge support
 ---
-LabelFloat.css is a form validation plugin that uses CSS to animate form labels as if they were placeholders. When the form field is active, the label will "float" down to the bottom of the field for user input. Colors are easily customizable and has full support with the popular Twitter Bootstrap framework.
+LabelFloat.css is a form validation plugin that uses CSS3 to animate form labels and act as placeholders. When the form field is active, the label will "float" down to the bottom of the field for user input. Colors are easily customizable and has full support with the popular Twitter Bootstrap framework.
 
 LabelFloat was created in association with Upright Communications and is based off of Chris Coyier's take on floating labels. This plugin also is supported with all major browsers including mobile Safari and Internet Explorer 9 and above.
