@@ -18,6 +18,12 @@
             top: 25% !important;
         }
     }
+
+    input,
+    textarea { // removes mobile Safari radius on inputs
+         -webkit-appearance: none;
+         border-radius: 0;
+    }
 }
 
 /* SMALL (sm) devices (tablets, 768px and up) */
