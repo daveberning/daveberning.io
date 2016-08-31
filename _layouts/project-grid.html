@@ -4,7 +4,7 @@
 
 {% include header.html %}
 
-<div class="hero">
+<div class="hero" itemscope itemtype="https://schema.org/CreativeWork">
     <div class="container-fluid">
         <div class="row">
             {% assign projectIndex = (site.projects | sort: 'index') %}
@@ -16,8 +16,8 @@
                     background-size: cover;"></div>
                     <div class="caption">
                         <div class="cap-content">
-                            <a href="{{project.slug}}">
-                                <span>{{ project.name }}</span><br>
+                            <a href="{{project.slug}}" itemprop="url">
+                                <span itemprop="name">{{ project.name }}</span><br>
                                 {{ project.caption }}
                             </a>
                         </div>

@@ -33,7 +33,8 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2., .h3, .h4, .h5, .h6 {
     font-family: $oswald;
     text-transform: uppercase;
     margin: 0 0 25px 0;
@@ -182,6 +183,11 @@ header {
             	font-family: 'Oswald', sans-serif;
             	font-size: 2rem;
             	text-transform: uppercase;
+            }
+
+            div a span.view {
+                border: 1px solid $white;
+                padding: 10px;
             }
 
             div a:hover {

@@ -23,7 +23,7 @@ layout: default
 
                             {% include share-post.html %}
 
-                            <p class="text-center">Posted by: {{page.author | prepend: '<strong class="color-white">' | append: '</strong>'}} on {{ page.date | date: '%B %d, %Y' | prepend: '<strong class="color-white">' | append: '</strong>' }}</p>
+                            <p class="text-center">Posted by: {{page.author | prepend: '<strong class="color-white" itemprop="author">' | append: '</strong>'}} on {{ page.date | date: '%B %d, %Y' | prepend: '<strong class="color-white" itemprop="datePublished">' | append: '</strong>' }}</p>
 
                         </div>
                     </div>

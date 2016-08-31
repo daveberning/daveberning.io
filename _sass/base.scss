@@ -60,9 +60,9 @@
 }
 
 .btn-primary {
-    background: #356a7a;
-    color: #fff;
-    border: 2px solid #356a7a;
+    background: $primary;
+    color: $white;
+    border: 2px solid $primary;
 }
 
 .btn-primary:hover,

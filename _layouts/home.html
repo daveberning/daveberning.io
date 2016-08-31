@@ -1,6 +1,6 @@
 {% include head.html %}
 
-  <body>
+  <body itemscope itemtype="https://schema.org/Person">
 
     {% include header.html %}
 
@@ -9,8 +9,8 @@
             <div class="row height-100">
                 <div class="col-md-6 height-100 left">
                     <div class="vertically-center col-sm-8 col-sm-offset-2">
-                        <h1 class="text-center color-white">{{site.firstName}} {{site.lastName}}<br>
-                            <span>{{site.devSubCap}} {{site.location}}</span>
+                        <h1 class="text-center color-white"><span itemprop="givenName">{{site.firstName}}</span> <span class="familyName">{{site.lastName}}</span><br>
+                            <span>{{site.devSubCap}} <span itemprop="workLocation homeLocation birthPlace">{{site.location}}</span></span>
                         </h1>
 
                         <a href="/connect/" class="btn btn-primary btn-block text-center gutter-top gutter-bottom btn-lg">Contact Me</a>
