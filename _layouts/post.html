@@ -23,12 +23,12 @@ layout: default
 
                             {% include share-post.html %}
 
-                            <p class="text-center">Posted by: {{page.author | prepend: '<strong class="color-white" itemprop="author">' | append: '</strong>'}} on {{ page.date | date: '%B %d, %Y' | prepend: '<strong class="color-white" itemprop="datePublished">' | append: '</strong>' }}</p>
+                            <p class="text-center">Posted by: {{page.author | prepend: '<strong class="color-white"><span itemprop="author publisher">' | append: '</span></strong>'}} on {{ page.date | date: '%B %d, %Y' | prepend: '<strong class="color-white"><span itemprop="datePublished">' | append: '</span></strong>' }}</p>
 
                         </div>
                     </div>
                 </div>
-                <div class="avatar"><img src="{{site.url}}/images/dave-avatar.jpg" width="100" height="100"></div>
+                <div class="avatar"><span itemprop="image"><img src="{{site.url}}/images/dave-avatar.jpg" width="100" height="100"></span></div>
             </div>
 
             <div class="section">
@@ -69,7 +69,6 @@ layout: default
                     </div>
                 </div>
             </div>
-
       </article>
 
     <div class="section disqus">
