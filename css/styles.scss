@@ -9,10 +9,6 @@
 @import "responsive-reporter";
 @import "css-plugins";
 
-*  {
-    box-sizing: border-box;
-}
-
 body,
 html {
     width: 100%;
@@ -138,6 +134,62 @@ header {
         @include reset-spacing;
     }
 
+    .featured-work {
+        overflow: hidden;
+        float: left;
+        @include reset-spacing;
+
+        h3 {
+            @include reset-spacing;
+        }
+
+        // .wrap {
+        // 	position: relative;
+        // 	text-align: center;
+        // }
+
+        .caption {
+        	position: absolute;
+        	top: 25%;
+        	padding: 0;
+        	width: 100%;
+        	height: 50%;
+
+        	-webkit-transition: all .3s;
+        	-moz-transition: all .3s;
+        	-o-transition: all .3s;
+        	-ms-transition: all .3s;
+        	transition: all .3s;
+
+            div {
+            	display: table;
+            	height: 100%;
+            	width: 100%;
+            	background: black;
+            	opacity: .6;
+            }
+
+            div a {
+            	display: table-cell;
+                vertical-align: middle;
+                width: 100%;
+                text-align: center;
+                color: white;
+                opacity: 1;
+            }
+
+            div a span {
+            	font-family: 'Oswald', sans-serif;
+            	font-size: 2rem;
+            	text-transform: uppercase;
+            }
+
+            div a:hover {
+            	text-decoration: none;
+            }
+        }
+    }
+
     .avatar img {
         border-radius: 50%;
         border: 5px solid $white;
@@ -148,7 +200,43 @@ header {
     }
 }
 
+.featured-work {
+    .caption {
+       top: 100% !important;
+       height: 100% !important;
+
+       div {
+          height: 100% !important;
+          opacity: .6;
+      }
+    }
+}
+
+.featured-work:hover .caption {
+   top: 0 !important;
+
+   -webkit-transition: all .3s;
+   -moz-transition: all .3s;
+   -o-transition: all .3s;
+   -ms-transition: all .3s;
+   transition: all .3s;
+
+}
+
+.featured-work:hover .bkg {
+   -webkit-filter: blur(4px);
+   filter: blur(4px);
+
+   -webkit-transform: all .3s;
+   -moz-transform: all .3s;
+   -ms-transform: all .3s;
+   -o-transform: all .3s;
+   transform: all .3s;
+   transition-delay: .1s;
+}
+
 .featured-work .bkg {
+    padding-top: 57%;
     -webkit-transform: all .3s;
     -moz-transform: all .3s;
     -ms-transform: all .3s;
@@ -241,7 +329,7 @@ header {
 .social li a {
     color: $white;
     font-size: 2.5rem;
-    margin: 0 .25rem;
+    margin: 0 .5rem;
 }
 
 .tweet {

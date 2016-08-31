@@ -2,6 +2,10 @@
 
 /* MISC
 --------------------------------*/
+*  {
+    box-sizing: border-box;
+}
+
 .gutter-top {
     margin-top: 15px;
 }
