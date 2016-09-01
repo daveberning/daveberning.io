@@ -593,6 +593,127 @@ aside {
     div > div:last-child { padding-left: 7px; }
 }
 
+/* Timeline styles */
+#timeline {
+    position: relative;
+    overflow: hidden;
+    padding: 0 15px;
+
+    i {
+        margin-right: 2rem;
+    }
+}
+
+#timeline h2:first-child {
+    margin-top: 0 !important;
+}
+
+#timeline h2,
+#timeline .end-timeline {
+    background: #595959;
+    color: white;
+    max-width: 6em;
+    margin: 2rem auto 2rem;
+    padding: .5em;
+    text-align: center;
+    position: relative;
+    clear: both;
+}
+
+#timeline .end-timeline {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    margin: 0 auto !important;
+    position: relative;
+    left: 2px
+}
+
+#timeline .heading {
+    overflow: hidden;
+    display: table;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#timeline h3 {
+    text-align: left;
+    text-transform: none;
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    width: 100%;
+}
+
+#timeline::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background: #595959;
+    left: 0;
+}
+
+#timeline li .badge {
+    height: 60px !important;
+    width: 60px !important;
+    float: left;
+    margin-right: 10px;
+    display: block;
+    background: none !important;
+}
+
+#timeline ul {
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#timeline li {
+    background: #366b7b;
+    color: white;
+    padding: 1em;
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+}
+
+#timeline li a {
+    color: white !important;
+    text-decoration: underline !important;
+}
+
+#timeline li:nth-child(even) {
+    /* float: right;
+    margin-top: 2em; */
+    -webkit-box-shadow: 4px 4px 0px #212121;
+       -moz-box-shadow: 4px 4px 0px #212121;
+        -ms-box-shadow: 4px 4px 0px #212121;
+         -o-box-shadow: 4px 4px 0px #212121;
+            box-shadow: 4px 4px 0px #212121;
+}
+
+#timeline li:nth-child(odd) {
+    -webkit-box-shadow: -4px 4px 0px #212121;
+       -moz-box-shadow: -4px 4px 0px #212121;
+        -ms-box-shadow: -4px 4px 0px #212121;
+         -o-box-shadow: -4px 4px 0px #212121;
+            box-shadow: -4px 4px 0px #212121;
+}
+
+time {
+    font-style: italic;
+}
+
+
+#timeline::before {
+    left: 50%;
+
+    }
+
 
 /* FOOTER
 ----------------------------------------- */
