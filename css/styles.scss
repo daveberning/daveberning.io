@@ -214,6 +214,7 @@ header {
        div {
           height: 100% !important;
           opacity: .6;
+          cursor: pointer;
       }
     }
 }
@@ -242,7 +243,6 @@ header {
 }
 
 .featured-work .bkg {
-    padding-top: 57%;
     -webkit-transform: all .3s;
     -moz-transform: all .3s;
     -ms-transform: all .3s;
@@ -599,7 +599,7 @@ aside {
 footer {
     background: $black;
     color: $white;
-    padding: 1rem 0;
+    padding: 2rem 0;
 
     ul { margin-bottom: 0; }
 }

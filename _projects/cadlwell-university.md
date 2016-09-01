@@ -7,7 +7,7 @@ description:
 layout: project-single
 categories: work
 name: "Caldwell University"
-caption: "Interactive Mico-Site, Web Development"
+caption: "Interactive Mico-Site"
 projectLink: http://www.choosecaldwell.net
 featuredOnHomepage: true
 index: 3

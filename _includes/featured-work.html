@@ -1,8 +1,11 @@
 <div class="hidden-xs hidden-sm col-md-6 right height-100 work">
     {% assign projectIndex = (site.projects | sort: 'index') %}
+
     {% for project in projectIndex limit:3 %}
     <div class="featured-work col-xs-12 height-50 text-center">
-        <div class="bkg" style="background: url('{{project.featuredImage}}') no-repeat top center; background-size: cover;"></div>
+        <div class="bkg" style="background: url('{{project.featuredImage}}') no-repeat center center; background-size: cover;">
+            <img src="{{site.url}}images/m80-logo.png">
+        </div>
         <div class="caption">
             <div>
                 <a href="{{project.categories}}/{{project.slug}}"><span>{{project.name}}</span><br>

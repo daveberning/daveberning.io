@@ -2,19 +2,32 @@
 layout: post
 title:  "How This Site Was Made"
 date:   2016-08-20 00:06:05 -0400
-backgroundImage: m80-bkg-thumbnail.jpg
+author: Dave Berning
+backgroundImage: macbook-pro.jpg
 categories:
     - web development
-    - jekyll
 tags:
     - Dave
     - test tag
     - tag
 ---
-This article will be going over the technical side of the creation process. I'm not going to talk about the branding or even the UI because 1) I'm technical like that, and 2) I shouldn't have to explain a UI. So, do you even care? Well, if you don't I'm going to tell you anyway.
+This article will not be going over the design in anyway, nor will it go over the UI. The reason being is 1) I'm trying to show the technical achievements and 2) I shouldn't need to explain a user interface.
 
-It started with me realizing that I needed to give a much needed facelift to my website. My previous website was a little "cookie cutter" and dated. It got me through my first job interview, but I needed something with a better UI/UX. I also wanted to utilize a server side language, to better manage the code. However, upon research, there were better, more efficient ways of achieving this.
+## Bit of a Background
+This redesign started when I realized that my current website at the time (old one now) was outdated, cookie cutter, and "hey look parallax". I mean, it wasn't a terrible site; it got me my first job. I just wanted something cleaner and something that I can say challenged me.
 
-## To server-side or not to server-side?
+I started this redesign knowing I wanted to use a server-side language for convenience...nobody wants to update the same header twenty times. However, I wasn't working with a database or doing complex logic. All these includes added requests which contributed to my load times.
 
-So, I immediately starting delving into PHP. My background is in Wordpress and PHP so this immediately seemed natural. I chose to use a server side language because, come on...who wants to the same navigation for each page.
+### Here Comes Jekyll
+
+After some research I found the static site generator, Jekyll! It does everything I was trying to do and it exports into flat HTML. No includes, no server-side compiling, no PHP.
+
+You might be asking, "bro, why not use a CMS like Wordpress". My answer to that is 1) Wordpress is __overkil__ and 2) I'm a web developer. My personal website should showcase my ability to handcraft websites. I already have [plenty examples of Wordpress websites](/work/bearcast-media) in my portfolio.
+
+I've heard of Jekyll before but briefly. I've never really used it until now. I won't be going back to PHP if I don't need too.
+
+## Archtecture
+
+One very important mindset I adopted while working in the field is _object oriented CSS (OOCSS)_. Bascially, I created a base CSS file with generic classes like __.bkg-primary__ and __.gutter-top__. These classes give me features and styles that I need simply by adding them in my HTML.
+
+Another

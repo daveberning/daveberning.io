@@ -254,11 +254,16 @@ input[type="submit"]:hover {
 
 .bootstrap label.error,
 .bootstrap input:focus + label span,
+.bootstrap input:active + label span,
 .bootstrap input:focus:not(:required) + label span,
+.bootstrap input:active:not(:required) + label span,
 .bootstrap input:valid + label span + label span,
 .bootstrap input:focus + label span + label span,
+.bootstrap input:active + label span + label span,
 .bootstrap textarea:focus + label span,
+.bootstrap textarea:active + label span,
 .bootstrap textarea:focus + label span + label span,
+.bootstrap textarea:active + label span + label span,
 .bootstrap textarea:valid + label span + label span {
   background: #366b7b; /* Transformed label */
   color: white !important;
@@ -292,16 +297,28 @@ input[type="submit"]:hover {
 .bootstrap textarea.error:active + label + label,
 .bootstrap input:focus + label,
 .bootstrap input:focus + label + label,
+.bootstrap input:active + label,
+.bootstrap input:active + label + label,
 .bootstrap input.valid:valid:not(:focus) + label,
 .bootstrap input.valid:valid:not(:focus) + label + label.valid,
+.bootstrap input.valid:valid:not(:active) + label,
+.bootstrap input.valid:valid:not(:active) + label + label.valid,
 .bootstrap textarea:focus + label,
 .bootstrap textarea:focus + label + label,
-.bootstrap textarea:active:not(:focus) + label,
+.bootstrap textarea:active + label,
+.bootstrap textarea:active + label + label,
+.bootstrap textarea:valid:not(:focus) + label,
+.bootstrap textarea:valid:not(:active) + label,
 .bootstrap textarea.valid:valid:not(:focus) + label,
 .bootstrap textarea.valid:valid:not(:focus) + label + label.valid,
+.bootstrap textarea.valid:valid:not(:active) + label,
+.bootstrap textarea.valid:valid:not(:active) + label + label.valid,
 .bootstrap textarea:focus + label + label,
+.bootstrap textarea:active + label + label,
 .bootstrap textarea.valid:valid:not(:focus) + label,
-.bootstrap textarea.valid:valid:not(:focus) + label + label.valid  { /* This is what makes the label transform (don't tweak unless you know what you're doing) */
+.bootstrap textarea.valid:valid:not(:focus) + label + label.valid,
+.bootstrap textarea.valid:valid:not(:active) + label,
+.bootstrap textarea.valid:valid:not(:active) + label + label.valid  { /* This is what makes the label transform (don't tweak unless you know what you're doing) */
   top: 100% !important;
   padding: 0 15px !important;
   margin-top: -18px;
@@ -310,11 +327,16 @@ input[type="submit"]:hover {
 }
 
 .bootstrap input.valid:valid:not(:focus) + label span,
-.bootstrap input.valid:valid:not(:focus) + label span + label, span
+.bootstrap input.valid:valid:not(:focus) + label span + label span,
+.bootstrap input.valid:valid:not(:active) + label span,
+.bootstrap input.valid:valid:not(:active) + label span + label span,
 .bootstrap textarea.valid:valid:not(:focus) + label span,
 .bootstrap textarea.valid:valid:not(:focus) + label span + label span,
+.bootstrap textarea.valid:valid:not(:active) + label span,
+.bootstrap textarea.valid:valid:not(:active) + label span + label span,
 .bootstrap input.valid:not(:required) + label span,
-.bootstrap textarea.valid:valid:not(:focus) + label span { /* If the field is valid and not focused or active */
+.bootstrap textarea.valid:valid:not(:focus) + label span,
+.bootstrap textarea.valid:valid:not(:active) + label span { /* If the field is valid and not focused or active */
   background: #545454;
   text-transform: uppercase;
   color: white;
@@ -358,7 +380,8 @@ select + label {
   padding: 5px 2px;
 }
 
-.lf-select select:focus {
+.lf-select select:focus,
+.lf-select select:active  {
   outline: none;
 }
 
