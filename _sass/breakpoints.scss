@@ -82,8 +82,14 @@
     .section {
         padding: 10rem 0;
     }
+
+    .hero.home {
+        min-height: 530px;
+    }
 }
 /* LARGE (lg) devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
-
+    .hero.home h1 {
+        font-size: 5rem;
+    }
 }

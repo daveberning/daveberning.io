@@ -11,14 +11,9 @@ index: 4
 #SEO
 title: Labelfloat.css
 description: Labelfloat.css is a CSS plugin developed by Cincinnati web developer, Dave Berning. Easy form creation with full validation.
-image:
-  twitter:
-  facebook:
-  height:
-  width:
 
 # Images
-featuredImage: images/m80-bkg-thumbnail.jpg
+featuredImage: images/labelfloat-thumbnail.png
 backgroundImage: images/code.jpeg
 topLeftImage: images/labelfloat-desktop.png
 bottomRightImage:
