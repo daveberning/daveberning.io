@@ -3,9 +3,7 @@
 
     {% for project in projectIndex limit:3 %}
     <div class="featured-work col-xs-12 height-50 text-center">
-        <div class="bkg" style="background: url('{{project.featuredImage}}') no-repeat center center; background-size: cover;">
-            <img src="{{site.url}}images/m80-logo.png">
-        </div>
+        <div class="bkg" style="background: url('{{project.featuredImage}}') no-repeat center center; background-size: cover;"></div>
         <div class="caption">
             <div>
                 <a href="{{project.categories}}/{{project.slug}}"><span>{{project.name}}</span><br>

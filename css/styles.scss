@@ -593,6 +593,14 @@ aside {
     div > div:last-child { padding-left: 7px; }
 }
 
+.success-msg {
+    padding: 10px;
+    border-radius: 2px;
+    background: #ccc;
+    display: block;
+    margin-top: 15px;
+}
+
 /* Timeline styles */
 #timeline {
     position: relative;

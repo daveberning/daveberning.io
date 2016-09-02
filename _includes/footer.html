@@ -29,7 +29,7 @@
                                 type: form.method,
                                 data: $(form).serialize(),
                                 success: function(response) {
-                                    $('.form').html("Thank You"); // update the DIV
+                                    $('.form').html('<span class="success-msg"><i class="fa fa-check-circle" aria-hidden="true"></i> Thank you for your message! I will respond to your email as soon as possible.</span>'); // update the DIV
                                 }
                             });
                         }
