@@ -1,82 +1,90 @@
-        <footer>
-            <div class="container-fluid text-center">
-                <div class="row">
-                    {% include social-icons.html %}
-                    <small>Copyright &copy; 2013-{{ site.time | date: '%Y' }}. All Rights Reversed.</small>
-                    <!-- <small>If I helped you at all...feel free to buy me a craft beer.</small> -->
-                </div>
-            </div>
-        </footer>
+<footer>
+    <div class="container-fluid text-center">
+        <div class="row">
+            {% include social-icons.html %}
+            <small>Copyright &copy; 2013-{{ site.time | date: '%Y' }}. All Rights Reversed.</small>
+            <!-- <small>If I helped you at all...feel free to buy me a craft beer.</small> -->
+        </div>
+    </div>
+</footer>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://use.fontawesome.com/29081410fc.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="{{site.url}}/js/js-plugins.js"></script>
-        <script>
-            (function ($) {
-                $(document).ready(function() {
-                    $('.flexslider').flexslider({
-                        animation: "slide"
-                    });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://use.fontawesome.com/29081410fc.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="{{site.url}}/js/js-plugins.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function() {
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
 
-                    $("form").validate({
-                		errorPlacement: function(error, element) {
-                			error.appendTo(element.prev());
-                		},
-                        submitHandler: function(form) {
-                            $.ajax({
-                                url: form.action,
-                                type: form.method,
-                                data: $(form).serialize(),
-                                success: function(response) {
-                                    $('.form').html('<span class="success-msg"><i class="fa fa-check-circle" aria-hidden="true"></i> Thank you for your message! I will respond to your email as soon as possible.</span>'); // update the DIV
-                                }
-                            });
-                        }
-                	});
-
-                    function showPostPagination() {
-                        var pastWidth = $(".prev-arrow").width();
-                        var recentWidth = $(".next-arrow").width();
-
-                        var prevWidth = $(".to-post.prev").width() -pastWidth -20;
-                        var nextWidth = $(".to-post.next").width() -recentWidth -20;
-
-                        $(".to-post.prev").css("left", -prevWidth);
-                        $(".to-post.next").css("right", -nextWidth);
-
-                        $(".to-post.prev").mouseenter(function() {
-                            $(this).css("left", 0);
-                        }).mouseleave(function() {
-                            $(this).css("left", -prevWidth);
-                        });
-
-                        $(".to-post.next").mouseenter(function() {
-                            $(this).css("right", 0);
-                        }).mouseleave(function() {
-                            $(this).css("right", -nextWidth);
-                        });
-                    }
-
-                    $(window).scroll(function(e) {
-                        var distanceScrolled = $(this).scrollTop();
-                        $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
-
-                        if ($(document).scrollTop() >= 500) {
-                            $(".to-post").css("opacity", 100);
-                        } else {
-                            $(".to-post").css("opacity", 0);
-                            showPostPagination();
+            $("form").validate({
+                errorPlacement: function(error, element) {
+                    error.appendTo(element.prev());
+                },
+                submitHandler: function(form) {
+                    $.ajax({
+                        url: form.action,
+                        type: form.method,
+                        data: $(form).serialize(),
+                        success: function(response) {
+                            $('.form').html('<span class="success-msg"><i class="fa fa-check-circle" aria-hidden="true"></i> Thank you for your message! I will respond to your email as soon as possible.</span>'); // update the DIV
                         }
                     });
+                }
+            });
+
+            function showPostPagination() {
+                var pastWidth = $(".prev-arrow").width();
+                var recentWidth = $(".next-arrow").width();
+
+                var prevWidth = $(".to-post.prev").width() -pastWidth -20;
+                var nextWidth = $(".to-post.next").width() -recentWidth -20;
+
+                $(".to-post.prev").css("left", -prevWidth);
+                $(".to-post.next").css("right", -nextWidth);
+
+                $(".to-post.prev").mouseenter(function() {
+                    $(this).css("left", 0);
+                }).mouseleave(function() {
+                    $(this).css("left", -prevWidth);
                 });
-            }(jQuery));
-            
 
-            var myElement = document.querySelector("header");
-            var headroom  = new Headroom(myElement);
-            headroom.init();
-        </script>
-    </div><!-- #main -->
+                $(".to-post.next").mouseenter(function() {
+                    $(this).css("right", 0);
+                }).mouseleave(function() {
+                    $(this).css("right", -nextWidth);
+                });
+            }
+
+            $(window).scroll(function(e) {
+                var distanceScrolled = $(this).scrollTop();
+                $('.blur').css('-webkit-filter', 'blur('+distanceScrolled/60+'px)');
+
+                if ($(document).scrollTop() >= 500) {
+                    $(".to-post").css("opacity", 100);
+                } else {
+                    $(".to-post").css("opacity", 0);
+                    showPostPagination();
+                }
+            });
+        });
+    }(jQuery));
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67071600-1', 'auto');
+    ga('send', 'pageview');
+
+
+    var myElement = document.querySelector("header");
+    var headroom  = new Headroom(myElement);
+    headroom.init();
+</script>
+</div><!-- #main -->
 </body>
 </html>
