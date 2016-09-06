@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to My Web Development Blog"
-date:   2016-08-20 00:06:05 -0400
+date:   2016-08-29 00:06:05 -0400
 author: Dave Berning
 backgroundImage: macbook-pro.jpg
 ---
