@@ -3,6 +3,9 @@ layout: post
 title:  "Welcome to My Web Development Blog"
 date:   2016-08-29 00:12:05 -0400
 author: Dave Berning
+seo:
+    name: Welcome to My Web Development Blog
+    type: BlogPosting
 backgroundImage: macbook-pro.jpg
 ---
 
