@@ -6,6 +6,9 @@ author: Dave Berning
 seo:
     name: Welcome to My Web Development Blog
     type: BlogPosting
+    author: Dave Berning
+    publisher: Dave Berning
+    image: macbook-pro.jpg
 backgroundImage: macbook-pro.jpg
 ---
 
