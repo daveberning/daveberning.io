@@ -29,22 +29,19 @@ WWW is not better than non-WWW, they're equal. It doesn't matter which version y
 > It doesn't matter which version you choose as long as you're consistent! Google does not care one bit which version you choose.
 
 ## Still Not Convinced?
-If you're still worried about which one to use, note that notable companies with great SEO use one or the other.
+If you're still worried about which one to use, look at some notable companies and see which type of URL they use.
 
 Websites with WWW
-
 + [Facebook](https://www.facebook.com/)
 + [Apple](http://www.apple.com/)
 + [YouTube](https://www.youtube.com)
 
 Websites without WWW
-
 + [GitHub](https://github.com/)
 + [Twitter](https://twitter.com/)
 + [CodePen](http://codepen.io/)
 
-### Well, Article or It's Not True
-Still not convinced? [Check out this article from Matt Cutts himself](https://www.mattcutts.com/blog/seo-advice-url-canonicalization/). Granted, it is from 2006 but still relevant to the topic.
+If you need written proof, [check out this article from Matt Cutts himself](https://www.mattcutts.com/blog/seo-advice-url-canonicalization/). Granted, it is from 2006 but still relevant to the topic.
 
 ## TLDR
 In the end, it doesn't matter which version you use. Google will not favor one URL over the other, just make sure you stick with one. Regardless of your position on this matter, I hope we can at least agree that www and non-www combined is just awful. Don't do that...and don't combine spaces and tabs either.
