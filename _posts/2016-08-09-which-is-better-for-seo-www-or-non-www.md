@@ -23,7 +23,7 @@ Any little bit of SEO goes a long way. So it's important to evaluate every littl
 
 I've heard this before from developers, "Why would you negatively affect your SEO efforts just for domain aesthetics?" My answer to that is, "uh, I'm not."
 
-## WWW is _Not_ Better Than Non-WWW
+## WWW is _Not_  Better Than Non-WWW
 WWW is not better than non-WWW, they're equal. It doesn't matter which version you choose as long as you're consistent! Google does not care one bit which version you choose. Google treats www.daveberning.io and daveberning.io as two separate websites and will rank whichever one higher based on visits and other factors. That's why it's important to pick one and stay with it. If you pick the non-WWW, make sure that every link to your website and every page is non-WWW. It's also important to make sure that all your traffic from the WWW gets redirected to your non-WWW.
 
 > It doesn't matter which version you choose as long as you're consistent! Google does not care one bit which version you choose.
@@ -31,15 +31,17 @@ WWW is not better than non-WWW, they're equal. It doesn't matter which version y
 ## Still Not Convinced?
 If you're still worried about which one to use, note that notable companies with great SEO use one or the other.
 
-__Websites with WWW__
-- [Facebook](https://www.facebook.com/)
-- [Apple](http://www.apple.com/)
-- [YouTube](https://www.youtube.com)
+Websites with WWW
 
-__Websites without WWW__
-- [GitHub](https://github.com/)
-- [Twitter](https://twitter.com/)
-- [CodePen](http://codepen.io/)
++ [Facebook](https://www.facebook.com/)
++ [Apple](http://www.apple.com/)
++ [YouTube](https://www.youtube.com)
+
+Websites without WWW
+
++ [GitHub](https://github.com/)
++ [Twitter](https://twitter.com/)
++ [CodePen](http://codepen.io/)
 
 ## Well, Article or It's Not True
 Still not convinced? [Check out this article from Matt Cutts himself](https://www.mattcutts.com/blog/seo-advice-url-canonicalization/). Granted, it is from 2006 but still relevant to the topic.
