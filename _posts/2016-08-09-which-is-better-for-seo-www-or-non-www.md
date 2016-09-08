@@ -32,11 +32,13 @@ WWW is not better than non-WWW, they're equal. It doesn't matter which version y
 If you're still worried about which one to use, look at some notable companies and see which type of URL they use.
 
 Websites with WWW
+
 + [Facebook](https://www.facebook.com/)
 + [Apple](http://www.apple.com/)
 + [YouTube](https://www.youtube.com)
 
 Websites without WWW
+
 + [GitHub](https://github.com/)
 + [Twitter](https://twitter.com/)
 + [CodePen](http://codepen.io/)
