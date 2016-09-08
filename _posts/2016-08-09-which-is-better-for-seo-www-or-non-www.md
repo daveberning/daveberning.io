@@ -23,7 +23,7 @@ Any little bit of SEO goes a long way. So it's important to evaluate every littl
 
 I've heard this before from developers, "Why would you negatively affect your SEO efforts just for domain aesthetics?" My answer to that is, "uh, I'm not."
 
-## WWW is _Not_  Better Than Non-WWW
+## WWW is Not Better Than Non-WWW
 WWW is not better than non-WWW, they're equal. It doesn't matter which version you choose as long as you're consistent! Google does not care one bit which version you choose. Google treats www.daveberning.io and daveberning.io as two separate websites and will rank whichever one higher based on visits and other factors. That's why it's important to pick one and stay with it. If you pick the non-WWW, make sure that every link to your website and every page is non-WWW. It's also important to make sure that all your traffic from the WWW gets redirected to your non-WWW.
 
 > It doesn't matter which version you choose as long as you're consistent! Google does not care one bit which version you choose.
