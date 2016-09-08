@@ -54,7 +54,7 @@ layout: default
                                     </div>
                                   {% endif %}
 
-                            {{ content }}
+                            {{ content | remove: '<p>' | remove: '</p>' }}
                             </div>
                         </div>
                     </div>
