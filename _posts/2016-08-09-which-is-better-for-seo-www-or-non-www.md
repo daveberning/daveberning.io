@@ -43,7 +43,7 @@ Websites without WWW
 + [Twitter](https://twitter.com/)
 + [CodePen](http://codepen.io/)
 
-## Well, Article or It's Not True
+### Well, Article or It's Not True
 Still not convinced? [Check out this article from Matt Cutts himself](https://www.mattcutts.com/blog/seo-advice-url-canonicalization/). Granted, it is from 2006 but still relevant to the topic.
 
 ## TLDR
