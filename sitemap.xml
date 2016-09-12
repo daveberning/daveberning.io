@@ -3,18 +3,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for post in site.posts %}
-    <url>
-        <loc>https://daveberning.io{{ post.url | remove: 'index.html' }}</loc>
-    </url>
+        <url>
+            <loc>https://daveberning.io{{ post.url | remove: 'index.html' }}</loc>
+        </url>
     {% endfor %}
 
     {% for page in site.pages %}
-    {% if page.layout != nil %}
-    {% if page.layout != 'feed' %}
-    <url>
-        <loc>https://daveberning.io{{ page.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
-    {% endif %}
+        {% if page.layout != nil %}
+            {% if page.layout != 'feed' %}
+                <url>
+                    <loc>https://daveberning.io{{ page.url | remove: 'index.html' }}</loc>
+                </url>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% for project in site.projects %}
+        <url>
+            <loc>https://daveberning.io{{ project.url | remove: 'index.html' }}</loc>
+        </url>
     {% endfor %}
 </urlset>
