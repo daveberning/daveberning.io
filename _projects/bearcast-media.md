@@ -10,6 +10,9 @@ index: 2
 
 #SEO
 description: Bearcast Media is the University of Cincinnati's college radio station. Bearcast was developed by Cincinnati web developer, Dave Berning.
+seo:
+    type: CreativeWork
+    name: Bearcast Media
 
 # Images
 featuredImage: images/bearcast-bkg-thumbnail.jpg

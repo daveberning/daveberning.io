@@ -11,7 +11,7 @@ description: Dave Berning is a web developer and designer from Cincinnat, OH.
 avatar: images/dave.jpg
 
 # URLs
-baseurl: "/"
+baseurl: ""
 url: "https://daveberning.io" # the base hostname & protocol for your site
 projectURL: "https://daveberning.io/project/"
 imagesURL: "https://daveberning.io/images/"

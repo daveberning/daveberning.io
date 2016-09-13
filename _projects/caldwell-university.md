@@ -14,6 +14,9 @@ index: 3
 
 #SEO
 description: Caldwell University is a micro-site developed by Cincinnati web developer, Dave Berning. Caldwell features custom card flips and page animations.
+seo:
+    type: CreativeWork
+    name: Caldwell University
 
 # Images
 featuredImage: images/caldwell-bkg-thumbnail.jpg

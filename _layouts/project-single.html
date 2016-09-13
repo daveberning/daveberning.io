@@ -4,7 +4,7 @@
 
     {% include header.html %}
 
-        <div class="hero standard" itemscope itemtype="https://schema.org/CreativeWork">
+        <div class="hero standard">
             <div class="container-fluid">
 
                 <div class='blurImg'>
@@ -13,7 +13,7 @@
 
                 <div class="row">
                     <div class="container-fluid">
-                        <h1 class="text-center color-white" itemprop="name">{{page.name}}</h1>
+                        <h1 class="text-center color-white">{{page.name}}</h1>
 
                         <div class="row gutter-top">
                             <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-8 gutter-bottom">
-                        <img class="img-responsive" itemprop="image" src="{{site.url}}/{{page.topLeftImage}}" alt="Bearcast Media on various devices.">
+                        <img class="img-responsive" src="{{site.url}}/{{page.topLeftImage}}" alt="Bearcast Media on various devices.">
                     </div>
                     <div class="col-sm-6 col-md-4">
                         <h2>Too Long Didn't Read</h2>
@@ -40,7 +40,7 @@
                           {% endfor %}
                         </ul>
 
-                        <a href="{{page.projectLink}}" itemprop="url" target="_blank" class="btn btn-block btn-primary btn-lg gutter-top"><i class="material-icons">open_in_new</i> Visit Site</a>
+                        <a href="{{page.projectLink}}" target="_blank" class="btn btn-block btn-primary btn-lg gutter-top"><i class="material-icons">open_in_new</i> Visit Site</a>
                     </div>
                 </div>
             </div>
