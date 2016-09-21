@@ -21,7 +21,7 @@ Google has detailed which types of interstitials that will have a negative impac
 - Displaying a standalone interstitial that the user has to dismiss before accessing the main content.
 - Using a layout where the above-the-fold portion of the page appears similar to a standalone interstitial, but the original content has been inlined underneath the fold.
 
-![Examples of intrusive popups](http://parsecdigital.io/codepen/intrusive.png)
+![Examples of intrusive popups](http://parsecdigital.io/codepen/intrusive.png){:class="img-responsive"}
 
 ### Interstitials With No Impact
 If you have a popup that uses a reasonable amount of space or have popups for age verification or legal obligations, you'll be fine. Google has detailed the positive popups below.
@@ -30,7 +30,7 @@ If you have a popup that uses a reasonable amount of space or have popups for ag
 - Login dialogs on sites where content is not publicly indexable. For example, this would include private content such as email or unindexable content that is behind a paywall.
 - Banners that use a reasonable amount of screen space and are easily dismissible. For example, the app install banners provided by Safari and Chrome are examples of banners that use a reasonable amount of screen space.
 
-![Examples of non-intrusive popups](http://parsecdigital.io/codepen/non-intrusive.png)
+![Examples of non-intrusive popups](http://parsecdigital.io/codepen/non-intrusive.png){:class="img-responsive"}
 
 ## The Problem
 This is great for users! Google usually has the user's be interest in mind when shipping out large updates like this. This isn't the first time too. Last year, Google released an update that encourages mobile optimization and SSL certificates.
