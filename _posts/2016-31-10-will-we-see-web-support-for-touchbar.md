@@ -21,7 +21,7 @@ The idea of harnessing Apple specific hardware isn’t too farfetched. In June, 
 
 ~~~ html
 <!--[if Apple TouchBar]>
-Special instructions for IE 6 here
+    HTML for TouchBar
 <![endif] -->
 ~~~
 
