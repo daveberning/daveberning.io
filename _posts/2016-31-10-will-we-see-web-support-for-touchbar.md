@@ -21,13 +21,13 @@ The idea of harnessing Apple specific hardware isn’t too farfetched. In June, 
 
 ~~~ html
 <!--[if Apple TouchBar]>
-    HTML for TouchBar
+    HTML for TouchBar   
 <![endif] -->
 ~~~
 
 ![Examples of TouchBar functionality on the Web]({{site.imagesURL}}berning-site-macbook.jpg){:class="img-responsive"}
 
-Either way, access to the TouchBar would be neat but certainly not crucial. Supporting the TouchBar especially within the first year or so would be just because.
+Either way, access to the TouchBar would be neat but certainly not crucial. Supporting the TouchBar especially within the first year or so would be to try and built support and because well...you can.
 
 ## The Possibilities
 Imagine being able to code share links, the top level navigation items, or a page’s sub items. The possibilities are endless really. Other possibilities are web push notifications, an entirely different menu (I would advise against that), call to actions and more. Of course, with great power comes great responsibility. I can quickly see this being abused for banner ads, malicious links…
