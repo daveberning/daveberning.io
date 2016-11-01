@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Will We See Web Support For Apple’s TouchBar?"
-date:   2016-10-31 20:04:00 -0400
+date:   2016-10-31 12:04:00 -0400
 author: Dave Berning
 seo:
     name: Will We See Web Support For Apple’s TouchBar?
