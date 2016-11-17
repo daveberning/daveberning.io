@@ -34,7 +34,7 @@ collections:
 
 #Gems
 gems: [jekyll-paginate, jekyll-gist, jekyll-seo-tag, octopress-minify-html]
-paginate: 6
+paginate: 5
 paginate_path: /blog/:num/
 
 # Build settings
