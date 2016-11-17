@@ -53,6 +53,7 @@ LeftyRighty was built with a grid format in mind. Meaning, for this to work, you
 
 #### Without Bootstrap (Default)
 Basic row structure with LeftyRighty's .lr-item class.
+
 ```html
 <div class="row">
     <div class="lr-item">
@@ -68,6 +69,7 @@ Basic row structure with LeftyRighty's .lr-item class.
     </div>
 </div>
 ```
+
 #### With Bootstrap (via API option)
 If you are using Bootstrap, you will need to initialize the plugin with the Bootstrap API call.
 ```html
