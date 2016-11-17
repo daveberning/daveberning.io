@@ -104,6 +104,7 @@ There are __three__ main core functions that LeftyRighty supports. These can be 
 These functions can be done by simply adding a class to the row or in the third case, an item.
 
 ##### Row Reverse
+
 ```html
 <div class="row lr-reverse">
     <!-- columns -->
@@ -120,6 +121,7 @@ These functions can be done by simply adding a class to the row or in the third 
 
 ##### Flip Two Specific Items
 Add the .lr-spec class to two items you want to flip on click.
+
 ```html
 <div class="row">
     <div class="lr-item">
