@@ -72,6 +72,7 @@ Basic row structure with LeftyRighty's .lr-item class.
 
 #### With Bootstrap (via API option)
 If you are using Bootstrap, you will need to initialize the plugin with the Bootstrap API call.
+
 ```html
 <div class="row">
     <div class="col-sm-4">
