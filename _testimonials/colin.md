@@ -1,6 +1,6 @@
 ---
 name: "Colin Lutz"
-title: "Morning Show Host/Digital Coordinator at Nash FM 102.5 WMDH"
+title: "Morning Show Host/Digital Coordinator at Nash FM 102.5"
 avatar: images/colin.jpg
 index: 2
 ---
