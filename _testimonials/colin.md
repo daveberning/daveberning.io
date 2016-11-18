@@ -1,6 +1,6 @@
 ---
 name: "Colin Lutz"
-title: "Morning Show Producer/On-Air Talent at Cumulus Media"
+title: "Morning Show Host/Digital Coordinator at Nash FM 102.5 WMDH"
 avatar: images/colin.jpg
 index: 2
 ---
