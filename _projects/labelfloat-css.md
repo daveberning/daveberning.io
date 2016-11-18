@@ -7,6 +7,8 @@ caption: "Plugin Development"
 projectLink: http://daveberning.github.io/labelfloat-css/
 hasDemoForm: true
 index: 4
+hasGithubRepo: true
+repoLink: https://github.com/daveberning/labelfloat-css
 
 #SEO
 title: Labelfloat.css

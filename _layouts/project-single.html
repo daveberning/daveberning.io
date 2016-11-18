@@ -41,6 +41,10 @@
                         </ul>
 
                         <a href="{{page.projectLink}}" target="_blank" class="btn btn-block btn-primary btn-lg gutter-top"><i class="material-icons">open_in_new</i> Visit Site</a>
+
+                        {% if page.hasGithubRepo == true %}
+                            <a href="{{page.repoLink}}" target="_blank" class="btn btn-block btn-secondary btn-lg gutter-top"><i class="fa fa-github" aria-hidden="true"></i> GitHub Repo</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
