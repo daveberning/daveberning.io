@@ -30,7 +30,7 @@ The idea of harnessing Apple specific hardware isn’t too farfetched. In June, 
 Either way, access to the TouchBar would be neat but certainly not crucial. Supporting the TouchBar within its first year or so would be just for bragging rights.
 
 ## The Possibilities
-Imagine being able to code share links, the top level navigation items, or a page’s sub items. The possibilities are endless really. Other possibilities are web push notifications, an entirely different menu (I would advise against that), call to actions and more. Of course, with great power comes great responsibility. I can quickly see this being abused for banner ads, malicious links…
+Imagine being able to code share links, the top level navigation items, or a page’s sub items. The possibilities are endless really. Other possibilities are web push notifications, an entirely different menu (I would advise against that), call to actions and more. Of course, with great power comes great responsibility. I can quickly see this being abused for banner ads, malicious links, etc…
 
 With all that said, I do hope that Apple will pull an ApplePay and open up some of the Mac specific hardware up to developers. The only question would be, will it be (if at all) supported with every major browser or just Safari.
 
