@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Starting a New Project: Periodic Table of Elements"
-date:   2017-02-16 00:08:54 -0400
+title:  "Entering The Exciting World of Web Applications"
+date:   2016-12-24 00:21:08 -0400
 author: Dave Berning
 seo:
-    name: Starting a New Project: Periodic Table of Elements
+    name: Entering The Exciting World of Web Applications
     type: BlogPosting
     author: Dave Berning
     publisher: Dave Berning
