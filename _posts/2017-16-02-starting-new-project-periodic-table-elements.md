@@ -1,15 +1,15 @@
 ---
 layout: post
 title:  "Starting a New Project: Periodic Table of Elements"
-date:   2016-08-29 00:12:05 -0400
+date:   2016-09-08 00:8:54 -0400
 author: Dave Berning
 seo:
     name: Starting a New Project: Periodic Table of Elements
     type: BlogPosting
     author: Dave Berning
     publisher: Dave Berning
-    image: macbook-pro.jpg
-backgroundImage: application.jpg
+    image: seo.jpg
+backgroundImage: seo.jpg
 ---
 
 I know I'm late but, welcome 2017! I've been pretty busy lately and haven't had much time to dedicate a post to my loyal fan (One can dream...). I have been working diligently on my new business Parsec Digital's website over the past few weeks. I hope to get this site launched soon so I can begin working on other things!
