@@ -8,8 +8,8 @@ seo:
     type: BlogPosting
     author: Dave Berning
     publisher: Dave Berning
-    image: seo.jpg
-backgroundImage: seo.jpg
+    image: carina.jpeg
+backgroundImage: carina.jpeg
 ---
 
 I know I'm late but, welcome 2017! I've been pretty busy lately and haven't had much time to dedicate a post to my loyal fan (One can dream...). I have been working diligently on my new business Parsec Digital's website over the past few weeks. I hope to get this site launched soon so I can begin working on other things!
