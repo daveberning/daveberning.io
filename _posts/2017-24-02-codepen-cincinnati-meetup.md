@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Starting a CodePen Cincinnati Meetup"
-date:   2016-08-29 00:12:05 -0400
+date:   2017-02-24 00:12:05 -0400
 author: Dave Berning
 seo:
     name: Starting a CodePen Cincinnati Meetup
