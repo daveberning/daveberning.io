@@ -192,7 +192,7 @@ If you follow me on [Twitter](https://twitter.com/daveberning) you'll know that 
 So...after hours of research, setting up environments, and playing around with each...I decided to make the switch to Vue. Sorry, various Angular Twitter profiles that retweeted and liked my tweet.
 
 <div class="row">
-    <div class="col-sm-6 col-sm-3">
+    <div class="col-sm-6 col-sm-offset-3">
         <img src="https://daveberning.io/images/vue-logo.png" alt="VueJS Logo" class="img-responsive">
     </div>
 </div>
