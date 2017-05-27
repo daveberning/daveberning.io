@@ -12,17 +12,15 @@ seo:
 backgroundImage: seo.jpg
 ---
 
-# My Take on the Big Three: React, Angular, and Vue
-
 <div class="row">
     <div class="col-sm-4">
-        <a href="#react"><img src="https://daveberning.io/react-logo.svg" alt="ReactJS Logo" class="img-responsive"></a>
+        <a href="#react"><img src="https://daveberning.io/images/react-logo.svg" alt="ReactJS Logo" class="img-responsive"></a>
     </div>
     <div class="col-sm-4">
-        <a href="#angular"><img src="https://daveberning.io/angular-logo.png" alt="Angular Logo" class="img-responsive"></a>
+        <a href="#angular"><img src="https://daveberning.io/images/angular-logo.png" alt="Angular Logo" class="img-responsive"></a>
     </div>
     <div class="col-sm-4">
-        <a href="#vue"><img src="https://daveberning.io/vue-logo.png" alt="VueJS Logo" class="img-responsive"></a>
+        <a href="#vue"><img src="https://daveberning.io/images/vue-logo.png" alt="VueJS Logo" class="img-responsive"></a>
     </div>
 </div>
 
@@ -193,6 +191,6 @@ If you follow me on [Twitter](https://twitter.com/daveberning) you'll know that 
 
 So...after hours of research, setting up environments, and playing around with each...I decided to make the switch to Vue. Sorry, various Angular Twitter profiles that retweeted and liked my tweet.
 
-![Vue Logo](https://daveberning.io/vue-logo.png){:class="img-responsive"}
+![Vue Logo](https://daveberning.io/images/vue-logo.png){:class="img-responsive"}
 
 If you enjoyed this article, please share and comment below. I want to hear what you think. Did I make the right decision?
