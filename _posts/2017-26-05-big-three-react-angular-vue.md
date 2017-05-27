@@ -191,6 +191,10 @@ If you follow me on [Twitter](https://twitter.com/daveberning) you'll know that 
 
 So...after hours of research, setting up environments, and playing around with each...I decided to make the switch to Vue. Sorry, various Angular Twitter profiles that retweeted and liked my tweet.
 
-![Vue Logo](https://daveberning.io/images/vue-logo.png){:class="img-responsive"}
+<div class="row">
+    <div class="col-sm-6 col-sm-3">
+        <img src="https://daveberning.io/images/vue-logo.png" alt="VueJS Logo" class="img-responsive">
+    </div>
+</div>
 
 If you enjoyed this article, please share and comment below. I want to hear what you think. Did I make the right decision?
