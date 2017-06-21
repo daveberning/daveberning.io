@@ -11,8 +11,7 @@ seo:
     image: mobile-surfing.jpg
 backgroundImage: mobile-surfing.jpg
 ---
-# The Best Way to Learn a New Framework: Find a Topic You’re Passionate About and
-Run With It
+# The Best Way to Learn a New Framework: Find a Topic You’re Passionate About and Run With It
 
 ![](https://cdn-images-1.medium.com/max/1600/1*7GJlC3q3iyFXTLriuksrow.jpeg)
 
