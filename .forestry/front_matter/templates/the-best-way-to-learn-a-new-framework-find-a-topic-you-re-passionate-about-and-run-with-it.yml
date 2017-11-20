@@ -1,13 +1,11 @@
 ---
-pages:
-- _posts/foo.md
 hide_body: true
 fields:
 - name: layout
   label: Layout
   type: text
   hidden: false
-  default: ''
+  default: blog
 - name: title
   label: Title
   type: text
@@ -17,12 +15,12 @@ fields:
   label: Date
   type: datetime
   hidden: false
-  default: ''
+  default: 2017-11-20 00:00:00 -0500
 - name: author
   label: Author
   type: text
   hidden: false
-  default: ''
+  default: Dave Berning
 - name: seo
   label: Seo
   type: field_group

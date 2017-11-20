@@ -1,6 +1,4 @@
 ---
-pages:
-- _posts/2017-11-20-this-is-a-test.md
 hide_body: false
 fields:
 - name: layout

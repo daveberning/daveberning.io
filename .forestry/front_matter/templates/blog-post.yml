@@ -1,6 +1,4 @@
 ---
-pages:
-- _posts/2017-11-20-foo-fighters.md
 hide_body: false
 fields:
 - name: layout
@@ -17,7 +15,7 @@ fields:
   label: Date
   type: datetime
   hidden: false
-  default: 2017-11-20 00:00:00 -0500
+  default: 2017-11-20 05:00:00 +0000
 - name: author
   label: Author
   type: text
