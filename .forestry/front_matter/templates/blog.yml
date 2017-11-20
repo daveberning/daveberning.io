@@ -1,0 +1,28 @@
+---
+hide_body: false
+fields:
+- name: layout
+  label: Layout
+  type: text
+  hidden: false
+  default: ''
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: backgroundImage
+  label: Backgroundimage
+  type: text
+  hidden: false
+  default: ''
+- name: paginate
+  label: Paginate
+  type: text
+  hidden: false
+  default: ''
+- name: paginate_path
+  label: Paginate path
+  type: text
+  hidden: false
+  default: ''
