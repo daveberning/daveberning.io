@@ -5,22 +5,22 @@ fields:
   label: Layout
   type: text
   hidden: false
-  default: ''
+  default: blog
 - name: title
   label: Title
   type: text
   hidden: false
-  default: ''
+  default: Foobar
 - name: date
   label: Date
   type: datetime
   hidden: false
-  default: ''
+  default: 2017-11-20 00:00:00 -0500
 - name: author
   label: Author
   type: text
   hidden: false
-  default: ''
+  default: Dave Berning
 - name: seo
   label: Seo
   type: field_group
@@ -57,3 +57,9 @@ fields:
   type: text
   hidden: false
   default: ''
+- type: textarea
+  name: body
+  label: Body
+  config:
+    required: true
+    wysiwyg: true
