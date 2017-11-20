@@ -1,6 +1,6 @@
 ---
 pages:
-- _posts/foo-fighters.md
+- _posts/2017-11-20-foo-fighters.md
 hide_body: false
 fields:
 - name: layout
