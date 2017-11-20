@@ -5,12 +5,12 @@ fields:
   label: Layout
   type: text
   hidden: false
-  default: ''
+  default: blog
 - name: title
   label: Title
   type: text
   hidden: false
-  default: ''
+  default: Blog
 - name: backgroundImage
   label: Backgroundimage
   type: text
@@ -25,4 +25,8 @@ fields:
   label: Paginate path
   type: text
   hidden: false
-  default: ''
+  default: "/blog/page:num/"
+- type: text
+- type: textarea
+  name: body
+  label: Body
