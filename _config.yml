@@ -12,9 +12,9 @@ avatar: images/dave.jpg
 
 # URLs
 baseurl: ""
-url: "https://daveberning.io" # the base hostname & protocol for your site
-projectURL: "https://daveberning.io/project/"
-imagesURL: "https://daveberning.io/images/"
+url: "http://localhost:4000" # the base hostname & protocol for your site
+projectURL: "http://localhost:4000/project/"
+imagesURL: "http://localhost:4000/images/"
 
 # Social Media Accounts
 facebook: https://www.facebook.com/dave.berning.iii

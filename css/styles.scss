@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-family: $lato;
+    font-family: $roboto;
     font-size: 18px;
     background: $primary;
 
@@ -24,6 +24,7 @@ body {
         line-height: 3rem;
         margin: 0 0 25px;
         color: lighten($black, 15%);
+        font-weight: 300;
     }
 
     strong {
@@ -32,14 +33,28 @@ body {
     }
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: $oswald;
+    font-family: $roboto;
     text-transform: uppercase;
     margin: 0 0 25px 0;
-    font-weight: 400;
+    font-weight: 900;
     letter-spacing: 1px;
     text-align: center;
+}
+
+h2, .h2 {
+  font-size: 4.5rem;
+  margin-bottom: 4rem;
+}
+
+h3, .h3 {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 
@@ -61,11 +76,12 @@ header {
     span.logo { // logo
         border: 3px solid $white;
         border-radius: 2px;
-        font-family: $oswald;
+        font-family: $roboto;
         margin: 1rem 0;
         padding: .25rem .5rem;
         font-size: 2.75rem;
         display: inline-block;
+        font-weight: 900;
     }
 
     nav {
@@ -125,7 +141,7 @@ header {
         text-shadow: 1px 1px 1px #2f2f2f;
 
         span {
-            font-family: $lato;
+            font-family: $roboto;
             font-size: 1.5rem;
         }
     }
@@ -179,7 +195,7 @@ header {
             }
 
             div a span {
-            	font-family: 'Oswald', sans-serif;
+            	font-family: $roboto;
             	font-size: 2rem;
             	text-transform: uppercase;
             }
@@ -346,7 +362,7 @@ header {
             font-size: 2rem;
 
             a {
-                font-family: $oswald;
+                font-family: $roboto;
                 color: $white;
                 text-transform: uppercase;
             }
@@ -520,7 +536,7 @@ a.page-link:hover {
     }
 
     p span {
-        font-family: $oswald;
+        font-family: $roboto;
     }
 
     p:last-child img {
@@ -587,7 +603,7 @@ aside {
 
     .codepen { background: #000; }
     .codepen:hover { background: #1a1a1a; }
-    
+
     .medium { background: #00ab6b; }
     .medium:hover { background: #5AAA8C; }
 
