@@ -1,7 +1,6 @@
 ---
 pages:
-- _posts/codepen-cincinnati-rhinegeist.md
-- _posts/2017-12-18-foobar.md
+- _posts/2017-12-18-codepen-cincinnati-rhinegeist.md
 hide_body: false
 fields:
 - name: layout
