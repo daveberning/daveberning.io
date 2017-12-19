@@ -1,6 +1,6 @@
 ---
 pages:
-- _posts/foobar.md
+- _posts/2017-12-18-foobar.md
 hide_body: false
 fields:
 - name: layout
