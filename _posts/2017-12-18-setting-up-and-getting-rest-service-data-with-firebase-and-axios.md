@@ -2,7 +2,7 @@
 title: Setting Up and Getting REST Service Data With Firebase and Axios
 layout: post
 author: Dave Berning
-date: 2017-08-27 18:27:17 -0400
+date: 2017-08-27 22:27:17 +0000
 seo:
   name: ''
   type: ''

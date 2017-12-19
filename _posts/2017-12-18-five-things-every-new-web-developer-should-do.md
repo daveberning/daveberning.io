@@ -2,7 +2,7 @@
 title: " Five Things Every New Web Developer Should Do"
 layout: post
 author: Dave Berning
-date: 2017-08-19 18:36:37 -0400
+date: 2017-08-19 22:36:37 +0000
 seo:
   name: ''
   type: ''
