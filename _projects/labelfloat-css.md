@@ -1,36 +1,32 @@
 ---
-# Project Information
 layout: project-single
 categories: work
-name: "Labelfloat.css"
-caption: "Plugin Development"
+name: Labelfloat.css
+caption: Plugin Development
 projectLink: http://daveberning.github.io/labelfloat-css/
 hasDemoForm: true
 index: 4
 hasGithubRepo: true
 repoLink: https://github.com/daveberning/labelfloat-css
-
-#SEO
 title: Labelfloat.css
-description: Labelfloat.css is a CSS plugin developed by Cincinnati web developer, Dave Berning. Easy form creation with full validation.
+description: Labelfloat.css is a CSS plugin developed by Cincinnati web developer,
+  Dave Berning. Easy form creation with full validation.
 seo:
-    type: CreativeWork
-    name: Labelfloat.css
-
-# Images
+  type: CreativeWork
+  name: Labelfloat.css
 featuredImage: images/labelfloat-thumbnail.png
 backgroundImage: images/code.jpeg
 topLeftImage: images/labelfloat-desktop.png
-bottomRightImage:
-
-# TLDR Content
+bottomRightImage: 
 tldr:
-    - <strong>Client:</strong> Personal Project in association with Upright Communications
-    - <strong>Location:</strong> Cincinnati, OH
-    - <strong>Role:</strong> Web Developer
-    - <strong>Type:</strong> Plugin Development
-    - <strong>Date:</strong> September 2015
-    - <strong>Features:</strong> Floating labels as placeholders, Bootstrap, Chrome, Safari, Firefox, Opera, IE, and Edge support
+- "<strong>Client:</strong> Personal Project in association with Upright Communications"
+- "<strong>Location:</strong> Cincinnati, OH"
+- "<strong>Role:</strong> Web Developer"
+- "<strong>Type:</strong> Plugin Development"
+- "<strong>Date:</strong> September 2015"
+- "<strong>Features:</strong> Floating labels as placeholders, Bootstrap, Chrome,
+  Safari, Firefox, Opera, IE, and Edge support"
+date: 2017-12-19 03:31:41 +0000
 ---
 LabelFloat.css is a form validation plugin that uses CSS3 to animate form labels and act as placeholders. When the form field is active, the label will "float" down to the bottom of the field for user input. Colors are easily customizable and has full support with the popular Twitter Bootstrap framework.
 

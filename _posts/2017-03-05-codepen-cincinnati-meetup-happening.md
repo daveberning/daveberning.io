@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "'CodePen Cincinnati' Is Happening"
-date:   2017-05-03 00:12:05 -0400
+title: "'CodePen Cincinnati' Is Happening"
+date: 2017-05-03 04:12:05 +0000
 author: Dave Berning
 seo:
-    name: CodePen Cincinnati Meetup Is Happening
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: codepen-bkg.jpg
+  name: CodePen Cincinnati Meetup Is Happening
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: codepen-bkg.jpg
 backgroundImage: codepen-bkg.png
 ---
 

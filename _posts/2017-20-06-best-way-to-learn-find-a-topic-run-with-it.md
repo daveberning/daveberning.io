@@ -1,14 +1,16 @@
 ---
 layout: post
-title:  "The Best Way to Learn a New Framework - Find a Topic You’re Passionate About and Run With It"
-date:   2017-06-20 00:18:42 -0400
+title: The Best Way to Learn a New Framework - Find a Topic You’re Passionate About
+  and Run With It
+date: 2017-06-20 04:18:42 +0000
 author: Dave Berning
 seo:
-    name: The Best Way to Learn a New Framework - Find a Topic You’re Passionate About and Run With It
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: mobile-surfing.jpg
+  name: The Best Way to Learn a New Framework - Find a Topic You’re Passionate About
+    and Run With It
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: mobile-surfing.jpg
 backgroundImage: mobile-surfing.jpg
 ---
 

@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cincinnati Web Developer | Dave Berning</title>
+    <description>Dave Berning is a web developer and designer from Cincinnat, OH.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 17 Dec 2017 15:21:44 -0500</pubDate>
+    <lastBuildDate>Sun, 17 Dec 2017 15:21:44 -0500</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>The Best Way to Learn a New Framework - Find a Topic You’re Passionate About and Run With It</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*7GJlC3q3iyFXTLriuksrow.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Learning a new programming language, a new framework, and/or a new skill is a
+daunting task. As a web developer trying to keep up with the field, it can be
+stressful. Technologies seem to come and go every six months to a year; there’s
+always the next up-and-coming framework around the corner.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*kqiqhJnR4k-oPMSLEVWmdA.jpeg&quot; alt=&quot;&quot; /&gt;
+&lt;span class=&quot;figcaption_hack&quot;&gt;&lt;strong&gt;Addition:&lt;/strong&gt; 2016 — VueJS so hot right now.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’re coming from a strictly HTML/CSS background like me, taking the next
+step into the JavaScript world can be &lt;em&gt;extremely&lt;/em&gt; intimidating. I mean, I’ve
+lived in this “jQuery comfort zone” for many years. A few years ago, as a young
+and naive developer, I thought all I ever needed was jQuery; boy was I wrong. I
+noticed all these neat frameworks and what they can do but never thought that I
+was skillful enough to use them. I would take a brief gander at some examples
+and was immediately intimidated by them and continued doing what I did best.&lt;/p&gt;
+
+&lt;p&gt;It wasn’t until I started my latest job that I had to get serious about PWA’s
+and JavaScript frameworks. I started this new position creating and maintaining
+AngularJS applications for a popular custom home builder. I enjoy working there
+but there was a problem: I had no idea what I was doing. In order to get caught
+up to speed I had no choice but to invest some time outside of work and learn
+AngularJS (the framework they used).&lt;/p&gt;
+
+&lt;h2 id=&quot;my-beef-with-the-hello-world-tutorial&quot;&gt;My Beef With The “Hello World!” Tutorial&lt;/h2&gt;
+
+&lt;p&gt;I’ve spent lots of hours watching tutorial videos on Lynda.com and other sites.
+They’re great resources but all their courses have one thing in common — Hello
+World!&lt;/p&gt;
+
+&lt;p&gt;Don’t get me wrong, the “Hello World!” example is great when learning a new
+programming language but &lt;em&gt;everything&lt;/em&gt; starts off with that. In my opinion, if
+you’ve been developing for a few years, those “Hello World” tutorials do you
+&lt;em&gt;no&lt;/em&gt; good. And by that I mean, it can become rehearsed and dull; it shouldn’t be
+dull, it should be exciting!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In my opinion, if you’ve been developing for a few years, those “Hello World”
+tutorials do you no good. And by that I mean, it can become rehearsed and dull;
+it shouldn’t be dull, it should be exciting!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;find-your-own-hello-world&quot;&gt;Find Your Own “Hello World”&lt;/h2&gt;
+
+&lt;p&gt;Let’s find your own “Hello World” app. I tend to use my “&lt;a href=&quot;https://medium.com/@daveberning/starting-a-new-project-the-periodic-table-of-elements-1ddf8bd49753&quot;&gt;Periodic Table of
+Elements&lt;/a&gt;”
+app as my tutorial app for each framework I’m learning. This also helps me
+retain information by comparing one framework to another. So let’s get started.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-1-pick-a-topic&quot;&gt;Step 1: Pick a Topic&lt;/h3&gt;
+
+&lt;p&gt;Instead of learning AngularJS the “traditional way”, I decided to create
+something about a topic that &lt;em&gt;interests&lt;/em&gt; me. This is the most important part of
+this approach. Without an interesting topic to work with, you might as well
+ignore this entire article. My friend Ryan is currently learning HTML and CSS.
+All of his learning exercises are related to Jeep’s which keeps him motivated.&lt;/p&gt;
+
+&lt;p&gt;My wife, our rocket scientist friend (really), and I all recently traveled to
+Washington D.C. for the March for Science. I &lt;em&gt;love&lt;/em&gt; science and everything about
+it. So naturally that was my topic. Anyway, my point is that I’m passionate
+about science so for me, it was a no-brainer.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-2-come-up-with-an-app-idea&quot;&gt;Step 2: Come Up With An App Idea&lt;/h3&gt;
+
+&lt;p&gt;You have your topic and now it’s time to come up with an app idea. Try coming up
+with a brief list of ideas even if it’s been done before. Remember, this
+application doesn’t need to be the next big thing it just needs to be
+&lt;em&gt;interesting&lt;/em&gt; enough for you to learn. Here are some of the ideas that I came up
+with for my science theme.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Periodic Table of Elements Application (final choice)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Animated Planets and Moons of the Solar System&lt;/li&gt;
+  &lt;li&gt;“You Weight on a Planet” Calculator App&lt;/li&gt;
+  &lt;li&gt;Planet Weather App&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;step-3-get-to-work&quot;&gt;Step 3: Get to Work&lt;/h3&gt;
+
+&lt;p&gt;You have your topic, you’ve fleshed out an idea, now it’s time to get to work!
+You can follow the “Hello World” tutorials if you want but by taking this new
+approach, you’re more likely to solve real world problems. Problems like needing
+to extract data from a JSON file or a service and process that information in a
+factory. This also helps your developing and troubleshooting skills.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;By taking this approach I saved &lt;em&gt;hours&lt;/em&gt; of time learning AngularJS. Not only was
+I able to learn a new framework fairly quickly, it was fun and I ended up with a
+pretty unique piece that I can add to my portfolio.&lt;/p&gt;
+
+&lt;p&gt;Do you have a topic that you’re interested in? If so, what is your app idea and
+which framework or language are you trying to learn? Respond below and help jump
+start an idea for another developer.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 Jun 2017 00:18:42 -0400</pubDate>
+        <link>http://localhost:4000/best-way-to-learn-find-a-topic-run-with-it</link>
+        <guid isPermaLink="true">http://localhost:4000/best-way-to-learn-find-a-topic-run-with-it</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>My Take on the Big Three: React, Angular, and Vue</title>
+        <description>&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-sm-4&quot;&gt;
+        &lt;a href=&quot;#react&quot;&gt;&lt;img src=&quot;https://daveberning.io/images/react-logo.svg&quot; alt=&quot;ReactJS Logo&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-4&quot;&gt;
+        &lt;a href=&quot;#angular&quot;&gt;&lt;img src=&quot;https://daveberning.io/images/angular-logo.png&quot; alt=&quot;Angular Logo&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-sm-4&quot;&gt;
+        &lt;a href=&quot;#vue&quot;&gt;&lt;img src=&quot;https://daveberning.io/images/vue-logo.png&quot; alt=&quot;VueJS Logo&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://daveberning.io/entering-the-exciting-world-web-applications&quot;&gt;As I mentioned before&lt;/a&gt;, it really is a great time to be a web developer. The gap between web development and mobile app development has never been smaller thanks in part to javascript frameworks. &lt;a href=&quot;https://colorlib.com/wp/javascript-frameworks/&quot;&gt;There are so many front-end frameworks out there&lt;/a&gt;, it can be a bit overwhelming at first. Out of the many frameworks and libraries, these three stand out; React, Angular, and Vue.&lt;/p&gt;
+
+&lt;p&gt;I recently started working with these frameworks in web applications a few months back. I hope this comparison is useful to those eager to step outside their comfort zone but not sure where to start.&lt;/p&gt;
+
+&lt;h2 id=&quot;my-past-experience-with-frameworks&quot;&gt;My Past Experience With Frameworks&lt;/h2&gt;
+
+&lt;p&gt;Just so you understand where I am coming from, I started working on web applications using AngularJS (Angular 1). When I started my current job, my employer was using AngularJS for their modern web apps. So, I didn’t have much of a choice in choosing a framework initially.&lt;/p&gt;
+
+&lt;p&gt;A lot of my time outside of work was spent researching and getting caught up with AngularJS. So at the end of the day, I become an AngularJS developer. However, there are many that I wanted evaluate before just committing to what I know; especially for freelance projects. With the recent release of Angular (Angular 2), I thought this was a great opportunity to reevaluate my primary framework of choice. More on that specifically in a bit.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;With the recent release of Angular (Angular 2), I thought this was a great opportunity to reevaluate my primary framework of choice.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;the-big-three-react-angular-and-vue&quot;&gt;The Big Three: React, Angular, and Vue&lt;/h2&gt;
+
+&lt;p&gt;The big three that have separated themselves from the rest of the pack are React, Angular, and Vue. React is a front-end library created by Facebook, Angular is a MVC framework created by Google, and Vue is a library created by &lt;a href=&quot;http://evanyou.me/&quot;&gt;Evan You&lt;/a&gt;. All three are great and all do similar things, but there’s a lot of differences between the three.&lt;/p&gt;
+
+&lt;div id=&quot;#react&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;react&quot;&gt;React&lt;/h3&gt;
+
+&lt;p&gt;As mentioned above, React is a UI library created by Facebook and Instagram in 2013. React was built by the Facebook team in order to overcome unique front-end obstacles. Some popular sites that use React include, Facebook, Instagram, CodeAcademy, and Airbnb, &lt;a href=&quot;https://github.com/facebook/react/wiki/sites-using-react&quot;&gt;to name a few&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;React utilizes a Virtual DOM which is what makes React so quick and popular. React does not directly modify the DOM directly. It instead modified a Virtual DOM that then evaluates what has changed, &lt;em&gt;then&lt;/em&gt; updates the actual DOM. This is done so that the DOM doesn’t have to re-render each time a small or large change was made.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;React utilizes a Virtual DOM which is what makes React so quick. React does not directly modify the DOM directly.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;React also uses a component based model. Similar to web components, a component in React generally has HTML (as JSX), JS, and CSS all in one file or chunk of code. React components are generally written in a JS file. There is no traditional HTML file with a clear separation between the view and logic; each component is in one JS file.&lt;/p&gt;
+
+&lt;h4 id=&quot;react-pros-and-cons&quot;&gt;React: Pros and Cons&lt;/h4&gt;
+
+&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pros&lt;/th&gt;
+      &lt;th&gt;Cons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Utilizes Virtual DOM&lt;/td&gt;
+      &lt;td&gt;No clear separation between HTML, CSS, and JS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lightweight&lt;/td&gt;
+      &lt;td&gt;Setting up a development environment is long and difficult&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fast&lt;/td&gt;
+      &lt;td&gt;No MVC framework out of the box&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Backed by Facebook&lt;/td&gt;
+      &lt;td&gt;No routers or module management&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Open Source&lt;/td&gt;
+      &lt;td&gt;Fairly steep learning curve&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Great Open Source Community on GitHub&lt;/td&gt;
+      &lt;td&gt;Bad documentation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Create native mobile apps with React Native&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;UI automatically updates when data changes&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;summarize&quot;&gt;Summarize&lt;/h4&gt;
+
+&lt;p&gt;To summarize, React is a great UI library that is easier to learn than Angular. There’s a lot that it can do for the view out of the box but that’s about it; it isn’t a fully fledged MVC framework.&lt;/p&gt;
+
+&lt;p&gt;With that said, it is extremely popular with over 67k starts on &lt;a href=&quot;https://github.com/facebook/react&quot;&gt;GitHub&lt;/a&gt; proving that. The open source community is very active and you should be able to find other plugins that makeup for what it lacks. Something that React has over it’s competitors is native mobile application support with &lt;a href=&quot;https://github.com/facebook/react-native&quot;&gt;React Native&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Facebook &lt;a href=&quot;https://techcrunch.com/2017/04/18/facebook-announces-react-fiber-a-rewrite-of-its-react-framework/&quot;&gt;recently announced&lt;/a&gt; React Fiber; a rewrite of React.&lt;/p&gt;
+
+&lt;div id=&quot;#angular&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;angular&quot;&gt;Angular&lt;/h3&gt;
+
+&lt;p&gt;Angular is a fully fledged front-end MVC framework created by Google in 2010. Like Facebook, Google created Angular to solve various problems that were not done easily at the time. For a few years, AngularJS (Angular 1) was the king of frameworks. It was overwhelmingly popular a few years ago but has since dropped in popularity and adoption rate over the past few years.&lt;/p&gt;
+
+&lt;p&gt;This drop (along with React’s component based approach) prompted Google to completely rewrite it’s already popular framework to…wait for it…Angular (Angular 2+). Despite sharing the same name, &lt;strong&gt;AngularJS and Angular are really two completely different frameworks&lt;/strong&gt;. Honestly, Google should have rebranded Angular to something else and ditch AngularJS entirely.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Angular 1 is referred to as &lt;a href=&quot;https://angularjs.org/&quot;&gt;AngularJS&lt;/a&gt; while Angular 2+ is referred to as just &lt;a href=&quot;https://angular.io&quot;&gt;Angular&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;AngularJS has things called scopes, factories, controllers, directives. Your view, controller and factory logic are clearly separated and data is traversed in a classic MVC like fashion. Or in AngularJS’ case, FVM (factory, view, controller).&lt;/p&gt;
+
+&lt;p&gt;Angular on the other hand is more component driven like it’s counter part, React. Angular was rewritten in this component mode to compete with React but tries to maintain it’s full framework status as before. The logic written for your Angular application is done using &lt;a href=&quot;https://www.typescriptlang.org/&quot;&gt;Typescript&lt;/a&gt;; a superset of JS created by Microsoft. Typescript resembles that of traditional back-end programming languages like Java. I could write another article on Typescript alone.&lt;/p&gt;
+
+&lt;h4 id=&quot;angular-pros-and-cons&quot;&gt;Angular: Pros and Cons&lt;/h4&gt;
+
+&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pros&lt;/th&gt;
+      &lt;th&gt;Cons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Backed by Google&lt;/td&gt;
+      &lt;td&gt;Confusion…is it Angular 1 or Angular 2? Oh, it’s AngularJS and Angular….&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MVC framework out of the box (AngularJS/Angular)&lt;/td&gt;
+      &lt;td&gt;Overkill for smaller applications (AngularJS/Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Two-way data binding (AngularJS/Angular)&lt;/td&gt;
+      &lt;td&gt;Setting up a development environment is long and very difficult (Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DOM manipulation (AngularJS/Angular)&lt;/td&gt;
+      &lt;td&gt;Dropped in popularity (AngularJS/Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Clear separation of HTML, CSS, and JS (Angular)&lt;/td&gt;
+      &lt;td&gt;Lost in developer’s trust&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Open Source (AngularJS/Angular)&lt;/td&gt;
+      &lt;td&gt;Very steep learning curve (AngularJS/Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Decent Community on GitHub (AngularJS/Angular)&lt;/td&gt;
+      &lt;td&gt;Bad documentation (AngularJS/Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;One framework for web and native applications (Angular)&lt;/td&gt;
+      &lt;td&gt;Lack of native mobile support (AngularJS)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Very fast and efficient (Angular)&lt;/td&gt;
+      &lt;td&gt;Very slow and large in size (Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Usage of Typescript (Angular)&lt;/td&gt;
+      &lt;td&gt;Usage of Typescript (Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Very robust&lt;/td&gt;
+      &lt;td&gt;Skipped version 3 and went straight to 4. Adds to the confusion. (Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Back-end developer friendly&lt;/td&gt;
+      &lt;td&gt;Intimidating for front-end developers (AngularJS/Angular)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Unit test friendly&lt;/td&gt;
+      &lt;td&gt;AngularJS support; moving towards Angular&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;summarize-1&quot;&gt;Summarize&lt;/h4&gt;
+
+&lt;p&gt;Angular is a great, robust, and mature framework that is great for large scale applications. Angular’s two-way data binding is a huge advantage over it’s competitors. Angular is also great for native development as it’s described as “one framework” for mobile and desktop.&lt;/p&gt;
+
+&lt;p&gt;With that said, the popularity and reputation of Angular has dropped significantly over the last few years. Google has managed to lose a lot of developer’s trust during the rewrite. A lot of people are hesitant to move to Angular from AngularJS or move to React or Vue entirely; and for good reason.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Google has managed to lose a lot of developer’s trust during the rewrite. A lot of people are hesitant to move to Angular from AngularJS or move to React or Vue entirely; and for good reason.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;All those companies that created applications in AngularJS are forced to either convert or move. Which is a shame because each one of those applications where “cutting edge” and now are outdated.&lt;/p&gt;
+
+&lt;p&gt;Google has said however, that they’ll continue to support AngularJS with security updates until 50% or more of applications are converted over to Angular. However, I personally do not see that happening. I don’t think it’ll take off like AngularJS did. The rewrite left a poor taste in many developer’s mouths.&lt;/p&gt;
+
+&lt;div id=&quot;#vue&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vue&quot;&gt;Vue&lt;/h3&gt;
+
+&lt;p&gt;VueJS is a newcomer to the fight. It was created by ex-Google employee, &lt;a href=&quot;https://github.com/yyx990803&quot;&gt;Evan You&lt;/a&gt;. It’s the fastest growing framework out there and even surpassing React! It’s been around since 2015 and already as over &lt;em&gt;54k stars&lt;/em&gt; on &lt;a href=&quot;https://github.com/vuejs/vue&quot;&gt;GitHub&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Vue continues to push the framework competition forward with it’s recent release of version 2 (not a rewrite). Vue is progressive and “just makes sense”. The learning curve is shallow compared to React and Angular and the setup is easy with the official Vue CLI. It’s also gained a lot of momentum over the past year with sites like &lt;a href=&quot;https://www.grammarly.com/&quot;&gt;Grammerly&lt;/a&gt; using it.&lt;/p&gt;
+
+&lt;h4 id=&quot;best-of-both&quot;&gt;Best of Both&lt;/h4&gt;
+&lt;p&gt;Vue has been described as the perfect combination of React and Angular. Vue takes all the successful parts of each framework and then some.&lt;/p&gt;
+
+&lt;p&gt;Vue has the same component based approach as React, while clearly separating view and controller logic like Angular. Vue has a Virtual DOM and (with the help of third parties) performs CRUD operations like Angular, so it’s very scalable.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Vue has been described as the perfect combination of React and Angular. Vue has the component based approach as React, while clearly separating view and controller logic like Angular&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you are coming from AngularJS, transitioning to Vue is much easier than if you were to switch to React. The best things from AngularJS like the ng-if, ng-repeat directives were brought over as v-if, v-repeat and so on.&lt;/p&gt;
+
+&lt;p&gt;Components are much easier to manage in Vue as well. Languages aren’t mushed together like React/JSX and components aren’t stretched across several files as is the case with AngularJS.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Simplified Vue Component&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s more to it but your standard Component.vue file is similar to something like this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-HTML&quot;&gt;&amp;lt;template&amp;gt;
+    &amp;lt;p&amp;gt;Hello &amp;lt;/p&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;style lang=&quot;sass&quot; scoped&amp;gt;
+    p {
+        color: black;
+    }
+&amp;lt;/style&amp;gt;
+
+&amp;lt;script&amp;gt;
+    // Javascript or Typescript
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;vue-pros-and-cons&quot;&gt;Vue: Pros and Cons&lt;/h4&gt;
+
+&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Pros&lt;/th&gt;
+      &lt;th&gt;Cons&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Large open source community&lt;/td&gt;
+      &lt;td&gt;Does not have the backing of a large company&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Very active community&lt;/td&gt;
+      &lt;td&gt;No native mobile support (yet)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Setting up environment is easy&lt;/td&gt;
+      &lt;td&gt;Language barrier&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Virtual DOM&lt;/td&gt;
+      &lt;td&gt;Smaller ecosystem&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lightweight&lt;/td&gt;
+      &lt;td&gt;Not used much in production (yet)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Great performance -  fast&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Two-way data binding&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Separates HTML, CSS, JS&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fantastic documentation&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Flexible - Can use Javascript or Typescript&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;summarize-2&quot;&gt;Summarize&lt;/h4&gt;
+&lt;p&gt;In my experience, Vue is much simpler and easier to use. The development environment is much easier to setup compared to the other two, especially with their CLI. Vue is newer to the game with a fantastic open source community. It has surpassed React in popularity in the past year and the future continues to look bright.&lt;/p&gt;
+
+&lt;p&gt;The major downfall to Vue (which ultimately is preventing large companies from adopting it) is the lack of backing from a large company. React has Facebook and Angular has Google. Vue is managed by one person and a large open source community. The lack of a large corporation could be offsetting to some people; it was for me initially. However, I would argue that you should not steer away from it completely.&lt;/p&gt;
+
+&lt;p&gt;If you want to know more about Vue, I highly recommend &lt;a href=&quot;https://css-tricks.com/intro-to-vue-1-rendering-directives-events/&quot;&gt;Sarah Drasner’s CSS-Tricks series&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-which-framework-did-i-choose&quot;&gt;So, Which Framework Did I Choose?&lt;/h2&gt;
+
+&lt;p&gt;If you follow me on &lt;a href=&quot;https://twitter.com/daveberning&quot;&gt;Twitter&lt;/a&gt; you’ll know that I recently have been considering switching from AngularJS to a new framework. My co-worker and I had some reservations with Angular as a whole and wanted to reevaluate our options. This conversation at work really prompted me to write this article. As posted on Twitter, I said I would write and post about it and reveal the framework I decided on.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I already made my decision. I&amp;#39;ll write a blog post comparing the big three: &lt;a href=&quot;https://twitter.com/hashtag/React?src=hash&quot;&gt;#React&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/Angular?src=hash&quot;&gt;#Angular&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/hashtag/Vue?src=hash&quot;&gt;#Vue&lt;/a&gt;. I&amp;#39;ll also share why I went with _____.&lt;/p&gt;&amp;mdash; Dave Berning (@daveberning) &lt;a href=&quot;https://twitter.com/daveberning/status/868159584506195968&quot;&gt;May 26, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;So…after hours of research, setting up environments, and playing around with each…I decided to make the switch to Vue. Sorry, various Angular Twitter profiles that retweeted and liked my tweet.&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-sm-6 col-sm-offset-3&quot;&gt;
+        &lt;img src=&quot;https://daveberning.io/images/vue-logo.png&quot; alt=&quot;VueJS Logo&quot; class=&quot;img-responsive&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you enjoyed this article, please share and comment below. I want to hear what you think. Did I make the right decision?&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 May 2017 00:14:54 -0400</pubDate>
+        <link>http://localhost:4000/big-three-react-angular-vue</link>
+        <guid isPermaLink="true">http://localhost:4000/big-three-react-angular-vue</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>'CodePen Cincinnati' Is Happening</title>
+        <description>&lt;p&gt;I’m hosting Cincinnati’s first CodePen meet up! The meet up will start off with a classic “show and tell”, followed by a small workshop if needed, then to a general discussion about the field.&lt;/p&gt;
+
+&lt;p&gt;Any and all front-end web developers regardless of skill set and expertise are welcome! Let’s all get together, share pens, network, and talk shop. Please RSVP through Nvite below. The meetup will happen on &lt;strong&gt;Tuesday June 6 at Queen City Exchange from 6:00PM-8:00PM&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can follow the event on Twitter &lt;a href=&quot;https://twitter.com/codepencin&quot;&gt;@CodePenCIN&lt;/a&gt; and with the hashtag, &lt;a href=&quot;https://twitter.com/search?q=%23CodePenCIN&amp;amp;src=typd&quot;&gt;#CodePenCIN&lt;/a&gt;. If you have any questions, please let me know. I hope to see you there!&lt;/p&gt;
+
+&lt;script async=&quot;&quot; src=&quot;//widgets.nvite.com/1.6/button.js&quot; data-resource=&quot;6qvpwz&quot; data-button-text=&quot;RSVP to CodePen Cincinnati&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Wed, 03 May 2017 00:12:05 -0400</pubDate>
+        <link>http://localhost:4000/codepen-cincinnati-meetup-happening</link>
+        <guid isPermaLink="true">http://localhost:4000/codepen-cincinnati-meetup-happening</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Starting a 'CodePen Cincinnati' Meetup</title>
+        <description>&lt;p&gt;The past few weeks, I’ve had the urge to jump outside of my close circle of developer friends and see what other developers around town are doing. After all, meeting new developers and viewing their work not only makes you better, but keeps you up-to-date with the industry. Not to mention, you get to build your network up and get introduced to new business and employment opportunities!&lt;/p&gt;
+
+&lt;p&gt;I’ve been working a lot on &lt;a href=&quot;http://codepen.io/daveberning/pen/ZezVVd/&quot;&gt;CodePen&lt;/a&gt; lately and started exploring their site. They sponsor meetups across the world and provide free “swag” to members that show up! Cincinnati has never had a CodePen meetup so I’m here to change that. I’m in the process of getting a venue but in the meantime, rallying up support for it.&lt;/p&gt;
+
+&lt;p&gt;The CodePen meetup will generally start with members presenting or sharing pens they really like, talk about what problems they’ve overcome, why they decided to write the pen, and what they got out of it. Then segue into a front-end workshop (if needed) or a general discussion about the industry.&lt;/p&gt;
+
+&lt;p&gt;If you’re in the Cincinnati/Northern Kentucky Area, please follow the event on Twitter &lt;a href=&quot;https://twitter.com/CodePenCIN&quot;&gt;@CodePenCIN&lt;/a&gt; and use the #CodePenCIN hashtag across social media.&lt;/p&gt;
+
+&lt;p&gt;Any details about the upcoming event will be posted on Twitter and my blog.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Feb 2017 23:12:05 -0500</pubDate>
+        <link>http://localhost:4000/codepen-cincinnati-meetup</link>
+        <guid isPermaLink="true">http://localhost:4000/codepen-cincinnati-meetup</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Starting a New Project - Periodic Table of Elements</title>
+        <description>&lt;p&gt;I know I’m late but, welcome 2017! I’ve been pretty busy lately and haven’t had much time to dedicate a post to my loyal fan (One can dream…). I have been working diligently on my new business Parsec Digital’s website over the past few weeks. I hope to get this site launched soon so I can begin working on other things!&lt;/p&gt;
+
+&lt;p&gt;Anyway, if you’ve already read my &lt;a href=&quot;https://daveberning.io/timeline&quot;&gt;timeline&lt;/a&gt;, you’ll know that I just recently started working for Drees Homes! At Drees, we have a big application that myself and the team have been working on since I’ve started. It’s an AngularJS application that essentially provides marketers with tools to create a home from start to finish. You may also know that this is my first introduction to Angular and &lt;a href=&quot;https://daveberning.io/entering-the-exciting-world-web-applications&quot;&gt;web applications&lt;/a&gt; in general and I have to say, it’s much more interesting!&lt;/p&gt;
+
+&lt;p&gt;The past few weeks, I’ve been struggling with Angular, I have to admit. It’s a challenge, yes but challenge is good in this field. You have to constantly evolve and grow as a developer in order to stay relevant and employable. So, this past week I decided to start a new project to get better acquainted with Angular. I &lt;em&gt;love&lt;/em&gt; science so instead of mindlessly reading documentation, I decided to make learning more interesting by creating The Periodic Table of Elements (PToE).&lt;/p&gt;
+
+&lt;h2 id=&quot;the-ui&quot;&gt;The UI&lt;/h2&gt;
+
+&lt;p&gt;This application will have a simple UI (as everything should, am I right?). All you will see if the element’s title in the top left, name and navigation arrows towards the bottom, and the PToE icon in the bottom right. In the center, will be an animating atom with the proper amount of electrons (organized by shell), protons, and neutrons. By clicking the navigation arrows towards the bottom, you can flip through elements in order or choose a specific one via the PToE icon in the bottom right.&lt;/p&gt;
+
+&lt;p&gt;Eventually, I’d like to have a fly-out with additional information about each element but that’ll come at a later date.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-progress-so-far&quot;&gt;The Progress So Far&lt;/h2&gt;
+
+&lt;p&gt;As of today, I have a factory that is fetching and process data from a &lt;a href=&quot;https://github.com/diniska/chemistry/blob/master/PeriodicalTable/periodicTable.json&quot;&gt;JSON file&lt;/a&gt;. The JSON file I’m using has all the elements grouped up in groups. So, in my controller, I had to iterate each group and push every element within each group to a single general array. This way, I can just grab an element by it’s index in one array.&lt;/p&gt;
+
+&lt;p&gt;Right now, the bare bones of the application is working. From Hydrogen (H-1), I can navigate to Helium (He-2), Lithium (Li-3), Beryllium (Be-4), and back. I also have 15px wide colored circles that represent the amount of quarks (sub-atomic particles) an atom has. For just a few hours of work it’s quite impressive I think!&lt;/p&gt;
+
+&lt;h2 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h2&gt;
+
+&lt;p&gt;I have all the data returning and the navigation working which is half of the Angular battle. Next, I plan to separate the electrons into certain groups based of the electrons in each shell or electron orbit. From there, I need to create a CSS animated atom with electrons actually orbiting the nucleus. It certainly is a fun project. My best advice to anything that wants to learn a new technology: Find something that interests you and go create something! If you start creating a generic app that with generic content, it is much harder to stay engaged. Don’t forget to &lt;a href=&quot;https://github.com/daveberning/periodic-table-elements&quot;&gt;check out the repo&lt;/a&gt; if you want to keep up with my progress.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Feb 2017 23:08:54 -0500</pubDate>
+        <link>http://localhost:4000/starting-new-project-periodic-table-elements</link>
+        <guid isPermaLink="true">http://localhost:4000/starting-new-project-periodic-table-elements</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Entering The Exciting World of Web Applications</title>
+        <description>&lt;p&gt;I started my career like many, creating simple static websites. I remember how exciting it was when I made my first mobile friendly website; it felt like I developed an app. I then moved to eCommerce and I felt like I actually developed a site that &lt;em&gt;does&lt;/em&gt; something. I’m now working on web applications that takes data from the back-end that users can interact with on the front-end.&lt;/p&gt;
+
+&lt;p&gt;For the past few years, I’ve seen a growing trend in the need for web applications. This has largely to do with the standardization of apps. It seems like every website has a mobile app companion in the AppStore and Marketplace these days. Unfortunately, it can be expensive to develop a companion app for your website. Each platform has their own language and SDK that you have to learn and manage. Fortunately however, there are web technologies like &lt;a href=&quot;http://phonegap.com/&quot;&gt;PhoneGap&lt;/a&gt; and &lt;a href=&quot;https://facebook.github.io/react-native/&quot;&gt;React Native&lt;/a&gt; that allow web developers to create hybrid and native applications for iOS and Android.&lt;/p&gt;
+
+&lt;h2 id=&quot;web-development-isnt-limited-to-the-browser&quot;&gt;Web Development Isn’t Limited to the Browser&lt;/h2&gt;
+
+&lt;p&gt;Probably the most exciting thing about web development is that it isn’t just limited to the browser anymore. There plenty of web packagers like PhoneGap and frameworks like React Native that let web developers create native apps with HTML, CSS, and JavaScript. This is exciting because we can now develop apps without learning a new technology, making app development cheaper as these “hybrid” apps can be ported to multiple operating systems.&lt;/p&gt;
+
+&lt;p&gt;I am currently working on a web app that lets marketers sit down with clients to create a custom home. The app is great and is currently only supported for the desktop. I would eventually like to see this ported to mobile devices to utilize device hardware for a better user experience.&lt;/p&gt;
+
+&lt;h2 id=&quot;its-an-exciting-time-for-web-development&quot;&gt;It’s an Exciting Time for Web Development&lt;/h2&gt;
+
+&lt;p&gt;It’s an exciting time to be a web developer. With each day, more features are adopted by browsers that let you do some exciting things like CSS3 keyframes and animations. The field has grown tremendously over the past few years. JavaScript has grown to be a flexible full-stack language that performs well on both the front and back-end with &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;NodeJS&lt;/a&gt;. There is something for everybody and there is always room for growth as a developer.&lt;/p&gt;
+
+&lt;p&gt;To learn more about web applications and technologies, checkout &lt;a href=&quot;http://referrals.trhou.se/daveberning&quot;&gt;Treehouse&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 Dec 2016 23:21:08 -0500</pubDate>
+        <link>http://localhost:4000/entering-the-exciting-world-web-applications</link>
+        <guid isPermaLink="true">http://localhost:4000/entering-the-exciting-world-web-applications</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Making the Web Work For Everyone with LeftyRighty.js</title>
+        <description>&lt;p&gt;I’m excited to share with you my latest project…&lt;a href=&quot;https://github.com/parsecdigital/LeftyRighty.js&quot;&gt;LeftyRighty.js&lt;/a&gt;! This has been in development for a few months now and I am finally ready to release it into the wild. This is my first JavaScript plugin. I plan on releasing regular updates to this. So, if you’d like to contribute, please fork and submit a pull request.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-does-it-do&quot;&gt;What Does It Do?&lt;/h2&gt;
+
+&lt;p&gt;I’m glad you asked. LeftyRighty is a JavaScript plugin developed to make the mobile web easier to use for everyone. This plugin was developed specifically for the physically impaired or handicapped. With phones getting larger (5.5”) these days, reaching important elements on the webpage can be difficult to do with one hand.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I’m glad you asked. LeftyRighty is a JavaScript plugin developed to make the mobile web easier to use for everyone. This plugin was developed specifically for the physically impaired or handicapped.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Look at these heat maps. The green areas are the comfortable areas that require no reach. The yellow areas require some reach and the red areas require a reach which can be difficult with one hand.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/mobile-heatmap.png&quot; alt=&quot;Heat maps of thumb reach on mobile phones&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine a CTA or a navigation icon that is on the opposite side of the phone. That hard to reach button would be very difficult to tap with one hand. But, what if they were flipped? That would make that CTA much easier to reach and tap with one hand.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-do-i-use-it&quot;&gt;How Do I Use It?&lt;/h2&gt;
+
+&lt;p&gt;Before I get into detail, please reference the &lt;a href=&quot;https://github.com/parsecdigital/LeftyRighty.js&quot;&gt;repo&lt;/a&gt; for more information located in the README.&lt;/p&gt;
+
+&lt;p&gt;LeftyRighty.js basically can perform one of three functions on a row; reverse the full row, flip the first and last items, or flip two specific items. You can also nest these row functions within one another; the parent can reverse the while row while the child can flip specific items, for example.&lt;/p&gt;
+
+&lt;p&gt;With that said, let’s get into the tutorial.&lt;/p&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+&lt;p&gt;Connect your JavaScript and CSS dependancies and initialize.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;css/lefty-righty.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;js/lefty-righty.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'body'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;leftyrighty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;html-structure&quot;&gt;HTML Structure&lt;/h3&gt;
+&lt;p&gt;LeftyRighty was built with a grid format in mind. Meaning, for this to work, you’ll need to code your website with rows and columns. LeftyRighty does support Bootstrap through the API.&lt;/p&gt;
+
+&lt;h4 id=&quot;without-bootstrap-default&quot;&gt;Without Bootstrap (Default)&lt;/h4&gt;
+&lt;p&gt;Basic row structure with LeftyRighty’s .lr-item class.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 1
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 2
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 3
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;with-bootstrap-via-api-option&quot;&gt;With Bootstrap (via API option)&lt;/h4&gt;
+&lt;p&gt;If you are using Bootstrap, you will need to initialize the plugin with the Bootstrap API call.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col-sm-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 1
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col-sm-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 2
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col-sm-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 3
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'body'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;leftyrighty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;bootstrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// API call&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are &lt;strong&gt;three&lt;/strong&gt; main core functions that LeftyRighty supports. These can be nested and mixed and matched for greater control.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Flip the entire row&lt;/li&gt;
+  &lt;li&gt;Flip the first and last item of the row&lt;/li&gt;
+  &lt;li&gt;Flip &lt;em&gt;two&lt;/em&gt; specific items in a row&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These functions can be done by simply adding a class to the row or in the third case, an item.&lt;/p&gt;
+
+&lt;h5 id=&quot;row-reverse&quot;&gt;Row Reverse&lt;/h5&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row lr-reverse&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- columns --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;flip-first-and-last-item&quot;&gt;Flip First and Last Item&lt;/h5&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row lr-first-last&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- columns --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;flip-two-specific-items&quot;&gt;Flip Two Specific Items&lt;/h5&gt;
+&lt;p&gt;Add the .lr-spec class to two items you want to flip on click.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 1
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item lr-spec&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 2
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 3
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 4
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item lr-spec&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 5
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;lr-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Column 6
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;That’s pretty much it. There are various API options that you can specify in your initialization; things like showing a dialog box to select a hand, and specifying the website’s default intended hand.&lt;/p&gt;
+
+&lt;p&gt;Full documentation is on its way but this is pretty much it. If you’d like to contribute, please fork and submit pull requests. Any contribution is greatly appreciated and will go a long way. Comment below your thoughts and share!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Nov 2016 23:14:36 -0500</pubDate>
+        <link>http://localhost:4000/making-web-work-for-everyone-leftyrighty</link>
+        <guid isPermaLink="true">http://localhost:4000/making-web-work-for-everyone-leftyrighty</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Will We See Web Support For Apple’s TouchBar?</title>
+        <description>&lt;h2 id=&quot;briefly-on-the-new-mac&quot;&gt;Briefly on the New Mac&lt;/h2&gt;
+&lt;p&gt;On Thursday, October 27, Apple announced it’s past due update to the MacBook Pro. There are things I like and don’t like about the new MacBook, but the one thing I do like is the TouchBar. The TouchBar is a great addition to the Mac family and would be a great addition to Windows as well.&lt;/p&gt;
+
+&lt;p&gt;We’ve been mapping functionality to 40 year old technology. The TouchBar essentially replaces the function keys with digital ones that change based on application for added functionality. It’s neat, but as a web developer, I immediately thought about the web’s potential; assuming web developers can harness it’s power.&lt;/p&gt;
+
+&lt;h2 id=&quot;is-it-plausible&quot;&gt;Is it Plausible?&lt;/h2&gt;
+&lt;p&gt;The idea of harnessing Apple specific hardware isn’t too farfetched. In June, Apple announced that ApplePay would be making it’s way to the Web. ApplePay would work with the iPhone (or now the Mac’s) TouchID sensor and Safari. Maybe Apple will release an API or maybe it’ll just be supported with special conditional tags like you would write for IE support.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--[if Apple TouchBar]&amp;gt;
+    HTML for TouchBar   
+&amp;lt;![endif] --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/berning-site-macbook.jpg&quot; alt=&quot;Examples of TouchBar functionality on the Web&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Either way, access to the TouchBar would be neat but certainly not crucial. Supporting the TouchBar within its first year or so would be just for bragging rights.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-possibilities&quot;&gt;The Possibilities&lt;/h2&gt;
+&lt;p&gt;Imagine being able to code share links, the top level navigation items, or a page’s sub items. The possibilities are endless really. Other possibilities are web push notifications, an entirely different menu (I would advise against that), call to actions and more. Of course, with great power comes great responsibility. I can quickly see this being abused for banner ads, malicious links, etc…&lt;/p&gt;
+
+&lt;p&gt;With all that said, I do hope that Apple will pull an ApplePay and open up some of the Mac specific hardware up to developers. The only question would be, will it be (if at all) supported with every major browser or just Safari.&lt;/p&gt;
+
+&lt;p&gt;Please leave a comment below and share on Twitter!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 31 Oct 2016 12:04:00 -0400</pubDate>
+        <link>http://localhost:4000/will-we-see-web-support-for-touchbar</link>
+        <guid isPermaLink="true">http://localhost:4000/will-we-see-web-support-for-touchbar</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Designing in Browser vs Photoshop</title>
+        <description>&lt;p&gt;It’s been a while since my last post but I’m back at it! I’ve been busy working on jump starting my freelance web design shop, &lt;a href=&quot;http://parsecdigital.io&quot;&gt;Parsec Digital&lt;/a&gt;. You know, drafting contracts, creating business cards, and of course…designing the website. Which got me thinking. Should I design in the browser or in Photoshop?&lt;/p&gt;
+
+&lt;p&gt;I won’t be offering a TLDR because I think this is a topic worth digging in to. Traditionally, after the initial wireframes, websites are mocked up in a program like Photoshop. That’s how I’ve done it and this is how it’s still done with a lot of people. However, there has been a recent push in the past year or so to start designing in the browser. Each have their pros and cons so let’s discuss.&lt;/p&gt;
+
+&lt;h2 id=&quot;designing-in-photoshop&quot;&gt;Designing in Photoshop&lt;/h2&gt;
+
+&lt;p&gt;When I talk about “designing in photoshop” I’m also talking about designing in other desktop applications like UXPin, Sketch, and Adobe Experience Design. These tools are great but require the designer to learn a new software and it’s nuances.&lt;/p&gt;
+
+&lt;p&gt;If you’re primarily a designer, designing in Photoshop might come natural to you. The main advantage for designing in an application is the ability to focus more on the design than the code. Just be prepared to do the same task multiple times for each breakpoint.&lt;/p&gt;
+
+&lt;p&gt;If you’re a graphic designer that knows a small amount of code, designing in Photoshop may come natural to you.&lt;/p&gt;
+
+&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Greater attention to design and composition.&lt;/li&gt;
+  &lt;li&gt;Greater focus in web performance. With a fully fledged mockup, you can see where the elements will be on the webpage. Your code will be more thought out during development.&lt;/li&gt;
+  &lt;li&gt;Decreased development time.&lt;/li&gt;
+  &lt;li&gt;Mockups can easily be referenced during development.&lt;/li&gt;
+  &lt;li&gt;Shared assets. You can easily grab logos, images, and graphics from the mockup.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Extremely frustrating to do efficiently if you’re primarily a “coder”.&lt;/li&gt;
+  &lt;li&gt;Have to learn the nuance of the program(s).&lt;/li&gt;
+  &lt;li&gt;Tasks feel repetitive especially with creating separate mockups for mobile, tablet, and desktop.&lt;/li&gt;
+  &lt;li&gt;Essentially you’re doing twice the work.&lt;/li&gt;
+  &lt;li&gt;Can’t easily move from computer to computer. Especially if you’re using custom fonts.&lt;/li&gt;
+  &lt;li&gt;Large file size.&lt;/li&gt;
+  &lt;li&gt;Not interactive.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;designing-in-the-browser&quot;&gt;Designing in the Browser&lt;/h2&gt;
+
+&lt;p&gt;You’re developing your website for the browser anyway. Why not design it in the browser too? Responsive web design is the standard practice these days and has been for a while. It’s important to see how each element reacts at the various breakpoints.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You’re developing your website for the browser anyway. Why not design it in the browser too?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There are tons of frameworks out there for you to choose from. However, the two most popular ones are &lt;a href=&quot;http://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt; and &lt;a href=&quot;http://foundation.zurb.com/&quot;&gt;Foundation&lt;/a&gt;. These responsive frameworks make designing in the browser a lot easier. Plus, you can easily share your design for them to interact with. In my experience, clients are more likely to be pleased with the design if they can also interact with it and see how it will behave.&lt;/p&gt;
+
+&lt;p&gt;If you’re a designer who is efficient at coding, designing in browser may come natural to you.&lt;/p&gt;
+
+&lt;h3 id=&quot;pros-1&quot;&gt;Pros&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;See how your site will react at various breakpoints&lt;/li&gt;
+  &lt;li&gt;Don’t have to create separate files for each breakpoint&lt;/li&gt;
+  &lt;li&gt;View your design at various resolutions and pixel densities&lt;/li&gt;
+  &lt;li&gt;Easily share your design with clients and other users&lt;/li&gt;
+  &lt;li&gt;Visualization of website behavior&lt;/li&gt;
+  &lt;li&gt;Easily reuse code from design to development&lt;/li&gt;
+  &lt;li&gt;Shared assets. You can easily grab logos, images, and graphics from the design for your website.&lt;/li&gt;
+  &lt;li&gt;Easily switch from computer to computer when working on your design&lt;/li&gt;
+  &lt;li&gt;Fonts stay consistent&lt;/li&gt;
+  &lt;li&gt;Smaller file size&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cons-1&quot;&gt;Cons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Depending on your coding experience, it can be a slower to design in browser&lt;/li&gt;
+  &lt;li&gt;Development time may be slower&lt;/li&gt;
+  &lt;li&gt;More emphasis on code than overall visual design&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Designing is an intimate process. The process of getting from a blank screen to a finish product is often times unique to the designer. Everyone works best with the tools they are most comfortable with; it all depends on what your strengths are. For me personally, I tend to design in the browser. More often than not, I can create a basic webpage quicker than I can create a new layer in Photoshop. As a developer first, designing in the browser is much more efficient both in pre-production and in development. I can easily solve potential problems as they happen, share my progress, and reuse code.&lt;/p&gt;
+
+&lt;p&gt;Which do you prefer? Did I leave anything out? Leave a comment down below and tweet me @daveberning.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 25 Oct 2016 00:21:08 -0400</pubDate>
+        <link>http://localhost:4000/designing-in-browser-or-photoshop</link>
+        <guid isPermaLink="true">http://localhost:4000/designing-in-browser-or-photoshop</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to Stay Ahead of Google's Non-Intrusive Popup Update</title>
+        <description>&lt;h2 id=&quot;the-update&quot;&gt;The Update&lt;/h2&gt;
+&lt;p&gt;Google recently announced that on January 10, 2017 it will begin penalizing sites with “intrusive interstitials”. The reason being that intrusive popups are disruptive to the mobile user experience and “can be problematic on mobile devices where screens are often smaller.”&lt;/p&gt;
+
+&lt;h3 id=&quot;interstitials-with-a-negative-impact&quot;&gt;Interstitials With A Negative Impact&lt;/h3&gt;
+&lt;p&gt;Google has detailed which types of interstitials that will have a negative impact on your website.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Showing a popup that covers the main content, either immediately after the user navigates to a page from the search results, or while they are looking through the page.&lt;/li&gt;
+  &lt;li&gt;Displaying a standalone interstitial that the user has to dismiss before accessing the main content.&lt;/li&gt;
+  &lt;li&gt;Using a layout where the above-the-fold portion of the page appears similar to a standalone interstitial, but the original content has been inlined underneath the fold.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://parsecdigital.io/codepen/intrusive.png&quot; alt=&quot;Examples of intrusive popups&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;interstitials-with-no-impact&quot;&gt;Interstitials With No Impact&lt;/h3&gt;
+&lt;p&gt;If you have a popup that uses a reasonable amount of space or have popups for age verification or legal obligations, you’ll be fine. Google has detailed the positive popups below.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Interstitials that appear to be in response to a legal obligation, such as for cookie usage or for age verification.&lt;/li&gt;
+  &lt;li&gt;Login dialogs on sites where content is not publicly indexable. For example, this would include private content such as email or unindexable content that is behind a paywall.&lt;/li&gt;
+  &lt;li&gt;Banners that use a reasonable amount of screen space and are easily dismissible. For example, the app install banners provided by Safari and Chrome are examples of banners that use a reasonable amount of screen space.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://parsecdigital.io/codepen/non-intrusive.png&quot; alt=&quot;Examples of non-intrusive popups&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;This is great for users! Google usually has the user’s be interest in mind when shipping out large updates like this. This isn’t the first time too. Last year, Google released an update that encourages mobile optimization and SSL certificates.&lt;/p&gt;
+
+&lt;p&gt;Although great for the user, this is not so great if you are an online business that relies on these popups for online marketing. If you don’t want to update your popups you must ask yourself, “Do I want more online subscribers or higher SEO page rank on Google?”&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Although great for the user, this is not so great if you are an online business that relies on these popups for online marketing. If you don’t want to update your popups you must ask yourself, “Do I want more online subscribers or higher SEO page rank on Google?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It’s important to stay ahead of the SEO curve. If you don’t want to fall behind you must adopt new ways of achieving the same goal. With all that said, there are some solutions that give you the popup functionality while still being compliant with Google’s upcoming update.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-possible-solution&quot;&gt;A Possible Solution&lt;/h2&gt;
+&lt;p&gt;Below is a pen I wrote that is compliant with Google’s new update: “Banners that use a reasonable amount of screen space and are easily dismissible. For example, the app install banners provided by Safari and Chrome are examples of banners that use a reasonable amount of screen space.”&lt;/p&gt;
+
+&lt;p&gt;This solution is a small full width banner that is fixed to the bottom of the viewport. The user is able to click on the bar to expand a newsletter signup form or easily dismiss it completely. This example will even animate to try and grab the user’s attention if at all ignored.&lt;/p&gt;
+
+&lt;p data-height=&quot;482&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;JRKLLq&quot; data-default-tab=&quot;html,result&quot; data-user=&quot;daveberning&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/daveberning/pen/JRKLLq/&quot;&gt;Non-Intrusive Popup&lt;/a&gt; by Dave Berning (&lt;a href=&quot;http://codepen.io/daveberning&quot;&gt;@daveberning&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The main thing to take away is that Google’s update gives the power to the user. If the user wants to signup for a newsletter, then they can…on their terms. Online marketers and businesses need to be able to embrace this to preserve their SEO efforts and subscribers. Have another possible solution yourself? Comment below and share on social media.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Sep 2016 00:18:42 -0400</pubDate>
+        <link>http://localhost:4000/how-to-stay-ahead-of-googles-non-intrusive-popup-update</link>
+        <guid isPermaLink="true">http://localhost:4000/how-to-stay-ahead-of-googles-non-intrusive-popup-update</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

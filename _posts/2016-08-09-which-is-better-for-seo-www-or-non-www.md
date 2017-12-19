@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Which is Better for SEO, WWW or Non-WWW?"
-date:   2016-09-08 00:8:54 -0400
+title: Which is Better for SEO, WWW or Non-WWW?
+date: 2016-09-08 04:08:54 +0000
 author: Dave Berning
 seo:
-    name: Which is Better for SEO, WWW or Non-WWW?
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: seo.jpg
+  name: Which is Better for SEO, WWW or Non-WWW?
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: seo.jpg
 backgroundImage: seo.jpg
 ---
 

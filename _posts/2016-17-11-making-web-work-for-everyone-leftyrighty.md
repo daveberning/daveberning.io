@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Making the Web Work For Everyone with LeftyRighty.js"
-date:   2016-11-17 00:14:36 -0400
+title: Making the Web Work For Everyone with LeftyRighty.js
+date: 2016-11-17 04:14:36 +0000
 author: Dave Berning
 seo:
-    name: Making the Web Work For Everyone with LeftyRighty.js
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: seo.jpg
+  name: Making the Web Work For Everyone with LeftyRighty.js
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: seo.jpg
 backgroundImage: seo.jpg
 ---
 

@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Starting a New Project - Periodic Table of Elements"
-date:   2017-02-16 00:8:54 -0400
+title: Starting a New Project - Periodic Table of Elements
+date: 2017-02-16 04:08:54 +0000
 author: Dave Berning
 seo:
-    name: Starting a New Project - Periodic Table of Elements
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: carina.jpeg
+  name: Starting a New Project - Periodic Table of Elements
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: carina.jpeg
 backgroundImage: carina.jpeg
 ---
 
