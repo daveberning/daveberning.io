@@ -2,7 +2,7 @@
 title: Creating Reusable Vue Components
 layout: post
 author: Dave Berning
-date: 2017-06-24 18:38:21 -0400
+date: 2017-06-24 22:38:21 +0000
 seo:
   name: ''
   type: ''
