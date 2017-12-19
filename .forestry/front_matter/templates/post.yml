@@ -60,7 +60,7 @@ fields:
   hidden: false
   default: ''
 - type: text
-  name: body
+  name: ''
   label: Body
   config:
     required: true
