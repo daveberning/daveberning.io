@@ -1,6 +1,6 @@
 ---
 pages:
-- _posts/foo.md
+- _posts/foobar.md
 hide_body: true
 fields:
 - name: layout
