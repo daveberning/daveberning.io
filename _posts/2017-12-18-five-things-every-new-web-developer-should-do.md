@@ -2,7 +2,7 @@
 title: " Five Things Every New Web Developer Should Do"
 layout: post
 author: Dave Berning
-date: 2017-12-18 00:00:00 +0000
+date: 2017-08-19 18:36:37 -0400
 seo:
   name: ''
   type: ''
@@ -17,7 +17,7 @@ Lately, I’ve been getting asked the same question by a lot of web developers t
 
 “What?! But I barely know how to code!” Yeah, I know. This may seem a bit abnormal if you’re just starting out but it’s true, all of it; you’re a web developer 🎉! One of the most productive ways to get the development ball rolling is networking and marketing yourself as web developer.
 
-![](https://cdn-images-1.medium.com/max/1600/1\*vWduEGN1phPiyZxFS_z9jg.jpeg)
+![](/han-solo.jpeg)
 
 Spoilers…Han Solo dies
 
@@ -37,7 +37,7 @@ Every single job I’ve had in the industry has been the result of networking.
 
 I recognize the cliché in this cliché post but again, it’s true. Start off with the basics — **HTML and CSS**. Every website on the World Wide Web contains some degree of HTML and CSS. These are the two most important building blocks of any website. There’s also JavaScript of course but we’ll get to that later.
 
-![](https://cdn-images-1.medium.com/max/1600/1\*HHzwtxH4HYE57TmTAA4CPA.png)
+![](/web-stack.png)
 
 Notice “JavaScript” and not “jQuery”…we’ll get to that later
 
