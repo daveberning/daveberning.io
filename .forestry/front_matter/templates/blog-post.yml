@@ -62,4 +62,4 @@ fields:
   label: Backgroundimage
   type: file
   hidden: false
-  default: ''
+  default: "/_site/images/codepen-bkg.png"
