@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Which is Better for SEO, WWW or Non-WWW?
-date: 2016-09-08 00:08:54 -0400
+date: 2016-09-08 04:08:54 +0000
 author: Dave Berning
 seo:
   name: Which is Better for SEO, WWW or Non-WWW?

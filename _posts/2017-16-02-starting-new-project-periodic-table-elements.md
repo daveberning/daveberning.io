@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Starting a New Project - Periodic Table of Elements
-date: 2017-02-16 00:08:54 -0400
+date: 2017-02-16 04:08:54 +0000
 author: Dave Berning
 seo:
   name: Starting a New Project - Periodic Table of Elements
