@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "How to Stay Ahead of Google's Non-Intrusive Popup Update"
-date:   2016-09-18 00:18:42 -0400
+title: How to Stay Ahead of Google's Non-Intrusive Popup Update
+date: 2016-09-18 04:18:42 +0000
 author: Dave Berning
 seo:
-    name: How to Stay Ahead of Google's Non-Intrusive Popup Update
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: mobile-surfing.jpg
+  name: How to Stay Ahead of Google's Non-Intrusive Popup Update
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: mobile-surfing.jpg
 backgroundImage: mobile-surfing.jpg
 ---
 ## The Update

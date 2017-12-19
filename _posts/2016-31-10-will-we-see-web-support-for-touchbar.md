@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Will We See Web Support For Apple’s TouchBar?"
-date:   2016-10-31 12:04:00 -0400
+title: Will We See Web Support For Apple’s TouchBar?
+date: 2016-10-31 16:04:00 +0000
 author: Dave Berning
 seo:
-    name: Will We See Web Support For Apple’s TouchBar?
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: macbook-blog-cover.jpg
-backgroundImage:  macbook-blog-cover.jpg
+  name: Will We See Web Support For Apple’s TouchBar?
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: macbook-blog-cover.jpg
+backgroundImage: macbook-blog-cover.jpg
 ---
 ## Briefly on the New Mac
 On Thursday, October 27, Apple announced it’s past due update to the MacBook Pro. There are things I like and don’t like about the new MacBook, but the one thing I do like is the TouchBar. The TouchBar is a great addition to the Mac family and would be a great addition to Windows as well.

@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Welcome to My Web Development Blog"
-date:   2016-08-29 00:12:05 -0400
+title: Welcome to My Web Development Blog
+date: 2016-08-29 04:12:05 +0000
 author: Dave Berning
 seo:
-    name: Welcome to My Web Development Blog
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: macbook-pro.jpg
+  name: Welcome to My Web Development Blog
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: macbook-pro.jpg
 backgroundImage: macbook-pro.jpg
 ---
 

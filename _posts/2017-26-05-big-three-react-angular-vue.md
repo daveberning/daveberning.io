@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "My Take on the Big Three: React, Angular, and Vue"
-date:   2017-05-27 00:14:54 -0400
+title: 'My Take on the Big Three: React, Angular, and Vue'
+date: 2017-05-27 04:14:54 +0000
 author: Dave Berning
 seo:
-    name: My Take on the Big Three
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: seo.jpg
+  name: My Take on the Big Three
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: seo.jpg
 backgroundImage: seo.jpg
 ---
 

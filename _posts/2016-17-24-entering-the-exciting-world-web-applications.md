@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Entering The Exciting World of Web Applications"
-date:   2016-12-24 00:21:08 -0400
+title: Entering The Exciting World of Web Applications
+date: 2016-12-24 04:21:08 +0000
 author: Dave Berning
 seo:
-    name: Entering The Exciting World of Web Applications
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: application.jpg
-backgroundImage:  application.jpg
+  name: Entering The Exciting World of Web Applications
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: application.jpg
+backgroundImage: application.jpg
 ---
 
 I started my career like many, creating simple static websites. I remember how exciting it was when I made my first mobile friendly website; it felt like I developed an app. I then moved to eCommerce and I felt like I actually developed a site that _does_ something. I'm now working on web applications that takes data from the back-end that users can interact with on the front-end.

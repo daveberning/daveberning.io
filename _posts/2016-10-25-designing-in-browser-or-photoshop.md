@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Designing in Browser vs Photoshop"
-date:   2016-10-25 00:21:08 -0400
+title: Designing in Browser vs Photoshop
+date: 2016-10-25 04:21:08 +0000
 author: Dave Berning
 seo:
-    name: Designing in Browser vs Photoshop
-    type: BlogPosting
-    author: Dave Berning
-    publisher: Dave Berning
-    image: design-browser.jpg
-backgroundImage:  design-browser.jpg
+  name: Designing in Browser vs Photoshop
+  type: BlogPosting
+  author: Dave Berning
+  publisher: Dave Berning
+  image: design-browser.jpg
+backgroundImage: design-browser.jpg
 ---
 It’s been a while since my last post but I’m back at it! I’ve been busy working on jump starting my freelance web design shop, [Parsec Digital](http://parsecdigital.io). You know, drafting contracts, creating business cards, and of course...designing the website. Which got me thinking. Should I design in the browser or in Photoshop?
 
