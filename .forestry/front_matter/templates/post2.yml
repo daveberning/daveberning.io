@@ -1,7 +1,5 @@
 ---
-pages:
-- _posts/foobar.md
-hide_body: true
+hide_body: false
 fields:
 - name: layout
   label: Layout
@@ -22,7 +20,7 @@ fields:
   label: Author
   type: text
   hidden: false
-  default: ''
+  default: Dave Berning
 - name: seo
   label: Seo
   type: field_group
@@ -59,8 +57,3 @@ fields:
   type: file
   hidden: false
   default: ''
-- type: text
-  name: content
-  label: Body
-  config:
-    required: true
