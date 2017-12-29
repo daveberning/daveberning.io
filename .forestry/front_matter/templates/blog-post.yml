@@ -1,5 +1,6 @@
 ---
 pages:
+- _posts/creating-alias-for-package-imports-in-react.md
 - _posts/connect-a-cms-to-your-jekyll-site.md
 - _posts/2017-12-18-creating-reusable-vue-components.md
 - _posts/2017-12-18-five-things-every-new-web-developer-should-do.md
