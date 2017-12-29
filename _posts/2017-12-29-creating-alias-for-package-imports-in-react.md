@@ -78,7 +78,7 @@ Your alias object should look something like this...
       'react-native': 'react-native-web'
     },
 
-I also like to add alias' to some commonly used node_modules as well. For my projects, I usually create an alias for [Bulma](), the Flexbox CSS framework.
+I also like to add alias' to some commonly used node_modules as well. For my projects, I usually create an alias for [Bulma](https://bulma.io/), the Flexbox CSS framework.
 
     'bulma': path.resolve('node_modules/bulma/css/bulma.css')
 
@@ -86,4 +86,4 @@ So, in my components, I can just import it like any other package, stylesheet, i
 
     import Bulma from 'bulma';
 
-If this helped you at all, please share and [follow me on Twitter]()!
+If this helped you at all, please share and [follow me on Twitter](https://twitter.com/daveberning)!
