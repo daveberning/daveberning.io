@@ -11,7 +11,7 @@ seo:
   publisher: ''
   image: ''
 ---
-If you're working with the Vue CLI and you're trying to import global JS/CSS libraries you're not alone. Some [solutions](https://github.com/vuejs/vue-loader/issues/144) will tell you to just add the package with a require statement or an @import statement. That's fine but there is a time and a place to use the @import statement in [Vue](https://vuejs.org/) and importing a global CSS library isn't one of them. Instead, let's use an ES6 'import' statement. 
+If you're working with the Vue CLI and you're trying to import global JS/CSS libraries you're not alone. Some [solutions](https://github.com/vuejs/vue-loader/issues/144) will tell you to just add the package with a require statement or an @import statement. That's fine but there is a time and a place to use the @import statement in [Vue](https://vuejs.org/) and importing a global CSS library isn't one of them. Instead, let's use an ES6 'import' statement.
 
 > ...\[T\]here is a time and a place to use the @import statement in Vue and importing a global CSS library isn't one of them.
 
@@ -48,6 +48,6 @@ Now that your alias is created, let's import it into our _src/main.js_ file. Imp
 
 That's it! Really.
 
-Granted, you could just add the relative path Bulma but this is much cleaner to read. Plus, you now how to create alias' in Webpack for Vue!
+Granted, you could just add the relative path to Bulma but this is much cleaner and easier to read. Plus, you now know how to create alias' in Webpack for Vue!
 
 Thanks for reading. If this helped you at all, please share and [follow me on Twitter](https://twitter.com/daveberning)!
