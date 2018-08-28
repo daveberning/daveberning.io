@@ -191,6 +191,19 @@ a.color-white:hover {
     padding: 5rem 0;
 }
 
+.cta-dark {
+    background: #424242 !important;
+}
+
+.btn-no-underline {
+    text-decoration: none !important;
+}
+
+.btn-default:hover {
+    color: $white;
+    text-decoration: underline !important;
+}
+
 .section:nth-child(even) {
     background: $white;
 }
