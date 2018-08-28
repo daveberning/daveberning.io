@@ -1,13 +1,7 @@
 ---
-pages:
-- _posts/2018-01-06-importing-global-libraries-into-vue-cli-the-clean-way.md
-- _posts/2017-12-29-creating-alias-for-package-imports-in-react.md
-- _posts/connect-a-cms-to-your-jekyll-site.md
-- _posts/2017-12-18-creating-reusable-vue-components.md
-- _posts/2017-12-18-five-things-every-new-web-developer-should-do.md
-- _posts/2017-12-18-setting-up-and-getting-rest-service-data-with-firebase-and-axios.md
-- _posts/2017-12-18-codepen-cincinnati-rhinegeist.md
+label: blog-post
 hide_body: false
+is_partial: false
 fields:
 - name: layout
   label: Layout
@@ -65,3 +59,10 @@ fields:
   type: file
   hidden: false
   default: "/_site/images/codepen-bkg.png"
+pages:
+- _posts/2017-12-18-codepen-cincinnati-rhinegeist.md
+- _posts/2017-12-18-creating-reusable-vue-components.md
+- _posts/2017-12-18-five-things-every-new-web-developer-should-do.md
+- _posts/2018-01-06-importing-global-libraries-into-vue-cli-the-clean-way.md
+- _posts/2017-12-29-creating-alias-for-package-imports-in-react.md
+- _posts/2017-12-18-setting-up-and-getting-rest-service-data-with-firebase-and-axios.md
