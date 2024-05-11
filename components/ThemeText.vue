@@ -1,25 +1,33 @@
 <template>
-  <component :is="tag" :style="themeDarkTextColor">
+  <component :is="tag" :style="styles">
     <slot />
   </component>
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
-  import { getThemeColors } from '~/data/theme-colors'
+import { defineComponent } from 'vue'
+import { mapStores } from 'pinia'
+import { useThemeStore } from '~/stores/theme'
 
-  export default Vue.extend({
-    props: {
-      tag: {
-        type: String as () => string,
-        required: false,
-        default: 'div'
-      }
-    },
-    computed: {
-      themeDarkTextColor(): string {
-        return `color: ${getThemeColors(this.$store.state.theme).textColorDark}`
+export default defineComponent({
+  name: 'ThemeText',
+  props: {
+    tag: {
+      type: String,
+      default: 'p',
+    }
+  },
+  computed: {
+    ...mapStores(useThemeStore),
+    styles(): Record<string, string> {
+      return {
+        color: this.themeStore.theme?.text || '',
       }
     }
-  })
+  }
+})
 </script>
+
+<style scoped>
+
+</style>

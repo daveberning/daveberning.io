@@ -1,12 +1,8 @@
-export interface Theme {
-  background: string,
-  backgroundDarker: string, // darken 7% of background color
-  backgroundLighter: string, // Lighten 6% of background color
-  textColorDark: string
-}
+export type ThemeName = 'teal'
 
-export interface ThemeSwatch {
-  name: string,
-  color: string
-  image?: string
+export interface Theme {
+  name: ThemeName,
+  background: string,
+  dark: string,
+  text: string,
 }

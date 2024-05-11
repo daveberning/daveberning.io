@@ -1,255 +1,102 @@
 <template>
-  <div class="component">
-    <div class="wrapper">
-      <div class="content">
-        <picture>
-          <source
-            ref="image"
-            :srcset="`images/portraits/dave-${$store.state.theme}.png`"
-            media="(min-width: 1335px)">
-          <img alt="PP" src="images/dave-mobile.jpg">
-        </picture>
-        <div>
-          <theme-text tag="h1">{{ about.firstName }} {{ about.lastName }}</theme-text>
-          <theme-text tag="h2">{{ about.role }} from {{ about.city }}, {{ about.state }}</theme-text>
-          <theme-text class="left" tag="p">
-            Photography by
-            <a :style="`${$store.getters.darkTextColor};`" href="http://jmanstudios.com" target="_blank">Jason Bayer</a>
-          </theme-text>
-          <theme-text class="right" tag="p">
-            Copyright &copy {{ new Date().getFullYear() }}. All Rights Reserved.
-          </theme-text>
-          <navigation :navigation="navigation" />
-          <social-media-icons :social-media="socialMedia" />
-        </div>
-      </div>
+  <div id="wrapper">
+    <img :src="themeStore.portrait" :alt="portraitAltText" />
+    <div id="content">
+      <theme-text tag="h1">Dave Berning</theme-text>
+      <theme-text>Front-End Software Engineer from Cincinnati, OH</theme-text>
+      <nav>
+        <ul>
+          <li><router-link to="/about">About <span>Ctrl + A</span></router-link></li>
+          <li><router-link to="/about">Work <span>Ctrl + W</span></router-link></li>
+          <li><router-link to="/about">Contact <span>Ctrl + T</span></router-link></li>
+        </ul>
+      </nav>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { About, NavigationItem, SocialMedia, VueInstance } from '@/types'
-import { about } from '@/data/about'
-import { socialMedia } from '@/data/social-media'
-import { navigation } from '@/data/navigation'
-import Navigation from '@/components/Navigation.vue'
-import SocialMediaIcons from '~/components/SocialMediaIcons.vue'
+import { defineComponent } from 'vue'
+import { useThemeStore } from '~/stores/theme'
+import { mapStores } from 'pinia'
 
-export default Vue.extend({
-  name: 'Home' as string,
-  components: {
-    Navigation,
-    SocialMediaIcons
-  },
-  props: {
-    theme: {
-      required: false,
-      type: String
-    }
-  },
-  data() {
-    return {
-      navigation: navigation as NavigationItem[],
-      about: about as About,
-      socialMedia: socialMedia as SocialMedia[],
-      imgs: [] as any
-    }
-  },
-  mounted(): void {
-    const self: VueInstance = this
-    window.addEventListener('keyup', (e: KeyboardEvent) => {
-      if (e.keyCode === 65 && e.ctrlKey) {
-        self.$router.push('/about')
-      } // Shift + A
-      if (e.keyCode === 87 && e.ctrlKey) {
-        self.$router.push('/work')
-      } // Shift + W
-      if (e.keyCode === 71 && e.ctrlKey) {
-        self.$router.push('/writing')
-      } // Shift + G
-      if (e.keyCode === 67 && e.ctrlKey) {
-        self.$router.push('/contact')
-      } // Shift + C
-    })
-  },
-  head() {
-    return {
-      title: 'Dave Berning | Software Engineer | Cincinnati, OH',
-      description:
-        `Dave Berning is a software engineer from Cincinnati, Ohio. Since 2013, Dave has worked with several national and local companies through a range of projects. Dave is also a mentor and author, writing for Digital Ocean and Bleeding Edge Press.`
+export default defineComponent({
+  name: 'Home',
+  computed: {
+    ...mapStores(useThemeStore),
+    portraitAltText(): string {
+      return `Software engineer, Dave Berning in a ${this.themeStore.currentTheme} plaid shirt and grey shorts`
     }
   }
 })
 </script>
 
-<style lang="scss" scoped>
-.component {
-  position: fixed;
-  top: 0 !important;
-  transform: translateY(0) !important;
+<style lang="postcss" scoped>
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#content {
+  margin-right: 12rem;
+  text-align: center;
 }
 
 h1 {
-  font-size: 3rem;
-  line-height: 4rem;
-  margin: 1rem 0 0 0;
-
-  @media screen and (min-width: 812px) {
-    margin: 0;
-  }
-
-  @media screen and (min-width: 1335px) {
-    font-size: 7rem;
-    line-height: 11rem;
-    margin-bottom: 0;
-  }
-}
-
-h2 {
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-
-  @media screen and (min-width: 1335px) {
-    font-size: 2rem;
-    line-height: 2rem;
-  }
+  font-size: 7rem;
+  margin: 0;
 }
 
 p {
-  font-size: .75rem;
-  position: absolute;
-  bottom: 1rem;
-  color: #cccccc;
+  font-weight: 300;
+  font-size: 1.75rem;
+  margin: 1rem 0 0 0;
 }
 
-p.left {
-  left: 1rem;
-  display: none;
-
-  @media screen and (min-width: 1400px) {
-    display: block;
-  }
+img {
+  position: fixed;
+  width: 38rem;
+  height: auto;
+  left: 10rem;
+  top: 1rem;
 }
 
-p.right {
-  right: 0;
-  left: 0;
-
-  @media screen and (min-width: 1400px) {
-    right: 1rem;
-    left: unset;
-  }
-}
-
-ul li {
-  display: inline-block;
-  margin: 2.5rem 1rem 0 0;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  a {
-    font-size: 1.5rem;
-  }
-
-  @media screen and (min-width: 812px) {
-    margin: 1rem 1rem 0 0;
-  }
-  @media screen and (min-width: 967px) {
-    margin: 2.5rem 1rem 0 0;
-  }
-}
-
-.wrapper {
-  position: relative;
-  z-index: -1;
+ul {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  max-width: 2000px;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 2rem;
+  justify-content: center;
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2rem;
+}
 
-  @media screen and (min-width: 1760px) {
-    padding: 0 16rem;
-  }
+li {
+  padding: 1rem 0;
+}
 
-  @media screen and (min-width: 2000px) {
-    max-width: 92%;
-  }
+li a {
+  position: relative;
+  text-decoration: none;
+  color: v-bind(themeStore.theme.text);
+  border: 2px solid v-bind(themeStore.theme.text);
+  padding: .75rem 2rem 1.75rem 2rem;
+  border-radius: 1000px;
+  font-size: 1.25rem;
+  background: rgba(255, 255, 255, .5)
+}
 
-  .content {
-    width: 100%;
-    margin-right: 0;
-
-    @media screen and (min-width: 1335px) {
-      width: auto;
-      margin-right: 1rem;
-    }
-
-    @media screen and (min-width: 1400px) {
-      margin-right: 2rem;
-    }
-
-    @media screen and (min-width: 1592px) {
-      margin-right: 10rem;
-    }
-
-    @media screen and (min-width: 1760px) {
-      margin-right: 0;
-    }
-
-    @media screen and (min-width: 2000px) {
-      max-width: 59%;
-    }
-  }
-
-  img {
-    z-index: -1;
-    width: 150px;
-    border: 5px solid #3e9e91;
-    border-radius: 100%;
-
-    @media screen and (min-width: 812px) {
-      width: 100px;
-    }
-
-    @media screen and (min-width: 1024px) {
-      width: 225px;
-    }
-
-    @media screen and (min-width: 1336px) {
-      font-size: 8rem;
-      position: absolute;
-      top: 5px;
-      left: 3rem;
-      display: block;
-      width: 100%;
-      max-width: 600px;
-      border: none;
-      border-radius: unset;
-      -webkit-transform-style: preserve-3d;
-    }
-
-    @media screen and (min-width: 1400px) {
-      left: 2rem;
-    }
-
-    @media screen and (min-width: 1592px) {
-      left: 9rem;
-    }
-
-    @media screen and (min-width: 1760px) {
-      left: 14rem;
-      max-width: 660px;
-    }
-
-    @media screen and (min-width: 2000px) {
-      max-width: 36%;
-    }
-  }
+li a span {
+  font-size: .7rem;
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  margin-top: .25rem;
+  font-style: italic;
+  font-weight: 300;
 }
 </style>

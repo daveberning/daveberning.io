@@ -1,35 +1,19 @@
 {
-  "name": "daveberning.io",
-  "version": "1.0.0",
-  "description": "Dave Berning is a web developer and designer from Cincinnati, OH. He has been building interactive web applications and websites since 2012. He is also the author of \"Vue.js: Understanding It's Tools and Ecosystem\" and a contributing writer at Alligator.io",
-  "author": "Dave Berning",
+  "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "node -r ts-node/register node_modules/nuxt/bin/nuxt dev -c nuxt.config.ts",
-    "build": "node -r ts-node/register node_modules/nuxt/bin/nuxt build -c nuxt.config.ts",
-    "generate": "node -r ts-node/register node_modules/nuxt/bin/nuxt generate -c nuxt.config.ts",
-    "start": "nuxt start",
-    "test": "jest"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@daveberning/griddle": "^0.3.0",
-    "@vue/composition-api": "^0.3.4",
-    "axios": "^0.19.0",
-    "bowser": "^2.8.1",
-    "number-to-words": "^1.2.4",
-    "nuxt": "^2.0.0",
-    "sass-loader": "^8.0.2",
-    "ts-loader": "^6.2.2"
-  },
-  "devDependencies": {
-    "@nuxt/typescript-build": "^0.1.11",
-    "@nuxtjs/style-resources": "^1.0.0",
-    "@vue/test-utils": "^1.0.0-beta.27",
-    "babel-jest": "^24.1.0",
-    "jest": "^24.1.0",
-    "node-sass": "npm:sass@^1.58.3",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.8.3",
-    "vue-jest": "^4.0.0-0"
+    "@pinia/nuxt": "^0.5.1",
+    "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
   }
 }
