@@ -1,25 +1,18 @@
 <script setup lang="ts">
 import { computed, useAttrs } from "vue";
 import { mergeClass } from "~/utils/merge-class";
-import { type TextProps, textVariants } from ".";
+import { headerVariants, type HeaderProps } from ".";
 
-const props = withDefaults(defineProps<TextProps>(), {
-  as: "body",
-  color: "primary",
-  tag: 'p'
+const props = withDefaults(defineProps<HeaderProps>(), {
+  tag: "header",
+  theme: "primary",
 });
 
 const attrs = useAttrs();
 
-const resolvedTag = computed(() => {
-  if (props.tag) return props.tag;
-  if (props.as === "body") return "p";
-  return props.as;
-});
-
 const mergedClass = computed(() =>
   mergeClass(
-    textVariants({ as: props.as, color: props.color }),
+    headerVariants({ theme: props.theme }),
     attrs.class as Parameters<typeof mergeClass>[number]
   )
 );
@@ -32,7 +25,7 @@ const forwardedAttrs = computed(() =>
 </script>
 
 <template>
-  <component :is="resolvedTag" v-bind="forwardedAttrs" :class="mergedClass">
+  <component :is="props.tag" v-bind="forwardedAttrs" :class="mergedClass">
     <slot />
   </component>
 </template>

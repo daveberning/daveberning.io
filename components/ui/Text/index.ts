@@ -3,16 +3,17 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 /* Variant
 ----------------------------------------------------------------------------*/
-export const textVariants = cva("tracking-tight leading-tight text-pretty", {
+export const textVariants = cva("tracking-normal leading-tight text-pretty", {
   variants: {
     as: {
-      h1: "text-4xl font-bold sm:text-5xl md:text-6xl",
+      h1: "text-4xl font-bold",
       h2: "text-3xl font-semibold sm:text-4xl",
       h3: "text-2xl font-semibold sm:text-3xl",
       h4: "text-xl font-semibold",
       h5: "text-lg font-medium",
-      h6: "text-base font-medium uppercase tracking-wide",
-      body: "text-base font-normal leading-relaxed",
+      h6: "text-base font-100 uppercase tracking-wide",
+      body: "text-base font-extralight leading-relaxed",
+      'body-lg': "text-3xl font-extralight leading-relaxed",
     },
     color: {
       primary: "text-primary-black",
