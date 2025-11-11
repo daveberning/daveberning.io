@@ -1,17 +1,8 @@
 import Text from './Text.vue'
+import { cva, type VariantProps } from 'class-variance-authority'
 
-/* Types
--------------------------------------------------------------------------------- */
-export type TextVariants = VariantProps<typeof textVariants>;
-
-export interface TextProps {
-  as?: TextVariants["as"];
-  tag?: keyof HTMLElementTagNameMap;
-  color?: TextVariants["color"];
-};
-
-/* Variants
--------------------------------------------------------------------------------- */
+/* Variant
+----------------------------------------------------------------------------*/
 export const textVariants = cva("tracking-tight leading-tight text-pretty", {
   variants: {
     as: {
@@ -24,19 +15,32 @@ export const textVariants = cva("tracking-tight leading-tight text-pretty", {
       body: "text-base font-normal leading-relaxed",
     },
     color: {
-      default: "text-slate-100",
-      muted: "text-slate-400",
-      primary: "text-cyan-300",
-      accent: "text-emerald-300",
-      danger: "text-rose-300",
+      primary: "text-primary-black",
+      green: "text-green-black",
+      blue: "text-blue-black",
+      purple: "text-purple-black",
+      red: "text-red-black",
+      white: "text-white",
     },
   },
   defaultVariants: {
     as: "body",
-    color: "default",
+    color: "primary",
   },
 });
 
+/* Types
+----------------------------------------------------------------------------*/
+export type TextVariants = VariantProps<typeof textVariants>;
+
+export interface TextProps {
+  as?: TextVariants["as"];
+  tag?: keyof HTMLElementTagNameMap;
+  color?: TextVariants["color"];
+}
+
+/* Components
+----------------------------------------------------------------------------*/
 export {
   Text as default
 }

@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+@theme {
+  /* Colors
+  -------------------------------------------------- */
+  --color-primary: #3D9E91;
+  --color-primary-dark: #358479;
+  --color-primary-black: #334241;
+  --color-green: #3F894E;
+  --color-green-dark: #2C753A;
+  --color-green-black: #30413C;
+  --color-blue: #2E5186;
+  --color-blue-dark: #1A3D73;
+  --color-blue-black: #191B29;
+  --color-purple: #8D6299;
+  --color-purple-dark: #794E85;
+  --color-purple-black: #2A1F2B;
+  --color-red: #A83D44;
+  --color-red-dark: #992D35;
+  --color-red-black: #423332;
+
+  /* Text Size
+  -------------------------------------------------- */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 4rem;
+  --text-5xl: 5rem;
+  --text-6xl: 7rem;
+}

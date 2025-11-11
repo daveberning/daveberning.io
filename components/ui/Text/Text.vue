@@ -5,11 +5,16 @@ import { type TextProps, textVariants } from ".";
 
 const props = withDefaults(defineProps<TextProps>(), {
   as: "body",
-  color: "default",
-  tag: 'p'
+  color: "primary",
 });
 
 const attrs = useAttrs();
+
+const resolvedTag = computed(() => {
+  if (props.tag) return props.tag;
+  if (props.as === "body") return "p";
+  return props.as;
+});
 
 const mergedClass = computed(() =>
   mergeClass(
@@ -17,10 +22,16 @@ const mergedClass = computed(() =>
     attrs.class as Parameters<typeof mergeClass>[number]
   )
 );
+
+const forwardedAttrs = computed(() =>
+  Object.fromEntries(
+    Object.entries(attrs).filter(([key]) => key !== "class")
+  )
+);
 </script>
 
 <template>
-  <component :is="tag" :class="mergedClass">
+  <component :is="resolvedTag" v-bind="forwardedAttrs" :class="mergedClass">
     <slot />
   </component>
 </template>

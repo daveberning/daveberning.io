@@ -13,6 +13,7 @@ Tailwind v4 is loaded via a single `@import "tailwindcss"` inside `assets/css/ma
 ## UI Building Blocks
 
 - `components/ui/Text.vue` – composable typography component powered by [`class-variance-authority`](https://github.com/joe-bell/cva).
+- `tokens/design-tokens.ts` – central place to declare color tokens (primary, green, blue, purple, red) for the design system.
 
 Example usage:
 
