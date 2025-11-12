@@ -7,7 +7,7 @@
     <nav class="mt-4">
       <ul class="inline-flex gap-2">
         <li><Link to="/about" type="button">About</Link></li>
-        <li><Link to="/work" type="button">Work</Link></li>
+        <li><Link to="/experience" type="button">Work</Link></li>
         <li><Link to="/writing" type="button">Writing</Link></li>
         <li><Link to="/contact" type="button">Contact</Link></li>
       </ul>

@@ -5,7 +5,7 @@ import type { RouteLocationRaw } from 'vue-router'
 /* Variants
 ----------------------------------------------------------------------------*/
 export const linkVariants = cva(
-  "font-medium transition-colors transition-opacity duration-200 ease-in-out underline-offset-4 opacity-80 hover:opacity-100",
+  "font-medium transition-colors transition-opacity duration-200 ease-in-out underline-offset-4",
   {
     variants: {
       color: {
