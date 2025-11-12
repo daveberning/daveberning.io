@@ -31,12 +31,10 @@ export const headerNavigationItemVariants = cva(
     variants: {
       theme: {
         primary: "bg-primary text-white hover:bg-primary-black",
-        green: "bg-green-dark hover:bg-green",
-        blue: "bg-blue-dark hover:bg-blue",
-        purple: "bg-purple-dark hover:bg-purple",
-        red: "bg-red-dark hover:bg-red",
-        dark: "bg-slate-900 hover:bg-slate-800",
-        light: "bg-slate-200 text-slate-900 hover:bg-white",
+        green: "bg-green hover:bg-green-black",
+        blue: "bg-blue hover:bg-blue-black",
+        purple: "bg-purple hover:bg-purple-black",
+        red: "bg-red hover:bg-red-black",
       },
     },
     defaultVariants: {

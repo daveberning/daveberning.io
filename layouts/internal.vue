@@ -2,16 +2,19 @@
 import Text from '~/components/ui/Text'
 import Header, { HeaderNavigation } from '~/components/ui/Header'
 import Link from '~/components/ui/Link'
+import ThemePicker from '~/components/ThemePicker'
+import { useThemeStore } from '~/stores/theme'
 
 const year = new Date().getFullYear()
+const themeStore = useThemeStore()
 </script>
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <Header class="flex justify-between px-6 py-4">
+    <Header class="flex justify-between px-6 py-4" :theme="themeStore.active">
       <Text color="white" class="font-black uppercase tracking-widest">Dave Berning</Text>
       <div class="flex items-center gap-4">
-        <HeaderNavigation></HeaderNavigation>
+        <HeaderNavigation />
         <Link to="/contact" color="cta" type="button">Contact</Link>
       </div>
     </Header>
@@ -21,5 +24,6 @@ const year = new Date().getFullYear()
     <footer class="text-center p-4">
       <Text>&copy; {{ year }}. All Rights Reserved. <Link to="/site-info">Technical information.</Link></Text>
     </footer>
+    <ThemePicker />
   </div>
 </template>

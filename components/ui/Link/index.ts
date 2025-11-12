@@ -31,23 +31,28 @@ export const linkVariants = cva(
     compoundVariants: [
       {
         type: 'button',
+        color: 'primary',
+        class: "bg-primary text-white! hover:bg-primary-dark"
+      },
+      {
+        type: 'button',
         color: 'green',
-        class: "bg-green text-white hover:bg-green-dark"
+        class: "bg-green text-white! hover:bg-green-dark"
       },
       {
         type: 'button',
         color: 'blue',
-        class: "bg-blue text-white hover:bg-blue-dark"
+        class: "bg-blue text-white! hover:bg-blue-dark"
       },
       {
         type: 'button',
         color: 'purple',
-        class: "bg-purple text-white hover:bg-purple-dark"
+        class: "bg-purple text-white! hover:bg-purple-dark"
       },
       {
         type: 'button',
         color: 'red',
-        class: "bg-red text-white hover:bg-red-dark"
+        class: "bg-red text-white! hover:bg-red-dark"
       },
       {
         type: 'button',

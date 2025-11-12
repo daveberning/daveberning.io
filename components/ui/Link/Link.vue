@@ -2,13 +2,14 @@
 import { computed, useAttrs } from "vue";
 import { mergeClass } from "~/utils/merge-class";
 import { linkVariants, type LinkProps } from ".";
+import { useThemeStore } from "~/stores/theme";
 
 const props = withDefaults(defineProps<LinkProps>(), {
-  color: "primary",
   type: 'normal'
 });
 
 const attrs = useAttrs();
+const themeStore = useThemeStore();
 
 const isRouteObject = computed(
   () => typeof props.to === "object" && props.to !== null
@@ -37,7 +38,7 @@ const useNuxtLink = computed(
 
 const mergedClass = computed(() =>
   mergeClass(
-    linkVariants({ color: props.color, type: props.type }),
+    linkVariants({ color: props.color ?? themeStore.active, type: props.type }),
     attrs.class as Parameters<typeof mergeClass>[number]
   )
 );

@@ -3,7 +3,7 @@
     <Text as="h1" tag="h1">Dave Berning</Text>
     <Text as="body-lg" tag="h2">Software Engineer from Cincinnati, OH</Text>
     <Text as="body">I specialize in building composable and extensive applications and component libraries using Vue, TypeScript, Tailwind, and more. I teach web development as an Adjunct at the University of Cincinnati.</Text>
-    <img :src="davePortrait" alt="Portrait of Dave Berning" class="fixed right-55 top-[20px] max-w-[600px]"/>
+    <Portrait />
     <nav class="mt-4">
       <ul class="inline-flex gap-2">
         <li><Link to="/about" type="button">About</Link></li>
@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import Text from '~/components/ui/Text'
 import Link from '~/components/ui/Link'
-import davePortrait from '~/assets/images/portraits/dave-default.png'
+import Portrait from '~/components/Portrait.vue'
 
 definePageMeta({
   layout: 'default',

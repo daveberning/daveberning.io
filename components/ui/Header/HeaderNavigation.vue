@@ -13,7 +13,8 @@ const props = withDefaults(defineProps<HeaderNavigationProps>(), {
   theme: "primary",
 });
 
-const router = useRouter();
+const router = useRouter()
+const themeStore = useThemeStore()
 
 const navigationItems = computed(() => {
   return router
@@ -46,11 +47,8 @@ const navigationItems = computed(() => {
   <nav v-if="navigationItems.length">
     <ul class="flex flex-wrap items-center gap-2">
       <li v-for="item in navigationItems" :key="item.label + item.to">
-        <Link
-          :to="item.to"
-          color="white"
-          :class="mergeClass(
-            headerNavigationItemVariants({ theme: item.theme }),
+        <Link :to="item.to" color="white" :class="mergeClass(
+            headerNavigationItemVariants({ theme: themeStore.active }),
             linkVariants({ color: 'white', type: 'bare' }),
           )"
         >
