@@ -18,9 +18,13 @@ const resolvedTag = computed(() => {
   return props.as;
 });
 
+const resolvedColor = computed(
+  () => props.color ?? (themeStore.mode === 'dark' ? 'white' : themeStore.active),
+)
+
 const mergedClass = computed(() =>
   mergeClass(
-    textVariants({ as: props.as, color: props.color ?? themeStore.active }),
+    textVariants({ as: props.as, color: resolvedColor.value }),
     attrs.class as Parameters<typeof mergeClass>[number]
   )
 );

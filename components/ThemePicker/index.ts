@@ -1,6 +1,6 @@
 import ThemePicker from './ThemePicker.vue'
 import { cva, type VariantProps } from 'class-variance-authority'
-import type { ThemeVariant } from '~/stores/theme'
+import type { ThemeMode, ThemeVariant } from '~/stores/theme'
 
 const themeVariantClasses = {
   primary: 'bg-primary border-primary-dark',
@@ -43,10 +43,33 @@ export const themePickerSwatchVariants = cva(
   },
 )
 
+const modeToggleVariantClasses = {
+  light: 'bg-white text-slate-900 border-white/80',
+  dark: 'bg-slate-900 text-white border-white/60',
+} satisfies Record<ThemeMode, string>
+
+export const themePickerModeToggleVariants = cva(
+  'flex h-8 w-8 items-center justify-center rounded-full border-2 text-xs transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white',
+  {
+    variants: {
+      mode: modeToggleVariantClasses,
+      state: {
+        active: 'ring-2 ring-white/80 opacity-100',
+        idle: 'opacity-70 hover:opacity-100',
+      },
+    },
+    defaultVariants: {
+      mode: 'light',
+      state: 'idle',
+    },
+  },
+)
+
 /* Types
 ----------------------------------------------------------------------------*/
 export type ThemePickerListVariants = VariantProps<typeof themePickerListVariants>
 export type ThemePickerSwatchVariants = VariantProps<typeof themePickerSwatchVariants>
+export type ThemePickerModeToggleVariants = VariantProps<typeof themePickerModeToggleVariants>
 
 export interface ThemePickerProps {
   orientation?: ThemePickerListVariants['orientation']

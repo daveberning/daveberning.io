@@ -19,9 +19,15 @@ export const useLink = (props: LinkProps) => {
   const useNuxtLink = computed(() => isRouteObject.value || (typeof props.to === "string" && !isExternalLink.value))
   const hrefValue = computed(() => typeof props.to === "string" ? props.to : "#")
 
+  const resolvedColor = computed(() => {
+    if (props.color) return props.color
+    if (props.type === "button") return themeStore.active
+    return themeStore.mode === "dark" ? "white" : themeStore.active
+  })
+
   const mergedClass = computed(() =>
     mergeClass(
-      linkVariants({ color: props.color ?? themeStore.active, type: props.type }),
+      linkVariants({ color: resolvedColor.value, type: props.type }),
       attrs.class as Parameters<typeof mergeClass>[number]
     )
   );
