@@ -12,7 +12,7 @@ const themeStore = useThemeStore()
 <template>
   <div class="flex flex-col min-h-screen">
     <Header class="flex justify-between px-6 py-4" :theme="themeStore.active">
-      <Text color="white" class="font-black uppercase tracking-widest">Dave Berning</Text>
+      <Link to="/" color="white" type="bare" class="font-black uppercase tracking-widest">Dave Berning</Link>
       <div class="flex items-center gap-4">
         <HeaderNavigation />
         <Link to="/contact" color="cta" type="button">Contact</Link>
