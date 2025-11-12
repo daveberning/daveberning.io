@@ -13,7 +13,7 @@ const themeVariantClasses = {
 /* Variants
 ----------------------------------------------------------------------------*/
 export const themePickerListVariants = cva(
-  'fixed bottom-6 left-6 z-50 flex gap-3',
+  'fixed bottom-6 left-6 z-50 flex gap-3 items-center',
   {
     variants: {
       orientation: {
