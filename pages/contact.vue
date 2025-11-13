@@ -4,6 +4,8 @@ import Text from '~/components/ui/Text'
 definePageMeta({
   layout: 'internal',
   headerNavLabel: "Contact",
+  headerNav: true,
+  headerNavOrder: 4,
 })
 </script>
 

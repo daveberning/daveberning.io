@@ -15,7 +15,6 @@ const themeStore = useThemeStore()
       <Link to="/" color="white" type="bare" class="font-black tracking-wide">Dave Berning</Link>
       <div class="flex items-center gap-4">
         <HeaderNavigation />
-        <Link to="/contact" color="cta" type="button">Contact</Link>
       </div>
     </Header>
     <main class="mx-auto w-full max-w-[1350px] px-6 py-12 flex-1">
