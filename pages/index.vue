@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col min-h-screen w-full items-start justify-center max-w-[600px]">
+  <div class="flex flex-col min-h-screen w-full items-start justify-center max-w-[600px]">
     <Text as="h1" tag="h1">Dave Berning</Text>
     <Text as="body-lg" tag="h2">Software Engineer from Cincinnati, OH</Text>
     <Text as="body">I specialize in building composable and extensive applications and component libraries using Vue, TypeScript, Tailwind, and more. I teach web development as an Adjunct at the University of Cincinnati.</Text>
@@ -12,7 +12,7 @@
         <li><Link to="/contact" type="button">Contact</Link></li>
       </ul>
     </nav>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">

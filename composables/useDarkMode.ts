@@ -1,4 +1,4 @@
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useThemeStore } from '~/stores/theme'
 
 export function useDarkMode() {
@@ -10,6 +10,13 @@ export function useDarkMode() {
       ? `background-color: var(--color-${themeStore.active}-black); color: #ffffff;`
       : 'background-color: #ffffff; color: #0f172a;',
   )
+
+  onMounted(() => {
+    if (typeof window !== 'undefined' || typeof window.matchMedia === 'function') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      themeStore.setMode(mediaQuery.matches ? 'dark' : 'light')
+    }
+  })
 
   return {
     classes,

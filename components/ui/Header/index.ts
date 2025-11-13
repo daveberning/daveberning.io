@@ -6,7 +6,7 @@ import type { RouteLocationRaw } from 'vue-router'
 /* Variant
 ----------------------------------------------------------------------------*/
 export const headerVariants = cva(
-  "w-full border-b border-white/5 px-6 py-4 flex items-center justify-between gap-6",
+  "w-full border-b border-white/5 px-6 py-3 flex items-center justify-between gap-6",
   {
     variants: {
       theme: {

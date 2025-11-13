@@ -5,6 +5,7 @@ definePageMeta({
   layout: 'internal',
   headerNav: true,
   headerNavLabel: "Writing",
+  headerNavOrder: 2,
 })
 </script>
 

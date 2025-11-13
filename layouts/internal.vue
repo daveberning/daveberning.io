@@ -11,14 +11,14 @@ const themeStore = useThemeStore()
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <Header class="flex justify-between px-6 py-4" :theme="themeStore.active">
-      <Link to="/" color="white" type="bare" class="font-black uppercase tracking-widest">Dave Berning</Link>
+    <Header :theme="themeStore.active" class="sticky top-0">
+      <Link to="/" color="white" type="bare" class="font-black tracking-wide">Dave Berning</Link>
       <div class="flex items-center gap-4">
         <HeaderNavigation />
         <Link to="/contact" color="cta" type="button">Contact</Link>
       </div>
     </Header>
-    <main class="mx-auto w-full max-w-[1140px] px-6 py-12 flex-1">
+    <main class="mx-auto w-full max-w-[1350px] px-6 py-12 flex-1">
       <slot />
     </main>
     <footer class="text-center p-4">

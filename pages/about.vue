@@ -5,6 +5,7 @@ definePageMeta({
   layout: 'internal',
   headerNav: true,
   headerNavLabel: "About",
+  headerNavOrder: 3,
 })
 </script>
 
