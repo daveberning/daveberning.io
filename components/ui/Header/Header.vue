@@ -4,7 +4,6 @@ import { mergeClass } from "~/utils/merge-class";
 import { headerVariants, type HeaderProps } from ".";
 import { useThemeStore } from "~/stores/theme";
 
-const themeStore = useThemeStore()
 const props = withDefaults(defineProps<HeaderProps>(), {
   tag: "header",
   theme: "primary",

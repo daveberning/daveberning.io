@@ -12,7 +12,7 @@ const themeStore = useThemeStore()
 <template>
   <div class="flex flex-col min-h-screen">
     <Header :theme="themeStore.active" class="sticky top-0">
-      <Link to="/" color="white" type="bare" class="font-black tracking-wide">Dave Berning</Link>
+      <Link to="/" color="white" type="bare" class="font-black tracking-wide uppercase">Dave Berning</Link>
       <div class="flex items-center gap-4">
         <HeaderNavigation />
       </div>

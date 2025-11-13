@@ -10,11 +10,11 @@ export const headerVariants = cva(
   {
     variants: {
       theme: {
-        primary: "bg-primary-dark text-white",
-        green: "bg-green-dark text-white",
-        blue: "bg-blue-dark text-white",
-        purple: "bg-purple-dark text-white",
-        red: "bg-red-dark text-white",
+        primary: "bg-primary text-white",
+        green: "bg-green text-white",
+        blue: "bg-blue text-white",
+        purple: "bg-purple text-white",
+        red: "bg-red text-white",
         dark: "bg-slate-900 text-white",
         light: "bg-white text-slate-900 border-slate-200",
       },
@@ -30,11 +30,11 @@ export const headerNavigationItemVariants = cva(
   {
     variants: {
       theme: {
-        primary: "bg-primary text-white hover:bg-primary-black",
-        green: "bg-green hover:bg-green-black",
-        blue: "bg-blue hover:bg-blue-black",
-        purple: "bg-purple hover:bg-purple-black",
-        red: "bg-red hover:bg-red-black",
+        primary: "bg-primary-dark text-white hover:bg-primary-black",
+        green: "bg-green-dark hover:bg-green-black",
+        blue: "bg-blue-dark hover:bg-blue-black",
+        purple: "bg-purple-dark hover:bg-purple-black",
+        red: "bg-red-dark hover:bg-red-black",
       },
     },
     defaultVariants: {
