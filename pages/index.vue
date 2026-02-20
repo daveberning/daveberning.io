@@ -16,8 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import Text from '~/components/ui/Text'
-import Link from '~/components/ui/Link'
+import Text from '../components/Text'
+import Link from '../components/Link'
 import Portrait from '~/components/Portrait.vue'
 
 definePageMeta({

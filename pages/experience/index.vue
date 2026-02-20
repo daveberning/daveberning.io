@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import Card from '~/components/ui/Card'
-import Text from '~/components/ui/Text'
+import Card from '../../components/Card'
+import Text from '../../components/Text'
 import type { ExperienceEntry, ExperienceType } from '~/types/experiences'
+import { useThemeStore } from '~/stores/theme'
+import Button from '../../components/Button'
 
 definePageMeta({
   layout: 'internal',
@@ -9,6 +11,8 @@ definePageMeta({
   headerNavLabel: 'Experience',
   headerNavOrder: 1,
 })
+
+const themeStore = useThemeStore()
 
 const experiences: Record<ExperienceType, ExperienceEntry[]> = {
   professional: [
@@ -87,6 +91,40 @@ const experiences: Record<ExperienceType, ExperienceEntry[]> = {
       type: 'freelance',
     },
   ],
+  education: [
+    {
+      company: 'University of Cincinnati',
+      role: 'Bachelor of Fine Arts in Electronic Media',
+      period: '2013 - 2015',
+      logo: '/logos/uc.png',
+      logoClass: 'h-[50px]',
+      type: 'education',
+    },
+    {
+      company: 'University of Cincinnati',
+      role: 'Associate of Applied Science in Electronic Media',
+      period: '2010 - 2013',
+      logo: '/logos/uc.png',
+      logoClass: 'h-[50px]',
+      type: 'education',
+    },
+    {
+      company: 'University of Washington',
+      role: 'Certificate in Python Programming',
+      period: '2022',
+      logo: '/logos/uw.png',
+      logoClass: 'h-[50px]',
+      type: 'education',
+    },
+    {
+      company: 'Certificates.dev',
+      role: 'Vue.js Developer Level I',
+      period: '2024',
+      logo: '/logos/certificates.svg',
+      logoClass: 'h-[50px]',
+      type: 'education',
+    },
+  ]
 }
 </script>
 
@@ -95,10 +133,13 @@ const experiences: Record<ExperienceType, ExperienceEntry[]> = {
   <Text class="mt-4">
     Dave Berning is a seasoned Software Engineer and Professor based in Cincinnati, OH. With a passion for technology and education, Dave has dedicated his career to developing innovative software solutions while also nurturing the next generation of tech talent through his teaching.
   </Text>
+  <Button :color="themeStore.active" rounded="full" class="mt-4 cursor-pointer">
+    Download Resume
+  </Button>
   <div v-for="[type, entries] in Object.entries(experiences)" :key="type">
     <Text as="h3" tag="h2" class="mt-4 capitalize">{{ type }}</Text>
     <div class="grid grid-cols-1 gap-4 mt-4 md:grid-cols-2 lg:grid-cols-3 mb-8">
-      <Card v-for="experience in entries" :key="`professional-${experience.company}`" :color="experience.color" class="flex flex-col justify-center gap-2 items-center text-center">
+      <Card v-for="experience in entries" :key="`professional-${experience.company}`" :color="themeStore.active" class="flex flex-col justify-center gap-2 items-center text-center">
         <img :src="experience.logo" :alt="`${experience.company} logo`" :class="experience.logoClass ?? 'w-1/2'">
         <ul class="space-y-1">
           <Text tag="li" color="white">{{ experience.role }}</Text>

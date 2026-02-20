@@ -1,20 +1,12 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useRouter } from "vue-router";
-import Link, { linkVariants } from "~/components/ui/Link";
-import { mergeClass } from "~/utils/merge-class";
-import {
-  type HeaderNavigationProps,
-  type HeaderNavigationRouteMeta,
-  headerNavigationItemVariants,
-} from ".";
-
-const props = withDefaults(defineProps<HeaderNavigationProps>(), {
-  theme: "primary",
-});
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import Link, { linkVariants } from '~/components/Link'
+import { cn } from '~/utils/twMerge'
+import { injectHeaderContext, type HeaderNavigationRouteMeta, headerNavigationItemVariants } from './index'
 
 const router = useRouter()
-const themeStore = useThemeStore()
+const { theme } = injectHeaderContext()
 
 const navigationItems = computed(() => {
   return router
@@ -37,21 +29,17 @@ const navigationItems = computed(() => {
       return {
         label,
         to: meta.to ?? route.path,
-        theme: meta.headerNavColor ?? props.theme,
-      };
-    });
-});
+        theme,
+      }
+    })
+})
 </script>
 
 <template>
   <nav v-if="navigationItems.length">
     <ul class="flex flex-wrap items-center gap-2">
       <li v-for="item in navigationItems" :key="item.label + item.to">
-        <Link :to="item.to" color="white" :class="mergeClass(
-            headerNavigationItemVariants({ theme: themeStore.active }),
-            linkVariants({ color: 'white', type: 'bare' }),
-          )"
-        >
+        <Link :to="item.to" :class="cn(headerNavigationItemVariants({ theme }), linkVariants({ color: 'white', type: 'bare' }))">
           {{ item.label }}
         </Link>
       </li>

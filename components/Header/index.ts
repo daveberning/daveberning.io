@@ -1,7 +1,20 @@
+import { cva, type VariantProps } from 'class-variance-authority'
+import { useCreateContext } from '~/composables/useCreateContext'
+import type { RouteLocationRaw } from 'vue-router'
 import Header from './Header.vue'
 import HeaderNavigation from './HeaderNavigation.vue'
-import { cva, type VariantProps } from 'class-variance-authority'
-import type { RouteLocationRaw } from 'vue-router'
+
+/* Context
+----------------------------------------------------------------------------*/
+export interface HeaderContext {
+  theme: HeaderVariants['theme']
+}
+
+export const [
+  injectHeaderContext,
+  provideHeaderContext,
+] = useCreateContext<HeaderContext>('Header')
+
 
 /* Variant
 ----------------------------------------------------------------------------*/

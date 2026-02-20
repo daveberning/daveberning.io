@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Header from '~/components/ui/Header'
-import Text from '~/components/ui/Text'
+import Header from '../components/Header'
+import Text from '../components/Text'
 
 definePageMeta({
   layout: "internal",

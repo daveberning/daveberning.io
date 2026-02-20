@@ -1,41 +1,31 @@
 <script setup lang="ts">
-import { computed, useAttrs } from 'vue'
-import { storeToRefs } from 'pinia'
-import { mergeClass } from '~/utils/merge-class'
+import { computed } from 'vue'
+import { cn } from '~/utils/twMerge'
 import { themeOptions, useThemeStore } from '~/stores/theme'
-import {
-  themePickerListVariants,
-  themePickerSwatchVariants,
-  themePickerModeToggleVariants,
-  type ThemePickerProps,
-} from '.'
+import { themePickerListVariants, themePickerSwatchVariants, type ThemePickerProps } from '.'
 
 const props = withDefaults(defineProps<ThemePickerProps>(), {
   orientation: 'vertical',
 })
 
-const attrs = useAttrs()
 const themeStore = useThemeStore()
-const { active, mode } = storeToRefs(themeStore)
-const swatchClass = (theme: typeof themeOptions[number]) => themePickerSwatchVariants({ theme, state: active.value === theme ? 'active' : 'idle' })
-const modeToggleLabel = computed(() => mode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode')
 
-const listClass = computed(() =>
-  mergeClass(
-    themePickerListVariants({ orientation: props.orientation }),
-    attrs.class as Parameters<typeof mergeClass>[number],
-  ),
+function swatchClass(theme: typeof themeOptions[number]) {
+  return themePickerSwatchVariants({
+    theme,
+    state: themeStore.active === theme ? 'active' : 'idle'
+  })
+}
+
+const modeToggleLabel = computed(() => themeStore.mode.value === 'dark'
+  ? 'Switch to light mode'
+  : 'Switch to dark mode'
 )
 
-const forwardedAttrs = computed(() =>
-  Object.fromEntries(
-    Object.entries(attrs).filter(([key]) => key !== 'class'),
-  ),
-)
 </script>
 
 <template>
-  <ul v-bind="forwardedAttrs" :class="listClass">
+  <ul :class="cn(themePickerListVariants({ orientation: props.orientation }))">
     <li class="hover:cursor-pointer">
       <span class="sr-only">{{ modeToggleLabel }}</span>
       <svg
@@ -56,7 +46,7 @@ const forwardedAttrs = computed(() =>
     <li v-for="theme in themeOptions" :key="theme">
       <button
         type="button"
-        :class="swatchClass(theme)"
+        :class="cn(swatchClass(theme), 'cursor-pointer')"
         :aria-label="`Switch to ${theme} theme`"
         :aria-pressed="active === theme"
         :title="`Activate ${theme} theme`"

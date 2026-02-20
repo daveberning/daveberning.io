@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Text from '~/components/ui/Text'
+import Text from '../components/Text'
 
 definePageMeta({
   layout: 'internal',

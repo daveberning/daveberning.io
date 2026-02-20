@@ -1,5 +1,5 @@
-import Card from './Card.vue'
 import { cva, type VariantProps } from 'class-variance-authority'
+import Card from './Card.vue'
 
 /* Variants
 ----------------------------------------------------------------------------*/
@@ -32,4 +32,6 @@ export interface CardProps {
 
 /* Components
 ----------------------------------------------------------------------------*/
-export { Card as default }
+export {
+  Card as default
+}

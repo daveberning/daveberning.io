@@ -68,8 +68,6 @@ export const themePickerModeToggleVariants = cva(
 /* Types
 ----------------------------------------------------------------------------*/
 export type ThemePickerListVariants = VariantProps<typeof themePickerListVariants>
-export type ThemePickerSwatchVariants = VariantProps<typeof themePickerSwatchVariants>
-export type ThemePickerModeToggleVariants = VariantProps<typeof themePickerModeToggleVariants>
 
 export interface ThemePickerProps {
   orientation?: ThemePickerListVariants['orientation']

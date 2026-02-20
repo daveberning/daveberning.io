@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Text from '~/components/ui/Text'
-import Header, { HeaderNavigation } from '~/components/ui/Header'
-import Link from '~/components/ui/Link'
+import Text from '../components/Text'
+import Header, { HeaderNavigation } from '../components/Header'
+import Link from '../components/Link'
 import ThemePicker from '~/components/ThemePicker'
 import { useThemeStore } from '~/stores/theme'
 
@@ -17,7 +17,7 @@ const themeStore = useThemeStore()
         <HeaderNavigation />
       </div>
     </Header>
-    <main class="mx-auto w-full max-w-[1350px] px-6 py-12 flex-1">
+    <main class="mx-auto w-full max-w-[1140px] px-6 py-12 flex-1">
       <slot />
     </main>
     <footer class="text-center p-4">

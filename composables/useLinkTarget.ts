@@ -3,13 +3,14 @@ import type { Ref } from "vue";
 import type { RouteLocationRaw } from "vue-router";
 
 type MaybeRef<T> = T | Ref<T>;
-
 const PROTOCOL_REGEX = /^[a-zA-Z][a-zA-Z\d+\-.]*:/;
+const isRelative = (value: string) => value.startsWith("/") || value.startsWith(".") || value.startsWith("#");
 
-const isRelative = (value: string) =>
-  value.startsWith("/") || value.startsWith(".") || value.startsWith("#");
-
-export const useLinkTarget = (target: MaybeRef<string | RouteLocationRaw>) => {
+/**
+ * A composable to determine if a link target is external or internal, and to compute the appropriate href and NuxtLink target.
+ * @param target
+ */
+export function useLinkTarget(target: MaybeRef<string | RouteLocationRaw>) {
   const valueRef = toRef(target)
   const isRouteObject = computed(() => typeof valueRef.value === "object" && valueRef.value !== null)
 
@@ -29,4 +30,4 @@ export const useLinkTarget = (target: MaybeRef<string | RouteLocationRaw>) => {
     nuxtLinkTarget,
     isRouteObject,
   };
-};
+}

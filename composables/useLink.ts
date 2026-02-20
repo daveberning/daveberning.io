@@ -1,9 +1,12 @@
 import { computed, useAttrs } from "vue";
-import { mergeClass } from "~/utils/merge-class";
-import { linkVariants, type LinkProps } from "~/components/ui/Link";
+import { type LinkProps } from "../components/Link";
 import { useThemeStore } from "~/stores/theme";
 
-export const useLink = (props: LinkProps) => {
+/**
+ * A composable to manage link attributes and classes based on the provided props and theme.
+ * @param props
+ */
+export function useLink(props: LinkProps) {
   function isExternalString(value: string) {
     if (value.startsWith("/") || value.startsWith(".") || value.startsWith("#"))
       return false;
@@ -25,13 +28,6 @@ export const useLink = (props: LinkProps) => {
     return themeStore.mode === "dark" ? "white" : themeStore.active
   })
 
-  const mergedClass = computed(() =>
-    mergeClass(
-      linkVariants({ color: resolvedColor.value, type: props.type }),
-      attrs.class as Parameters<typeof mergeClass>[number]
-    )
-  );
-
   const forwardedAttrs = computed(() =>
     Object.fromEntries(
       Object.entries(attrs).filter(([key]) => key !== "class")
@@ -43,7 +39,7 @@ export const useLink = (props: LinkProps) => {
     hrefValue,
     isExternalLink,
     isRouteObject,
-    mergedClass,
+    resolvedColor,
     useNuxtLink,
   }
 }
