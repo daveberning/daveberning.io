@@ -2,6 +2,8 @@
 import { textVariants, type TextProps } from '.'
 import { cn } from '~/lib/utils'
 
+defineOptions({ inheritAttrs: false })
+
 const props = withDefaults(defineProps<TextProps>(), { as: 'p' })
 const attrs = useAttrs()
 </script>
