@@ -4,3 +4,24 @@ _drafts
 .jekyll-metadata
 CNAME
 berning-resume.pdf
+
+# Nuxt build
+.nuxt
+.output
+.dist
+
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env
+.env
+.env.*
+
+# Editor
+.idea
+*.iml
+.DS_Store

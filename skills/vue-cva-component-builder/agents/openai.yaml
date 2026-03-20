@@ -1,0 +1,5 @@
+interface:
+  display_name: "Vue CVA Component Builder"
+  short_description: "Generate slot-based Vue components with context + cva variants"
+  default_prompt: |
+    Follow the Vue CVA Component Builder instructions to scaffold parent + subcomponents, colocate variants in index.ts, and wire provide/inject contexts so Codex can produce composable UI kits quickly.
