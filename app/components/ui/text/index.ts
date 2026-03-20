@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority'
 
 /* Variants
 --------------------------------------------------------------------- */
-export const textVariants = cva('text-theme-dark dark:text-text', {
+export const textVariants = cva('text-theme-black dark:text-text', {
   variants: {
     as: {
       h1: 'text-5xl font-bold',

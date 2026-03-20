@@ -10,6 +10,10 @@ berning-resume.pdf
 .output
 .dist
 
+# Storybook build
+public/storybook
+storybook-static
+
 # Node
 node_modules
 npm-debug.log*

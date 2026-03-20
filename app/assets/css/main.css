@@ -29,7 +29,7 @@
 /* =====================================================================
    Theme base colors — one hex per theme, everything else is derived
    ===================================================================== */
-:root                 { --theme-color-base: #3e9e91; --theme-color-black: #242c2c; } /* teal — default */
+:root                 { --theme-color-base: #3e9e91; --theme-color-black: red; } /* teal — default */
 [data-theme="teal"]   { --theme-color-base: #3e9e91; --theme-color-black: #242c2c; }
 [data-theme="red"]    { --theme-color-base: #a83c44; --theme-color-black: #222222; }
 [data-theme="blue"]   { --theme-color-base: #2e5186; --theme-color-black: #1c1d23; }

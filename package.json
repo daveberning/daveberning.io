@@ -3,10 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "npm run build-storybook && nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "npm run build-storybook && nuxt generate",
     "preview": "nuxt preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o public/storybook",
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
     "lint": "oxlint .",
@@ -20,6 +22,10 @@
     "precommit:check": "npm run lint && npm run typecheck && npm run test"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^10.0.0",
+    "@storybook/vue3-vite": "^10.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "storybook": "^10.0.0",
     "@nuxt/devtools": "^4.0.0-alpha.1",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.2.1",
