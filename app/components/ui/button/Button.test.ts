@@ -14,60 +14,126 @@ describe('Button', () => {
       expect(wrapper.text()).toBe('Click me')
     })
 
-    it('applies default variant and size classes', () => {
+    it('applies default solid+teal+regular+regular classes', () => {
       const wrapper = mount(Button)
       const classes = wrapper.classes()
-      expect(classes).toContain('bg-primary')
+      expect(classes).toContain('bg-teal-600')
+      expect(classes).toContain('text-white')
       expect(classes).toContain('h-10')
       expect(classes).toContain('px-4')
+      expect(classes).toContain('rounded-md')
+    })
+  })
+
+  describe('color prop', () => {
+    it('applies teal solid classes', () => {
+      const wrapper = mount(Button, { props: { color: 'teal' } })
+      expect(wrapper.classes()).toContain('bg-teal-600')
+      expect(wrapper.classes()).toContain('text-white')
+    })
+
+    it('applies purple solid classes', () => {
+      const wrapper = mount(Button, { props: { color: 'purple' } })
+      expect(wrapper.classes()).toContain('bg-purple-600')
+    })
+
+    it('applies red solid classes', () => {
+      const wrapper = mount(Button, { props: { color: 'red' } })
+      expect(wrapper.classes()).toContain('bg-red-600')
+    })
+
+    it('applies green solid classes', () => {
+      const wrapper = mount(Button, { props: { color: 'green' } })
+      expect(wrapper.classes()).toContain('bg-green-600')
+    })
+
+    it('applies blue solid classes', () => {
+      const wrapper = mount(Button, { props: { color: 'blue' } })
+      expect(wrapper.classes()).toContain('bg-blue-700')
     })
   })
 
   describe('variant prop', () => {
-    it('applies destructive variant classes', () => {
-      const wrapper = mount(Button, { props: { variant: 'destructive' } })
-      expect(wrapper.classes()).toContain('bg-destructive')
+    it('applies solid variant — filled background', () => {
+      const wrapper = mount(Button, { props: { variant: 'solid', color: 'teal' } })
+      expect(wrapper.classes()).toContain('bg-teal-600')
+      expect(wrapper.classes()).toContain('text-white')
     })
 
-    it('applies outline variant classes', () => {
-      const wrapper = mount(Button, { props: { variant: 'outline' } })
-      expect(wrapper.classes()).toContain('border')
-      expect(wrapper.classes()).toContain('bg-background')
+    it('applies outline variant — border and transparent background', () => {
+      const wrapper = mount(Button, { props: { variant: 'outline', color: 'teal' } })
+      const classes = wrapper.classes()
+      expect(classes).toContain('border-2')
+      expect(classes).toContain('bg-transparent')
+      expect(classes).toContain('border-teal-600')
+      expect(classes).toContain('text-teal-600')
     })
 
-    it('applies secondary variant classes', () => {
-      const wrapper = mount(Button, { props: { variant: 'secondary' } })
-      expect(wrapper.classes()).toContain('bg-secondary')
+    it('applies text variant — no border, transparent background', () => {
+      const wrapper = mount(Button, { props: { variant: 'text', color: 'teal' } })
+      const classes = wrapper.classes()
+      expect(classes).toContain('bg-transparent')
+      expect(classes).toContain('text-teal-600')
+      expect(classes).not.toContain('border-2')
     })
 
-    it('applies ghost variant classes', () => {
-      const wrapper = mount(Button, { props: { variant: 'ghost' } })
-      expect(wrapper.classes()).toContain('hover:bg-accent')
+    it('outline purple has correct color classes', () => {
+      const wrapper = mount(Button, { props: { variant: 'outline', color: 'purple' } })
+      expect(wrapper.classes()).toContain('border-purple-600')
+      expect(wrapper.classes()).toContain('text-purple-600')
     })
 
-    it('applies link variant classes', () => {
-      const wrapper = mount(Button, { props: { variant: 'link' } })
-      expect(wrapper.classes()).toContain('underline-offset-4')
+    it('text red has correct color class', () => {
+      const wrapper = mount(Button, { props: { variant: 'text', color: 'red' } })
+      expect(wrapper.classes()).toContain('text-red-600')
     })
   })
 
   describe('size prop', () => {
-    it('applies sm size classes', () => {
-      const wrapper = mount(Button, { props: { size: 'sm' } })
-      expect(wrapper.classes()).toContain('h-9')
-      expect(wrapper.classes()).toContain('px-3')
+    it('applies small size classes', () => {
+      const wrapper = mount(Button, { props: { size: 'small' } })
+      const classes = wrapper.classes()
+      expect(classes).toContain('h-8')
+      expect(classes).toContain('px-3')
+      expect(classes).toContain('text-xs')
     })
 
-    it('applies lg size classes', () => {
-      const wrapper = mount(Button, { props: { size: 'lg' } })
-      expect(wrapper.classes()).toContain('h-11')
-      expect(wrapper.classes()).toContain('px-8')
+    it('applies regular size classes', () => {
+      const wrapper = mount(Button, { props: { size: 'regular' } })
+      const classes = wrapper.classes()
+      expect(classes).toContain('h-10')
+      expect(classes).toContain('px-4')
+      expect(classes).toContain('text-sm')
     })
 
-    it('applies icon size classes', () => {
-      const wrapper = mount(Button, { props: { size: 'icon' } })
-      expect(wrapper.classes()).toContain('h-10')
-      expect(wrapper.classes()).toContain('w-10')
+    it('applies large size classes', () => {
+      const wrapper = mount(Button, { props: { size: 'large' } })
+      const classes = wrapper.classes()
+      expect(classes).toContain('h-12')
+      expect(classes).toContain('px-6')
+      expect(classes).toContain('text-base')
+    })
+  })
+
+  describe('radius prop', () => {
+    it('applies small radius', () => {
+      const wrapper = mount(Button, { props: { radius: 'small' } })
+      expect(wrapper.classes()).toContain('rounded-sm')
+    })
+
+    it('applies regular radius', () => {
+      const wrapper = mount(Button, { props: { radius: 'regular' } })
+      expect(wrapper.classes()).toContain('rounded-md')
+    })
+
+    it('applies full radius', () => {
+      const wrapper = mount(Button, { props: { radius: 'full' } })
+      expect(wrapper.classes()).toContain('rounded-full')
+    })
+
+    it('applies none radius', () => {
+      const wrapper = mount(Button, { props: { radius: 'none' } })
+      expect(wrapper.classes()).toContain('rounded-none')
     })
   })
 
@@ -91,7 +157,6 @@ describe('Button', () => {
 
     it('uses tailwind-merge to resolve conflicting classes', () => {
       const wrapper = mount(Button, { props: { class: 'px-10' } })
-      // px-10 should win over the default px-4 py-2 from size=default
       expect(wrapper.classes()).toContain('px-10')
       expect(wrapper.classes()).not.toContain('px-4')
     })

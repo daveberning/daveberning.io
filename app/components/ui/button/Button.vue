@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 </script>
 
 <template>
-  <component :is="props.as" :class="cn(buttonVariants({ variant: props.variant, size: props.size }), props.class)">
+  <component :is="props.as" :class="cn(buttonVariants({ color: props.color, variant: props.variant, size: props.size, radius: props.radius }), props.class)">
     <slot />
   </component>
 </template>

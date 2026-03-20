@@ -4,27 +4,60 @@ import { cva } from 'class-variance-authority'
 /* Variants
 --------------------------------------------------------------------- */
 export const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer',
   {
     variants: {
+      color: {
+        teal: '',
+        purple: '',
+        red: '',
+        green: '',
+        blue: '',
+      },
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
+        solid: '',
+        outline: 'border-2 bg-transparent',
+        text: 'bg-transparent',
       },
       size: {
-        default: 'h-10 px-4 py-2',
-        sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
-        icon: 'h-10 w-10',
+        small: 'h-8 px-3 text-xs',
+        regular: 'h-10 px-4 text-sm',
+        large: 'h-12 px-6 text-base',
+      },
+      radius: {
+        small: 'rounded-sm',
+        regular: 'rounded-md',
+        full: 'rounded-full',
+        none: 'rounded-none',
       },
     },
+    compoundVariants: [
+      /* Solid ---------------------------------------------------------- */
+      { variant: 'solid', color: 'teal',   class: 'bg-teal-600   text-white hover:bg-teal-500   active:bg-teal-700   focus-visible:ring-teal-400' },
+      { variant: 'solid', color: 'purple', class: 'bg-purple-600 text-white hover:bg-purple-500 active:bg-purple-700 focus-visible:ring-purple-400' },
+      { variant: 'solid', color: 'red',    class: 'bg-red-600    text-white hover:bg-red-500    active:bg-red-700    focus-visible:ring-red-400' },
+      { variant: 'solid', color: 'green',  class: 'bg-green-600  text-white hover:bg-green-500  active:bg-green-700  focus-visible:ring-green-400' },
+      { variant: 'solid', color: 'blue',   class: 'bg-blue-700   text-white hover:bg-blue-600   active:bg-blue-800   focus-visible:ring-blue-500' },
+
+      /* Outline -------------------------------------------------------- */
+      { variant: 'outline', color: 'teal',   class: 'border-teal-600   text-teal-600   hover:bg-teal-50   dark:hover:bg-teal-900/30   active:bg-teal-100   dark:active:bg-teal-900/50   focus-visible:ring-teal-400' },
+      { variant: 'outline', color: 'purple', class: 'border-purple-600 text-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/30 active:bg-purple-100 dark:active:bg-purple-900/50 focus-visible:ring-purple-400' },
+      { variant: 'outline', color: 'red',    class: 'border-red-600    text-red-600    hover:bg-red-50    dark:hover:bg-red-900/30    active:bg-red-100    dark:active:bg-red-900/50    focus-visible:ring-red-400' },
+      { variant: 'outline', color: 'green',  class: 'border-green-600  text-green-600  hover:bg-green-50  dark:hover:bg-green-900/30  active:bg-green-100  dark:active:bg-green-900/50  focus-visible:ring-green-400' },
+      { variant: 'outline', color: 'blue',   class: 'border-blue-700   text-blue-700   hover:bg-blue-50   dark:hover:bg-blue-900/30   active:bg-blue-100  dark:active:bg-blue-900/50   focus-visible:ring-blue-500' },
+
+      /* Text ----------------------------------------------------------- */
+      { variant: 'text', color: 'teal',   class: 'text-teal-600   hover:bg-teal-50/80   dark:hover:bg-teal-900/30   active:bg-teal-100/80   dark:active:bg-teal-900/50   focus-visible:ring-teal-400' },
+      { variant: 'text', color: 'purple', class: 'text-purple-600 hover:bg-purple-50/80 dark:hover:bg-purple-900/30 active:bg-purple-100/80 dark:active:bg-purple-900/50 focus-visible:ring-purple-400' },
+      { variant: 'text', color: 'red',    class: 'text-red-600    hover:bg-red-50/80    dark:hover:bg-red-900/30    active:bg-red-100/80    dark:active:bg-red-900/50    focus-visible:ring-red-400' },
+      { variant: 'text', color: 'green',  class: 'text-green-600  hover:bg-green-50/80  dark:hover:bg-green-900/30  active:bg-green-100/80  dark:active:bg-green-900/50  focus-visible:ring-green-400' },
+      { variant: 'text', color: 'blue',   class: 'text-blue-700   hover:bg-blue-50/80   dark:hover:bg-blue-900/30   active:bg-blue-100/80   dark:active:bg-blue-900/50   focus-visible:ring-blue-500' },
+    ],
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      color: 'teal',
+      variant: 'solid',
+      size: 'regular',
+      radius: 'regular',
     },
   },
 )
@@ -34,8 +67,10 @@ export const buttonVariants = cva(
 export type ButtonVariants = VariantProps<typeof buttonVariants>
 
 export interface ButtonProps {
+  color?: ButtonVariants['color']
   variant?: ButtonVariants['variant']
   size?: ButtonVariants['size']
+  radius?: ButtonVariants['radius']
   class?: string
   as?: string
 }
