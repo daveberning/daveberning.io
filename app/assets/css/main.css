@@ -1,5 +1,89 @@
 @import "tailwindcss";
 
+/* Class-based dark mode — .dark on <html> */
+@variant dark (&:where(.dark, .dark *));
+
+/* =====================================================================
+   Tailwind token registration
+   All theme + semantic vars are exposed as Tailwind utilities via
+   @theme inline. "inline" embeds the var() reference directly into
+   generated classes, making them reactive to runtime CSS var changes.
+   ===================================================================== */
+@theme inline {
+  /* Accent / brand (theme-switchable) */
+  --color-theme:        var(--theme-color);
+  --color-theme-dark:   var(--theme-color-dark);
+  --color-theme-light:  var(--theme-color-light);
+  --color-theme-fg:     var(--theme-fg);   /* text rendered ON a theme-colored bg */
+
+  /* Semantic surface / content */
+  --color-background:     var(--background);
+  --color-surface:        var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border:         var(--border);
+  --color-text:           var(--text);
+  --color-text-muted:     var(--text-muted);
+}
+
+/* =====================================================================
+   Theme base colors — one hex per theme, everything else is derived
+   ===================================================================== */
+:root               { --theme-color-base: #3e9e91; } /* teal — default */
+[data-theme="teal"]   { --theme-color-base: #3e9e91; }
+[data-theme="red"]    { --theme-color-base: #a83c44; }
+[data-theme="blue"]   { --theme-color-base: #2e5186; }
+[data-theme="green"]  { --theme-color-base: #40894e; }
+[data-theme="purple"] { --theme-color-base: #8d6299; }
+
+/* =====================================================================
+   Derived accent variants — light mode
+   oklch relative color syntax: shift lightness, keep hue + chroma
+   ===================================================================== */
+:root,
+[data-theme] {
+  --theme-color:       var(--theme-color-base);
+  --theme-color-dark:  oklch(from var(--theme-color-base) calc(l - 0.10) c h);
+  --theme-color-light: oklch(from var(--theme-color-base) calc(l + 0.22) c h);
+  --theme-fg:          oklch(from var(--theme-color-base) 0.98 0.01 h); /* near-white, hue-tinted */
+}
+
+/* =====================================================================
+   Semantic tokens — light mode
+   ===================================================================== */
+:root {
+  --background:     #ffffff;
+  --surface:        #f4f4f5;
+  --surface-raised: #e4e4e7;
+  --border:         #d4d4d8;
+  --text:           #18181b;
+  --text-muted:     #71717a;
+}
+
+/* =====================================================================
+   Dark mode overrides
+   Declared after [data-theme] so same-specificity cascade wins.
+   Accent base is inherited from [data-theme] on <html> — only the
+   derived values are re-calculated for dark backgrounds.
+   ===================================================================== */
+.dark {
+  /* Semantic surfaces */
+  --background:     #0f1117;
+  --surface:        #1a1d27;
+  --surface-raised: #242736;
+  --border:         #2d3148;
+  --text:           #e8e9f0;
+  --text-muted:     #8890a4;
+
+  /* Accent re-derivation: shift base lighter so it pops on dark bg */
+  --theme-color:       oklch(from var(--theme-color-base) calc(l + 0.08) c h);
+  --theme-color-dark:  oklch(from var(--theme-color-base) calc(l - 0.02) c h);
+  --theme-color-light: oklch(from var(--theme-color-base) calc(l + 0.28) c h);
+  --theme-fg:          oklch(from var(--theme-color-base) 0.10 0.02 h); /* near-black on lighter accent */
+}
+
+/* =====================================================================
+   Base resets
+   ===================================================================== */
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
@@ -12,5 +96,7 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-color: var(--background);
+    color: var(--text);
   }
 }
