@@ -6,6 +6,6 @@ useHead({
 
 <template>
   <main>
-    <h1>Dave Berning</h1>
+    <UiText as="h1" class="text-[10rem] font-black">Dave Berning</UiText>
   </main>
 </template>

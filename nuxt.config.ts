@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
+  alias: {
+    '@': './src',
+  },
   modules: [
     '@pinia/nuxt',
     '@nuxt/image',
@@ -20,6 +23,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Inter', provider: 'google' },
+      { name: 'Roboto', provider: 'google' },
     ],
   },
   future: {
