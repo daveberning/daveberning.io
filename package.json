@@ -1,0 +1,31 @@
+{
+  "name": "daveberning.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
+    "deps:update:all": "npx npm-check-updates -u && npm install",
+    "deps:update:minor": "npx npm-check-updates -u --target minor && npm install",
+    "deps:update:patch": "npx npm-check-updates -u --target patch && npm install"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^4.0.0-alpha.1",
+    "@nuxt/eslint": "^1.15.2",
+    "@nuxt/fonts": "^0.14.0",
+    "@nuxt/icon": "^2.2.1",
+    "@nuxt/image": "^2.0.0",
+    "@pinia/nuxt": "^0.11.3",
+    "nuxt": "^4.4.2",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.6"
+  },
+  "dependencies": {
+    "pinia": "^3.0.4"
+  }
+}
