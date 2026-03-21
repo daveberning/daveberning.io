@@ -1,15 +1,23 @@
 <script setup lang="ts">
+import { Card, CardContent } from '~/components/ui/card'
+
 useHead({ title: 'Work — Dave Berning' })
 
 definePageMeta({ layout: 'internal' })
 
-
+const items = Array.from({ length: 8 })
 </script>
 
 <template>
-  <section class="px-6 py-12 sm:px-10 lg:px-16">
-    <UiText as="h1">
-      Work
-    </UiText>
-  </section>
+  <UiText as="h1" class="mb-8">
+    Work
+  </UiText>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <Card v-for="(_, i) in items" :key="i">
+      <CardContent>
+        <UiText>Project {{ i + 1 }}</UiText>
+        <UiText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</UiText>
+      </CardContent>
+    </Card>
+  </div>
 </template>

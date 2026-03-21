@@ -12,7 +12,7 @@ const linkVariant = computed(() => isDark.value ? darkVariant.value : 'solid')
 </script>
 
 <template>
-  <Link :variant="linkVariant" radius="full" :to="props.to" :class="cn(props.class)">
+  <UiLink :variant="linkVariant" radius="full" :to="props.to" :class="cn(props.class)">
     <slot />
-  </Link>
+  </UiLink>
 </template>

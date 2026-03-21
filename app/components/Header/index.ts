@@ -16,7 +16,7 @@ export { injectHeaderContext, provideHeaderContext }
 /* Variants
 --------------------------------------------------------------------- */
 export const headerVariants = cva(
-  'sticky top-0 z-50 flex h-16 items-center justify-between px-6 sm:px-10 lg:px-16',
+  'sticky top-0 z-50 flex justify-center p-2',
   {
     variants: {
       variant: {

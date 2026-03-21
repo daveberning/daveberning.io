@@ -26,16 +26,20 @@ const navigationItems = [
 
 <template>
   <div class="flex h-screen flex-col bg-background dark:bg-theme-black">
-    <Header :variant="color">
-      <HeaderBrand>Dave Berning</HeaderBrand>
-      <Navigation dark-variant="text">
-        <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">
-          {{ item.name }}
-        </NavigationItem>
-      </Navigation>
+    <Header :variant="color" class="px-0 justify-center">
+      <div class="container flex items-center justify-between">
+        <HeaderBrand>Dave Berning</HeaderBrand>
+        <Navigation dark-variant="text">
+          <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">
+            {{ item.name }}
+          </NavigationItem>
+        </Navigation>
+      </div>
     </Header>
-    <main class="flex-1 overflow-auto">
-      <slot />
+    <main class="flex-1 overflow-auto flex justify-center py-12">
+      <div class="container">
+        <slot />
+      </div>
     </main>
     <ThemePicker class="fixed bottom-4 left-4 z-50" />
   </div>

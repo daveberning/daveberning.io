@@ -14,6 +14,8 @@ provideHeaderContext({
 
 <template>
   <header :class="cn(headerVariants({ variant: props.variant }), props.class)">
-    <slot />
+    <div class="flex justify-between container">
+      <slot />
+    </div>
   </header>
 </template>
