@@ -8,9 +8,9 @@ export const linkVariants = cva(
   {
     variants: {
       variant: {
-        solid:   'bg-theme text-theme-fg hover:bg-theme-dark hover:outline-2 hover:outline-offset-2 hover:outline-theme dark:hover:outline-white',
-        outline: 'border-2 border-theme bg-transparent text-theme dark:border-white dark:text-white hover:outline-2 hover:outline-offset-2 hover:outline-theme dark:hover:outline-white',
-        text:    'bg-transparent text-theme dark:text-white hover:underline',
+        solid:   'bg-theme text-theme-fg hover:bg-theme-dark hover:outline-2 hover:outline-offset-2',
+        outline: 'border-2 bg-transparent hover:outline-2 hover:outline-offset-2',
+        text:    'bg-transparent hover:underline',
       },
       size: {
         small:   'h-8 px-3 text-xs',
@@ -23,11 +23,24 @@ export const linkVariants = cva(
         full:    'rounded-full',
         none:    'rounded-none',
       },
+      mode: {
+        light: '',
+        dark:  '',
+      },
     },
+    compoundVariants: [
+      { variant: 'solid',   mode: 'light', class: 'hover:outline-theme' },
+      { variant: 'solid',   mode: 'dark',  class: 'hover:outline-white' },
+      { variant: 'outline', mode: 'light', class: 'border-theme text-theme hover:outline-theme' },
+      { variant: 'outline', mode: 'dark',  class: 'border-white text-white hover:outline-white' },
+      { variant: 'text',    mode: 'light', class: 'text-theme' },
+      { variant: 'text',    mode: 'dark',  class: 'text-white' },
+    ],
     defaultVariants: {
       variant: 'text',
       size:    'regular',
       radius:  'regular',
+      mode:    'light',
     },
   },
 )

@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { type ThemePickerItemProps } from '.'
+import { useTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
 
 const props = defineProps<ThemePickerItemProps>()
 const emit = defineEmits<{ select: [] }>()
+
+const { isDark } = useTheme()
+const ringColor = computed(() => isDark.value ? 'focus-visible:ring-white' : 'focus-visible:ring-black')
+const borderClass = computed(() => isDark.value ? 'border-white' : 'border-black')
 </script>
 
 <template>
@@ -14,10 +20,11 @@ const emit = defineEmits<{ select: [] }>()
     :aria-pressed="props.selected"
     :class="cn(
       'size-4 rounded-full cursor-pointer transition-all duration-200',
-      'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black dark:focus-visible:ring-white',
+      'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+      ringColor,
       props.selected
-        ? 'scale-150 border-2 border-black dark:border-white'
-        : 'border border-black dark:border-white hover:scale-150',
+        ? cn('scale-150 border-2', borderClass)
+        : cn('border hover:scale-150', borderClass),
       props.class,
     )"
     :style="{ backgroundColor: props.color }"

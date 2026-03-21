@@ -52,8 +52,9 @@ function onKeyDown(event: KeyboardEvent) {
       :aria-pressed="isDark"
       :class="cn(
         'size-4 rounded-full cursor-pointer overflow-hidden transition-all duration-200',
-        'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black dark:focus-visible:ring-white',
-        'border border-black dark:border-white hover:scale-150',
+        'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+        isDark ? 'focus-visible:ring-white' : 'focus-visible:ring-black',
+        isDark ? 'border border-white hover:scale-150' : 'border border-black hover:scale-150',
       )"
       style="background: linear-gradient(135deg, #18181b 50%, #f4f4f5 50%)"
       @click="toggleDark"

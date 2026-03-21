@@ -1,23 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTheme } from '~/composables/useTheme'
+import { cn } from '~/lib/utils'
+import { navigationItems } from '~/variables'
 
 useHead({ title: 'Dave Berning' })
 
-const { color } = useTheme()
+const { color, isDark } = useTheme()
 const portrait = computed(() => `/portraits/dave-${color.value}.png`)
 
-const navigationItems = [
-  { name: 'About', to: '/about' },
-  { name: 'Work', to: '/work' },
-  { name: 'Writing', to: '/writing' },
-  { name: 'Contact', to: '/contact' },
-  { name: 'Teaching', to: '/teaching' },
-]
 </script>
 
 <template>
-  <main class="flex flex-col-reverse lg:flex-row items-center lg:items-stretch h-screen overflow-hidden bg-background dark:bg-theme-black">
+  <main :class="cn('flex flex-col-reverse lg:flex-row items-center lg:items-stretch h-screen overflow-hidden', isDark ? 'bg-theme-black' : 'bg-background')">
     <Portrait :src="portrait" :alt="`Dave Berning — ${color} theme`" />
     <div class="flex flex-col items-center px-6 sm:px-10 lg:px-16 justify-center">
       <UiText as="h1" class="text-5xl lg:text-[7vw] font-black leading-none">

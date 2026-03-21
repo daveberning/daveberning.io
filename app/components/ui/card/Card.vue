@@ -12,7 +12,10 @@ const props = withDefaults(defineProps<CardProps>(), {
 const { isDark } = useTheme()
 const mode = computed(() => isDark.value ? 'dark' : 'light')
 
-provideCardContext({ variant: toRef(props, 'variant'), mode })
+provideCardContext({
+  variant: toRef(props, 'variant'),
+  mode
+})
 </script>
 
 <template>

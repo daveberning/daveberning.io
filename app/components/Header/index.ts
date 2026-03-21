@@ -16,24 +16,29 @@ export { injectHeaderContext, provideHeaderContext }
 /* Variants
 --------------------------------------------------------------------- */
 export const headerVariants = cva(
-  'sticky top-0 z-50 flex justify-center p-2',
+  'sticky top-0 z-50 flex justify-center p-2 border-b border-theme-dark',
   {
     variants: {
       variant: {
-        teal:   'border-b border-[#2a7a6f] bg-teal-600',
-        red:    'border-b border-[#7a2a30] bg-red-60',
-        blue:   'border-b border-[#1e3a63] bg-blue-600',
-        green:  'border-b border-[#2a6035] bg-green-600',
-        purple: 'border-b border-[#5e3d6b] bg-purple-600',
+        teal:   '',
+        red:    '',
+        blue:   '',
+        green:  '',
+        purple: '',
+      },
+      mode: {
+        light: 'bg-theme',
+        dark:  'bg-theme-dark',
       },
     },
     defaultVariants: {
       variant: 'teal',
+      mode:    'light',
     },
   }
 )
 
-export const headerBrandVariants = cva('text-lg font-bold text-white transition-opacity hover:opacity-80 dark:text-text', {
+export const headerBrandVariants = cva('text-lg font-bold transition-opacity hover:opacity-80', {
   variants: {
     variant: {
       teal:   '',
@@ -42,9 +47,14 @@ export const headerBrandVariants = cva('text-lg font-bold text-white transition-
       green:  '',
       purple: '',
     },
+    mode: {
+      light: 'text-white',
+      dark:  'text-text',
+    },
   },
   defaultVariants: {
     variant: 'teal',
+    mode:    'light',
   },
 })
 

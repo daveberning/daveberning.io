@@ -2,8 +2,13 @@
 import { ThemePicker } from '~/components/ThemePicker'
 import { Header, HeaderBrand } from '~/components/Header'
 import { provideTheme } from '~/composables/useTheme'
+import { cn } from '~/lib/utils'
+import { navigationItems } from '~/variables'
 
-const { color } = provideTheme()
+const {
+  color,
+  isDark
+} = provideTheme()
 
 useHead({
   script: [
@@ -14,18 +19,10 @@ useHead({
     },
   ],
 })
-
-const navigationItems = [
-  { name: 'About', to: '/about' },
-  { name: 'Work', to: '/work' },
-  { name: 'Writing', to: '/writing' },
-  { name: 'Contact', to: '/contact' },
-  { name: 'Teaching', to: '/teaching' },
-]
 </script>
 
 <template>
-  <div class="flex h-screen flex-col bg-background dark:bg-theme-black">
+  <div :class="cn('flex h-screen flex-col', isDark ? 'bg-theme-black' : 'bg-background')">
     <Header :variant="color" class="px-0 justify-center">
       <div class="container flex items-center justify-between">
         <HeaderBrand>Dave Berning</HeaderBrand>

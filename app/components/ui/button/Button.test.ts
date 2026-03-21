@@ -1,6 +1,16 @@
+import { ref } from 'vue'
 import { mount } from '@vue/test-utils'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import Button from './Button.vue'
+
+vi.mock('~/composables/useTheme', () => ({
+  useTheme: () => ({
+    isDark:      ref(false),
+    color:       ref('teal'),
+    setColor:    vi.fn(),
+    toggleDark:  vi.fn(),
+  }),
+}))
 
 describe('Button', () => {
   describe('default rendering', () => {

@@ -29,12 +29,12 @@
 /* =====================================================================
    Theme base colors — one hex per theme, everything else is derived
    ===================================================================== */
-:root                 { --theme-color-base: #3e9e91; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #011A24; } /* teal — default */
-[data-theme="teal"]   { --theme-color-base: #3e9e91; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #011A24; }
-[data-theme="red"]    { --theme-color-base: #a83c44; --theme-color-light: #d97880; --theme-color-dark: #7a2a30; --theme-color-black: #2e0e10; }
-[data-theme="blue"]   { --theme-color-base: #2e5186; --theme-color-light: #7a9bc7; --theme-color-dark: #1e3a63; --theme-color-black: #0a1524; }
-[data-theme="green"]  { --theme-color-base: #40894e; --theme-color-light: #7ec08e; --theme-color-dark: #2a6035; --theme-color-black: #0f2414; }
-[data-theme="purple"] { --theme-color-base: #8d6299; --theme-color-light: #c2a0cc; --theme-color-dark: #5e3d6b; --theme-color-black: #1e1024; }
+:root                 { --theme-color-base: #3e9e91; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; } /* teal — default */
+[data-theme="teal"]   { --theme-color-base: #3e9e91; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; }
+[data-theme="red"]    { --theme-color-base: #a83c44; --theme-color-light: #d97880; --theme-color-dark: #7a2a30; --theme-color-black: #1e0e11; }
+[data-theme="blue"]   { --theme-color-base: #2e5186; --theme-color-light: #7a9bc7; --theme-color-dark: #1e3a63; --theme-color-black: #0e1622; }
+[data-theme="green"]  { --theme-color-base: #40894e; --theme-color-light: #7ec08e; --theme-color-dark: #2a6035; --theme-color-black: #0e1b11; }
+[data-theme="purple"] { --theme-color-base: #8d6299; --theme-color-light: #c2a0cc; --theme-color-dark: #5e3d6b; --theme-color-black: #170e1f; }
 
 /* =====================================================================
    Derived accent variants — light mode

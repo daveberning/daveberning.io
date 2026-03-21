@@ -3,20 +3,25 @@ import { cva } from 'class-variance-authority'
 
 /* Variants
 --------------------------------------------------------------------- */
-export const textVariants = cva('text-theme-black dark:text-text', {
+export const textVariants = cva('', {
   variants: {
     as: {
-      h1: 'text-5xl font-bold',
-      h2: 'text-4xl font-bold',
-      h3: 'text-3xl font-semibold',
-      h4: 'text-2xl font-semibold',
-      h5: 'text-xl font-semibold',
-      h6: 'text-lg font-semibold',
+      h1: 'text-5xl font-black',
+      h2: 'text-4xl font-black',
+      h3: 'text-3xl font-bold',
+      h4: 'text-2xl font-bold',
+      h5: 'text-xl font-bold',
+      h6: 'text-lg font-bold',
       p:  'text-base font-normal',
+    },
+    mode: {
+      light: 'text-theme-black',
+      dark:  'text-text',
     },
   },
   defaultVariants: {
-    as: 'p',
+    as:   'p',
+    mode: 'light',
   },
 })
 

@@ -8,27 +8,31 @@ export const buttonVariants = cva(
   {
     variants: {
       color: {
-        teal: '',
+        teal:   '',
         purple: '',
-        red: '',
-        green: '',
-        blue: '',
+        red:    '',
+        green:  '',
+        blue:   '',
       },
       variant: {
-        solid: '',
+        solid:   '',
         outline: 'border-2 bg-transparent',
-        text: 'bg-transparent',
+        text:    'bg-transparent',
       },
       size: {
-        small: 'h-8 px-3 text-xs',
+        small:   'h-8 px-3 text-xs',
         regular: 'h-10 px-4 text-sm',
-        large: 'h-12 px-6 text-base',
+        large:   'h-12 px-6 text-base',
       },
       radius: {
-        small: 'rounded-sm',
+        small:   'rounded-sm',
         regular: 'rounded-md',
-        full: 'rounded-full',
-        none: 'rounded-none',
+        full:    'rounded-full',
+        none:    'rounded-none',
+      },
+      mode: {
+        light: '',
+        dark:  '',
       },
     },
     compoundVariants: [
@@ -39,25 +43,40 @@ export const buttonVariants = cva(
       { variant: 'solid', color: 'green',  class: 'bg-green-600  text-white hover:bg-green-500  active:bg-green-700  focus-visible:ring-green-400' },
       { variant: 'solid', color: 'blue',   class: 'bg-blue-700   text-white hover:bg-blue-600   active:bg-blue-800   focus-visible:ring-blue-500' },
 
-      /* Outline -------------------------------------------------------- */
-      { variant: 'outline', color: 'teal',   class: 'border-teal-600   text-teal-600   hover:bg-teal-50   dark:hover:bg-teal-900/30   active:bg-teal-100   dark:active:bg-teal-900/50   focus-visible:ring-teal-400' },
-      { variant: 'outline', color: 'purple', class: 'border-purple-600 text-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/30 active:bg-purple-100 dark:active:bg-purple-900/50 focus-visible:ring-purple-400' },
-      { variant: 'outline', color: 'red',    class: 'border-red-600    text-red-600    hover:bg-red-50    dark:hover:bg-red-900/30    active:bg-red-100    dark:active:bg-red-900/50    focus-visible:ring-red-400' },
-      { variant: 'outline', color: 'green',  class: 'border-green-600  text-green-600  hover:bg-green-50  dark:hover:bg-green-900/30  active:bg-green-100  dark:active:bg-green-900/50  focus-visible:ring-green-400' },
-      { variant: 'outline', color: 'blue',   class: 'border-blue-700   text-blue-700   hover:bg-blue-50   dark:hover:bg-blue-900/30   active:bg-blue-100  dark:active:bg-blue-900/50   focus-visible:ring-blue-500' },
+      /* Outline — light ------------------------------------------------ */
+      { variant: 'outline', color: 'teal',   mode: 'light', class: 'border-teal-600   text-teal-600   hover:bg-teal-50   active:bg-teal-100   focus-visible:ring-teal-400' },
+      { variant: 'outline', color: 'purple', mode: 'light', class: 'border-purple-600 text-purple-600 hover:bg-purple-50 active:bg-purple-100 focus-visible:ring-purple-400' },
+      { variant: 'outline', color: 'red',    mode: 'light', class: 'border-red-600    text-red-600    hover:bg-red-50    active:bg-red-100    focus-visible:ring-red-400' },
+      { variant: 'outline', color: 'green',  mode: 'light', class: 'border-green-600  text-green-600  hover:bg-green-50  active:bg-green-100  focus-visible:ring-green-400' },
+      { variant: 'outline', color: 'blue',   mode: 'light', class: 'border-blue-700   text-blue-700   hover:bg-blue-50   active:bg-blue-100   focus-visible:ring-blue-500' },
 
-      /* Text ----------------------------------------------------------- */
-      { variant: 'text', color: 'teal',   class: 'text-teal-600   hover:bg-teal-50/80   dark:hover:bg-teal-900/30   active:bg-teal-100/80   dark:active:bg-teal-900/50   focus-visible:ring-teal-400' },
-      { variant: 'text', color: 'purple', class: 'text-purple-600 hover:bg-purple-50/80 dark:hover:bg-purple-900/30 active:bg-purple-100/80 dark:active:bg-purple-900/50 focus-visible:ring-purple-400' },
-      { variant: 'text', color: 'red',    class: 'text-red-600    hover:bg-red-50/80    dark:hover:bg-red-900/30    active:bg-red-100/80    dark:active:bg-red-900/50    focus-visible:ring-red-400' },
-      { variant: 'text', color: 'green',  class: 'text-green-600  hover:bg-green-50/80  dark:hover:bg-green-900/30  active:bg-green-100/80  dark:active:bg-green-900/50  focus-visible:ring-green-400' },
-      { variant: 'text', color: 'blue',   class: 'text-blue-700   hover:bg-blue-50/80   dark:hover:bg-blue-900/30   active:bg-blue-100/80   dark:active:bg-blue-900/50   focus-visible:ring-blue-500' },
+      /* Outline — dark ------------------------------------------------- */
+      { variant: 'outline', color: 'teal',   mode: 'dark', class: 'border-teal-400   text-teal-400   hover:bg-teal-900/30   active:bg-teal-900/50   focus-visible:ring-teal-400' },
+      { variant: 'outline', color: 'purple', mode: 'dark', class: 'border-purple-400 text-purple-400 hover:bg-purple-900/30 active:bg-purple-900/50 focus-visible:ring-purple-400' },
+      { variant: 'outline', color: 'red',    mode: 'dark', class: 'border-red-400    text-red-400    hover:bg-red-900/30    active:bg-red-900/50    focus-visible:ring-red-400' },
+      { variant: 'outline', color: 'green',  mode: 'dark', class: 'border-green-400  text-green-400  hover:bg-green-900/30  active:bg-green-900/50  focus-visible:ring-green-400' },
+      { variant: 'outline', color: 'blue',   mode: 'dark', class: 'border-blue-400   text-blue-400   hover:bg-blue-900/30   active:bg-blue-900/50   focus-visible:ring-blue-500' },
+
+      /* Text — light --------------------------------------------------- */
+      { variant: 'text', color: 'teal',   mode: 'light', class: 'text-teal-600   hover:bg-teal-50/80   active:bg-teal-100/80   focus-visible:ring-teal-400' },
+      { variant: 'text', color: 'purple', mode: 'light', class: 'text-purple-600 hover:bg-purple-50/80 active:bg-purple-100/80 focus-visible:ring-purple-400' },
+      { variant: 'text', color: 'red',    mode: 'light', class: 'text-red-600    hover:bg-red-50/80    active:bg-red-100/80    focus-visible:ring-red-400' },
+      { variant: 'text', color: 'green',  mode: 'light', class: 'text-green-600  hover:bg-green-50/80  active:bg-green-100/80  focus-visible:ring-green-400' },
+      { variant: 'text', color: 'blue',   mode: 'light', class: 'text-blue-700   hover:bg-blue-50/80   active:bg-blue-100/80   focus-visible:ring-blue-500' },
+
+      /* Text — dark ---------------------------------------------------- */
+      { variant: 'text', color: 'teal',   mode: 'dark', class: 'text-teal-400   hover:bg-teal-900/30   active:bg-teal-900/50   focus-visible:ring-teal-400' },
+      { variant: 'text', color: 'purple', mode: 'dark', class: 'text-purple-400 hover:bg-purple-900/30 active:bg-purple-900/50 focus-visible:ring-purple-400' },
+      { variant: 'text', color: 'red',    mode: 'dark', class: 'text-red-400    hover:bg-red-900/30    active:bg-red-900/50    focus-visible:ring-red-400' },
+      { variant: 'text', color: 'green',  mode: 'dark', class: 'text-green-400  hover:bg-green-900/30  active:bg-green-900/50  focus-visible:ring-green-400' },
+      { variant: 'text', color: 'blue',   mode: 'dark', class: 'text-blue-400   hover:bg-blue-900/30   active:bg-blue-900/50   focus-visible:ring-blue-500' },
     ],
     defaultVariants: {
-      color: 'teal',
+      color:   'teal',
       variant: 'solid',
-      size: 'regular',
-      radius: 'regular',
+      size:    'regular',
+      radius:  'regular',
+      mode:    'light',
     },
   },
 )
