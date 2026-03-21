@@ -1,13 +1,18 @@
 <script setup lang="ts">
-import { navigationItemVariants, type NavigationItemProps } from '.'
+import { injectNavigationContext, type NavigationItemProps } from '.'
 import { Link } from '~/components/ui/link'
+import { useTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
 
-const props = withDefaults(defineProps<NavigationItemProps>(), { variant: 'solid' })
+const props = defineProps<NavigationItemProps>()
+
+const { isDark } = useTheme()
+const { darkVariant } = injectNavigationContext()
+const linkVariant = computed(() => isDark.value ? darkVariant.value : 'solid')
 </script>
 
 <template>
-  <Link :variant="props.variant" radius="full" :to="props.to" :class="cn(navigationItemVariants({ variant: props.variant }), props.class)">
+  <Link :variant="linkVariant" radius="full" :to="props.to" :class="cn(props.class)">
     <slot />
   </Link>
 </template>

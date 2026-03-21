@@ -1,35 +1,32 @@
-import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
+import type { Ref } from 'vue'
+import { useCreateContext } from '~/composables/useCreateContext'
 import Navigation from './Navigation.vue'
 import NavigationItem from './NavigationItem.vue'
+
+/* Context
+--------------------------------------------------------------------- */
+interface NavigationContext {
+  darkVariant: Ref<'text' | 'outline'>
+}
+
+const [injectNavigationContext, provideNavigationContext] = useCreateContext<NavigationContext>('Navigation')
+
+export { injectNavigationContext, provideNavigationContext }
 
 /* Variants
 --------------------------------------------------------------------- */
 export const navigationVariants = cva('flex items-center gap-2')
 
-export const navigationItemVariants = cva('', {
-  variants: {
-    variant: {
-      solid:   'dark:bg-transparent dark:border-2 dark:border-white dark:text-white',
-      outline: '',
-    },
-  },
-  defaultVariants: {
-    variant: 'solid',
-  },
-})
-
 /* Types
 --------------------------------------------------------------------- */
-export type NavigationItemVariants = VariantProps<typeof navigationItemVariants>
-
 export interface NavigationProps {
+  darkVariant?: 'text' | 'outline'
   class?: string
 }
 
 export interface NavigationItemProps {
   to: string
-  variant?: NavigationItemVariants['variant']
   class?: string
 }
 

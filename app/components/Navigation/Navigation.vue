@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { navigationVariants, type NavigationProps } from '.'
+import { toRef } from 'vue'
+import { navigationVariants, provideNavigationContext, type NavigationProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = defineProps<NavigationProps>()
+const props = withDefaults(defineProps<NavigationProps>(), { darkVariant: 'outline' })
+
+provideNavigationContext({ darkVariant: toRef(props, 'darkVariant') })
 </script>
 
 <template>
