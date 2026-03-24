@@ -37,5 +37,4 @@ import Portrait from './Portrait.vue'
 
 export {
   Portrait as default,
-  Portrait
 }

@@ -78,4 +78,7 @@ export interface HeaderBrandProps {
 import Header from './Header.vue'
 import HeaderBrand from './HeaderBrand.vue'
 
-export { Header as default, Header, HeaderBrand }
+export {
+  Header as default,
+  HeaderBrand
+}

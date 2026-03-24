@@ -154,7 +154,6 @@ export interface CardFooterProps {
 --------------------------------------------------------------------- */
 export {
   Card as default,
-  Card,
   CardHeader,
   CardContent,
   CardFooter

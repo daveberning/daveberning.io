@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ThemePicker } from '~/components/ThemePicker'
-import { Header, HeaderBrand } from '~/components/Header'
+import ThemePicker from '~/components/ThemePicker'
+import Header, { HeaderBrand } from '~/components/Header'
 import { provideInternalContext } from '~/components/Internal'
 import { provideTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'

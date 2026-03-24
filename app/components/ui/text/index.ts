@@ -1,5 +1,6 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
+import Text from './Text.vue'
 
 /* Variants
 --------------------------------------------------------------------- */
@@ -55,9 +56,6 @@ export interface TextProps {
 
 /* Components
 --------------------------------------------------------------------- */
-import Text from './Text.vue'
-
 export {
   Text as default,
-  Text
 }

@@ -48,6 +48,5 @@ export const THEMES: { name: ThemeColor; color: string }[] = [
 --------------------------------------------------------------------- */
 export {
   ThemePicker as default,
-  ThemePicker,
   ThemePickerItem
 }

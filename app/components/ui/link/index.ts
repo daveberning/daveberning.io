@@ -63,4 +63,6 @@ export interface LinkProps {
 --------------------------------------------------------------------- */
 import Link from './Link.vue'
 
-export { Link as default, Link }
+export {
+  Link as default,
+}

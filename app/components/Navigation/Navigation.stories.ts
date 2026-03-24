@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { Navigation, NavigationItem } from '.'
+import Navigation, { NavigationItem } from '.'
 
 const meta: Meta<typeof Navigation> = {
   title: 'Navigation',

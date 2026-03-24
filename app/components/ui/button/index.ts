@@ -98,4 +98,6 @@ export interface ButtonProps {
 --------------------------------------------------------------------- */
 import Button from './Button.vue'
 
-export { Button as default, Button }
+export {
+  Button as default,
+}

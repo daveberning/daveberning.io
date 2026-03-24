@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
-import { Card } from '~/components/ui/card'
+import Card from '~/components/ui/card'
 import { injectInternalContext, type InternalAsideProps } from '.'
 import { useTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'

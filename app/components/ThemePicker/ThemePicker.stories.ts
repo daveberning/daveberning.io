@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { ThemePicker } from '.'
+import ThemePicker from '.'
 
 const meta: Meta<typeof ThemePicker> = {
   title: 'ThemePicker',

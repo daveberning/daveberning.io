@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ThemePicker } from '~/components/ThemePicker'
+import ThemePicker from '~/components/ThemePicker'
 import { provideTheme } from '~/composables/useTheme'
 
 provideTheme()

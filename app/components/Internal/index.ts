@@ -26,4 +26,7 @@ export interface InternalAsideProps {
 
 /* Components
 --------------------------------------------------------------------- */
-export { InternalMain, InternalAside }
+export {
+  InternalMain,
+  InternalAside
+}

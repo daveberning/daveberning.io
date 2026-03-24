@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { Link } from '.'
+import Link from '.'
 
 const meta: Meta<typeof Link> = {
   title: 'UI/Link',

@@ -84,7 +84,6 @@ import TableCaption from './TableCaption.vue'
 
 export {
   Table as default,
-  Table,
   TableHeader,
   TableBody,
   TableFooter,

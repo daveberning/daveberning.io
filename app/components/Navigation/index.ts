@@ -34,6 +34,5 @@ export interface NavigationItemProps {
 --------------------------------------------------------------------- */
 export {
   Navigation as default,
-  Navigation,
   NavigationItem
 }

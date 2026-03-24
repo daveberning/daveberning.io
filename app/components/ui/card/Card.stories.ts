@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import { Card, CardHeader, CardContent, CardFooter } from '.'
+import Card, { CardHeader, CardContent, CardFooter } from '.'
 
 const meta: Meta<typeof Card> = {
   title: 'UI/Card',
