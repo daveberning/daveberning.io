@@ -18,7 +18,7 @@ setup((app) => {
 const preview: Preview = {
   // Provide theme context to every story that needs it
   decorators: [
-    (story) => ({
+    () => ({
       setup() { provideTheme() },
       template: '<story />',
     }),

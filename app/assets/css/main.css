@@ -24,6 +24,18 @@
   --color-border:         var(--border);
   --color-text:           var(--text);
   --color-text-muted:     var(--text-muted);
+
+  /* Static per-theme palette (independent of active theme selection) */
+  --color-brand-teal:        #3e9e91;
+  --color-brand-teal-dark:   #2a7a6f;
+  --color-brand-red:         #a83c44;
+  --color-brand-red-dark:    #7a2a30;
+  --color-brand-blue:        #2e5186;
+  --color-brand-blue-dark:   #1e3a63;
+  --color-brand-green:       #40894e;
+  --color-brand-green-dark:  #2a6035;
+  --color-brand-purple:      #8d6299;
+  --color-brand-purple-dark: #5e3d6b;
 }
 
 /* =====================================================================

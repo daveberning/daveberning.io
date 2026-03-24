@@ -4,11 +4,11 @@ import { cn } from '~/lib/utils'
 
 const props = defineProps<CardFooterProps>()
 
-const { variant } = injectCardContext()
+const { variant, mode } = injectCardContext()
 </script>
 
 <template>
-  <div :class="cn(cardFooterVariants({ variant }), props.class)">
+  <div :class="cn(cardFooterVariants({ variant, mode }), props.class)">
     <slot />
   </div>
 </template>

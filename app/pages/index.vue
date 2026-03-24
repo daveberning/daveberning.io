@@ -19,7 +19,7 @@ const portrait = computed(() => `/portraits/dave-${color.value}.png`)
         Dave Berning
       </UiText>
       <UiText as="h2" class="text-xl lg:text-[1.75vw] font-light leading-0 my-10">
-        Software Engineer &amp; Instructor in Cincinnati, OH
+        Front-End Software Engineer in Cincinnati, OH
       </UiText>
       <Navigation>
         <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">

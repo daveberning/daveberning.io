@@ -14,14 +14,31 @@ export const textVariants = cva('', {
       h6: 'text-lg font-bold',
       p:  'text-base font-normal',
     },
+    color: {
+      default: '',       // resolved via compound variants + mode
+      inherit: 'text-inherit',
+      white:   'text-white',
+      muted:   'text-text-muted',
+      theme:   'text-theme',
+      teal:    'text-brand-teal',
+      red:     'text-brand-red',
+      blue:    'text-brand-blue',
+      green:   'text-brand-green',
+      purple:  'text-brand-purple',
+    },
     mode: {
-      light: 'text-theme-black',
-      dark:  'text-text',
+      light: '',
+      dark:  '',
     },
   },
+  compoundVariants: [
+    { color: 'default', mode: 'light', class: 'text-theme-black' },
+    { color: 'default', mode: 'dark',  class: 'text-text' },
+  ],
   defaultVariants: {
-    as:   'p',
-    mode: 'light',
+    as:    'p',
+    color: 'default',
+    mode:  'light',
   },
 })
 
@@ -32,7 +49,8 @@ export type TextVariants = VariantProps<typeof textVariants>
 export type TextAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
 
 export interface TextProps {
-  as?: TextAs
+  as?:    TextAs
+  color?: TextVariants['color']
 }
 
 /* Components

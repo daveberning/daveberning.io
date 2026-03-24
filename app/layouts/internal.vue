@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { ThemePicker } from '~/components/ThemePicker'
 import { Header, HeaderBrand } from '~/components/Header'
+import { provideInternalContext } from '~/components/Internal'
 import { provideTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
 import { navigationItems } from '~/variables'
 
-const {
-  color,
-  isDark
-} = provideTheme()
+const { color, isDark } = provideTheme()
+
+const hasAside = ref(false)
+provideInternalContext({ hasAside, setHasAside: (v) => { hasAside.value = v } })
 
 useHead({
   script: [
@@ -25,7 +27,9 @@ useHead({
   <div :class="cn('flex h-screen flex-col', isDark ? 'bg-theme-black' : 'bg-background')">
     <Header :variant="color" class="px-0 justify-center">
       <div class="container flex items-center justify-between">
-        <HeaderBrand>Dave Berning</HeaderBrand>
+        <HeaderBrand>
+          <code class="text-base">&lt;name&gt;</code>Dave<code class="text-base">&lt;/name&gt;</code>
+        </HeaderBrand>
         <Navigation dark-variant="text">
           <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">
             {{ item.name }}
@@ -33,11 +37,11 @@ useHead({
         </Navigation>
       </div>
     </Header>
-    <main class="flex-1 overflow-auto flex justify-center py-12">
-      <div class="container">
+    <div class="flex-1 overflow-auto flex justify-center py-12">
+      <div :class="cn('container grid grid-cols-1 gap-8 items-start', hasAside && 'md:grid-cols-3')">
         <slot />
       </div>
-    </main>
+    </div>
     <ThemePicker class="fixed bottom-4 left-4 z-50" />
   </div>
 </template>
