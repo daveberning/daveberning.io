@@ -2,11 +2,11 @@
 import { cardContentVariants, type CardContentProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = defineProps<CardContentProps>()
+const props = withDefaults(defineProps<CardContentProps>(), { as: 'div' })
 </script>
 
 <template>
-  <div :class="cn(cardContentVariants(), props.class)">
+  <component :is="props.as" :class="cn(cardContentVariants(), props.class)">
     <slot />
-  </div>
+  </component>
 </template>

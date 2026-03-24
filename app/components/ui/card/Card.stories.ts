@@ -8,7 +8,7 @@ const meta: Meta<typeof Card> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'raised', 'outline', 'theme'],
+      options: ['default', 'raised', 'outline', 'theme', 'teal', 'red', 'blue', 'green', 'purple'],
     },
   },
   args: {
@@ -51,6 +51,26 @@ export const Theme: Story = {
   args: { variant: 'theme' },
 }
 
+export const Teal: Story = {
+  args: { variant: 'teal' },
+}
+
+export const Red: Story = {
+  args: { variant: 'red' },
+}
+
+export const Blue: Story = {
+  args: { variant: 'blue' },
+}
+
+export const Green: Story = {
+  args: { variant: 'green' },
+}
+
+export const Purple: Story = {
+  args: { variant: 'purple' },
+}
+
 export const ContentOnly: Story = {
   render: (args) => ({
     components: { Card, CardContent },
@@ -70,16 +90,16 @@ export const AllVariants: Story = {
     components: { Card, CardHeader, CardContent, CardFooter },
     template: `
       <div class="flex flex-wrap gap-4">
-        <Card v-for="variant in ['default', 'raised', 'outline', 'theme']" :key="variant" :variant="variant" class="w-64">
+        <Card v-for="variant in ['default', 'raised', 'outline', 'theme', 'teal', 'red', 'blue', 'green', 'purple']" :key="variant" :variant="variant" class="w-64">
           <CardHeader>
             <p class="text-sm font-semibold capitalize">{{ variant }}</p>
-            <p class="text-xs mt-0.5" :class="variant === 'theme' ? 'text-theme-fg/70' : 'text-text-muted'">Subtitle</p>
+            <p class="text-xs mt-0.5" :class="['theme', 'teal', 'red', 'blue', 'green', 'purple'].includes(variant) ? 'text-theme-fg/70' : 'text-text-muted'">Subtitle</p>
           </CardHeader>
           <CardContent>
             <p class="text-sm">Content for the {{ variant }} card variant.</p>
           </CardContent>
           <CardFooter>
-            <p class="text-xs" :class="variant === 'theme' ? 'text-theme-fg/70' : 'text-text-muted'">Footer</p>
+            <p class="text-xs" :class="['theme', 'teal', 'red', 'blue', 'green', 'purple'].includes(variant) ? 'text-theme-fg/70' : 'text-text-muted'">Footer</p>
           </CardFooter>
         </Card>
       </div>

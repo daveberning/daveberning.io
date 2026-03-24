@@ -2,13 +2,13 @@
 import { cardFooterVariants, injectCardContext, type CardFooterProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = defineProps<CardFooterProps>()
+const props = withDefaults(defineProps<CardFooterProps>(), { as: 'div' })
 
 const { variant, mode } = injectCardContext()
 </script>
 
 <template>
-  <div :class="cn(cardFooterVariants({ variant, mode }), props.class)">
+  <component :is="props.as" :class="cn(cardFooterVariants({ variant, mode }), props.class)">
     <slot />
-  </div>
+  </component>
 </template>

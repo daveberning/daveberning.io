@@ -28,7 +28,7 @@ useHead({
     <Header :variant="color" class="px-0 justify-center">
       <div class="container flex items-center justify-between">
         <HeaderBrand>
-          <code class="text-base">&lt;name&gt;</code>Dave<code class="text-base">&lt;/name&gt;</code>
+          <code class="text-base text-rose-700/60">&lt;name&gt;</code>Dave<code class="text-base text-rose-700/60">&lt;/name&gt;</code>
         </HeaderBrand>
         <Navigation dark-variant="text">
           <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">

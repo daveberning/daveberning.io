@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { injectNavigationContext, type NavigationItemProps } from '.'
-import Link from '~/components/ui/link'
 import { useTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
 

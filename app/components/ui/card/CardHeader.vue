@@ -2,13 +2,13 @@
 import { cardHeaderVariants, injectCardContext, type CardHeaderProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = defineProps<CardHeaderProps>()
+const props = withDefaults(defineProps<CardHeaderProps>(), { as: 'div' })
 
 const { variant, mode } = injectCardContext()
 </script>
 
 <template>
-  <div :class="cn(cardHeaderVariants({ variant, mode }), props.class)">
+  <component :is="props.as" :class="cn(cardHeaderVariants({ variant, mode }), props.class)">
     <slot />
-  </div>
+  </component>
 </template>

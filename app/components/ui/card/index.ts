@@ -21,19 +21,19 @@ export { injectCardContext, provideCardContext }
 /* Variants
 --------------------------------------------------------------------- */
 export const cardVariants = cva(
-  'rounded-lg overflow-hidden',
+  'rounded-lg overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme',
   {
     variants: {
       variant: {
         default: 'border border-border text-text',
-        raised:  'border border-border text-text shadow-sm',
+        raised:  'border border-border text-text shadow-md',
         outline: 'bg-transparent border-2 border-border text-text',
-        theme:   'bg-theme border border-theme-dark text-white',
-        teal:    'bg-brand-teal border border-brand-teal-dark text-white',
-        red:     'bg-brand-red border border-brand-red-dark text-white',
-        blue:    'bg-brand-blue border border-brand-blue-dark text-white',
-        green:   'bg-brand-green border border-brand-green-dark text-white',
-        purple:  'bg-brand-purple border border-brand-purple-dark text-white',
+        theme:   'bg-theme border border-theme-dark text-theme-fg',
+        teal:    'bg-brand-teal border border-brand-teal-dark text-brand-teal-text',
+        red:     'bg-brand-red border border-brand-red-dark text-brand-red-text',
+        blue:    'bg-brand-blue border border-brand-blue-dark text-brand-blue-text',
+        green:   'bg-brand-green border border-brand-green-dark text-brand-green-text',
+        purple:  'bg-brand-purple border border-brand-purple-dark text-brand-purple-text',
       },
       mode: {
         light: '',
@@ -50,6 +50,7 @@ export const cardVariants = cva(
       { variant: 'blue',    mode: 'dark',  class: 'bg-brand-blue-dark border-brand-blue' },
       { variant: 'green',   mode: 'dark',  class: 'bg-brand-green-dark border-brand-green' },
       { variant: 'purple',  mode: 'dark',  class: 'bg-brand-purple-dark border-brand-purple' },
+      { variant: 'outline', mode: 'light', class: 'bg-surface/40' },
     ],
     defaultVariants: {
       variant: 'default',
@@ -134,20 +135,24 @@ export type CardVariants = VariantProps<typeof cardVariants>
 
 export interface CardProps {
   variant?: CardVariants['variant']
+  mode?: 'light' | 'dark'
   class?: string
   as?: string
 }
 
 export interface CardHeaderProps {
   class?: string
+  as?: string
 }
 
 export interface CardContentProps {
   class?: string
+  as?: string
 }
 
 export interface CardFooterProps {
   class?: string
+  as?: string
 }
 
 /* Components

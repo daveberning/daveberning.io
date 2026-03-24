@@ -10,16 +10,16 @@ const props = withDefaults(defineProps<CardProps>(), {
 })
 
 const { isDark } = useTheme()
-const mode = computed(() => isDark.value ? 'dark' : 'light')
+const resolvedMode = computed(() => props.mode ?? (isDark.value ? 'dark' : 'light'))
 
 provideCardContext({
   variant: toRef(props, 'variant'),
-  mode
+  mode: resolvedMode
 })
 </script>
 
 <template>
-  <component :is="props.as" :class="cn(cardVariants({ variant: props.variant, mode }), props.class)">
+  <component :is="props.as" :class="cn(cardVariants({ variant: props.variant, mode: resolvedMode }), props.class)">
     <slot />
   </component>
 </template>

@@ -5,7 +5,9 @@ import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<NavigationProps>(), { darkVariant: 'outline' })
 
-provideNavigationContext({ darkVariant: toRef(props, 'darkVariant') })
+provideNavigationContext({
+  darkVariant: toRef(props, 'darkVariant')
+})
 </script>
 
 <template>

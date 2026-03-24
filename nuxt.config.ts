@@ -23,8 +23,8 @@ export default defineNuxtConfig({
   ],
   fonts: {
     families: [
-      { name: 'Inter', provider: 'google' },
-      { name: 'Roboto', provider: 'google', weights: [100, 300, 400, 500, 700, 900] },
+      { name: 'Space Grotesk', provider: 'google', weights: [300, 400, 500, 600, 700] },
+      { name: 'DM Sans', provider: 'google', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900] },
     ],
   },
   future: {
