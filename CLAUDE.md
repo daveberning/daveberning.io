@@ -115,6 +115,25 @@ Key rules:
 - Apply classes with `cn()` inline in `:class` — never create a `mergedClass` computed ref
 - Do not use `defineSlots`
 
+## Agents
+
+This project uses specialized agents that collaborate to solve problems. When a prompt is received, the appropriate agents should work together to formulate a complete solution.
+
+| Agent | Role | When to use |
+|---|---|---|
+| `front-end-software-engineer` | Builds, refactors, and tests front-end code — Vue components, composables, Pinia stores, Tailwind styling, Vitest tests | Any task touching `app/` |
+| `qa-engineer` | Writes and runs unit, component, and e2e tests (Vitest + Playwright) | After new components or features are written; regression coverage after refactors |
+| `ui-designer` | UI/UX design guidance, accessibility reviews (WCAG), layout recommendations, design system consistency | **Only** when creating new components or asking about colors, layouts, spacing, or visual design |
+| `Plan` | Software architect — designs implementation strategies, identifies critical files, weighs trade-offs | Before starting non-trivial features or refactors |
+| `Explore` | Fast codebase exploration — finds files by pattern, searches for keywords, answers structural questions | When context about existing code is needed before making changes |
+
+### Collaboration rules
+
+- For any non-trivial feature: `Plan` → `front-end-software-engineer` → `qa-engineer`
+- For new UI components: `ui-designer` (design) → `front-end-software-engineer` (build) → `qa-engineer` (test)
+- `ui-designer` is **only invoked** for tasks explicitly involving component creation, visual design decisions, or UX/accessibility review — not for general coding tasks
+- `qa-engineer` runs **after** implementation is complete, not during
+
 ## Nuxt modules in use
 
 - `@pinia/nuxt` — state management (`app/stores/`)
