@@ -13,7 +13,7 @@
   /* Accent / brand (theme-switchable) */
   --color-theme:        var(--theme-color);
   --color-theme-dark:   var(--theme-color-dark);
-  --color-theme-light:  var(--theme-color-light);
+  --color-theme-light:  var(--theme-color-light);  /* Decorative fills only -- contrast too low for text use */
   --color-theme-black:  var(--theme-color-black);
   --color-theme-fg:     var(--theme-fg);   /* text rendered ON a theme-colored bg */
 
@@ -26,26 +26,33 @@
   --color-text-muted:     var(--text-muted);
 
   /* Static per-theme palette (independent of active theme selection) */
-  --color-brand-teal:        #3e9e91;
+  --color-brand-teal:        #2d8a7e;
   --color-brand-teal-dark:   #2a7a6f;
   --color-brand-red:         #a83c44;
   --color-brand-red-dark:    #7a2a30;
   --color-brand-blue:        #2e5186;
   --color-brand-blue-dark:   #1e3a63;
-  --color-brand-green:       #40894e;
+  --color-brand-green:       #2f7040;
   --color-brand-green-dark:  #2a6035;
   --color-brand-purple:      #8d6299;
   --color-brand-purple-dark: #5e3d6b;
+
+  /* Per-brand foreground text (reactive to light/dark) */
+  --color-brand-teal-text:   var(--brand-teal-text);
+  --color-brand-red-text:    var(--brand-red-text);
+  --color-brand-blue-text:   var(--brand-blue-text);
+  --color-brand-green-text:  var(--brand-green-text);
+  --color-brand-purple-text: var(--brand-purple-text);
 }
 
 /* =====================================================================
    Theme base colors — one hex per theme, everything else is derived
    ===================================================================== */
-:root                 { --theme-color-base: #3e9e91; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; } /* teal — default */
-[data-theme="teal"]   { --theme-color-base: #3e9e91; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; }
+:root                 { --theme-color-base: #2d8a7e; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; } /* teal — default */
+[data-theme="teal"]   { --theme-color-base: #2d8a7e; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; }
 [data-theme="red"]    { --theme-color-base: #a83c44; --theme-color-light: #d97880; --theme-color-dark: #7a2a30; --theme-color-black: #1e0e11; }
 [data-theme="blue"]   { --theme-color-base: #2e5186; --theme-color-light: #7a9bc7; --theme-color-dark: #1e3a63; --theme-color-black: #0e1622; }
-[data-theme="green"]  { --theme-color-base: #40894e; --theme-color-light: #7ec08e; --theme-color-dark: #2a6035; --theme-color-black: #0e1b11; }
+[data-theme="green"]  { --theme-color-base: #2f7040; --theme-color-light: #7ec08e; --theme-color-dark: #2a6035; --theme-color-black: #0e1b11; }
 [data-theme="purple"] { --theme-color-base: #8d6299; --theme-color-light: #c2a0cc; --theme-color-dark: #5e3d6b; --theme-color-black: #170e1f; }
 
 /* =====================================================================
@@ -69,7 +76,14 @@
   --surface-raised: #e4e4e7;
   --border:         #d4d4d8;
   --text:           #18181b;
-  --text-muted:     #71717a;
+  --text-muted:     #636369;
+
+  /* Brand foreground — dark near-black with hue tint (4.5:1+ on brand bg) */
+  --brand-teal-text:   oklch(0.12 0.04 185);
+  --brand-red-text:    oklch(0.12 0.04 20);
+  --brand-blue-text:   oklch(0.12 0.04 250);
+  --brand-green-text:  oklch(0.12 0.04 145);
+  --brand-purple-text: oklch(0.12 0.04 305);
 }
 
 /* =====================================================================
@@ -92,6 +106,13 @@
   --theme-color-dark:  oklch(from var(--theme-color-base) calc(l - 0.02) c h);
   --theme-color-light: oklch(from var(--theme-color-base) calc(l + 0.28) c h);
   --theme-fg:          oklch(from var(--theme-color-base) 0.10 0.02 h); /* near-black on lighter accent */
+
+  /* Brand foreground — near-white, hue-tinted */
+  --brand-teal-text:   oklch(0.96 0.01 185);
+  --brand-red-text:    oklch(0.96 0.01 20);
+  --brand-blue-text:   oklch(0.96 0.01 250);
+  --brand-green-text:  oklch(0.96 0.01 145);
+  --brand-purple-text: oklch(0.96 0.01 305);
 }
 
 /* =====================================================================
