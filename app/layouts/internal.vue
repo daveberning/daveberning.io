@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import ThemePicker from '~/components/ThemePicker'
 import Header, { HeaderBrand } from '~/components/Header'
+import Footer from '~/components/ui/footer'
 import { provideInternalContext } from '~/components/Internal'
 import { provideTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
@@ -24,11 +25,11 @@ useHead({
 </script>
 
 <template>
-  <div :class="cn('flex h-screen flex-col', isDark ? 'bg-theme-black' : 'bg-background')">
+  <div :class="cn('flex min-h-screen flex-col', isDark ? 'bg-theme-black' : 'bg-background')">
     <Header :variant="color" class="px-0 justify-center">
-      <div class="container flex items-center justify-between">
+      <div class="container flex items-center justify-between px-8">
         <HeaderBrand>
-          <code class="text-base text-rose-700/60">&lt;name&gt;</code>Dave<code class="text-base text-rose-700/60">&lt;/name&gt;</code>
+          <code>&lt;name&gt;</code>Dave<code>&lt;/name&gt;</code>
         </HeaderBrand>
         <Navigation dark-variant="text">
           <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">
@@ -37,11 +38,20 @@ useHead({
         </Navigation>
       </div>
     </Header>
-    <div class="flex-1 overflow-auto flex justify-center py-12">
-      <div :class="cn('container grid grid-cols-1 gap-8 items-start', hasAside && 'md:grid-cols-3')">
+    <div class="flex-1 flex justify-center py-12">
+      <div :class="cn('container grid grid-cols-1 gap-8 items-start px-8', hasAside && 'md:grid-cols-3')">
         <slot />
       </div>
     </div>
+    <UiCtaBar class="text-center flex gap-4">
+      <UiText as="h3" color="white">Let's Work Together</UiText>
+      <div class="m-4">
+        <UiText color="white">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
+      </div>
+      <UiButton color="white" variant="outline" size="large">Download Résumé</UiButton>
+      <UiSocialLinks class="justify-center mt-4" />
+    </UiCtaBar>
+    <Footer />
     <ThemePicker class="fixed bottom-4 left-4 z-50" />
   </div>
 </template>

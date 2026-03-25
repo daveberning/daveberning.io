@@ -13,6 +13,7 @@ export const buttonVariants = cva(
         red:    '',
         green:  '',
         blue:   '',
+        white:  '',
       },
       variant: {
         solid:   '',
@@ -36,6 +37,10 @@ export const buttonVariants = cva(
       },
     },
     compoundVariants: [
+      /* White ---------------------------------------------------------- */
+      { variant: 'outline', color: 'white', class: 'border-white text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white' },
+      { variant: 'text',    color: 'white', class: 'text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white' },
+
       /* Solid ---------------------------------------------------------- */
       { variant: 'solid', color: 'teal',   class: 'bg-teal-600   text-white hover:bg-teal-700   active:bg-teal-800   focus-visible:ring-teal-400' },
       { variant: 'solid', color: 'purple', class: 'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 focus-visible:ring-purple-400' },
