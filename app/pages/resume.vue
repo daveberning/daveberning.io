@@ -1,5 +1,7 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'internal' })
+definePageMeta({
+  layout: false
+})
 
 const { data: page } = await useAsyncData('resume', () =>
   queryCollection('content').path('/resume').first()
@@ -17,8 +19,8 @@ const content = computed(() => page.value!)
 </script>
 
 <template>
-  <div class="grid grid-cols-3">
-    <aside class="col-span-1">
+  <NuxtLayout name="internal">
+    <InternalAside class="text-center flex flex-col items-center">
       <h1 class="text-2xl font-bold mb-4">Résumé</h1>
       <p class="mb-2">
         I'm currently a software engineer at
@@ -30,9 +32,9 @@ const content = computed(() => page.value!)
         and
         <a href="https://www.nordtheme.com/ports/kitty" class="text-teal-500 hover:underline" target="_blank" rel="noopener">Nord Kitty</a>.
       </p>
-    </aside>
-    <article class="col-span-2">
+    </InternalAside>
+    <InternalMain>
       <ContentRenderer :value="content" />
-    </article>
-  </div>
+    </InternalMain>
+  </NuxtLayout>
 </template>

@@ -11,7 +11,7 @@ import CardFooter from './CardFooter.vue'
 --------------------------------------------------------------------- */
 interface CardContext {
   variant: Ref<CardVariants['variant']>
-  mode:    Ref<'light' | 'dark'>
+  color:   Ref<CardVariants['color']>
 }
 
 const [injectCardContext, provideCardContext] = useCreateContext<CardContext>('Card')
@@ -25,36 +25,19 @@ export const cardVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border border-border text-text',
-        raised:  'border border-border text-text shadow-md',
-        outline: 'bg-transparent border-2 border-border text-text',
-        theme:   'bg-theme border border-theme-dark text-theme-fg',
-        teal:    'bg-brand-teal border border-brand-teal-dark text-brand-teal-text',
-        red:     'bg-brand-red border border-brand-red-dark text-brand-red-text',
-        blue:    'bg-brand-blue border border-brand-blue-dark text-brand-blue-text',
-        green:   'bg-brand-green border border-brand-green-dark text-brand-green-text',
-        purple:  'bg-brand-purple border border-brand-purple-dark text-brand-purple-text',
+        solid:   'bg-background border border-border text-text',
+        outline: '!bg-transparent border-2 border-border text-text',
       },
-      mode: {
-        light: '',
-        dark:  '',
+      color: {
+        teal:   'bg-brand-teal border border-brand-teal-dark text-brand-teal-text dark:bg-brand-teal-dark dark:border-brand-teal',
+        red:    'bg-brand-red border border-brand-red-dark text-brand-red-text dark:bg-brand-red-dark dark:border-brand-red',
+        blue:   'bg-brand-blue border border-brand-blue-dark text-brand-blue-text dark:bg-brand-blue-dark dark:border-brand-blue',
+        green:  'bg-brand-green border border-brand-green-dark text-brand-green-text dark:bg-brand-green-dark dark:border-brand-green',
+        purple: 'bg-brand-purple border border-brand-purple-dark text-brand-purple-text dark:bg-brand-purple-dark dark:border-brand-purple',
       },
     },
-    compoundVariants: [
-      { variant: 'default', mode: 'light', class: 'bg-white' },
-      { variant: 'default', mode: 'dark',  class: 'bg-surface' },
-      { variant: 'raised',  mode: 'light', class: 'bg-white' },
-      { variant: 'raised',  mode: 'dark',  class: 'bg-surface-raised' },
-      { variant: 'teal',    mode: 'dark',  class: 'bg-brand-teal-dark border-brand-teal' },
-      { variant: 'red',     mode: 'dark',  class: 'bg-brand-red-dark border-brand-red' },
-      { variant: 'blue',    mode: 'dark',  class: 'bg-brand-blue-dark border-brand-blue' },
-      { variant: 'green',   mode: 'dark',  class: 'bg-brand-green-dark border-brand-green' },
-      { variant: 'purple',  mode: 'dark',  class: 'bg-brand-purple-dark border-brand-purple' },
-      { variant: 'outline', mode: 'light', class: 'bg-surface/40' },
-    ],
     defaultVariants: {
-      variant: 'default',
-      mode:    'light',
+      variant: 'solid',
     },
   },
 )
@@ -64,31 +47,19 @@ export const cardHeaderVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border-b border-border',
-        raised:  'border-b border-border',
+        solid:   'border-b border-border',
         outline: 'border-b border-border',
-        theme:   'border-b border-theme-dark',
-        teal:    'border-b border-brand-teal-dark',
-        red:     'border-b border-brand-red-dark',
-        blue:    'border-b border-brand-blue-dark',
-        green:   'border-b border-brand-green-dark',
-        purple:  'border-b border-brand-purple-dark',
       },
-      mode: {
-        light: '',
-        dark:  '',
+      color: {
+        teal:   'border-b border-brand-teal-dark dark:border-brand-teal',
+        red:    'border-b border-brand-red-dark dark:border-brand-red',
+        blue:   'border-b border-brand-blue-dark dark:border-brand-blue',
+        green:  'border-b border-brand-green-dark dark:border-brand-green',
+        purple: 'border-b border-brand-purple-dark dark:border-brand-purple',
       },
     },
-    compoundVariants: [
-      { variant: 'teal',   mode: 'dark', class: 'border-brand-teal' },
-      { variant: 'red',    mode: 'dark', class: 'border-brand-red' },
-      { variant: 'blue',   mode: 'dark', class: 'border-brand-blue' },
-      { variant: 'green',  mode: 'dark', class: 'border-brand-green' },
-      { variant: 'purple', mode: 'dark', class: 'border-brand-purple' },
-    ],
     defaultVariants: {
-      variant: 'default',
-      mode:    'light',
+      variant: 'solid',
     },
   },
 )
@@ -100,31 +71,19 @@ export const cardFooterVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border-t border-border',
-        raised:  'border-t border-border',
+        solid:   'border-t border-border',
         outline: 'border-t border-border',
-        theme:   'border-t border-theme-dark',
-        teal:    'border-t border-brand-teal-dark',
-        red:     'border-t border-brand-red-dark',
-        blue:    'border-t border-brand-blue-dark',
-        green:   'border-t border-brand-green-dark',
-        purple:  'border-t border-brand-purple-dark',
       },
-      mode: {
-        light: '',
-        dark:  '',
+      color: {
+        teal:   'border-t border-brand-teal-dark dark:border-brand-teal',
+        red:    'border-t border-brand-red-dark dark:border-brand-red',
+        blue:   'border-t border-brand-blue-dark dark:border-brand-blue',
+        green:  'border-t border-brand-green-dark dark:border-brand-green',
+        purple: 'border-t border-brand-purple-dark dark:border-brand-purple',
       },
     },
-    compoundVariants: [
-      { variant: 'teal',   mode: 'dark', class: 'border-brand-teal' },
-      { variant: 'red',    mode: 'dark', class: 'border-brand-red' },
-      { variant: 'blue',   mode: 'dark', class: 'border-brand-blue' },
-      { variant: 'green',  mode: 'dark', class: 'border-brand-green' },
-      { variant: 'purple', mode: 'dark', class: 'border-brand-purple' },
-    ],
     defaultVariants: {
-      variant: 'default',
-      mode:    'light',
+      variant: 'solid',
     },
   },
 )
@@ -135,24 +94,24 @@ export type CardVariants = VariantProps<typeof cardVariants>
 
 export interface CardProps {
   variant?: CardVariants['variant']
-  mode?: 'light' | 'dark'
-  class?: string
-  as?: string
+  color?:   CardVariants['color']
+  class?:   string
+  as?:      string
 }
 
 export interface CardHeaderProps {
   class?: string
-  as?: string
+  as?:    string
 }
 
 export interface CardContentProps {
   class?: string
-  as?: string
+  as?:    string
 }
 
 export interface CardFooterProps {
   class?: string
-  as?: string
+  as?:    string
 }
 
 /* Components
@@ -161,5 +120,5 @@ export {
   Card as default,
   CardHeader,
   CardContent,
-  CardFooter
+  CardFooter,
 }

@@ -8,11 +8,15 @@ const meta: Meta<typeof Card> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'raised', 'outline', 'theme', 'teal', 'red', 'blue', 'green', 'purple'],
+      options: ['solid', 'outline'],
+    },
+    color: {
+      control: 'select',
+      options: ['teal', 'red', 'blue', 'green', 'purple'],
     },
   },
   args: {
-    variant: 'default',
+    variant: 'solid',
   },
   render: (args) => ({
     components: { Card, CardHeader, CardContent, CardFooter },
@@ -37,38 +41,18 @@ const meta: Meta<typeof Card> = {
 export default meta
 type Story = StoryObj<typeof Card>
 
-export const Default: Story = {}
-
-export const Raised: Story = {
-  args: { variant: 'raised' },
-}
+export const Solid: Story = {}
 
 export const Outline: Story = {
   args: { variant: 'outline' },
 }
 
-export const Theme: Story = {
-  args: { variant: 'theme' },
+export const WithColor: Story = {
+  args: { color: 'teal' },
 }
 
-export const Teal: Story = {
-  args: { variant: 'teal' },
-}
-
-export const Red: Story = {
-  args: { variant: 'red' },
-}
-
-export const Blue: Story = {
-  args: { variant: 'blue' },
-}
-
-export const Green: Story = {
-  args: { variant: 'green' },
-}
-
-export const Purple: Story = {
-  args: { variant: 'purple' },
+export const OutlineWithColor: Story = {
+  args: { variant: 'outline', color: 'teal' },
 }
 
 export const ContentOnly: Story = {
@@ -90,16 +74,28 @@ export const AllVariants: Story = {
     components: { Card, CardHeader, CardContent, CardFooter },
     template: `
       <div class="flex flex-wrap gap-4">
-        <Card v-for="variant in ['default', 'raised', 'outline', 'theme', 'teal', 'red', 'blue', 'green', 'purple']" :key="variant" :variant="variant" class="w-64">
+        <Card v-for="variant in ['solid', 'outline']" :key="variant" :variant="variant" class="w-64">
           <CardHeader>
             <p class="text-sm font-semibold capitalize">{{ variant }}</p>
-            <p class="text-xs mt-0.5" :class="['theme', 'teal', 'red', 'blue', 'green', 'purple'].includes(variant) ? 'text-theme-fg/70' : 'text-text-muted'">Subtitle</p>
+            <p class="text-xs text-text-muted mt-0.5">Subtitle</p>
           </CardHeader>
           <CardContent>
-            <p class="text-sm">Content for the {{ variant }} card variant.</p>
+            <p class="text-sm">Content for the {{ variant }} variant.</p>
           </CardContent>
           <CardFooter>
-            <p class="text-xs" :class="['theme', 'teal', 'red', 'blue', 'green', 'purple'].includes(variant) ? 'text-theme-fg/70' : 'text-text-muted'">Footer</p>
+            <p class="text-xs text-text-muted">Footer</p>
+          </CardFooter>
+        </Card>
+        <Card v-for="color in ['teal', 'red', 'blue', 'green', 'purple']" :key="color" :color="color" class="w-64">
+          <CardHeader>
+            <p class="text-sm font-semibold capitalize">{{ color }}</p>
+            <p class="text-xs mt-0.5">Subtitle</p>
+          </CardHeader>
+          <CardContent>
+            <p class="text-sm">Content for the {{ color }} color.</p>
+          </CardContent>
+          <CardFooter>
+            <p class="text-xs">Footer</p>
           </CardFooter>
         </Card>
       </div>

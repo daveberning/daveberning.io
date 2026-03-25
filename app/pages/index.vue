@@ -21,7 +21,7 @@ const portrait = computed(() => `/portraits/dave-${color.value}.png`)
       <UiText as="h2" class="text-xl lg:text-[1.75vw] font-light leading-0 my-10">
         Front-End Software Engineer in Cincinnati, OH
       </UiText>
-      <Navigation>
+      <Navigation dark-variant="outline">
         <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">
           {{ item.name }}
         </NavigationItem>

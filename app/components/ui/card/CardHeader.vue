@@ -4,11 +4,11 @@ import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<CardHeaderProps>(), { as: 'div' })
 
-const { variant, mode } = injectCardContext()
+const { variant, color } = injectCardContext()
 </script>
 
 <template>
-  <component :is="props.as" :class="cn(cardHeaderVariants({ variant, mode }), props.class)">
+  <component :is="props.as" :class="cn(cardHeaderVariants({ variant, color }), props.class)">
     <slot />
   </component>
 </template>

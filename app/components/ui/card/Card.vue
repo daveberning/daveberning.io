@@ -1,25 +1,21 @@
 <script setup lang="ts">
-import { computed, toRef } from 'vue'
+import { toRef } from 'vue'
 import { cardVariants, provideCardContext, type CardProps } from '.'
-import { useTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<CardProps>(), {
   as: 'div',
-  variant: 'default',
+  variant: 'solid',
 })
-
-const { isDark } = useTheme()
-const resolvedMode = computed(() => props.mode ?? (isDark.value ? 'dark' : 'light'))
 
 provideCardContext({
   variant: toRef(props, 'variant'),
-  mode: resolvedMode
+  color:   toRef(props, 'color'),
 })
 </script>
 
 <template>
-  <component :is="props.as" :class="cn(cardVariants({ variant: props.variant, mode: resolvedMode }), props.class)">
+  <component :is="props.as" :class="cn(cardVariants({ variant: props.variant, color: props.color }), props.class)">
     <slot />
   </component>
 </template>
