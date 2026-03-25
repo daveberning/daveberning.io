@@ -1,6 +1,10 @@
 ---
 order:
-  - jane-smith
-  - michael-chen
-  - sarah-johnson
+  - jess-fitak
+  - brett-valls
+  - bryan-king
+  - fran-frye
+  - mark-strong
+  - tess-white
+  - colin-lutz
 ---
