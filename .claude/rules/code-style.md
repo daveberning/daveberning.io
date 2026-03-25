@@ -23,6 +23,33 @@
 - Export the component as default from `index.ts`; never re-export from a parent barrel
 - All class merging goes through `cn()` from `~/lib/utils`
 
+## Variants & Theming
+
+- All component variants are defined with **CVA** in the component's `index.ts` — never inline in the SFC
+- Variants are driven by `useTheme()` — specifically `isDark` and `color` (a `ThemeColor`: `'teal' | 'red' | 'blue' | 'green' | 'purple'`)
+- Theme-based variants must use the **brand CSS custom properties** defined in `main.css` — never Tailwind color utilities like `bg-teal-500`
+
+  Available brand tokens:
+  ```
+  bg-brand-teal        bg-brand-teal-dark
+  bg-brand-red         bg-brand-red-dark
+  bg-brand-blue        bg-brand-blue-dark
+  bg-brand-green       bg-brand-green-dark
+  bg-brand-purple      bg-brand-purple-dark
+  text-brand-teal-text text-brand-red-text
+  text-brand-blue-text text-brand-green-text text-brand-purple-text
+  ```
+  Semantic tokens (respond to light/dark mode automatically):
+  ```
+  bg-background   bg-surface   bg-surface-raised
+  border-border   text-text    text-text-muted
+  bg-theme        bg-theme-dark   bg-theme-light   bg-theme-black
+  text-theme-fg
+  ```
+
+- The component's **props** determine which CVA variant is active — `useTheme()` values are read in the SFC and passed as variant keys
+- Do not hardcode dark/light styles inside variants — use semantic tokens that respond to the `dark` class on `<html>` automatically where possible
+
 ## General
 
 - No `console.log` in committed code
