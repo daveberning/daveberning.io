@@ -27,6 +27,14 @@ export default defineNuxtConfig({
       { name: 'DM Sans', provider: 'google', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900] },
     ],
   },
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        extensions: ['vue'],
+      },
+    ],
+  },
   future: {
     compatibilityVersion: 4,
   },

@@ -2,7 +2,7 @@
 works:
   - title: "EyeMed Customer Portal"
     description: "A short description of the fourth project and the technologies involved."
-    role: "UI Engineer"
+    role: "Front-End Web Developer"
     year: 2022
     technologies: ["Vue.js", "SCSS", "REST API", "JavaScript"]
     
@@ -11,11 +11,11 @@ works:
     role: "Front-End Web Developer"
     year: 2020
     technologies: ["Nuxt", "TypeScript", "Tailwind CSS", "Prismic CMS"]
-    url: "https://example.com"
+    url: "/work/cti"
 
   - title: "Kroger Wireless"
     description: "A short description of the second project, highlighting the problem it solved."
-    role: "Software Engineer"
+    role: "Freelance Software Engineer"
     year: 2018
     technologies: ["NativeScript", "Vue.js", "TypeScript"]
 
@@ -28,7 +28,7 @@ works:
   
   - title: "M80, Inc."
     description: "A short description of the fourth project and the technologies involved."
-    role: "Web Developer"
+    role: "Freelance Wordpress Developer"
     year: 2014
     technologies: ["Wordpress", "PHP", "JavaScript"]
 ---

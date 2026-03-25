@@ -29,5 +29,10 @@ export default defineContentConfig({
         image:   z.string().optional(),
       }),
     }),
+    works: defineCollection({
+      type: 'page',
+      source: 'work/*.md',
+      schema: workItemSchema,
+    }),
   },
 })

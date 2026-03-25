@@ -9,7 +9,6 @@ const {
   isDark,
 } = useTheme()
 
-const variant = computed(() => isDark.value ? 'solid' : 'outline')
 const works = computed(() => page.value?.works ?? [])
 
 /* Page Content
@@ -24,7 +23,7 @@ const { data: page } = await useAsyncData('work', () =>
     Work
   </UiText>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-    <PortfolioPiece v-for="work in works" :key="work.title" :color="color" :variant="variant">
+    <PortfolioPiece v-for="work in works" :key="work.title" :color="color" variant="solid">
       <PortfolioPieceHeader :title="work.title" :role="work.role" />
       <PortfolioPieceBody>
         <UiText>{{ work.description }}</UiText>
@@ -36,7 +35,7 @@ const { data: page } = await useAsyncData('work', () =>
       </PortfolioPieceTech>
       <PortfolioPieceFooter v-if="work.year || work.url">
         <span v-if="work.year" class="text-xs text-text-muted">{{ work.year}}</span>
-        <UiLink v-if="work.url" :href="work.url" variant="solid" size="small" class="ml-auto">
+        <UiLink v-if="work.url" :to="work.url" variant="solid" size="small" class="ml-auto">
           View Project
         </UiLink>
       </PortfolioPieceFooter>

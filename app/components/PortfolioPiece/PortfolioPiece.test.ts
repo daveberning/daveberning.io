@@ -284,26 +284,6 @@ describe('PortfolioPieceFooter', () => {
     expect(footer.element.tagName).toBe('DIV')
   })
 
-  it('renders year when provided', () => {
-    const wrapper = mountRoot({}, {
-      default: () => h(PortfolioPieceFooter, { year: 2024 }),
-    })
-    const footer = wrapper.findComponent(PortfolioPieceFooter)
-    expect(footer.text()).toContain('2024')
-    expect(footer.find('span').exists()).toBe(true)
-  })
-
-  it('renders link when url is provided', () => {
-    const wrapper = mountRoot({}, {
-      default: () => h(PortfolioPieceFooter, { url: 'https://example.com' }),
-    })
-    const footer = wrapper.findComponent(PortfolioPieceFooter)
-    const link = footer.find('a')
-    expect(link.exists()).toBe(true)
-    expect(link.attributes('href')).toBe('https://example.com')
-    expect(link.text()).toBe('View Project')
-  })
-
   it('omits year when not provided', () => {
     const wrapper = mountRoot({}, {
       default: () => h(PortfolioPieceFooter, { url: 'https://example.com' }),

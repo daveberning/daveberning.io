@@ -9,9 +9,6 @@ const props = withDefaults(defineProps<PortfolioPieceFooterProps>(), {
 
 <template>
   <component :is="props.as" :class="cn(portfolioPieceFooterVariants(), props.class)">
-    <span v-if="props.year" class="text-xs text-text-muted">{{ props.year }}</span>
-    <UiLink v-if="props.url" :href="props.url" variant="text" size="small" class="ml-auto">
-      View Project
-    </UiLink>
+    <slot />
   </component>
 </template>
