@@ -28,24 +28,37 @@ Imports → context block (compound only) → variants → types → component e
 ```ts
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
+import Button from './Button.vue'
 
-/* Variants */
+/* Variants
+--------------------------------------------------------------------- */
 export const buttonVariants = cva('...base classes...', {
-  variants: { variant: { default: '...' } },
-  defaultVariants: { variant: 'default' },
+  variants: {
+    variant: {
+      default: '...'
+    }
+  },
+  defaultVariants: {
+    variant: 'default'
+  },
 })
 
-/* Types */
+/* Types
+--------------------------------------------------------------------- */
 export type ButtonVariants = VariantProps<typeof buttonVariants>
+
 export interface ButtonProps {
   variant?: ButtonVariants['variant']
   class?: string
   as?: string
 }
 
-/* Components */
-import Button from './Button.vue'
-export { Button as default, Button }
+/* Components
+--------------------------------------------------------------------- */
+export {
+  Button as default
+  // other exports (subcomponents, contexts) go here
+}
 ```
 
 ### SFC pattern
@@ -54,7 +67,9 @@ export { Button as default, Button }
 import { myVariants, type MyProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = withDefaults(defineProps<MyProps>(), { as: 'div' })
+const props = withDefaults(defineProps<MyProps>(), {
+  as: 'div'
+})
 </script>
 
 <template>

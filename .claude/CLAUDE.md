@@ -54,12 +54,17 @@ Sections appear in this order: imports → context block (compound only) → typ
 ```ts
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
-// import { useCreateContext } from '~/composables/useCreateContext' // compound only
+import { useCreateContext } from '~/composables/useCreateContext' // compound only
+import Button from './Button.vue'
 
 /* Variants
 --------------------------------------------------------------------- */
 export const buttonVariants = cva('...base classes...', {
-  variants: { variant: { default: '...' } },
+  variants: {
+    variant: {
+      default: '...'
+    },
+  },
   defaultVariants: { variant: 'default' },
 })
 
@@ -73,11 +78,23 @@ export interface ButtonProps {
   as?: string
 }
 
+export interface ButtonContext {
+  // context values go here for compound components; empty for primitives
+}
+
+/* Context
+--------------------------------------------------------------------- */
+export const [
+  injectButtonContext,
+  provideButtonContext
+] = useCreateContext<ButtonContext>('Button')
+
 /* Components
 --------------------------------------------------------------------- */
-import Button from './Button.vue'
-
-export { Button as default, Button }
+export {
+  Button as default,
+  // other exports (compound subcomponents, context helpers) go here
+}
 ```
 
 ### SFC pattern
@@ -87,7 +104,9 @@ export { Button as default, Button }
 import { myVariants, type MyProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = withDefaults(defineProps<MyProps>(), { as: 'div' })
+const props = withDefaults(defineProps<MyProps>(), {
+  as: 'div',
+})
 </script>
 
 <template>
@@ -102,8 +121,10 @@ const props = withDefaults(defineProps<MyProps>(), { as: 'div' })
 Compound components share state via `useCreateContext`. The context helpers live in `index.ts`:
 
 ```ts
-const [injectHeaderContext, provideHeaderContext] = useCreateContext<HeaderContext>('Header')
-export { injectHeaderContext, provideHeaderContext }
+export const [
+  injectHeaderContext,
+  provideHeaderContext
+] = useCreateContext<HeaderContext>('Header')
 ```
 
 Root calls `provideHeaderContext(...)` inline; subcomponents call `injectHeaderContext()` and destructure what they need.
