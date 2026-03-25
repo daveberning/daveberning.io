@@ -9,13 +9,22 @@ const workItemSchema = z.object({
   url:          z.string().optional(),
 })
 
+const testimonialSchema = z.object({
+  name:    z.string(),
+  role:    z.string(),
+  company: z.string(),
+  image:   z.string().optional(),
+  content: z.string(),
+})
+
 export default defineContentConfig({
   collections: {
     content: defineCollection({
       type: 'page',
       source: '**/*.md',
       schema: z.object({
-        works: z.array(workItemSchema).optional(),
+        works:        z.array(workItemSchema).optional(),
+        testimonials: z.array(testimonialSchema).optional(),
       }),
     }),
   },
