@@ -26,6 +26,7 @@ const portrait = computed(() => `/portraits/dave-${color.value}.png`)
           {{ item.name }}
         </NavigationItem>
       </Navigation>
+      <UiSocialLinks class="mt-4" />
     </div>
   </main>
 </template>

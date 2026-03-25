@@ -1,5 +1,6 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
+import Button from './Button.vue'
 
 /* Variants
 --------------------------------------------------------------------- */
@@ -38,43 +39,44 @@ export const buttonVariants = cva(
     },
     compoundVariants: [
       /* White ---------------------------------------------------------- */
+      { variant: 'solid',   color: 'white', class: 'bg-white text-text hover:bg-white/90 active:bg-white/80 focus-visible:bg-white/80 focus-visible:ring-white' },
       { variant: 'outline', color: 'white', class: 'border-white text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white' },
       { variant: 'text',    color: 'white', class: 'text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white' },
 
       /* Solid ---------------------------------------------------------- */
-      { variant: 'solid', color: 'teal',   class: 'bg-teal-600   text-white hover:bg-teal-700   active:bg-teal-800   focus-visible:ring-teal-400' },
-      { variant: 'solid', color: 'purple', class: 'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 focus-visible:ring-purple-400' },
-      { variant: 'solid', color: 'red',    class: 'bg-red-600    text-white hover:bg-red-700    active:bg-red-800    focus-visible:ring-red-400' },
-      { variant: 'solid', color: 'green',  class: 'bg-green-600  text-white hover:bg-green-700  active:bg-green-800  focus-visible:ring-green-400' },
-      { variant: 'solid', color: 'blue',   class: 'bg-blue-700   text-white hover:bg-blue-800   active:bg-blue-900   focus-visible:ring-blue-500' },
+      { variant: 'solid', color: 'teal',   class: 'bg-brand-teal   text-white hover:bg-brand-teal-light   active:bg-brand-teal-dark   focus-visible:bg-brand-teal-dark   focus-visible:ring-brand-teal' },
+      { variant: 'solid', color: 'purple', class: 'bg-brand-purple text-white hover:bg-brand-purple-light active:bg-brand-purple-dark focus-visible:bg-brand-purple-dark focus-visible:ring-brand-purple' },
+      { variant: 'solid', color: 'red',    class: 'bg-brand-red    text-white hover:bg-brand-red-light    active:bg-brand-red-dark    focus-visible:bg-brand-red-dark    focus-visible:ring-brand-red' },
+      { variant: 'solid', color: 'green',  class: 'bg-brand-green  text-white hover:bg-brand-green-light  active:bg-brand-green-dark  focus-visible:bg-brand-green-dark  focus-visible:ring-brand-green' },
+      { variant: 'solid', color: 'blue',   class: 'bg-brand-blue   text-white hover:bg-brand-blue-light   active:bg-brand-blue-dark   focus-visible:bg-brand-blue-dark   focus-visible:ring-brand-blue' },
 
       /* Outline — light ------------------------------------------------ */
-      { variant: 'outline', color: 'teal',   mode: 'light', class: 'border-teal-600   text-teal-600   hover:bg-teal-100   active:bg-teal-200   focus-visible:ring-teal-400' },
-      { variant: 'outline', color: 'purple', mode: 'light', class: 'border-purple-600 text-purple-600 hover:bg-purple-100 active:bg-purple-200 focus-visible:ring-purple-400' },
-      { variant: 'outline', color: 'red',    mode: 'light', class: 'border-red-600    text-red-600    hover:bg-red-100    active:bg-red-200    focus-visible:ring-red-400' },
-      { variant: 'outline', color: 'green',  mode: 'light', class: 'border-green-600  text-green-600  hover:bg-green-100  active:bg-green-200  focus-visible:ring-green-400' },
-      { variant: 'outline', color: 'blue',   mode: 'light', class: 'border-blue-700   text-blue-700   hover:bg-blue-100   active:bg-blue-200   focus-visible:ring-blue-500' },
+      { variant: 'outline', color: 'teal',   mode: 'light', class: 'border-brand-teal   text-brand-teal   hover:bg-brand-teal/10   active:bg-brand-teal/20   focus-visible:ring-brand-teal' },
+      { variant: 'outline', color: 'purple', mode: 'light', class: 'border-brand-purple text-brand-purple hover:bg-brand-purple/10 active:bg-brand-purple/20 focus-visible:ring-brand-purple' },
+      { variant: 'outline', color: 'red',    mode: 'light', class: 'border-brand-red    text-brand-red    hover:bg-brand-red/10    active:bg-brand-red/20    focus-visible:ring-brand-red' },
+      { variant: 'outline', color: 'green',  mode: 'light', class: 'border-brand-green  text-brand-green  hover:bg-brand-green/10  active:bg-brand-green/20  focus-visible:ring-brand-green' },
+      { variant: 'outline', color: 'blue',   mode: 'light', class: 'border-brand-blue   text-brand-blue   hover:bg-brand-blue/10   active:bg-brand-blue/20   focus-visible:ring-brand-blue' },
 
       /* Outline — dark ------------------------------------------------- */
-      { variant: 'outline', color: 'teal',   mode: 'dark', class: 'border-teal-400   text-teal-400   hover:bg-teal-900/30   active:bg-teal-900/50   focus-visible:ring-teal-400' },
-      { variant: 'outline', color: 'purple', mode: 'dark', class: 'border-purple-400 text-purple-400 hover:bg-purple-900/30 active:bg-purple-900/50 focus-visible:ring-purple-400' },
-      { variant: 'outline', color: 'red',    mode: 'dark', class: 'border-red-400    text-red-400    hover:bg-red-900/30    active:bg-red-900/50    focus-visible:ring-red-400' },
-      { variant: 'outline', color: 'green',  mode: 'dark', class: 'border-green-400  text-green-400  hover:bg-green-900/30  active:bg-green-900/50  focus-visible:ring-green-400' },
-      { variant: 'outline', color: 'blue',   mode: 'dark', class: 'border-blue-400   text-blue-400   hover:bg-blue-900/30   active:bg-blue-900/50   focus-visible:ring-blue-500' },
+      { variant: 'outline', color: 'teal',   mode: 'dark', class: 'border-brand-teal-light   text-brand-teal-light   hover:bg-brand-teal/10   active:bg-brand-teal/20   focus-visible:ring-brand-teal-light' },
+      { variant: 'outline', color: 'purple', mode: 'dark', class: 'border-brand-purple-light text-brand-purple-light hover:bg-brand-purple/10 active:bg-brand-purple/20 focus-visible:ring-brand-purple-light' },
+      { variant: 'outline', color: 'red',    mode: 'dark', class: 'border-brand-red-light    text-brand-red-light    hover:bg-brand-red/10    active:bg-brand-red/20    focus-visible:ring-brand-red-light' },
+      { variant: 'outline', color: 'green',  mode: 'dark', class: 'border-brand-green-light  text-brand-green-light  hover:bg-brand-green/10  active:bg-brand-green/20  focus-visible:ring-brand-green-light' },
+      { variant: 'outline', color: 'blue',   mode: 'dark', class: 'border-brand-blue-light   text-brand-blue-light   hover:bg-brand-blue/10   active:bg-brand-blue/20   focus-visible:ring-brand-blue-light' },
 
       /* Text — light --------------------------------------------------- */
-      { variant: 'text', color: 'teal',   mode: 'light', class: 'text-teal-600   hover:bg-teal-50/80   active:bg-teal-100/80   focus-visible:ring-teal-400' },
-      { variant: 'text', color: 'purple', mode: 'light', class: 'text-purple-600 hover:bg-purple-50/80 active:bg-purple-100/80 focus-visible:ring-purple-400' },
-      { variant: 'text', color: 'red',    mode: 'light', class: 'text-red-600    hover:bg-red-50/80    active:bg-red-100/80    focus-visible:ring-red-400' },
-      { variant: 'text', color: 'green',  mode: 'light', class: 'text-green-600  hover:bg-green-50/80  active:bg-green-100/80  focus-visible:ring-green-400' },
-      { variant: 'text', color: 'blue',   mode: 'light', class: 'text-blue-700   hover:bg-blue-50/80   active:bg-blue-100/80   focus-visible:ring-blue-500' },
+      { variant: 'text', color: 'teal',   mode: 'light', class: 'text-brand-teal   hover:bg-brand-teal/10   active:bg-brand-teal/20   focus-visible:ring-brand-teal' },
+      { variant: 'text', color: 'purple', mode: 'light', class: 'text-brand-purple hover:bg-brand-purple/10 active:bg-brand-purple/20 focus-visible:ring-brand-purple' },
+      { variant: 'text', color: 'red',    mode: 'light', class: 'text-brand-red    hover:bg-brand-red/10    active:bg-brand-red/20    focus-visible:ring-brand-red' },
+      { variant: 'text', color: 'green',  mode: 'light', class: 'text-brand-green  hover:bg-brand-green/10  active:bg-brand-green/20  focus-visible:ring-brand-green' },
+      { variant: 'text', color: 'blue',   mode: 'light', class: 'text-brand-blue   hover:bg-brand-blue/10   active:bg-brand-blue/20   focus-visible:ring-brand-blue' },
 
       /* Text — dark ---------------------------------------------------- */
-      { variant: 'text', color: 'teal',   mode: 'dark', class: 'text-teal-400   hover:bg-teal-900/30   active:bg-teal-900/50   focus-visible:ring-teal-400' },
-      { variant: 'text', color: 'purple', mode: 'dark', class: 'text-purple-400 hover:bg-purple-900/30 active:bg-purple-900/50 focus-visible:ring-purple-400' },
-      { variant: 'text', color: 'red',    mode: 'dark', class: 'text-red-400    hover:bg-red-900/30    active:bg-red-900/50    focus-visible:ring-red-400' },
-      { variant: 'text', color: 'green',  mode: 'dark', class: 'text-green-400  hover:bg-green-900/30  active:bg-green-900/50  focus-visible:ring-green-400' },
-      { variant: 'text', color: 'blue',   mode: 'dark', class: 'text-blue-400   hover:bg-blue-900/30   active:bg-blue-900/50   focus-visible:ring-blue-500' },
+      { variant: 'text', color: 'teal',   mode: 'dark', class: 'text-brand-teal-light   hover:bg-brand-teal/10   active:bg-brand-teal/20   focus-visible:ring-brand-teal-light' },
+      { variant: 'text', color: 'purple', mode: 'dark', class: 'text-brand-purple-light hover:bg-brand-purple/10 active:bg-brand-purple/20 focus-visible:ring-brand-purple-light' },
+      { variant: 'text', color: 'red',    mode: 'dark', class: 'text-brand-red-light    hover:bg-brand-red/10    active:bg-brand-red/20    focus-visible:ring-brand-red-light' },
+      { variant: 'text', color: 'green',  mode: 'dark', class: 'text-brand-green-light  hover:bg-brand-green/10  active:bg-brand-green/20  focus-visible:ring-brand-green-light' },
+      { variant: 'text', color: 'blue',   mode: 'dark', class: 'text-brand-blue-light   hover:bg-brand-blue/10   active:bg-brand-blue/20   focus-visible:ring-brand-blue-light' },
     ],
     defaultVariants: {
       color:   'teal',
@@ -101,8 +103,6 @@ export interface ButtonProps {
 
 /* Components
 --------------------------------------------------------------------- */
-import Button from './Button.vue'
-
 export {
   Button as default,
 }

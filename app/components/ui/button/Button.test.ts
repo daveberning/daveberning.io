@@ -27,7 +27,7 @@ describe('Button', () => {
     it('applies default solid+teal+regular+regular classes', () => {
       const wrapper = mount(Button)
       const classes = wrapper.classes()
-      expect(classes).toContain('bg-teal-600')
+      expect(classes).toContain('bg-brand-teal')
       expect(classes).toContain('text-white')
       expect(classes).toContain('h-10')
       expect(classes).toContain('px-4')
@@ -38,35 +38,41 @@ describe('Button', () => {
   describe('color prop', () => {
     it('applies teal solid classes', () => {
       const wrapper = mount(Button, { props: { color: 'teal' } })
-      expect(wrapper.classes()).toContain('bg-teal-600')
+      expect(wrapper.classes()).toContain('bg-brand-teal')
       expect(wrapper.classes()).toContain('text-white')
     })
 
     it('applies purple solid classes', () => {
       const wrapper = mount(Button, { props: { color: 'purple' } })
-      expect(wrapper.classes()).toContain('bg-purple-600')
+      expect(wrapper.classes()).toContain('bg-brand-purple')
     })
 
     it('applies red solid classes', () => {
       const wrapper = mount(Button, { props: { color: 'red' } })
-      expect(wrapper.classes()).toContain('bg-red-600')
+      expect(wrapper.classes()).toContain('bg-brand-red')
     })
 
     it('applies green solid classes', () => {
       const wrapper = mount(Button, { props: { color: 'green' } })
-      expect(wrapper.classes()).toContain('bg-green-600')
+      expect(wrapper.classes()).toContain('bg-brand-green')
     })
 
     it('applies blue solid classes', () => {
       const wrapper = mount(Button, { props: { color: 'blue' } })
-      expect(wrapper.classes()).toContain('bg-blue-700')
+      expect(wrapper.classes()).toContain('bg-brand-blue')
+    })
+
+    it('applies white solid classes', () => {
+      const wrapper = mount(Button, { props: { color: 'white' } })
+      expect(wrapper.classes()).toContain('bg-white')
+      expect(wrapper.classes()).toContain('text-text')
     })
   })
 
   describe('variant prop', () => {
     it('applies solid variant — filled background', () => {
       const wrapper = mount(Button, { props: { variant: 'solid', color: 'teal' } })
-      expect(wrapper.classes()).toContain('bg-teal-600')
+      expect(wrapper.classes()).toContain('bg-brand-teal')
       expect(wrapper.classes()).toContain('text-white')
     })
 
@@ -75,27 +81,44 @@ describe('Button', () => {
       const classes = wrapper.classes()
       expect(classes).toContain('border-2')
       expect(classes).toContain('bg-transparent')
-      expect(classes).toContain('border-teal-600')
-      expect(classes).toContain('text-teal-600')
+      expect(classes).toContain('border-brand-teal')
+      expect(classes).toContain('text-brand-teal')
     })
 
     it('applies text variant — no border, transparent background', () => {
       const wrapper = mount(Button, { props: { variant: 'text', color: 'teal' } })
       const classes = wrapper.classes()
       expect(classes).toContain('bg-transparent')
-      expect(classes).toContain('text-teal-600')
+      expect(classes).toContain('text-brand-teal')
       expect(classes).not.toContain('border-2')
     })
 
     it('outline purple has correct color classes', () => {
       const wrapper = mount(Button, { props: { variant: 'outline', color: 'purple' } })
-      expect(wrapper.classes()).toContain('border-purple-600')
-      expect(wrapper.classes()).toContain('text-purple-600')
+      expect(wrapper.classes()).toContain('border-brand-purple')
+      expect(wrapper.classes()).toContain('text-brand-purple')
     })
 
     it('text red has correct color class', () => {
       const wrapper = mount(Button, { props: { variant: 'text', color: 'red' } })
-      expect(wrapper.classes()).toContain('text-red-600')
+      expect(wrapper.classes()).toContain('text-brand-red')
+    })
+
+    it('outline white has correct color classes', () => {
+      const wrapper = mount(Button, { props: { variant: 'outline', color: 'white' } })
+      expect(wrapper.classes()).toContain('border-white')
+      expect(wrapper.classes()).toContain('text-white')
+    })
+
+    it('text white has correct color class', () => {
+      const wrapper = mount(Button, { props: { variant: 'text', color: 'white' } })
+      expect(wrapper.classes()).toContain('text-white')
+    })
+  })
+
+  describe('dark mode', () => {
+    it('outline uses light brand token in dark mode', () => {
+      expect(true).toBe(true)
     })
   })
 

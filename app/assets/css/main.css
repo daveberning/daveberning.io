@@ -38,6 +38,13 @@
   --color-brand-purple:      #8d6299;
   --color-brand-purple-dark: #5e3d6b;
 
+  /* Light brand variants — oklch relative color shift */
+  --color-brand-teal-light:   oklch(from #2d8a7e calc(l + 0.12) c h);
+  --color-brand-red-light:    oklch(from #a83c44 calc(l + 0.12) c h);
+  --color-brand-blue-light:   oklch(from #2e5186 calc(l + 0.12) c h);
+  --color-brand-green-light:  oklch(from #2f7040 calc(l + 0.12) c h);
+  --color-brand-purple-light: oklch(from #8d6299 calc(l + 0.12) c h);
+
   /* Per-brand foreground text (reactive to light/dark) */
   --color-brand-teal-text:   var(--brand-teal-text);
   --color-brand-red-text:    var(--brand-red-text);

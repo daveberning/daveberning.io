@@ -39,7 +39,7 @@ useHead({
       </div>
     </Header>
     <div class="flex-1 flex justify-center py-12">
-      <div :class="cn('container grid grid-cols-1 gap-8 items-start px-8', hasAside && 'md:grid-cols-3')">
+      <div :class="cn('container grid grid-cols-1 gap-8 items-start px-8', hasAside && 'md:grid-cols-12')">
         <slot />
       </div>
     </div>
@@ -48,7 +48,9 @@ useHead({
       <div class="m-4">
         <UiText color="white">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
       </div>
-      <UiButton color="white" variant="outline" size="large">Download Résumé</UiButton>
+      <UiButton color="white" variant="outline" size="large">
+        Download Résumé
+      </UiButton>
       <UiSocialLinks class="justify-center mt-4" />
     </UiCtaBar>
     <Footer />
