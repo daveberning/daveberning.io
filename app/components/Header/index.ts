@@ -9,9 +9,10 @@ interface HeaderContext {
   variant: Ref<HeaderVariants['variant']>
 }
 
-const [injectHeaderContext, provideHeaderContext] = useCreateContext<HeaderContext>('Header')
-
-export { injectHeaderContext, provideHeaderContext }
+export const [
+  injectHeaderContext,
+  provideHeaderContext
+] = useCreateContext<HeaderContext>('Header')
 
 /* Variants
 --------------------------------------------------------------------- */

@@ -10,9 +10,10 @@ interface NavigationContext {
   darkVariant: Ref<'text' | 'outline'>
 }
 
-const [injectNavigationContext, provideNavigationContext] = useCreateContext<NavigationContext>('Navigation')
-
-export { injectNavigationContext, provideNavigationContext }
+export const [
+  injectNavigationContext,
+  provideNavigationContext
+] = useCreateContext<NavigationContext>('Navigation')
 
 /* Variants
 --------------------------------------------------------------------- */
