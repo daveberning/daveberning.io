@@ -36,7 +36,7 @@ const testimonials = computed(() => {
 
 <template>
   <UiText as="h1" class="mb-8">References</UiText>
-  <div class="columns-1 sm:columns-2 lg:columns-3 gap-6">
+  <div class="columns-1 lg:columns-2 gap-6">
     <Testimonial v-for="t in testimonials" :key="t.path" :name="t.name ?? ''" :role="t.role ?? ''" :company="t.company ?? ''" class="break-inside-avoid mb-6">
       <TestimonialContent>
         <ContentRenderer :value="t" />
