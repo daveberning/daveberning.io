@@ -6,16 +6,12 @@ import { navigationItems } from '~/variables'
 --------------------------------- */
 useHead({ title: 'Dave Berning' })
 
-const { color, isDark } = useTheme()
-
-/* Page Content
---------------------------------- */
-const portrait = computed(() => `/portraits/dave-${color.value}.png`)
+const { isDark } = useTheme()
 </script>
 
 <template>
   <main :class="cn('flex flex-col-reverse lg:flex-row items-center lg:items-stretch h-screen overflow-hidden', isDark ? 'bg-theme-black' : 'bg-background')">
-    <Portrait :src="portrait" :alt="`Dave Berning — ${color} theme`" />
+    <Portrait size="large" />
     <div class="flex flex-col items-center px-6 sm:px-10 lg:px-16 justify-center">
       <UiText as="h1" class="text-5xl lg:text-[7vw] font-black leading-none">
         Dave Berning
@@ -28,7 +24,7 @@ const portrait = computed(() => `/portraits/dave-${color.value}.png`)
           {{ item.name }}
         </NavigationItem>
       </Navigation>
-      <UiSocialLinks class="mt-4" />
+      <SocialLinks class="mt-4" />
     </div>
   </main>
 </template>

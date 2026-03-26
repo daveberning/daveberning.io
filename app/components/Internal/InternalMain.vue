@@ -8,7 +8,7 @@ const { hasAside } = injectInternalContext()
 </script>
 
 <template>
-  <main :class="cn(hasAside ? 'md:col-span-9' : 'md:col-span-12', props.class)">
+  <main :class="cn(hasAside ? 'col-span-12 lg:col-span-8 xl:col-span-9' : 'md:col-span-12', props.class)">
     <slot />
   </main>
 </template>

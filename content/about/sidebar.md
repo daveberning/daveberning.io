@@ -1,7 +1,8 @@
-![](/portraits/dave-gumwall.jpg){style="width: 100%; height: auto;"}
+::Portrait{size="small"}
+::
 
 :::div{class="py-10 px-8"}
-  ::ProseText{color="white"}
+  ::UiText{color="white"}
     Currently at
   ::
 
@@ -9,7 +10,7 @@
 
   <hr class="my-10 border-white" />
 
-  ::ProseText{color="white"}
+  ::UiText{color="white"}
     B.F.A in Electronic Media from
   ::
 

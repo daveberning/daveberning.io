@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import ThemePicker from '~/components/ThemePicker'
 import Header, { HeaderBrand } from '~/components/Header'
-import Footer from '~/components/ui/footer'
+import Footer from '~/components/Footer'
 import { provideInternalContext } from '~/components/Internal'
 import { provideTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
@@ -43,7 +43,7 @@ useHead({
         <slot />
       </div>
     </div>
-    <UiCtaBar class="text-center flex gap-4">
+    <CtaBar class="text-center flex gap-4">
       <UiText as="h3" color="white">Let's Work Together</UiText>
       <div class="m-4">
         <UiText color="white">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
@@ -51,8 +51,8 @@ useHead({
       <UiButton color="white" variant="outline" size="large">
         Download Résumé
       </UiButton>
-      <UiSocialLinks class="justify-center mt-4" />
-    </UiCtaBar>
+      <SocialLinks class="justify-center mt-4" />
+    </CtaBar>
     <Footer />
     <ThemePicker class="fixed bottom-4 left-4 z-50" />
   </div>

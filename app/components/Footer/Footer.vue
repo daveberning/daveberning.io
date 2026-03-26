@@ -8,15 +8,19 @@ const props = withDefaults(defineProps<FooterProps>(), {
   as: 'footer',
 })
 
-const { color, isDark } = useTheme()
+const {
+  color,
+  isDark
+} = useTheme()
+
 const resolvedColor = computed(() => props.color ?? color.value)
 const resolvedMode  = computed(() => props.mode  ?? (isDark.value ? 'dark' : 'light'))
 </script>
 
 <template>
   <component :is="props.as" :class="cn(footerVariants({ color: resolvedColor, mode: resolvedMode }), props.class)">
-    <div class="container text-sm text-center">
+    <UiText class="container text-sm text-center" color="white">
       &copy; {{ new Date().getFullYear() }} Dave Berning. All rights reserved.
-    </div>
+    </UiText>
   </component>
 </template>
