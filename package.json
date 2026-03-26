@@ -50,6 +50,8 @@
     "clsx": "^2.1.1",
     "pinia": "^3.0.4",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.2",
+    "vee-validate": "^4.15.1",
+    "yup": "^1.7.1"
   }
 }
