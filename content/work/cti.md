@@ -1,8 +1,8 @@
 ---
 title: "CTI"
-description: "A short description of the first project, what it does, and why it matters."
-role: "Front-End Engineer"
-year: 2024
+description: "One of my largest projects while working for Oodle, a design agency in Cincinnati, Ohio. I was responsible for building the front-end of a web application that allowed users to manage their own content."
+role: "Front-End Web Developer"
+year: 2019
 technologies: ["Vue.js", "TypeScript", "Tailwind CSS"]
 url: "https://example.com"
 ---

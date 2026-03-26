@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'
 import { navigationItems } from '~/variables'
 
+/* Page Meta Information
+--------------------------------- */
 useHead({ title: 'Dave Berning' })
 
 const { color, isDark } = useTheme()
-const portrait = computed(() => `/portraits/dave-${color.value}.png`)
 
+/* Page Content
+--------------------------------- */
+const portrait = computed(() => `/portraits/dave-${color.value}.png`)
 </script>
 
 <template>

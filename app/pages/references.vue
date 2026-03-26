@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import Testimonial, { TestimonialContent, TestimonialAttribution, TestimonialPhoto, TestimonialName, TestimonialRole } from '~/components/Testimonial'
+/* Page Meta Information
+--------------------------------- */
+useHead({ title: 'References — Dave Berning' })
+definePageMeta({ layout: 'internal' })
 
-useHead({
-  title: 'References — Dave Berning'
-})
-
-definePageMeta({
-  layout: 'internal'
-})
-
+/* Page Content
+--------------------------------- */
 const [
   { data: index },
   { data: allTestimonials },
@@ -23,7 +20,6 @@ const [
 
 const testimonials = computed(() => {
   const order = index.value?.order ?? []
-  // Filter out index.md (has no name) leaving only individual testimonial files
   const items = (allTestimonials.value ?? []).filter(t => t.name)
 
   if (!order.length) return items
@@ -36,7 +32,7 @@ const testimonials = computed(() => {
 
 <template>
   <UiText as="h1" class="mb-8">References</UiText>
-  <div class="columns-1 lg:columns-2 gap-6">
+  <div class="columns-1 lg:columns-3 gap-6">
     <Testimonial v-for="t in testimonials" :key="t.path" :name="t.name ?? ''" :role="t.role ?? ''" :company="t.company ?? ''" class="break-inside-avoid mb-6">
       <TestimonialContent>
         <ContentRenderer :value="t" />

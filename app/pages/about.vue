@@ -1,12 +1,11 @@
 <script setup lang="ts">
-useHead({
-  title: 'About — Dave Berning'
-})
+/* Page Meta Information
+--------------------------------- */
+useHead({ title: 'About — Dave Berning' })
+definePageMeta({ layout: false })
 
-definePageMeta({
-  layout: false
-})
-
+/* Page Content
+--------------------------------- */
 const { data: page } = await useAsyncData('about-content', () =>
   queryCollection('content').path('/about').first()
 )

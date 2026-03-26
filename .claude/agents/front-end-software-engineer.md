@@ -79,6 +79,36 @@ const props = withDefaults(defineProps<MyProps>(), {
 </template>
 ```
 
+### Pages pattern
+```vue
+<script setup lang="ts">
+/* Page Meta Information
+--------------------------------- */
+useHead({ /* ... */ })
+definePageMeta({ /* ... */})
+
+const {
+  color,
+  isDark,
+} = useTheme()
+
+
+const works = computed(() => page.value?.works ?? []) // example of computed properties, data properties, etc
+
+/* Page Content
+--------------------------------- */
+const { data: page } = await useAsyncData('work', () =>
+  queryCollection('content').path('/work').first()
+)
+</script>
+
+<template>
+  <!-- Page content goes here, using props, variants, and data as needed. Use Tailwind classes and cn() for styling. -->
+</template>
+```
+
+The `useHead` and `definePageMeta` objects should be single line if there's only one property. If there are multiple properties, they should be multi-line with one property per line. The comment sections above are a must.
+
 ### Key rules
 - Always use `<script setup lang="ts">`
 - Use `props.foo` in templates (not destructured) to preserve reactivity

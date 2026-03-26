@@ -34,7 +34,7 @@ const { data: page } = await useAsyncData('work', () =>
         </PortfolioPieceTechItem>
       </PortfolioPieceTech>
       <PortfolioPieceFooter v-if="work.year || work.url">
-        <span v-if="work.year" class="text-xs text-text-muted">{{ work.year}}</span>
+        <span v-if="work.year" class="text-xs text-text-muted">{{ work.year }}</span>
         <UiLink v-if="work.url" :to="work.url" variant="solid" size="small" class="ml-auto">
           View Project
         </UiLink>

@@ -2,7 +2,7 @@
 name: "Bryan King"
 role: "Senior Product Designer"
 company: "NaviStone"
-image: ""
+image: "/portraits/bryan.jpeg"
 ---
 
 Three years ago, I met Dave at the first CodePen Cincinnati Meetup, which he founded back in 2017. ince then, l've been a Co-organizer for the Meetup, and also have collaborated with him on his open source CSS Grid framework, Griddle.
