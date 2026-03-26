@@ -46,6 +46,8 @@ export default defineContentConfig({
         tags:          z.array(z.string()).optional(),
         readingTime:   z.number().optional(),
         category:      z.string().optional(),
+        externalUrl:   z.string().url().optional(),
+        platform:      z.string().optional(),
       }),
     }),
   },

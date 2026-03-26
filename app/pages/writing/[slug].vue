@@ -62,6 +62,12 @@ async function copyLink() {
     <article class="prose max-w-none">
       <ContentRenderer :value="post!" />
     </article>
+    <ReadOriginal
+      v-if="post!.externalUrl"
+      :href="post!.externalUrl"
+      :platform="post!.platform"
+      class="mt-8"
+    />
   </InternalMain>
   <InternalAside class="sticky top-[105px] p-8">
     <CardHeader>
@@ -71,10 +77,6 @@ async function copyLink() {
       <div v-if="post!.category" class="flex flex-col gap-1">
         <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Category</UiText>
         <UiText color="white">{{ post!.category }}</UiText>
-      </div>
-      <div class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">About</UiText>
-        <UiText color="white">{{ post!.description }}</UiText>
       </div>
       <div class="flex flex-col gap-1">
         <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Published</UiText>
@@ -103,29 +105,15 @@ async function copyLink() {
       <div class="flex flex-col gap-2">
         <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Share</UiText>
         <div class="flex flex-col gap-2">
-          <a
-            :href="shareLinks.x"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors"
-          >
+          <a :href="shareLinks.x" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
             <Icon name="simple-icons:x" class="size-4 shrink-0" />
             Share on X
           </a>
-          <a
-            :href="shareLinks.linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors"
-          >
+          <a :href="shareLinks.linkedin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
             <Icon name="simple-icons:linkedin" class="size-4 shrink-0" />
             Share on LinkedIn
           </a>
-          <button
-            type="button"
-            class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors text-left"
-            @click="copyLink"
-          >
+          <button type="button" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors text-left" @click="copyLink">
             <Icon :name="copied ? 'lucide:check' : 'lucide:link'" class="size-4 shrink-0" />
             {{ copied ? 'Copied!' : 'Copy link' }}
           </button>
