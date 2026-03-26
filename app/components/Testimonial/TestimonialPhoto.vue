@@ -19,11 +19,7 @@ const showImage = computed(() => !!props.src && !imgError.value)
       class="size-full object-cover object-center"
       @error="imgError = true"
     />
-    <span
-      v-else
-      aria-hidden="true"
-      class="size-full flex items-center justify-center bg-theme text-theme-fg text-sm font-semibold uppercase"
-    >
+    <span v-else aria-hidden="true" class="size-full flex items-center justify-center bg-theme text-theme-fg text-sm font-semibold uppercase">
       {{ name.charAt(0) }}
     </span>
   </div>

@@ -1,5 +1,5 @@
 ---
-name: "Tess"
+name: "Tess White"
 role: "General Manager"
 company: "Bearcast Media"
 image: "/portraits/tess.jpeg"

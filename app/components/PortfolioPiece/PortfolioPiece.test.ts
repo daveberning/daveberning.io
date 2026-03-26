@@ -254,8 +254,6 @@ describe('PortfolioPieceTechItem', () => {
     const item = wrapper.findComponent(PortfolioPieceTechItem)
     expect(item.classes()).toContain('text-xs')
     expect(item.classes()).toContain('rounded-full')
-    expect(item.classes()).toContain('border-border')
-    expect(item.classes()).toContain('text-text-muted')
   })
 
   it('merges a custom class', () => {

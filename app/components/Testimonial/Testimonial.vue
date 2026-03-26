@@ -7,11 +7,8 @@ const props = withDefaults(defineProps<TestimonialProps>(), {
   as: 'article',
 })
 
-provideTestimonialContext({
-  name:    toRef(props, 'name'),
-  role:    toRef(props, 'role'),
-  company: toRef(props, 'company'),
-})
+provideTestimonialContext({ name: toRef(props, 'name') })
+
 </script>
 
 <template>

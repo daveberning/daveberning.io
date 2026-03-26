@@ -12,14 +12,13 @@ import TestimonialRole from './TestimonialRole.vue'
 /* Context
 --------------------------------------------------------------------- */
 interface TestimonialContext {
-  name:    Ref<string>
-  role:    Ref<string>
-  company: Ref<string>
+  name: Ref<string>
 }
 
-const [injectTestimonialContext, provideTestimonialContext] = useCreateContext<TestimonialContext>('Testimonial')
-
-export { injectTestimonialContext, provideTestimonialContext }
+export const [
+  injectTestimonialContext,
+  provideTestimonialContext
+] = useCreateContext<TestimonialContext>('Testimonial')
 
 /* Variants
 --------------------------------------------------------------------- */
@@ -44,11 +43,9 @@ export const testimonialRoleVariants = cva('text-xs text-text-muted')
 export type TestimonialVariants = VariantProps<typeof testimonialVariants>
 
 export interface TestimonialProps {
-  name:    string
-  role:    string
-  company: string
-  class?:  string
-  as?:     string
+  name:   string
+  class?: string
+  as?:    string
 }
 
 export interface TestimonialContentProps {

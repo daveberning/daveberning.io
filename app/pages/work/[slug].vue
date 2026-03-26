@@ -26,7 +26,7 @@ if (!work.value)
   </InternalMain>
   <InternalAside class="sticky top-[105px] p-8">
     <CardHeader>
-      <UiText as="h2" class="text-xl font-semibold">TL;DR</UiText>
+      <UiText as="h2" class="text-xl font-semibold" color="white">TL;DR</UiText>
     </CardHeader>
     <CardContent class="flex flex-col gap-6 mt-4">
       <div v-if="work!.role" class="flex flex-col gap-1">
@@ -40,9 +40,9 @@ if (!work.value)
       <div v-if="work!.technologies?.length" class="flex flex-col gap-2">
         <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Technologies</UiText>
         <ul class="flex flex-wrap gap-2 list-none">
-          <UiText as="li" v-for="tech in work!.technologies" :key="tech" class="text-xs px-2.5 py-0.5 rounded-full border border-white">
+          <UiPill v-for="tech in work!.technologies" :key="tech" as="li" color="white" variant="outline" size="small">
             {{ tech }}
-          </UiText>
+          </UiPill>
         </ul>
       </div>
       <div v-if="work!.description" class="flex flex-col gap-1">

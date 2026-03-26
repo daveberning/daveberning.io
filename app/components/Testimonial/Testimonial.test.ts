@@ -11,9 +11,7 @@ import Testimonial, {
 } from '.'
 
 const baseProps: TestimonialProps = {
-  name:    'Jane Smith',
-  role:    'Engineering Manager',
-  company: 'Acme Corp',
+  name: 'Jane Smith',
 }
 
 function mountFull(props: TestimonialProps = baseProps, photoSrc?: string) {
@@ -25,8 +23,8 @@ function mountFull(props: TestimonialProps = baseProps, photoSrc?: string) {
         h(TestimonialAttribution, null, () => [
           h(TestimonialPhoto, { src: photoSrc }),
           h('div', { class: 'flex flex-col gap-0.5' }, [
-            h(TestimonialName),
-            h(TestimonialRole),
+            h(TestimonialName, null, () => props.name),
+            h(TestimonialRole, null, () => 'Engineering Manager · Acme Corp'),
           ]),
         ]),
       ],
@@ -85,7 +83,8 @@ describe('TestimonialPhoto', () => {
   it('shows the initial fallback when src is not provided', () => {
     const wrapper = mountFull()
     expect(wrapper.find('img').exists()).toBe(false)
-    expect(wrapper.find('span[aria-hidden="true"]').text()).toBe('“')
+    const photo = wrapper.findComponent(TestimonialPhoto)
+    expect(photo.find('span[aria-hidden="true"]').text().trim()).toBe('J')
   })
 
   it('shows the initial fallback when src is an empty string', () => {
@@ -116,21 +115,21 @@ describe('TestimonialPhoto', () => {
 })
 
 describe('TestimonialName', () => {
-  it('renders the name from context', () => {
+  it('renders slot content', () => {
     const wrapper = mountFull()
     const name = wrapper.findComponent(TestimonialName)
     expect(name.text()).toBe('Jane Smith')
     expect(name.find('p').classes()).toContain('font-semibold')
   })
 
-  it('reflects updated context', () => {
+  it('renders updated slot content', () => {
     const wrapper = mountFull({ ...baseProps, name: 'Alice Lee' })
     expect(wrapper.findComponent(TestimonialName).text()).toBe('Alice Lee')
   })
 })
 
 describe('TestimonialRole', () => {
-  it('renders role and company from context', () => {
+  it('renders slot content', () => {
     const wrapper = mountFull()
     const role = wrapper.findComponent(TestimonialRole)
     expect(role.text()).toContain('Engineering Manager')

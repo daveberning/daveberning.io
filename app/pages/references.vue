@@ -33,15 +33,15 @@ const testimonials = computed(() => {
 <template>
   <UiText as="h1" class="mb-8">References</UiText>
   <div class="columns-1 lg:columns-3 gap-6">
-    <Testimonial v-for="t in testimonials" :key="t.path" :name="t.name ?? ''" :role="t.role ?? ''" :company="t.company ?? ''" class="break-inside-avoid mb-6">
+    <Testimonial v-for="testimonal in testimonials" :key="testimonal.path" :name="testimonal.name ?? ''" class="break-inside-avoid mb-6">
       <TestimonialContent>
-        <ContentRenderer :value="t" />
+        <ContentRenderer :value="testimonal" />
       </TestimonialContent>
       <TestimonialAttribution>
-        <TestimonialPhoto :src="t.image" />
+        <TestimonialPhoto :src="testimonal.image" />
         <div class="flex flex-col gap-0.5">
-          <TestimonialName />
-          <TestimonialRole />
+          <TestimonialName>{{ testimonal.name }}</TestimonialName>
+          <TestimonialRole>{{ testimonal.role }} &middot; {{ testimonal.company }}</TestimonialRole>
         </div>
       </TestimonialAttribution>
     </Testimonial>
