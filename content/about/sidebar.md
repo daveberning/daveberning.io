@@ -1,20 +1,30 @@
-::Portrait{size="small"}
-::
-
-:::div{class="py-10 px-8"}
-  ::UiText{color="white"}
-    Currently at
-  ::
-
-  ![](/logos/wd-logo-white.svg){style="width: 100%; height: auto;" class="mt-8 px-8"}
-
-  <hr class="my-10 border-white" />
-
-  ::UiText{color="white"}
-    B.F.A in Electronic Media from
-  ::
-
-
-  ![](/logos/uc-logo-white.svg){style="width: 100%; height: auto;" class="mt-8 px-8"}
-
-:::
+---
+specializations:
+  - Design Systems
+  - Accessibility
+  - Vue
+  - TypeScript
+  - CSS
+  - HTML
+  - JS
+  - Front-End Architecture
+location: "Cincinnati, OH"
+currentlyAt: WDTech
+currentlyAtLogo: /logos/wd-logo-white.svg
+education: "BFA · University of Cincinnati"
+educationLogo: /logos/uc-logo-white.svg
+favoriteSeries: The Legend of Zelda
+favoriteGenres:
+  - Fantasy
+  - Sci-Fi
+favoriteBands:
+  - Green Day
+  - Nirvana
+  - Soundgarden
+  - Foo Fighters
+  - Red Hot Chili Peppers
+  - Jack White
+  - Blink-182
+  - Rise Against
+  - Temple of the Dog
+---

@@ -34,6 +34,21 @@ export default defineContentConfig({
       source: 'work/*.md',
       schema: workItemSchema,
     }),
+    about: defineCollection({
+      type: 'page',
+      source: 'about/*.md',
+      schema: z.object({
+        specializations:  z.array(z.string()).optional(),
+        location:         z.string().optional(),
+        currentlyAt:      z.string().optional(),
+        currentlyAtLogo:  z.string().optional(),
+        education:        z.string().optional(),
+        educationLogo:    z.string().optional(),
+        favoriteSeries:   z.string().optional(),
+        favoriteGenres:   z.array(z.string()).optional(),
+        favoriteBands:    z.array(z.string()).optional(),
+      }),
+    }),
     writing: defineCollection({
       type: 'page',
       source: 'writing/*.md',
