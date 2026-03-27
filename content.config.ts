@@ -21,7 +21,7 @@ export default defineContentConfig({
     }),
     testimonials: defineCollection({
       type: 'page',
-      source: 'references/*.md',
+      source: 'testimonials/*.md',
       schema: z.object({
         name:    z.string().optional(),
         role:    z.string().optional(),

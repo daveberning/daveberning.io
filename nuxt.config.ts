@@ -1,7 +1,26 @@
 import tailwindcss from '@tailwindcss/vite'
+import { createLogger } from 'vite'
+
+function createFilteredLogger() { // Ignoring sourcemap and lexical errors that are not relevant during development
+  const logger = createLogger()
+  const originalWarn = logger.warn.bind(logger)
+  logger.warn = (msg, options) => {
+    if (
+      msg.includes('Sourcemap is likely to be incorrect') ||
+      msg.includes('Lexical error')
+    ) return
+    originalWarn(msg, options)
+  }
+  return logger
+}
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  hooks: {
+    'vite:extendConfig'(config) {
+      Object.assign(config, { customLogger: createFilteredLogger() })
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {

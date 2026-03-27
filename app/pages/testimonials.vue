@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'References — Dave Berning' })
+useHead({ title: 'Testimonials — Dave Berning' })
 definePageMeta({ layout: 'internal' })
 
 /* Page Content
@@ -10,8 +10,8 @@ const [
   { data: index },
   { data: allTestimonials },
 ] = await Promise.all([
-  useAsyncData('references-index', () =>
-    queryCollection('content').path('/references').first()
+  useAsyncData('testimonials-index', () =>
+    queryCollection('content').path('/testimonials').first()
   ),
   useAsyncData('testimonials', () =>
     queryCollection('testimonials').all()
@@ -25,13 +25,13 @@ const testimonials = computed(() => {
   if (!order.length) return items
 
   return order
-    .map(slug => items.find(t => t.path === `/references/${slug}`))
+    .map(slug => items.find(t => t.path === `/testimonials/${slug}`))
     .filter(t => t != null)
 })
 </script>
 
 <template>
-  <UiText as="h1" class="mb-8">References</UiText>
+  <UiText as="h1" class="mb-8">Testimonials</UiText>
   <div class="columns-1 lg:columns-2 xl:columns-3 gap-6">
     <Testimonial v-for="testimonal in testimonials" :key="testimonal.path" :name="testimonal.name ?? ''" class="break-inside-avoid mb-6">
       <TestimonialContent>
