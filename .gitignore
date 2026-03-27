@@ -10,6 +10,9 @@ coverage
 .nuxt
 .output
 .dist
+dist
+.data
+.netlify
 
 # Storybook build
 public/storybook
@@ -30,3 +33,6 @@ pnpm-debug.log*
 .idea
 *.iml
 .DS_Store
+
+# Local Netlify folder
+.netlify

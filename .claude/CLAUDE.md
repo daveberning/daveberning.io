@@ -142,7 +142,7 @@ This project uses specialized agents that collaborate to solve problems. When a 
 
 | Agent                | Role | When to use |
 |----------------------|---|---|
-| `Front-End Engineer` | Builds, refactors, and tests front-end code — Vue components, composables, Pinia stores, Tailwind styling, Vitest tests | Any task touching `app/` |
+| `Front-End Engineer` | Builds, refactors, and tests front-end code — Vue components, composables, Tailwind styling, Vitest tests | Any task touching `app/` |
 | `QA Engineer`        | Writes and runs unit, component, and e2e tests (Vitest + Playwright) | After new components or features are written; regression coverage after refactors |
 | `UI/UX Designer`     | UI/UX design guidance, accessibility reviews (WCAG), layout recommendations, design system consistency | **Only** when creating new components or asking about colors, layouts, spacing, or visual design |
 | `Plan`               | Software architect — designs implementation strategies, identifies critical files, weighs trade-offs | Before starting non-trivial features or refactors |
@@ -157,7 +157,6 @@ This project uses specialized agents that collaborate to solve problems. When a 
 
 ## Nuxt modules in use
 
-- `@pinia/nuxt` — state management (`app/stores/`)
 - `@nuxt/image` — image optimization
 - `@nuxt/fonts` — Google Fonts (Inter configured)
 - `@nuxt/icon` — icon system

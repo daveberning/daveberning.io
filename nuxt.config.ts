@@ -6,13 +6,16 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: [
+        '@iconify/utils',
         '@vue/devtools-core',
         '@vue/devtools-kit',
         'class-variance-authority',
         'clsx',
         'tailwind-merge',
+        'yup',
+        'vee-validate',
       ]
-    }
+    },
   },
   devtools: {
     enabled: true
@@ -21,7 +24,6 @@ export default defineNuxtConfig({
     '@': './src',
   },
   modules: [
-    '@pinia/nuxt',
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
