@@ -16,6 +16,15 @@ function handleNavClick() {
   setTimeout(() => close(), 100)
 }
 
+let swipeStartY = 0
+function onTouchStart(e: TouchEvent) {
+  swipeStartY = e.touches[0]?.clientY ?? 0
+}
+function onTouchEnd(e: TouchEvent) {
+  const endY = e.changedTouches[0]?.clientY ?? 0
+  if (swipeStartY - endY >= 50) close()
+}
+
 function handleKeydown(e: KeyboardEvent) {
   if (e.key !== 'Tab') return
 
@@ -94,6 +103,8 @@ defineExpose({ isOpen, close })
         aria-label="Mobile navigation"
         :class="cn('fixed top-14 left-0 right-0 z-[49] bg-surface border-b border-border shadow-lg')"
         @keydown="handleKeydown"
+        @touchstart.passive="onTouchStart"
+        @touchend.passive="onTouchEnd"
       >
         <ul class="flex flex-col gap-1 px-4 py-4 list-none">
           <li v-for="item in navigationItems" :key="item.to">

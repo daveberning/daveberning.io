@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
 import ThemePicker from '~/components/ThemePicker'
 import Header, { HeaderBrand, HeaderHamburger } from '~/components/Header'
 import Footer from '~/components/Footer'
@@ -11,7 +12,10 @@ import { cn } from '~/lib/utils'
 import { navigationItems } from '~/variables'
 
 const { color, isDark } = provideTheme()
-const { isOpen, toggle } = provideMobileNav()
+const { isOpen, open, toggle } = provideMobileNav()
+
+const headerRef = ref<ComponentPublicInstance | null>(null)
+useSwipeGesture(headerRef, 'down', open)
 
 const hasAside = ref(false)
 provideInternalContext({ hasAside, setHasAside: (v) => { hasAside.value = v } })
@@ -29,7 +33,7 @@ useHead({
 
 <template>
   <div :class="cn('flex min-h-screen flex-col', isDark ? 'bg-theme-black' : 'bg-background')">
-    <Header :variant="color" class="px-0 justify-center">
+    <Header ref="headerRef" :variant="color" class="px-0 justify-center">
       <div class="container flex items-center justify-between px-8">
         <HeaderBrand>
           <code>&lt;name&gt;</code>Dave<code>&lt;/name&gt;</code>
