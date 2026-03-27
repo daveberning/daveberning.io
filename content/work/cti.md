@@ -1,28 +1,24 @@
 ---
-title: "CTI"
+title: "Clinical Trial Consulting (CTI)"
 description: "One of my largest projects while working for Oodle, a design agency in Cincinnati, Ohio. I was responsible for building the front-end of a web application that allowed users to manage their own content."
-role: "Front-End Web Developer"
+role: "Web Developer"
 year: 2019
-technologies: ["Vue.js", "TypeScript", "Tailwind CSS"]
-url: "https://example.com"
+technologies: ["Vue.js", "TypeScript", "SCSS", "Prismic CMS"]
+url: "http://www.ctifacts.com/"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+![](/work/cti.png)
 
-## Overview
+## Project Details
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+As the front-end developer at Oodle, I worked closely with our design team throughout the entire project — from initial handoff through launch. The designers provided comprehensive mockups in Sketch, and I was responsible for translating those designs into a fully functional, production-ready website. This meant carefully pulling and optimizing assets from Sketch and ensuring every detail of the design was faithfully represented in the browser across devices.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+On the CMS side, I architected and built out all of the Prismic Slices, which form the backbone of the site's content management experience. Each Slice was designed with flexibility in mind, giving the CTI team a structured but customizable way to manage their pages without ever touching code. I also maintained occasional direct communication with the client throughout the project to help clarify requirements, set expectations, and ensure the final product aligned with their vision.
 
-## My Role
+The end result is a complete, polished website that CTI can fully own and manage through Prismic long after launch. Pages can be updated, reordered, and expanded by their team at any time — no developer involvement required for day-to-day content changes.
 
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+## About CTI
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+CTI Clinical Trial and Consulting Services is a global, full-service contract research organization (CRO) that supports the full lifecycle of drug and device development — from initial concept through commercialization.
 
-## Challenges & Solutions
-
-Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.
-
-Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+CTI brings deep therapeutic expertise to pharmaceutical, biotechnology, and medical device companies across a wide range of focus areas, including rare diseases, gene therapy, oncology, neurology, immunology, nephrology, and pediatric populations. Their integrated clinical research site supports Phase I–IV trials across multiple specialties.
