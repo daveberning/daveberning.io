@@ -74,12 +74,19 @@ export interface HeaderBrandProps {
   class?: string
 }
 
+export interface HeaderHamburgerProps {
+  isOpen: boolean
+  class?: string
+}
+
 /* Components
 --------------------------------------------------------------------- */
 import Header from './Header.vue'
 import HeaderBrand from './HeaderBrand.vue'
+import HeaderHamburger from './HeaderHamburger.vue'
 
 export {
   Header as default,
-  HeaderBrand
+  HeaderBrand,
+  HeaderHamburger
 }

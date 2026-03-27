@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import ThemePicker from '~/components/ThemePicker'
-import Header, { HeaderBrand } from '~/components/Header'
+import Header, { HeaderBrand, HeaderHamburger } from '~/components/Header'
 import Footer from '~/components/Footer'
+import MobileNav from '~/components/MobileNav'
 import { provideInternalContext } from '~/components/Internal'
 import { provideTheme } from '~/composables/useTheme'
+import { provideMobileNav } from '~/composables/useMobileNav'
 import { cn } from '~/lib/utils'
 import { navigationItems } from '~/variables'
 
 const { color, isDark } = provideTheme()
+const { isOpen, toggle } = provideMobileNav()
 
 const hasAside = ref(false)
 provideInternalContext({ hasAside, setHasAside: (v) => { hasAside.value = v } })
@@ -31,11 +34,12 @@ useHead({
         <HeaderBrand>
           <code>&lt;name&gt;</code>Dave<code>&lt;/name&gt;</code>
         </HeaderBrand>
-        <Navigation dark-variant="text">
+        <Navigation dark-variant="text" class="hidden md:flex">
           <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">
             {{ item.name }}
           </NavigationItem>
         </Navigation>
+        <HeaderHamburger :is-open="isOpen" class="md:hidden" @toggle="toggle" />
       </div>
     </Header>
     <div class="flex-1 flex justify-center py-12">
@@ -54,6 +58,7 @@ useHead({
       <SocialLinks class="justify-center mt-4" />
     </CtaBar>
     <Footer />
+    <MobileNav />
     <ThemePicker class="fixed bottom-4 left-4 z-50" />
   </div>
 </template>
