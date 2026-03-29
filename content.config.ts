@@ -41,6 +41,7 @@ export default defineContentConfig({
         specializations:  z.array(z.string()).optional(),
         location:         z.string().optional(),
         currentlyAt:      z.string().optional(),
+        previouslyAt:     z.array(z.string()).optional(),
         currentlyAtLogo:  z.string().optional(),
         education:        z.string().optional(),
         educationLogo:    z.string().optional(),
