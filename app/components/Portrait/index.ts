@@ -6,7 +6,7 @@ import { cva } from 'class-variance-authority'
 export const portraitVariants = cva('object-contain flex-shrink-0', {
   variants: {
     size: {
-      large: 'self-center lg:self-end xl:self-start mt-4 w-[80%] h-auto lg:h-auto lg:w-[33rem] xl:w-[38rem] lg:ml-[5vw]',
+        large: 'self-center lg:self-end xl:self-start mt-4 w-[80%] h-auto lg:h-full lg:w-auto xl:h-auto xl:w-[38rem] lg:ml-[2vw] xl:ml-[5vw]',
       small: 'w-full h-auto',
     },
   },
