@@ -1,5 +1,6 @@
 ---
 order:
+  - gregory-howlett-gomez
   - jess-fitak
   - brett-valls
   - bryan-king
