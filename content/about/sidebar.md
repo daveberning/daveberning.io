@@ -10,6 +10,11 @@ specializations:
   - Front-End Architecture
 location: "Cincinnati, OH"
 currentlyAt: WDTech
+previouslyAt:
+  - Oodle
+  - Drees Homes
+  - Kalio Commerce
+  - Upright Communications
 currentlyAtLogo: /logos/wd-logo-white.svg
 education: "BFA · University of Cincinnati"
 educationLogo: /logos/uc-logo-white.svg

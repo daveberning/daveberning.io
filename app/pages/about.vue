@@ -41,6 +41,23 @@ const [{ data: page }, { data: sidebar }] = await Promise.all([
             <UiText color="white">{{ sidebar.currentlyAt }}</UiText>
           </dd>
         </div>
+        <div v-if="sidebar?.previouslyAt" class="flex flex-col gap-1">
+          <dt><UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Previously At</UiText></dt>
+          <dd>
+            <UiText color="white">{{ sidebar.previouslyAt.join(' · ') }}</UiText>
+          </dd>
+          <div v-if="sidebar?.favoriteGenres?.length" class="flex flex-col gap-1">
+            <dt>
+              <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">
+              <span class="inline-flex items-center gap-1.5">
+                <Icon name="lucide:book-open" class="size-3" aria-hidden="true" />
+                Favorite Book Genres
+              </span>
+              </UiText>
+            </dt>
+            <dd><UiText color="white">{{ sidebar.favoriteGenres.join(' · ') }}</UiText></dd>
+          </div>
+        </div>
         <div v-if="sidebar?.education" class="flex flex-col gap-1">
           <dt><UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Education</UiText></dt>
           <dd>
