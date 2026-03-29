@@ -19,7 +19,7 @@ const [{ data: page }, { data: sidebar }] = await Promise.all([
 
   <InternalAside class="sticky top-[105px]">
     <Portrait size="small" class="rounded-lg mb-6" />
-    <CardContent class="flex flex-col gap-6 mt-4 p-8">
+    <UiCardContent class="flex flex-col gap-6 mt-4">
       <dl class="flex flex-col gap-6">
         <div v-if="sidebar?.specializations?.length" class="flex flex-col gap-1">
           <dt><UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Specializations</UiText></dt>
@@ -98,6 +98,6 @@ const [{ data: page }, { data: sidebar }] = await Promise.all([
           <dd><UiText color="white">{{ sidebar.favoriteBands.join(' · ') }}</UiText></dd>
         </div>
       </dl>
-    </CardContent>
+    </UiCardContent>
   </InternalAside>
 </template>

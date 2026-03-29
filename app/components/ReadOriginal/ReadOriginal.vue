@@ -16,8 +16,8 @@ const ariaLabel = computed(() => {
   <div :class="cn('relative rounded-lg border border-border bg-surface hover:bg-surface-raised transition-colors overflow-hidden', props.class)">
     <div class="absolute inset-y-0 left-0 w-1 bg-theme" aria-hidden="true" />
     <div class="pl-8 pr-6 py-5">
-      <UiText v-if="props.platform" class="text-sm mb-1">
-        Originally published on {{ props.platform }}
+      <UiText v-if="props.platform" class="mb-1">
+        Originally published on <strong>{{ props.platform }}</strong>
       </UiText>
       <UiLink
         :to="props.href"

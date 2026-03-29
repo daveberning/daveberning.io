@@ -3,7 +3,7 @@ title: "WdSuite: Servicing"
 description: "I helped architype and build the front-end for the Servicing module of WDSuite, a comprehensive software platform for commercial lending operations. This was later injected into a larger application via module federation."
 role: "Senior Front-End Engineer"
 year: 2023
-technologies: ["Vue", "Typescript", "Tailwind", "Micro-frontends", "Module Federation"]
+technologies: ["Vue", "Typescript", "Tailwind", "Micro-frontends", "Module Federation", "Handsontable"]
 url: "https://suite.walkerdunlop.com/servicing"
 ---
 

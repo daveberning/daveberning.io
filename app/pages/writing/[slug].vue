@@ -69,11 +69,11 @@ async function copyLink() {
       class="mt-8"
     />
   </InternalMain>
-  <InternalAside class="sticky top-[105px] p-8">
-    <CardHeader>
+  <InternalAside class="sticky top-[105px] py-4">
+    <UiCardHeader class="border-b-0">
       <UiText as="h2" class="text-xl font-semibold" color="white">Details</UiText>
-    </CardHeader>
-    <CardContent class="flex flex-col gap-6 mt-4">
+    </UiCardHeader>
+    <UiCardContent class="flex flex-col gap-6 mt-4">
       <div v-if="post!.category" class="flex flex-col gap-1">
         <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Category</UiText>
         <UiText color="white">{{ post!.category }}</UiText>
@@ -119,6 +119,6 @@ async function copyLink() {
           </button>
         </div>
       </div>
-    </CardContent>
+    </UiCardContent>
   </InternalAside>
 </template>

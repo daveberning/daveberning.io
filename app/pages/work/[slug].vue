@@ -24,11 +24,11 @@ if (!work.value)
       <ContentRenderer :value="work!" />
     </article>
   </InternalMain>
-  <InternalAside class="sticky top-[105px] p-8">
-    <CardHeader>
+  <InternalAside class="sticky top-[105px] py-4">
+    <UiCardHeader class="border-b-0">
       <UiText as="h2" class="text-xl font-semibold" color="white">TL;DR</UiText>
-    </CardHeader>
-    <CardContent class="flex flex-col gap-6 mt-4">
+    </UiCardHeader>
+    <UiCardContent class="flex flex-col gap-6 mt-4">
       <div v-if="work!.role" class="flex flex-col gap-1">
         <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Role</UiText>
         <UiText color="white">{{ work!.role }}</UiText>
@@ -54,6 +54,6 @@ if (!work.value)
           View Project
         </UiLink>
       </div>
-    </CardContent>
+    </UiCardContent>
   </InternalAside>
 </template>
