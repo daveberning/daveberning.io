@@ -70,40 +70,38 @@ async function copyLink() {
     />
   </InternalMain>
   <InternalAside class="sticky top-[105px] py-4">
-    <UiCardHeader class="border-b-0">
-      <UiText as="h2" class="text-xl font-semibold" color="white">Details</UiText>
-    </UiCardHeader>
-    <UiCardContent class="flex flex-col gap-6 mt-4">
-      <div v-if="post!.category" class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Category</UiText>
+    <UiAside>
+      <UiAsideTitle>Details</UiAsideTitle>
+      <UiAsideSection v-if="post!.category">
+        <UiAsideSubtitle>Category</UiAsideSubtitle>
         <UiText color="white">{{ post!.category }}</UiText>
-      </div>
-      <div class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Published</UiText>
+      </UiAsideSection>
+      <UiAsideSection>
+        <UiAsideSubtitle>Published</UiAsideSubtitle>
         <UiText color="white">
           <time :datetime="post!.publishedAt">{{ formattedPublishedAt }}</time>
         </UiText>
-      </div>
-      <div v-if="post!.updatedAt && post!.updatedAt !== post!.publishedAt" class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Updated</UiText>
+      </UiAsideSection>
+      <UiAsideSection v-if="post!.updatedAt && post!.updatedAt !== post!.publishedAt">
+        <UiAsideSubtitle>Updated</UiAsideSubtitle>
         <UiText color="white">
           <time :datetime="post!.updatedAt">{{ formattedUpdatedAt }}</time>
         </UiText>
-      </div>
-      <div v-if="post!.readingTime" class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Reading Time</UiText>
+      </UiAsideSection>
+      <UiAsideSection v-if="post!.readingTime">
+        <UiAsideSubtitle>Reading Time</UiAsideSubtitle>
         <UiText color="white">{{ post!.readingTime }} min read</UiText>
-      </div>
-      <div v-if="post!.tags?.length" class="flex flex-col gap-2">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Tags</UiText>
+      </UiAsideSection>
+      <UiAsideSection v-if="post!.tags?.length">
+        <UiAsideSubtitle>Tags</UiAsideSubtitle>
         <ul class="flex flex-wrap gap-2 list-none">
           <UiPill v-for="tag in post!.tags" :key="tag" as="li" color="white" variant="outline" size="small">
             {{ tag }}
           </UiPill>
         </ul>
-      </div>
-      <div class="flex flex-col gap-2">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Share</UiText>
+      </UiAsideSection>
+      <UiAsideSection>
+        <UiAsideSubtitle>Share</UiAsideSubtitle>
         <div class="flex flex-col gap-2">
           <a :href="shareLinks.x" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
             <Icon name="simple-icons:x" class="size-4 shrink-0" />
@@ -118,7 +116,7 @@ async function copyLink() {
             {{ copied ? 'Copied!' : 'Copy link' }}
           </button>
         </div>
-      </div>
-    </UiCardContent>
+      </UiAsideSection>
+    </UiAside>
   </InternalAside>
 </template>

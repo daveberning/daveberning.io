@@ -25,35 +25,33 @@ if (!work.value)
     </article>
   </InternalMain>
   <InternalAside class="sticky top-[105px] py-4">
-    <UiCardHeader class="border-b-0">
-      <UiText as="h2" class="text-xl font-semibold" color="white">TL;DR</UiText>
-    </UiCardHeader>
-    <UiCardContent class="flex flex-col gap-6 mt-4">
-      <div v-if="work!.role" class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Role</UiText>
+    <UiAside>
+      <UiAsideTitle>TL;DR</UiAsideTitle>
+      <UiAsideSection v-if="work!.role">
+        <UiAsideSubtitle>Role</UiAsideSubtitle>
         <UiText color="white">{{ work!.role }}</UiText>
-      </div>
-      <div v-if="work!.year" class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Year</UiText>
+      </UiAsideSection>
+      <UiAsideSection v-if="work!.year">
+        <UiAsideSubtitle>Year</UiAsideSubtitle>
         <UiText color="white">{{ work!.year }}</UiText>
-      </div>
-      <div v-if="work!.technologies?.length" class="flex flex-col gap-2">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">Technologies</UiText>
+      </UiAsideSection>
+      <UiAsideSection v-if="work!.technologies?.length">
+        <UiAsideSubtitle>Technologies</UiAsideSubtitle>
         <ul class="flex flex-wrap gap-2 list-none">
           <UiPill v-for="tech in work!.technologies" :key="tech" as="li" color="white" variant="outline" size="small">
             {{ tech }}
           </UiPill>
         </ul>
-      </div>
-      <div v-if="work!.description" class="flex flex-col gap-1">
-        <UiText color="white" class="text-xs font-semibold uppercase tracking-widest">About</UiText>
+      </UiAsideSection>
+      <UiAsideSection v-if="work!.description">
+        <UiAsideSubtitle>About</UiAsideSubtitle>
         <UiText color="white">{{ work!.description }}</UiText>
-      </div>
-      <div v-if="work!.url">
+      </UiAsideSection>
+      <UiAsideSection v-if="work!.url">
         <UiLink :to="work!.url" color="white" variant="outline" size="large" class="w-full align-center justify-center">
           View Project
         </UiLink>
-      </div>
-    </UiCardContent>
+      </UiAsideSection>
+    </UiAside>
   </InternalAside>
 </template>

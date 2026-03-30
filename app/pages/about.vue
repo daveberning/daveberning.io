@@ -16,7 +16,6 @@ const [{ data: page }, { data: sidebar }] = await Promise.all([
   <InternalMain>
     <ContentRenderer v-if="page" :value="page" />
   </InternalMain>
-
   <InternalAside class="sticky top-[105px]">
     <Portrait size="small" class="rounded-lg mb-6" />
     <UiAside class="mt-4">
