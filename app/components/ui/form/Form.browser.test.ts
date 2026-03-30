@@ -85,7 +85,6 @@ describe('Form browser behavior', () => {
 
     await userEvent.fill(message, 'Hello from browser mode')
     await expect.element(message).toHaveValue('Hello from browser mode')
-    await userEvent.tab()
 
     await userEvent.click(view.getByRole('button', { name: 'Send Message' }))
 

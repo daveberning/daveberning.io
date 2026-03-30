@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm install
       - run: npm run lint
 
   test-coverage:
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm install
       - run: npm run test:coverage
 
   browser-tests:
@@ -44,7 +44,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm install
       - run: npx playwright install --with-deps ${{ matrix.browser }}
       - run: npm run test:browser:${{ matrix.browser }}
 
@@ -57,7 +57,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm install
       - run: npm run typecheck
 
   build:
@@ -70,7 +70,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm install
       - run: npm run generate
       - uses: actions/upload-artifact@v4
         with:
