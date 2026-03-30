@@ -19,7 +19,7 @@ const src = computed(() =>
 </script>
 
 <template>
-  <NuxtImg
+  <img
     :src="src"
     :alt="`Front-end engineer, Dave Berning in a ${color} plaid flannel shirt and grey pants with his hands in his pockets, smiling and looking at the camera.`"
     :class="cn(portraitVariants({ size: props.size }), props.class)"

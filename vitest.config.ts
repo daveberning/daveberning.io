@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import { defineVitestConfig } from '@nuxt/test-utils/config'
+import { configDefaults } from 'vitest/config'
 
 export default defineVitestConfig({
   resolve: {
@@ -9,6 +10,10 @@ export default defineVitestConfig({
   },
   test: {
     environment: 'happy-dom',
+    exclude: [
+      ...configDefaults.exclude,
+      '**/*.browser.test.ts',
+    ],
     coverage: {
       provider: 'v8',
       include: [
