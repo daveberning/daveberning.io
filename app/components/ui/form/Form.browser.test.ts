@@ -54,22 +54,28 @@ afterEach(() => {
 describe('Form browser behavior', () => {
   it('shows validation messages for missing and invalid fields', async () => {
     const view = render(BrowserFormHarness)
+    const firstName = view.getByLabelText('First Name')
+    const emailAddress = view.getByLabelText('Email Address')
+    const message = view.getByLabelText('Message')
 
     await userEvent.click(view.getByRole('button', { name: 'Send Message' }))
     await expect.element(view.getByText('First name is required')).toBeVisible()
     await expect.element(view.getByText('Email address is required')).toBeVisible()
     await expect.element(view.getByText('Message is required')).toBeVisible()
 
-    await userEvent.fill(view.getByLabelText('First Name'), 'Dave')
-    await userEvent.fill(view.getByLabelText('Email Address'), 'not-an-email')
-    await userEvent.fill(view.getByLabelText('Message'), 'Hello there')
-    await userEvent.click(view.getByRole('button', { name: 'Send Message' }))
+    await userEvent.fill(firstName, 'Dave')
+    await userEvent.fill(emailAddress, 'not-an-email')
+    await userEvent.tab()
+    await expect.element(view.getByText('Must be a valid email')).toBeVisible()
+    await userEvent.fill(message, 'Hello there')
 
+    await userEvent.click(view.getByRole('button', { name: 'Send Message' }))
     await expect.element(view.getByText('Must be a valid email')).toBeVisible()
   })
 
   it('submits valid values', async () => {
     const view = render(BrowserFormHarness)
+    const form = document.querySelector('form') as HTMLFormElement
 
     const firstName = view.getByLabelText('First Name')
     const emailAddress = view.getByLabelText('Email Address')
@@ -85,8 +91,7 @@ describe('Form browser behavior', () => {
 
     await userEvent.fill(message, 'Hello from browser mode')
     await expect.element(message).toHaveValue('Hello from browser mode')
-
-    await userEvent.click(view.getByRole('button', { name: 'Send Message' }))
+    form.requestSubmit()
 
     await expect.element(view.getByTestId('submitted-values')).toHaveTextContent('"firstName":"Dave"')
     await expect.element(view.getByTestId('submitted-values')).toHaveTextContent('"emailAddress":"dave@example.com"')
