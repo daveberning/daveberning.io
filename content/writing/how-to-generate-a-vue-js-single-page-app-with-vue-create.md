@@ -2,7 +2,7 @@
 title: "How To Generate a Vue.js Single Page App With the Vue CLI"
 description: "A beginner-friendly walkthrough of scaffolding a Vue.js single-page application with the Vue CLI — covering project setup, the generated file structure, and building your first Single-File Components."
 publishedAt: "2021-01-11"
-updatedAt: "2026-03-20"
+updatedAt: ""
 featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 5

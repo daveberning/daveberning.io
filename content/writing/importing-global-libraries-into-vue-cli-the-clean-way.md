@@ -2,7 +2,7 @@
 title: "Importing Global Libraries into Vue CLI (The Clean Way)"
 description: "How to import global JavaScript and CSS libraries into a Vue CLI project the right way — using ES6 imports and Webpack aliases instead of brittle relative paths."
 publishedAt: "2018-01-06"
-updatedAt: "2026-03-20"
+updatedAt: ""
 featuredImage: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*MoHYZRrpQcOociJZTo83zg.png"
 tags: ["JavaScript", "Vue", "Webpack", "Web Development"]
 readingTime: 3

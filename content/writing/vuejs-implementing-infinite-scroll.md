@@ -2,7 +2,7 @@
 title: "How To Implement an Infinite Scroll with Vue.js"
 description: "A lightweight approach to infinite scrolling in Vue.js — detecting scroll position with vanilla JavaScript, fetching paginated data from an API, and appending results without reloading the page."
 publishedAt: "2018-04-03"
-updatedAt: "2026-03-20"
+updatedAt: ""
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 5
 category: "Tutorial"

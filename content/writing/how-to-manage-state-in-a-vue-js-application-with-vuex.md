@@ -2,7 +2,7 @@
 title: "How To Manage State in a Vue.js Application with Vuex"
 description: "A step-by-step guide to centralizing application state in Vue.js using Vuex — covering the store, actions, mutations, and unidirectional data flow through a practical example app."
 publishedAt: "2021-09-30"
-updatedAt: "2026-03-20"
+updatedAt: ""
 featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 6

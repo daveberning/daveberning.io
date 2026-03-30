@@ -2,7 +2,7 @@
 title: "How To Use TypeScript with Vue Single File Components"
 description: "A guide to adding TypeScript to Vue Single-File Components — configuring type support, typing props and component state, and writing more reliable Vue applications with static type checking."
 publishedAt: "2019-09-03"
-updatedAt: "2026-03-20"
+updatedAt: ""
 featuredImage: "https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FVWgNzkr4k1aKz7fmAiXjy3Xp&width=1920"
 tags: ["JavaScript", "TypeScript", "Vue", "Web Development"]
 readingTime: 5

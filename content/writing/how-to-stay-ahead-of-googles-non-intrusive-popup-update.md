@@ -2,7 +2,7 @@
 title: "How to Stay Ahead of Google's Non-Intrusive Popup Update"
 description: "A breakdown of Google's 2017 penalty for intrusive interstitials — which popup patterns hurt your search rankings, which ones are safe, and how to keep your marketing goals intact without paying an SEO price."
 publishedAt: "2016-09-18"
-updatedAt: "2026-03-20"
+updatedAt: ""
 tags: ["SEO", "Web Development", "UX"]
 readingTime: 4
 category: "Article"

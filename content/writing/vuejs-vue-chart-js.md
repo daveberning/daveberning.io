@@ -2,7 +2,7 @@
 title: "How To Use Chart.js with Vue.js"
 description: "A practical guide to integrating Chart.js into a Vue.js application — setting up the library, wrapping charts in reusable Vue components, and rendering interactive HTML5 data visualizations."
 publishedAt: "2018-01-28"
-updatedAt: "2026-03-20"
+updatedAt: ""
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 5
 category: "Tutorial"

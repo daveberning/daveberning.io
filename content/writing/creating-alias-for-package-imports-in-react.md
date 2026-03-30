@@ -2,7 +2,7 @@
 title: "Creating Alias' For Package Imports in React"
 description: "How to eliminate fragile relative import paths in React by configuring Webpack aliases — cleaner imports, more resilient code, and a pattern that works for both your src directory and node_modules packages."
 publishedAt: "2017-12-29"
-updatedAt: "2026-03-20"
+updatedAt: ""
 tags: ["JavaScript", "React", "Webpack", "Web Development"]
 readingTime: 3
 category: "Article"

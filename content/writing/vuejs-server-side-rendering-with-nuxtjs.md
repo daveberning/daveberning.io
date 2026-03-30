@@ -2,7 +2,7 @@
 title: "Getting Started with Server-Side Rendering Using Nuxt.js"
 description: "An introduction to Nuxt.js and server-side rendering for Vue applications — covering how SSR works, what Nuxt provides out of the box, and how to get a universal Vue app up and running."
 publishedAt: "2018-04-16"
-updatedAt: "2026-03-20"
+updatedAt: ""
 tags: ["JavaScript", "Vue", "Nuxt", "Web Development"]
 readingTime: 5
 category: "Tutorial"

@@ -2,7 +2,7 @@
 title: "Which is Better for SEO?: WWW or non-WWW"
 description: "The definitive answer to one of web development's most persistent debates — whether www or non-www affects your search rankings, and the one rule that actually matters."
 publishedAt: "2016-09-08"
-updatedAt: "2026-03-20"
+updatedAt: ""
 tags: ["SEO", "Web Development"]
 readingTime: 3
 category: "Article"

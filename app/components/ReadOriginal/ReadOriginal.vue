@@ -17,7 +17,7 @@ const ariaLabel = computed(() => {
     <div class="absolute inset-y-0 left-0 w-1 bg-theme" aria-hidden="true" />
     <div class="pl-8 pr-6 py-5">
       <UiText v-if="props.platform" class="mb-1">
-        This is a summary of the article published on <strong>{{ props.platform }}</strong>
+        This is an AI-generated summary of the handwritten article published on <strong>{{ props.platform }}</strong>
       </UiText>
       <UiLink
         :to="props.href"

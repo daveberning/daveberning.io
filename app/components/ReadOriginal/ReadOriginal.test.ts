@@ -60,7 +60,7 @@ describe('ReadOriginal', () => {
       const wrapper = mountComponent({ platform: 'DigitalOcean' })
       const platformText = wrapper.find('p')
       expect(platformText.exists()).toBe(true)
-      expect(platformText.text()).toBe('This is a summary of the article published on DigitalOcean')
+      expect(platformText.text()).toBe('This is an AI-generated summary of the handwritten article published on DigitalOcean')
     })
 
     it('does not render platform text when platform prop is not provided', () => {
