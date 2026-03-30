@@ -14,7 +14,7 @@ const { data: post } = await useAsyncData(route.path, () =>
 )
 
 if (post.value)
-  useHead({ title: `${post.value.title} — Dave Berning` })
+  useHead({ title: post.value.title })
 
 if (!post.value)
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })

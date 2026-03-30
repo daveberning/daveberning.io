@@ -5,7 +5,7 @@ import { cn } from '~/lib/utils'
 
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'Writing — Dave Berning' })
+useHead({ title: 'Writing' })
 definePageMeta({ layout: 'internal' })
 
 const { color } = useTheme()

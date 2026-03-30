@@ -9,9 +9,9 @@ import { provideInternalContext } from '~/components/Internal'
 import { provideTheme } from '~/composables/useTheme'
 import { provideMobileNav } from '~/composables/useMobileNav'
 import { cn } from '~/lib/utils'
-import { navigationItems } from '~/variables'
 
 const { color, isDark } = provideTheme()
+const { data: siteInfo } = await useSiteInfo()
 const { isOpen, open, toggle } = provideMobileNav()
 
 const headerRef = ref<ComponentPublicInstance | null>(null)
@@ -21,6 +21,11 @@ const hasAside = ref(false)
 provideInternalContext({ hasAside, setHasAside: (v) => { hasAside.value = v } })
 
 useHead({
+  titleTemplate: (title) => {
+    const fullName = `${siteInfo.value?.firstName ?? ''} ${siteInfo.value?.lastName ?? ''}`.trim()
+    const base = siteInfo.value?.baseTitle ?? ''
+    return title ? `${title} | ${fullName} ${base}`.trim() : `${fullName} ${base}`.trim()
+  },
   script: [
     {
       key: 'theme-init',
@@ -36,10 +41,10 @@ useHead({
     <Header ref="headerRef" :variant="color" class="px-0 justify-center">
       <div class="container flex items-center justify-between px-8">
         <HeaderBrand>
-          <code>&lt;name&gt;</code>Dave<code>&lt;/name&gt;</code>
+          <code>&lt;name&gt;</code>{{ siteInfo?.firstName }}<code>&lt;/name&gt;</code>
         </HeaderBrand>
         <Navigation dark-variant="text" class="hidden md:flex">
-          <NavigationItem v-for="item in navigationItems" :key="item.to" :to="item.to">
+          <NavigationItem v-for="item in siteInfo?.navigation ?? []" :key="item.to" :to="item.to">
             {{ item.name }}
           </NavigationItem>
         </Navigation>
@@ -56,10 +61,10 @@ useHead({
       <div class="m-4">
         <UiText color="white">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
       </div>
-      <UiButton color="white" variant="outline" size="large">
+      <UiButton as="a" :href="siteInfo?.resumeUrl ?? '#'" color="white" variant="outline" size="large">
         Download Résumé
       </UiButton>
-      <SocialLinks class="justify-center mt-4" />
+      <SocialLinks :links="siteInfo?.socialLinks ?? []" class="justify-center mt-4" />
     </CtaBar>
     <Footer />
     <MobileNav />

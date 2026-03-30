@@ -15,7 +15,7 @@ onUnmounted(() => setHasAside(false))
 </script>
 
 <template>
-  <Card as="aside" :color="color" :class="cn('col-span-12 lg:col-span-4 xl:col-span-3', props.class)">
+  <UiCard as="aside" :color="color" :class="cn('col-span-12 lg:col-span-4 xl:col-span-3', props.class)">
     <slot />
-  </Card>
+  </UiCard>
 </template>

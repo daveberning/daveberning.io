@@ -13,7 +13,7 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
 }
 
-useHead({ title: `${page.value.title} — Dave Berning` })
+useHead({ title: page.value.title })
 
 /* Page Content
 --------------------------------- */

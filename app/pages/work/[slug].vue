@@ -10,7 +10,7 @@ const { data: work } = await useAsyncData(route.path, () =>
 /* Page Meta Information
 --------------------------------- */
 if (work.value)
-  useHead({ title: `${work.value.title} — Dave Berning` })
+  useHead({ title: work.value.title })
 definePageMeta({ layout: 'internal' })
 
 if (!work.value)

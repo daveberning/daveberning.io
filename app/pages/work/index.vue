@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'Work — Dave Berning' })
+useHead({ title: 'Work' })
 definePageMeta({ layout: 'internal' })
 
 const {

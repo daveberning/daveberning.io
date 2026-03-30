@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { defaultSocialLinks, type SocialLinksProps } from '.'
+import { type SocialLinksProps } from '.'
 import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<SocialLinksProps>(), {
-  links: () => defaultSocialLinks,
+  links: () => [],
 })
 </script>
 

@@ -11,6 +11,28 @@ const workItemSchema = z.object({
 
 export default defineContentConfig({
   collections: {
+    siteInfo: defineCollection({
+      type: 'page',
+      source: 'site-information.md',
+      schema: z.object({
+        firstName:  z.string(),
+        lastName:   z.string(),
+        role:       z.string(),
+        city:       z.string(),
+        state:      z.string(),
+        baseTitle:  z.string(),
+        resumeUrl:  z.string(),
+        navigation: z.array(z.object({
+          name: z.string(),
+          to:   z.string(),
+        })),
+        socialLinks: z.array(z.object({
+          label: z.string(),
+          href:  z.string(),
+          icon:  z.string(),
+        })),
+      }),
+    }),
     content: defineCollection({
       type: 'page',
       source: '**/*.md',

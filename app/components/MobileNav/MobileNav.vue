@@ -2,9 +2,9 @@
 import { nextTick, watch } from 'vue'
 import { useMobileNav } from '~/composables/useMobileNav'
 import { cn } from '~/lib/utils'
-import { navigationItems } from '~/variables'
 
 const { isOpen, close } = useMobileNav()
+const { data: siteInfo } = await useSiteInfo()
 
 const route = useRoute()
 
@@ -107,7 +107,7 @@ defineExpose({ isOpen, close })
         @touchend.passive="onTouchEnd"
       >
         <ul class="flex flex-col gap-1 px-4 py-4 list-none">
-          <li v-for="item in navigationItems" :key="item.to">
+          <li v-for="item in siteInfo?.navigation ?? []" :key="item.to">
             <NuxtLink
               :to="item.to"
               :aria-current="isActive(item) ? 'page' : undefined"

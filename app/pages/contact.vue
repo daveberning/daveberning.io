@@ -4,7 +4,7 @@ import { FormInput, FormSelect, FormTextArea } from '~/components/ui/form'
 
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'Contact — Dave Berning' })
+useHead({ title: 'Contact' })
 definePageMeta({ layout: 'internal' })
 
 const { color } = useTheme()

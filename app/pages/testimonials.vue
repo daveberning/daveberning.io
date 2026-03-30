@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'Testimonials — Dave Berning' })
+useHead({ title: 'Testimonials' })
 definePageMeta({ layout: 'internal' })
 
 /* Page Content
