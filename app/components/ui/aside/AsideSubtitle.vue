@@ -8,7 +8,7 @@ const { color: _color } = injectAsideContext()
 </script>
 
 <template>
-  <UiText color="white" :class="cn('text-xs font-semibold uppercase tracking-widest', props.class)">
+  <UiText color="white" :class="cn('text-xs uppercase tracking-widest font-bold', props.class)">
     <slot />
   </UiText>
 </template>

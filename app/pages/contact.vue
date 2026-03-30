@@ -4,10 +4,13 @@ import { FormInput, FormSelect, FormTextArea } from '~/components/ui/form'
 
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'Contact' })
-definePageMeta({ layout: 'internal' })
+useHead({
+  title: 'Contact'
+})
 
-const { color } = useTheme()
+const {
+  color
+} = useTheme()
 
 /* Form Fields
 --------------------------------- */
@@ -22,18 +25,18 @@ interface FormField {
 }
 
 const fields: FormField[] = [
-  { name: 'firstName',    label: 'First Name',    component: FormInput,    placeholder: 'Jane' },
-  { name: 'lastName',     label: 'Last Name',     component: FormInput,    placeholder: 'Doe' },
-  { name: 'phone',        label: 'Phone Number',  component: FormInput,    placeholder: '(555) 123-4567' },
-  { name: 'emailAddress',  label: 'Email Address',           component: FormInput,    placeholder: 'jane@example.com', type: 'email' },
-  { name: 'hearAboutMe',  label: 'How\'d you hear about me?', component: FormSelect,   placeholder: 'Select an option', options: ['Facebook', 'Instagram', 'LinkedIn', 'Google', 'Other'], class: 'sm:col-span-2' },
-  { name: 'message',       label: 'Message',                  component: FormTextArea, placeholder: 'Your message...', class: 'sm:col-span-2' },
+  { name: 'firstName',     label: 'First Name',                component: FormInput,    placeholder: 'Jane' },
+  { name: 'lastName',     label: 'Last Name',                 component: FormInput,    placeholder: 'Doe' },
+  { name: 'phone',        label: 'Phone Number',              component: FormInput,    placeholder: '(555) 123-4567' },
+  { name: 'emailAddress', label: 'Email Address',             component: FormInput,    placeholder: 'jane@example.com', type: 'email' },
+  { name: 'hearAboutMe',  label: 'How\'d you hear about me?', component: FormSelect,   placeholder: 'Select an option', class: 'sm:col-span-2', options: ['Facebook', 'Instagram', 'LinkedIn', 'Google', 'Other'] },
+  { name: 'message',      label: 'Message',                   component: FormTextArea, placeholder: 'Your message...',  class: 'sm:col-span-2' },
 ]
 
 /* Form Schema
 --------------------------------- */
 const schema = object({
-  firstName:    string().required('First name is required'),
+  firstName:     string().required('First name is required'),
   lastName:     string().required('Last name is required'),
   phone:        string(),
   emailAddress: string().email('Must be a valid email').required('Email address is required'),
@@ -47,29 +50,31 @@ function onSubmit(_values: Record<string, unknown>) {
 </script>
 
 <template>
-  <UiText as="h1" class="mb-4">
-    Contact
-  </UiText>
-  <UiText as="p" class="mb-8">
-    Have a project in mind or just want to say hello? Fill out the form below and I'll get back to you as soon as I can.
-  </UiText>
-  <UiForm :validation-schema="schema" @submit="onSubmit">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div v-for="field in fields" :key="field.name" :class="field.class">
-        <UiFormLabel :name="field.name">
-          {{ field.label }}
-        </UiFormLabel>
-        <component :is="field.component" :name="field.name" :type="field.type" :placeholder="field.placeholder" :options="field.options" />
-        <UiFormMessage :name="field.name" />
+  <NuxtLayout name="internal">
+    <UiText as="h1" class="mb-4">
+      Contact
+    </UiText>
+    <UiText as="p" class="mb-8">
+      Have a project in mind or just want to say hello? Fill out the form below and I'll get back to you as soon as I can.
+    </UiText>
+    <UiForm :validation-schema="schema" @submit="onSubmit">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div v-for="field in fields" :key="field.name" :class="field.class">
+          <UiFormLabel :name="field.name">
+            {{ field.label }}
+          </UiFormLabel>
+          <component :is="field.component" :name="field.name" :type="field.type" :placeholder="field.placeholder" :options="field.options" />
+          <UiFormMessage :name="field.name" />
+        </div>
       </div>
-    </div>
-    <div class="mt-6 flex flex-col-reverse sm:flex-row justify-end gap-3">
-      <UiButton type="reset" variant="text" :color="color" size="large" class="w-full sm:w-auto">
-        Clear
-      </UiButton>
-      <UiButton type="submit" variant="solid" :color="color" size="large" class="w-full sm:w-auto">
-        Send Message
-      </UiButton>
-    </div>
-  </UiForm>
+      <div class="mt-6 flex flex-col-reverse sm:flex-row justify-end gap-3">
+        <UiButton type="reset" variant="text" :color="color" size="large" class="w-full sm:w-auto">
+          Clear
+        </UiButton>
+        <UiButton type="submit" variant="solid" :color="color" size="large" class="w-full sm:w-auto">
+          Send Message
+        </UiButton>
+      </div>
+    </UiForm>
+  </NuxtLayout>
 </template>

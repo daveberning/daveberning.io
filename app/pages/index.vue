@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import { cn } from '~/lib/utils'
 
-const { isDark } = useTheme()
-const { data: siteInfo } = await useSiteInfo()
+/* Page Data
+--------------------------------- */
+const {
+  isDark
+} = useTheme()
 
-useHead({ title: `${siteInfo.value?.firstName} ${siteInfo.value?.lastName} ${siteInfo.value?.baseTitle ?? ''}`.trim() })
+const {
+  data: siteInfo
+} = await useSiteInfo()
+
+/* Page Meta Information
+--------------------------------- */
+useHead({
+  title: `${siteInfo.value?.firstName} ${siteInfo.value?.lastName} ${siteInfo.value?.baseTitle ?? ''}`.trim()
+})
 </script>
 
 <template>

@@ -11,12 +11,10 @@ const handleError = () => clearError({ redirect: '/' })
 
 <template>
   <NuxtLayout name="internal">
-    <InternalMain>
-      <UiText as="h1">
-        {{ props.error.statusCode }}
-      </UiText>
-      <UiText>{{ props.error.message }}</UiText>
-      <UiButton @click="handleError">Go Home</UiButton>
-    </InternalMain>
+    <UiText as="h1">
+      {{ props.error.statusCode }}
+    </UiText>
+    <UiText>{{ props.error.message }}</UiText>
+    <UiButton @click="handleError">Go Home</UiButton>
   </NuxtLayout>
 </template>

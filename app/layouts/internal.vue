@@ -1,24 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import type { ComponentPublicInstance } from 'vue'
 import ThemePicker from '~/components/ThemePicker'
 import Header, { HeaderBrand, HeaderHamburger } from '~/components/Header'
 import Footer from '~/components/Footer'
 import MobileNav from '~/components/MobileNav'
-import { provideInternalContext } from '~/components/Internal'
 import { provideTheme } from '~/composables/useTheme'
 import { provideMobileNav } from '~/composables/useMobileNav'
 import { cn } from '~/lib/utils'
 
-const { color, isDark } = provideTheme()
 const { data: siteInfo } = await useSiteInfo()
-const { isOpen, open, toggle } = provideMobileNav()
-
 const headerRef = ref<ComponentPublicInstance | null>(null)
-useSwipeGesture(headerRef, 'down', open)
 
-const hasAside = ref(false)
-provideInternalContext({ hasAside, setHasAside: (v) => { hasAside.value = v } })
+const {
+  color,
+  isDark
+} = provideTheme()
+
+const {
+  isOpen,
+  open,
+  toggle
+} = provideMobileNav()
+
+useSwipeGesture(headerRef, 'down', open)
 
 useHead({
   titleTemplate: (title) => {
@@ -52,8 +56,13 @@ useHead({
       </div>
     </Header>
     <div class="flex-1 flex justify-center py-12">
-      <div :class="cn('container grid grid-cols-1 gap-8 items-start px-8', hasAside && 'md:grid-cols-12')">
-        <slot />
+      <div :class="cn('container grid grid-cols-1 gap-8 items-start px-8', $slots.aside && 'md:grid-cols-12')">
+        <main :class="$slots.aside ? 'col-span-12 md:col-span-8 xl:col-span-9' : 'col-span-12'">
+          <slot />
+        </main>
+        <UiCard v-if="$slots.aside" as="aside" :color="color" class="col-span-12 md:col-span-4 xl:col-span-3 sticky top-[105px] py-4">
+          <slot name="aside" />
+        </UiCard>
       </div>
     </div>
     <CtaBar class="text-center flex gap-4">

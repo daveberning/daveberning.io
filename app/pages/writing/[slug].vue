@@ -1,11 +1,11 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-definePageMeta({ layout: 'internal' })
-
 const route = useRoute()
 
-const { color } = useTheme()
+const {
+  color
+} = useTheme()
 
 /* Page Content
 --------------------------------- */
@@ -13,22 +13,24 @@ const { data: post } = await useAsyncData(route.path, () =>
   queryCollection('writing').path(route.path).first()
 )
 
-if (post.value)
-  useHead({ title: post.value.title })
+if (post.value) {
+  useHead({
+    title: post.value.title
+  })
+}
 
 if (!post.value)
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
 
-const formatDate = (dateStr: string) =>
-  new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(dateStr))
+const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}).format(new Date(dateStr))
 
 const formattedPublishedAt = computed(() => post.value ? formatDate(post.value.publishedAt) : '')
 const formattedUpdatedAt   = computed(() => post.value?.updatedAt ? formatDate(post.value.updatedAt) : '')
-
-const pageUrl = computed(() => {
-  if (import.meta.server) return ''
-  return window.location.href
-})
+const pageUrl = computed(() => !import.meta.server ? window.location.href : '')
 
 const shareLinks = computed(() => ({
   x:        `https://x.com/intent/tweet?url=${encodeURIComponent(pageUrl.value)}&text=${encodeURIComponent(post.value?.title ?? '')}`,
@@ -36,6 +38,7 @@ const shareLinks = computed(() => ({
 }))
 
 const copied = ref(false)
+
 async function copyLink() {
   await navigator.clipboard.writeText(pageUrl.value)
   copied.value = true
@@ -44,7 +47,7 @@ async function copyLink() {
 </script>
 
 <template>
-  <InternalMain>
+  <NuxtLayout name="internal">
     <NuxtImg v-if="post!.featuredImage" :src="post!.featuredImage" :alt="post!.title" class="w-full rounded-xl object-cover aspect-[16/9] mb-8"/>
     <UiText as="h1" class="mb-3">{{ post!.title }}</UiText>
     <div class="flex items-center gap-2 text-sm text-text-muted mb-6">
@@ -62,61 +65,56 @@ async function copyLink() {
     <article class="prose max-w-none">
       <ContentRenderer :value="post!" />
     </article>
-    <ReadOriginal
-      v-if="post!.externalUrl"
-      :href="post!.externalUrl"
-      :platform="post!.platform"
-      class="mt-8"
-    />
-  </InternalMain>
-  <InternalAside class="sticky top-[105px] py-4">
-    <UiAside>
-      <UiAsideTitle>Details</UiAsideTitle>
-      <UiAsideSection v-if="post!.category">
-        <UiAsideSubtitle>Category</UiAsideSubtitle>
-        <UiText color="white">{{ post!.category }}</UiText>
-      </UiAsideSection>
-      <UiAsideSection>
-        <UiAsideSubtitle>Published</UiAsideSubtitle>
-        <UiText color="white">
-          <time :datetime="post!.publishedAt">{{ formattedPublishedAt }}</time>
-        </UiText>
-      </UiAsideSection>
-      <UiAsideSection v-if="post!.updatedAt && post!.updatedAt !== post!.publishedAt">
-        <UiAsideSubtitle>Updated</UiAsideSubtitle>
-        <UiText color="white">
-          <time :datetime="post!.updatedAt">{{ formattedUpdatedAt }}</time>
-        </UiText>
-      </UiAsideSection>
-      <UiAsideSection v-if="post!.readingTime">
-        <UiAsideSubtitle>Reading Time</UiAsideSubtitle>
-        <UiText color="white">{{ post!.readingTime }} min read</UiText>
-      </UiAsideSection>
-      <UiAsideSection v-if="post!.tags?.length">
-        <UiAsideSubtitle>Tags</UiAsideSubtitle>
-        <ul class="flex flex-wrap gap-2 list-none">
-          <UiPill v-for="tag in post!.tags" :key="tag" as="li" color="white" variant="outline" size="small">
-            {{ tag }}
-          </UiPill>
-        </ul>
-      </UiAsideSection>
-      <UiAsideSection>
-        <UiAsideSubtitle>Share</UiAsideSubtitle>
-        <div class="flex flex-col gap-2">
-          <a :href="shareLinks.x" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
-            <Icon name="simple-icons:x" class="size-4 shrink-0" />
-            Share on X
-          </a>
-          <a :href="shareLinks.linkedin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
-            <Icon name="simple-icons:linkedin" class="size-4 shrink-0" />
-            Share on LinkedIn
-          </a>
-          <button type="button" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors text-left" @click="copyLink">
-            <Icon :name="copied ? 'lucide:check' : 'lucide:link'" class="size-4 shrink-0" />
-            {{ copied ? 'Copied!' : 'Copy link' }}
-          </button>
-        </div>
-      </UiAsideSection>
-    </UiAside>
-  </InternalAside>
+    <ReadOriginal v-if="post!.externalUrl" :href="post!.externalUrl" :platform="post!.platform" class="mt-8" />
+    <template #aside>
+      <UiAside>
+        <UiAsideTitle>Details</UiAsideTitle>
+        <UiAsideSection v-if="post!.category">
+          <UiAsideSubtitle>Category</UiAsideSubtitle>
+          <UiText color="white">{{ post!.category }}</UiText>
+        </UiAsideSection>
+        <UiAsideSection>
+          <UiAsideSubtitle>Published</UiAsideSubtitle>
+          <UiText color="white">
+            <time :datetime="post!.publishedAt">{{ formattedPublishedAt }}</time>
+          </UiText>
+        </UiAsideSection>
+        <UiAsideSection v-if="post!.updatedAt && post!.updatedAt !== post!.publishedAt">
+          <UiAsideSubtitle>Updated</UiAsideSubtitle>
+          <UiText color="white">
+            <time :datetime="post!.updatedAt">{{ formattedUpdatedAt }}</time>
+          </UiText>
+        </UiAsideSection>
+        <UiAsideSection v-if="post!.readingTime">
+          <UiAsideSubtitle>Reading Time</UiAsideSubtitle>
+          <UiText color="white">{{ post!.readingTime }} min read</UiText>
+        </UiAsideSection>
+        <UiAsideSection v-if="post!.tags?.length">
+          <UiAsideSubtitle>Tags</UiAsideSubtitle>
+          <ul class="flex flex-wrap gap-2 list-none">
+            <UiPill v-for="tag in post!.tags" :key="tag" as="li" color="white" variant="outline" size="small">
+              {{ tag }}
+            </UiPill>
+          </ul>
+        </UiAsideSection>
+        <UiAsideSection>
+          <UiAsideSubtitle>Share</UiAsideSubtitle>
+          <div class="flex flex-col gap-2">
+            <a :href="shareLinks.x" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
+              <Icon name="simple-icons:x" class="size-4 shrink-0" />
+              Share on X
+            </a>
+            <a :href="shareLinks.linkedin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors">
+              <Icon name="simple-icons:linkedin" class="size-4 shrink-0" />
+              Share on LinkedIn
+            </a>
+            <button type="button" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors text-left" @click="copyLink">
+              <Icon :name="copied ? 'lucide:check' : 'lucide:link'" class="size-4 shrink-0" />
+              {{ copied ? 'Copied!' : 'Copy link' }}
+            </button>
+          </div>
+        </UiAsideSection>
+      </UiAside>
+    </template>
+  </NuxtLayout>
 </template>

@@ -157,7 +157,7 @@ describe('AsideSubtitle', () => {
     const subtitle = wrapper.findComponent(AsideSubtitle)
     const el = subtitle.find('p')
     expect(el.classes()).toContain('text-xs')
-    expect(el.classes()).toContain('font-semibold')
+    expect(el.classes()).toContain('font-bold')
     expect(el.classes()).toContain('uppercase')
     expect(el.classes()).toContain('tracking-widest')
   })

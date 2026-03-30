@@ -20,6 +20,6 @@ useHead({
 <template>
   <div>
     <slot />
-    <ThemePicker class="fixed bottom-4 left-4 z-50" />
+    <ThemePicker class="fixed bottom-4 left-2 sm:left-4 z-50" />
   </div>
 </template>

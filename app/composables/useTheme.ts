@@ -12,12 +12,14 @@ interface ThemeContext {
 }
 
 const THEME_KEY: InjectionKey<ThemeContext> = Symbol('theme')
-
 const STORAGE_COLOR = 'theme:color'
 const STORAGE_DARK  = 'theme:dark'
 
 /* Helpers
 --------------------------------------------------------------------- */
+/**
+ * Reads the persisted theme color and dark mode from localStorage, falling back to OS preference for dark mode if no saved value exists.
+ */
 function readStorage(): { color: ThemeColor; isDark: boolean } {
   const color  = (localStorage.getItem(STORAGE_COLOR) as ThemeColor | null) ?? 'teal'
   const hasSavedDark = localStorage.getItem(STORAGE_DARK) !== null
@@ -28,12 +30,22 @@ function readStorage(): { color: ThemeColor; isDark: boolean } {
   return { color, isDark }
 }
 
+/**
+ * Applies the given theme color and dark mode to the DOM by setting a data attribute and toggling a class on the root element.
+ * @param color
+ * @param isDark
+ */
 function applyToDOM(color: ThemeColor, isDark: boolean) {
   if (typeof document === 'undefined') return
   document.documentElement.setAttribute('data-theme', color)
   document.documentElement.classList.toggle('dark', isDark)
 }
 
+/**
+ * Saves the given theme color and dark mode to localStorage for persistence across sessions.
+ * @param color
+ * @param isDark
+ */
 function saveToStorage(color: ThemeColor, isDark: boolean) {
   localStorage.setItem(STORAGE_COLOR, color)
   localStorage.setItem(STORAGE_DARK, String(isDark))
@@ -41,6 +53,9 @@ function saveToStorage(color: ThemeColor, isDark: boolean) {
 
 /* Provider — call once in the root layout
 --------------------------------------------------------------------- */
+/**
+ * Provides the theme context to child components, managing the reactive state and syncing with localStorage and the DOM.
+ */
 export function provideTheme(): ThemeContext {
   // Start with defaults — localStorage must only be touched after mount
   // to avoid triggering happy-dom's localStorage warning during SSR/pre-render.
@@ -86,6 +101,9 @@ export function provideTheme(): ThemeContext {
 
 /* Consumer — call in any child component
 --------------------------------------------------------------------- */
+/**
+ * Access the theme context in any child component. Must be used within a parent that called provideTheme().
+ */
 export function useTheme(): ThemeContext {
   const context = inject(THEME_KEY)
   if (!context) throw new Error('[useTheme] Missing provider — call provideTheme() in a parent component.')

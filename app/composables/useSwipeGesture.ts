@@ -3,6 +3,10 @@ import type { ComponentPublicInstance, Ref } from 'vue'
 
 type MaybeElement = HTMLElement | ComponentPublicInstance | null
 
+/**
+ * Resolve a Ref that may contain an HTMLElement or a Vue component instance to an actual HTMLElement.
+ * @param ref
+ */
 function resolveEl(ref: Ref<MaybeElement>): HTMLElement | null {
   const value = ref.value
   if (!value) return null
@@ -10,12 +14,14 @@ function resolveEl(ref: Ref<MaybeElement>): HTMLElement | null {
   return value as HTMLElement
 }
 
-export function useSwipeGesture(
-  elementRef: Ref<MaybeElement>,
-  direction: 'up' | 'down',
-  callback: () => void,
-  options?: { threshold?: number },
-) {
+/**
+ * A composable to detect swipe up/down gestures on a given element and trigger a callback.
+ * @param elementRef
+ * @param direction
+ * @param callback
+ * @param options
+ */
+export function useSwipeGesture(elementRef: Ref<MaybeElement>, direction: 'up' | 'down', callback: () => void, options?: { threshold?: number }) {
   const { threshold = 50 } = options ?? {}
   let startY = 0
 
