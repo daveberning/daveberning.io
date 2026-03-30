@@ -33,7 +33,7 @@ const messageId = computed(() => `field-${props.name}-message`)
     :aria-describedby="messageId"
     :aria-invalid="state === 'error' || undefined"
     :class="cn(formTextAreaVariants({ state, mode }), props.class)"
-    @change="handleChange"
+    @input="handleChange"
     @blur="handleBlur"
   />
 </template>
