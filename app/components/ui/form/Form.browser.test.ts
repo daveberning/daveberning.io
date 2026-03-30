@@ -19,6 +19,9 @@ const BrowserFormHarness = defineComponent({
 
     function onSubmit(values: Record<string, unknown>) {
       submitted.value = JSON.stringify(values)
+      // Direct DOM write to distinguish "never called" from "Vue not re-rendering"
+      const el = document.querySelector('[data-testid="submitted-values"]')
+      if (el) el.textContent = JSON.stringify(values)
     }
 
     return () => h('div', [
@@ -73,8 +76,17 @@ describe('Form browser behavior', () => {
     const message = view.getByLabelText('Message')
 
     await userEvent.fill(firstName, 'Dave')
+    await expect.element(firstName).toHaveValue('Dave')
+    await userEvent.tab()
+
     await userEvent.fill(emailAddress, 'dave@example.com')
+    await expect.element(emailAddress).toHaveValue('dave@example.com')
+    await userEvent.tab()
+
     await userEvent.fill(message, 'Hello from browser mode')
+    await expect.element(message).toHaveValue('Hello from browser mode')
+    await userEvent.tab()
+
     await userEvent.click(view.getByRole('button', { name: 'Send Message' }))
 
     await expect.element(view.getByTestId('submitted-values')).toHaveTextContent('"firstName":"Dave"')

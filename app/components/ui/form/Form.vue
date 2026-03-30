@@ -13,6 +13,8 @@ const { handleSubmit, resetForm } = useForm({
 })
 
 const onSubmit = handleSubmit((values) => {
+  // eslint-disable-next-line no-console
+  console.log('[Form.vue] handleSubmit callback, values:', JSON.stringify(values))
   emit('submit', values)
 })
 </script>

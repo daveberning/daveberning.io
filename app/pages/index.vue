@@ -4,12 +4,6 @@
 const {
   data: siteInfo
 } = await useSiteInfo()
-
-/* Page Meta Information
---------------------------------- */
-useHead({
-  title: `${siteInfo.value?.firstName} ${siteInfo.value?.lastName} ${siteInfo.value?.baseTitle ?? ''}`.trim()
-})
 </script>
 
 <template>
