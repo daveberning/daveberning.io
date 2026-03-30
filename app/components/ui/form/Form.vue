@@ -18,7 +18,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <form :class="props.class" @submit="onSubmit" @reset.prevent="resetForm()">
+  <form :class="props.class" @submit.prevent="onSubmit" @reset.prevent="resetForm()">
     <slot />
   </form>
 </template>
