@@ -30,7 +30,7 @@ if (!work.value) {
       <ContentRenderer :value="work!" />
     </article>
     <template #aside>
-      <UiAside>
+      <UiAside class="py-8">
         <UiAsideTitle>TL;DR</UiAsideTitle>
         <UiAsideSection v-if="work!.role">
           <UiAsideSubtitle>Role</UiAsideSubtitle>

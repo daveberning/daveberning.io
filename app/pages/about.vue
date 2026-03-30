@@ -18,7 +18,7 @@ const [{ data: page }, { data: sidebar }] = await Promise.all([
     <ContentRenderer v-if="page" :value="page" />
     <template #aside>
       <Portrait size="small" class="rounded-lg mb-6" />
-      <UiAside class="mt-4">
+      <UiAside class="mt-4 pb-8">
         <UiAsideSection v-if="sidebar?.specializations?.length">
           <UiAsideSubtitle>Specializations</UiAsideSubtitle>
           <ul role="list" class="flex flex-wrap gap-2 list-none">

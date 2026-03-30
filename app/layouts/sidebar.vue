@@ -44,7 +44,7 @@ useSwipeGesture(headerRef, 'down', open)
         <main :class="$slots.aside ? 'col-span-12 md:col-span-8 xl:col-span-9' : 'col-span-12'">
           <slot />
         </main>
-        <UiCard v-if="$slots.aside" as="aside" :color="color" class="col-span-12 md:col-span-4 xl:col-span-3 sticky top-[105px] py-4">
+        <UiCard v-if="$slots.aside" as="aside" :color="color" class="col-span-12 md:col-span-4 xl:col-span-3 sticky top-[105px]">
           <slot name="aside" />
         </UiCard>
       </div>

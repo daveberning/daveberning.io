@@ -67,7 +67,7 @@ async function copyLink() {
     </article>
     <ReadOriginal v-if="post!.externalUrl" :href="post!.externalUrl" :platform="post!.platform" class="mt-8" />
     <template #aside>
-      <UiAside>
+      <UiAside class="py-8">
         <UiAsideTitle>Details</UiAsideTitle>
         <UiAsideSection v-if="post!.category">
           <UiAsideSubtitle>Category</UiAsideSubtitle>
