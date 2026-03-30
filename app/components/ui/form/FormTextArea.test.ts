@@ -16,12 +16,15 @@ vi.mock('~/composables/useTheme', () => ({
 }))
 
 vi.mock('vee-validate', () => ({
-  useField: () => ({
-    value:        ref(''),
-    errorMessage: errorMessageRef,
-    handleChange: vi.fn(),
-    handleBlur:   vi.fn(),
-  }),
+  useField: (nameGetter: () => string) => {
+    nameGetter()
+    return {
+      value:        ref(''),
+      errorMessage: errorMessageRef,
+      handleChange: vi.fn(),
+      handleBlur:   vi.fn(),
+    }
+  },
 }))
 
 function mountTextArea({

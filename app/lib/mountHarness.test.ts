@@ -74,6 +74,7 @@ describe('mountWithTheme', () => {
     mountWithTheme(TextProbe)
 
     expect(globalThis.localStorage.getItem('theme:color')).toBe(null)
+    expect(globalThis.localStorage.key(999)).toBe(null)
 
     globalThis.localStorage.setItem('theme:color', 'purple')
 

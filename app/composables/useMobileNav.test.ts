@@ -175,6 +175,26 @@ describe('provideMobileNav', () => {
     expect(removeEventSpy).toHaveBeenCalledWith('resize', expect.any(Function))
   })
 
+  it('skips listener removal when open fails before listeners are created', () => {
+    vi.spyOn(window, 'scrollY', 'get').mockImplementation(() => {
+      throw new Error('scroll unavailable')
+    })
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+    const { open, close, isOpen } = provideMobileNav()
+
+    expect(() => open()).toThrow('scroll unavailable')
+    expect(isOpen.value).toBe(true)
+
+    close()
+
+    expect(isOpen.value).toBe(false)
+    const removeKeydown = removeEventSpy.mock.calls.filter((c: unknown[]) => c[0] === 'keydown')
+    const removeResize = removeEventSpy.mock.calls.filter((c: unknown[]) => c[0] === 'resize')
+    expect(removeKeydown).toHaveLength(0)
+    expect(removeResize).toHaveLength(0)
+  })
+
   it('cleans up on unmount when open', () => {
     vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
     const { open } = provideMobileNav()

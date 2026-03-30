@@ -105,6 +105,14 @@ describe('TestimonialPhoto', () => {
     expect(photo.classes()).toContain('ring-2')
     expect(photo.classes()).toContain('ring-border')
   })
+
+  it('falls back to the initial when the image errors', async () => {
+    const wrapper = mountFull(baseProps, '/photos/jane.jpg')
+    await wrapper.find('img').trigger('error')
+
+    expect(wrapper.find('img').exists()).toBe(false)
+    expect(wrapper.findComponent(TestimonialPhoto).find('span[aria-hidden="true"]').text().trim()).toBe('J')
+  })
 })
 
 describe('TestimonialName', () => {

@@ -3,9 +3,11 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import Button from './Button.vue'
 
+const isDark = ref(false)
+
 vi.mock('~/composables/useTheme', () => ({
   useTheme: () => ({
-    isDark:      ref(false),
+    isDark,
     color:       ref('teal'),
     setColor:    vi.fn(),
     toggleDark:  vi.fn(),
@@ -118,7 +120,12 @@ describe('Button', () => {
 
   describe('dark mode', () => {
     it('outline uses light brand token in dark mode', () => {
-      expect(true).toBe(true)
+      isDark.value = true
+      const wrapper = mount(Button, { props: { variant: 'outline', color: 'teal' } })
+      expect(wrapper.classes()).toContain('border-brand-teal-light')
+      expect(wrapper.classes()).toContain('text-brand-teal-light')
+      expect(wrapper.classes()).toContain('focus-visible:ring-brand-teal-light')
+      isDark.value = false
     })
   })
 
