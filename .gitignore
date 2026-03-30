@@ -13,6 +13,7 @@ coverage
 dist
 .data
 .netlify
+.vitest-attachments
 
 # Storybook build
 public/storybook

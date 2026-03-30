@@ -7,7 +7,7 @@ const {
 </script>
 
 <template>
-  <main :class="cn('flex flex-col-reverse lg:flex-row items-center lg:items-stretch min-h-dvh lg:h-screen lg:overflow-hidden', isDark ? 'bg-theme-black' : 'bg-background')">
+  <main :class="cn('flex flex-col-reverse lg:flex-row items-center lg:items-stretch h-dvh lg:h-screen lg:overflow-hidden', isDark ? 'bg-theme-black' : 'bg-background')">
     <slot />
   </main>
 </template>
