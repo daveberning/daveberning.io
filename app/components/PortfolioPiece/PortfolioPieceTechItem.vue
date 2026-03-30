@@ -4,11 +4,13 @@ import Pill from '~/components/ui/pill/Pill.vue'
 
 const props = defineProps<PortfolioPieceTechItemProps>()
 
-const { color } = injectPortfolioPieceContext()
+const {
+  color
+} = injectPortfolioPieceContext()
 </script>
 
 <template>
-  <Pill as="li" variant="outline" size="small" :color="color" :class="props.class">
+  <UiPill as="li" variant="outline" size="small" :color="color" :class="props.class">
     <slot />
-  </Pill>
+  </UiPill>
 </template>

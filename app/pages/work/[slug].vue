@@ -24,7 +24,7 @@ if (!work.value) {
 </script>
 
 <template>
-  <NuxtLayout name="internal">
+  <NuxtLayout name="sidebar">
     <UiText as="h1" class="mb-8">{{ work!.title }}</UiText>
     <article class="prose max-w-none">
       <ContentRenderer :value="work!" />

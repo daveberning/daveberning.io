@@ -15,7 +15,7 @@ providePortfolioPieceContext({
 </script>
 
 <template>
-  <component :is="props.as" :class="cn(portfolioPieceVariants({ variant: props.variant, color: props.color, accent: props.accent }), props.class)">
+  <component :is="props.as" :class="cn(portfolioPieceVariants({ variant, color, accent }), props.class)">
     <slot />
   </component>
 </template>

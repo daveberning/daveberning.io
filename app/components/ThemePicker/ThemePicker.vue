@@ -9,7 +9,13 @@ const props = withDefaults(defineProps<ThemePickerProps>(), {
   orientation: 'vertical',
 })
 
-const { color, isDark, setColor, toggleDark } = useTheme()
+const {
+  color,
+  isDark,
+  setColor,
+  toggleDark
+} = useTheme()
+
 const containerRef = ref<HTMLElement | null>(null)
 
 function getButtons(): HTMLButtonElement[] {
@@ -26,6 +32,7 @@ function onKeyDown(event: KeyboardEvent) {
   event.preventDefault()
   const buttons = getButtons()
   const idx = buttons.indexOf(event.target as HTMLButtonElement)
+
   if (idx === -1) return
 
   const next = isPrev
@@ -42,8 +49,7 @@ function onKeyDown(event: KeyboardEvent) {
     role="toolbar"
     aria-label="Theme and appearance settings"
     :class="cn(themePickerVariants({ orientation: props.orientation }), props.class)"
-    @keydown="onKeyDown"
-  >
+    @keydown="onKeyDown">
     <!-- Dark mode toggle — always first -->
     <button
       type="button"

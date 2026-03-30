@@ -25,7 +25,7 @@ const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
 </script>
 
 <template>
-  <NuxtLayout name="internal">
+  <NuxtLayout name="sidebar">
     <UiText as="h1" ref="titleRef" class="mb-8">Writing</UiText>
     <div ref="listRef" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <article v-for="post in posts" :key="post.path" :class="cn('flex flex-col bg-surface border border-border rounded-2xl overflow-hidden transition-colors hover:border-theme')">
@@ -47,12 +47,12 @@ const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
           <UiText class="text-sm text-text-muted line-clamp-2 leading-relaxed">{{ post.description }}</UiText>
           <ul v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-auto list-none">
             <UiPill
-              v-for="tag in post.tags"
-              :key="tag"
-              as="li"
-              :color="color"
-              variant="outline"
-              size="small">
+                v-for="tag in post.tags"
+                :key="tag"
+                as="li"
+                :color="color"
+                variant="outline"
+                size="small">
               {{ tag }}
             </UiPill>
           </ul>

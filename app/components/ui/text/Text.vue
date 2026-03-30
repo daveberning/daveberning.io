@@ -6,14 +6,17 @@ import { cn } from '~/lib/utils'
 
 defineOptions({ inheritAttrs: false })
 
+const attrs = useAttrs()
+
+const {
+  isDark
+} = useTheme()
+
 const props = defineProps({
   as:    { type: String, default: 'p' },
   color: { type: String, default: 'default' },
 })
 
-const attrs = useAttrs()
-
-const { isDark } = useTheme()
 const mode = computed(() => isDark.value ? 'dark' : 'light')
 </script>
 

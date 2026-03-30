@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { injectAsideContext, type AsideTitleProps } from '.'
+import { type AsideTitleProps } from '.'
 import { cn } from '~/lib/utils'
 
 const props = defineProps<AsideTitleProps>()
-
-const { color: _color } = injectAsideContext()
 </script>
 
 <template>

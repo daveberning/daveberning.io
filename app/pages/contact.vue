@@ -50,7 +50,7 @@ function onSubmit(_values: Record<string, unknown>) {
 </script>
 
 <template>
-  <NuxtLayout name="internal">
+  <NuxtLayout name="sidebar">
     <UiText as="h1" class="mb-4">
       Contact
     </UiText>

@@ -5,7 +5,6 @@ import { cn } from '~/lib/utils'
 
 const { isOpen, close } = useMobileNav()
 const { data: siteInfo } = await useSiteInfo()
-
 const route = useRoute()
 
 function isActive(item: { to: string }): boolean {
@@ -17,9 +16,11 @@ function handleNavClick() {
 }
 
 let swipeStartY = 0
+
 function onTouchStart(e: TouchEvent) {
   swipeStartY = e.touches[0]?.clientY ?? 0
 }
+
 function onTouchEnd(e: TouchEvent) {
   const endY = e.changedTouches[0]?.clientY ?? 0
   if (swipeStartY - endY >= 50) close()
@@ -111,14 +112,12 @@ defineExpose({ isOpen, close })
             <NuxtLink
               :to="item.to"
               :aria-current="isActive(item) ? 'page' : undefined"
-              :class="cn(
-                'flex items-center w-full py-3 px-4 rounded-lg text-base font-medium transition-colors',
+              :class="cn('flex items-center w-full py-3 px-4 rounded-lg text-base font-medium transition-colors',
                 isActive(item)
                   ? 'bg-theme/15 text-theme font-semibold border-l-[3px] border-theme pl-[13px]'
                   : 'text-text hover:bg-surface-raised pl-4'
               )"
-              @click="handleNavClick"
-            >
+              @click="handleNavClick">
               {{ item.name }}
             </NuxtLink>
           </li>

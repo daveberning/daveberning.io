@@ -1,16 +1,10 @@
 import { h } from 'vue'
-import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import PortfolioPiece, {
-  PortfolioPieceHeader,
-  PortfolioPieceBody,
-  PortfolioPieceTech,
-  PortfolioPieceTechItem,
-  PortfolioPieceFooter,
-} from '.'
+import PortfolioPiece, { PortfolioPieceHeader, PortfolioPieceBody, PortfolioPieceTech, PortfolioPieceTechItem, PortfolioPieceFooter } from '.'
+import { mountWithTheme } from '~/lib/mountHarness'
 
 function mountRoot(props: Record<string, unknown> = {}, slots: Record<string, () => unknown> = {}) {
-  return mount(PortfolioPiece, {
+  return mountWithTheme(PortfolioPiece, {
     props,
     slots: { default: slots.default ?? (() => 'content') },
     global: {
@@ -27,12 +21,12 @@ function mountRoot(props: Record<string, unknown> = {}, slots: Record<string, ()
 describe('PortfolioPiece', () => {
   it('renders as an <article> by default', () => {
     const wrapper = mountRoot()
-    expect(wrapper.element.tagName).toBe('ARTICLE')
+    expect((wrapper.element as HTMLElement).tagName).toBe('ARTICLE')
   })
 
   it('renders as a custom element via as prop', () => {
     const wrapper = mountRoot({ as: 'section' })
-    expect(wrapper.element.tagName).toBe('SECTION')
+    expect((wrapper.element as HTMLElement).tagName).toBe('SECTION')
   })
 
   it('applies base variant classes', () => {
@@ -140,7 +134,8 @@ describe('PortfolioPieceHeader', () => {
     })
     const header = wrapper.findComponent(PortfolioPieceHeader)
     expect(header.text()).toContain('Lead Dev')
-    expect(header.findAll('p')).toHaveLength(2)
+    expect(header.find('h2').text()).toBe('My Project')
+    expect(header.find('p').text()).toBe('Lead Dev')
   })
 
   it('omits the role when not provided', () => {
@@ -148,9 +143,8 @@ describe('PortfolioPieceHeader', () => {
       default: () => h(PortfolioPieceHeader, { title: 'Solo Title' }),
     })
     const header = wrapper.findComponent(PortfolioPieceHeader)
-    const paragraphs = header.findAll('p')
-    expect(paragraphs).toHaveLength(1)
-    expect(paragraphs.at(0)?.text()).toBe('Solo Title')
+    expect(header.find('h2').text()).toBe('Solo Title')
+    expect(header.find('p').exists()).toBe(false)
   })
 
   it('applies base header variant classes', () => {

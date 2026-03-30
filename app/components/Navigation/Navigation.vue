@@ -3,7 +3,9 @@ import { toRef } from 'vue'
 import { navigationVariants, provideNavigationContext, type NavigationProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = withDefaults(defineProps<NavigationProps>(), { darkVariant: 'outline' })
+const props = withDefaults(defineProps<NavigationProps>(), {
+  darkVariant: 'outline'
+})
 
 provideNavigationContext({
   darkVariant: toRef(props, 'darkVariant')

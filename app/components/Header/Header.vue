@@ -8,7 +8,10 @@ const props = withDefaults(defineProps<HeaderProps>(), {
   variant: 'teal'
 })
 
-const { isDark } = useTheme()
+const {
+  isDark
+} = useTheme()
+
 const mode = computed(() => isDark.value ? 'dark' : 'light')
 
 provideHeaderContext({

@@ -47,7 +47,7 @@ async function copyLink() {
 </script>
 
 <template>
-  <NuxtLayout name="internal">
+  <NuxtLayout name="sidebar">
     <NuxtImg v-if="post!.featuredImage" :src="post!.featuredImage" :alt="post!.title" class="w-full rounded-xl object-cover aspect-[16/9] mb-8"/>
     <UiText as="h1" class="mb-3">{{ post!.title }}</UiText>
     <div class="flex items-center gap-2 text-sm text-text-muted mb-6">

@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<PortfolioPieceHeaderProps>(), {
 
 <template>
   <component :is="props.as" :class="cn(portfolioPieceHeaderVariants(), props.class)">
-    <p class="text-base font-semibold text-text">{{ props.title }}</p>
-    <p v-if="props.role" class="text-sm text-text-muted">{{ props.role }}</p>
+    <UiText as="h2" class="text-xl font-semibold">{{ props.title }}</UiText>
+    <UiText v-if="props.role" class="text-sm text-text-muted">{{ props.role }}</UiText>
   </component>
 </template>

@@ -17,7 +17,7 @@ const ariaLabel = computed(() => {
     <div class="absolute inset-y-0 left-0 w-1 bg-theme" aria-hidden="true" />
     <div class="pl-8 pr-6 py-5">
       <UiText v-if="props.platform" class="mb-1">
-        Originally published on <strong>{{ props.platform }}</strong>
+        This is a summary of the article published on <strong>{{ props.platform }}</strong>
       </UiText>
       <UiLink
         :to="props.href"
@@ -25,8 +25,7 @@ const ariaLabel = computed(() => {
         rel="noopener noreferrer"
         :aria-label="ariaLabel"
         variant="text"
-        class="group font-semibold text-base gap-1.5 h-auto px-0 hover:no-underline hover:text-theme-dark dark:text-theme"
-      >
+        class="group font-semibold text-base gap-1.5 h-auto px-0 hover:no-underline hover:text-theme-dark dark:text-theme">
         {{ props.label }}
         <Icon name="lucide:arrow-up-right" class="size-4 motion-safe:transition-transform group-hover:translate-x-px group-hover:-translate-y-px" aria-hidden="true"/>
       </UiLink>

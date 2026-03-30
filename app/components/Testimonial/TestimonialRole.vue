@@ -6,7 +6,7 @@ const props = defineProps<TestimonialRoleProps>()
 </script>
 
 <template>
-  <p :class="cn(testimonialRoleVariants(), props.class)">
+  <UiText :class="cn(testimonialRoleVariants(), props.class)">
     <slot />
-  </p>
+  </UiText>
 </template>

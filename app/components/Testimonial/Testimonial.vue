@@ -7,7 +7,9 @@ const props = withDefaults(defineProps<TestimonialProps>(), {
   as: 'article',
 })
 
-provideTestimonialContext({ name: toRef(props, 'name') })
+provideTestimonialContext({
+  name: toRef(props, 'name')
+})
 
 </script>
 

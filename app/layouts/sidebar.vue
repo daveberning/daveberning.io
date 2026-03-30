@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { ComponentPublicInstance } from 'vue'
-import ThemePicker from '~/components/ThemePicker'
 import Header, { HeaderBrand, HeaderHamburger } from '~/components/Header'
 import Footer from '~/components/Footer'
 import MobileNav from '~/components/MobileNav'
-import { provideTheme } from '~/composables/useTheme'
+import { useTheme } from '~/composables/useTheme'
 import { provideMobileNav } from '~/composables/useMobileNav'
 import { cn } from '~/lib/utils'
 
@@ -14,7 +13,7 @@ const headerRef = ref<ComponentPublicInstance | null>(null)
 const {
   color,
   isDark
-} = provideTheme()
+} = useTheme()
 
 const {
   isOpen,
@@ -23,21 +22,6 @@ const {
 } = provideMobileNav()
 
 useSwipeGesture(headerRef, 'down', open)
-
-useHead({
-  titleTemplate: (title) => {
-    const fullName = `${siteInfo.value?.firstName ?? ''} ${siteInfo.value?.lastName ?? ''}`.trim()
-    const base = siteInfo.value?.baseTitle ?? ''
-    return title ? `${title} | ${fullName} ${base}`.trim() : `${fullName} ${base}`.trim()
-  },
-  script: [
-    {
-      key: 'theme-init',
-      tagPosition: 'head',
-      innerHTML: `(function(){var c=localStorage.getItem('theme:color')||'teal';var d=localStorage.getItem('theme:dark');var dark=d!==null?d==='true':window.matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',c);if(dark)document.documentElement.classList.add('dark');}())`,
-    },
-  ],
-})
 </script>
 
 <template>
@@ -77,6 +61,5 @@ useHead({
     </CtaBar>
     <Footer />
     <MobileNav />
-    <ThemePicker class="fixed bottom-4 left-4 z-50" />
   </div>
 </template>

@@ -18,23 +18,11 @@ onMounted(() => {
   window.addEventListener('resize', onResize)
 })
 
-onUnmounted(() => {
-  window.removeEventListener('resize', onResize)
-})
+onUnmounted(() => window.removeEventListener('resize', onResize))
 </script>
 
 <template>
-  <div
-    v-if="props.dev"
-    :class="cn(
-      'fixed right-0 top-1/4 -translate-y-1/2 z-50',
-      'bg-theme-dark/80 text-white text-xs font-black',
-      'p-3 rounded-l-md',
-      'select-none pointer-events-none',
-      props.class,
-    )"
-    aria-hidden="true"
-  >
+  <div v-if="props.dev" :class="cn('fixed right-0 top-1/4 -translate-y-1/2 z-50 bg-theme-dark/80 text-white text-xs font-black p-3 rounded-l-md select-none pointer-events-none', props.class)" aria-hidden="true">
     {{ currentLabel }}
   </div>
 </template>

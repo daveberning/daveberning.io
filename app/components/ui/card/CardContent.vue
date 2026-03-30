@@ -2,7 +2,9 @@
 import { cardContentVariants, type CardContentProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = withDefaults(defineProps<CardContentProps>(), { as: 'div' })
+const props = withDefaults(defineProps<CardContentProps>(), {
+  as: 'div'
+})
 </script>
 
 <template>

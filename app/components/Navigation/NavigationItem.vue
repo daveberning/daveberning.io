@@ -5,9 +5,18 @@ import { cn } from '~/lib/utils'
 
 const props = defineProps<NavigationItemProps>()
 
-const { isDark } = useTheme()
-const { darkVariant } = injectNavigationContext()
-const linkVariant = computed(() => isDark.value ? darkVariant.value : 'solid')
+const {
+  isDark
+} = useTheme()
+
+const {
+  darkVariant
+} = injectNavigationContext()
+
+const linkVariant = computed(() => isDark.value
+  ? darkVariant.value
+  : 'solid'
+)
 </script>
 
 <template>

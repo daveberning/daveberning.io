@@ -4,7 +4,10 @@ import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<CardFooterProps>(), { as: 'div' })
 
-const { variant, color } = injectCardContext()
+const {
+  variant,
+  color
+} = injectCardContext()
 </script>
 
 <template>

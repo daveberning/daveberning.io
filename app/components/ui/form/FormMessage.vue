@@ -7,8 +7,13 @@ import { cn } from '~/lib/utils'
 
 const props = defineProps<FormMessageProps>()
 
-const { isDark } = useTheme()
-const { errorMessage } = useField(() => props.name)
+const {
+  isDark
+} = useTheme()
+
+const {
+  errorMessage
+} = useField(() => props.name)
 
 const mode      = computed(() => isDark.value ? 'dark' : 'light')
 const state     = computed(() => errorMessage.value ? 'error' : 'default')
@@ -16,12 +21,7 @@ const messageId = computed(() => `field-${props.name}-message`)
 </script>
 
 <template>
-  <span
-    :id="messageId"
-    role="alert"
-    aria-live="polite"
-    :class="cn(formMessageVariants({ state, mode }), props.class)"
-  >
+  <span :id="messageId" role="alert" aria-live="polite" :class="cn(formMessageVariants({ state, mode }), props.class)">
     {{ errorMessage ?? '' }}
   </span>
 </template>

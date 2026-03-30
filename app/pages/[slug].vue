@@ -20,7 +20,7 @@ const content = computed(() => page.value!)
 </script>
 
 <template>
-  <NuxtLayout name="internal">
+  <NuxtLayout name="sidebar">
     <article>
       <ContentRenderer :value="content" />
     </article>

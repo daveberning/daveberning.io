@@ -6,7 +6,9 @@ import { cn } from '~/lib/utils'
 const props = defineProps<HeaderHamburgerProps>()
 const emit = defineEmits<{ toggle: [] }>()
 
-const { isDark } = useTheme()
+const {
+  isDark
+} = useTheme()
 </script>
 
 <template>

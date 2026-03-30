@@ -1,12 +1,6 @@
 <script setup lang="ts">
-import { cn } from '~/lib/utils'
-
 /* Page Data
 --------------------------------- */
-const {
-  isDark
-} = useTheme()
-
 const {
   data: siteInfo
 } = await useSiteInfo()
@@ -19,7 +13,7 @@ useHead({
 </script>
 
 <template>
-  <main :class="cn('flex flex-col-reverse lg:flex-row items-center lg:items-stretch min-h-dvh lg:h-screen lg:overflow-hidden', isDark ? 'bg-theme-black' : 'bg-background')">
+  <NuxtLayout name="homepage">
     <Portrait size="large" />
     <div class="flex flex-col items-center px-6 sm:px-10 lg:px-10 xl:px-16 justify-start lg:justify-center pt-14 sm:pt-16 pb-6 lg:pt-0 lg:pb-0">
       <UiText as="h1" class="text-4xl sm:text-5xl lg:text-[4.5vw] lg:whitespace-nowrap xl:whitespace-normal xl:text-[6vw] 2xl:text-[7vw] font-black leading-none">
@@ -35,5 +29,5 @@ useHead({
       </Navigation>
       <SocialLinks :links="siteInfo?.socialLinks ?? []" class="mt-6 lg:mt-4" />
     </div>
-  </main>
+  </NuxtLayout>
 </template>

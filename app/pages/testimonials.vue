@@ -26,7 +26,7 @@ const testimonials = computed(() => {
 </script>
 
 <template>
-  <NuxtLayout name="internal">
+  <NuxtLayout name="sidebar">
     <UiText as="h1" class="mb-8">Testimonials</UiText>
     <div class="columns-1 lg:columns-2 xl:columns-3 gap-6">
       <Testimonial v-for="testimonal in testimonials" :key="testimonal.path" :name="testimonal.name ?? ''" class="break-inside-avoid mb-6">

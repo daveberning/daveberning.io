@@ -7,7 +7,9 @@ const props = withDefaults(defineProps<PortraitProps>(), {
   size: 'large',
 })
 
-const { color } = useTheme()
+const {
+  color
+} = useTheme()
 
 const src = computed(() =>
   props.size === 'small'
@@ -19,7 +21,7 @@ const src = computed(() =>
 <template>
   <NuxtImg
     :src="src"
-    :alt="`Dave Berning — ${color} theme`"
+    :alt="`Front-end engineer, Dave Berning in a ${color} plaid flannel shirt and grey pants with his hands in his pockets, smiling and looking at the camera.`"
     :class="cn(portraitVariants({ size: props.size }), props.class)"
   />
 </template>

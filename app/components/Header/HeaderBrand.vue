@@ -8,8 +8,14 @@ const props = withDefaults(defineProps<HeaderBrandProps>(), {
   to: '/'
 })
 
-const { variant } = injectHeaderContext()
-const { isDark } = useTheme()
+const {
+  variant
+} = injectHeaderContext()
+
+const {
+  isDark
+} = useTheme()
+
 const mode = computed(() => isDark.value ? 'dark' : 'light')
 </script>
 

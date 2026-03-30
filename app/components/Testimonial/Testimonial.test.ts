@@ -1,21 +1,14 @@
 import { h } from 'vue'
-import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import Testimonial, {
-  TestimonialContent,
-  TestimonialAttribution,
-  TestimonialPhoto,
-  TestimonialName,
-  TestimonialRole,
-  type TestimonialProps,
-} from '.'
+import Testimonial, { TestimonialContent, TestimonialAttribution, TestimonialPhoto, TestimonialName, TestimonialRole, type TestimonialProps } from '.'
+import { mountWithTheme } from '~/lib/mountHarness'
 
 const baseProps: TestimonialProps = {
   name: 'Jane Smith',
 }
 
 function mountFull(props: TestimonialProps = baseProps, photoSrc?: string) {
-  return mount(Testimonial, {
+  return mountWithTheme(Testimonial, {
     props,
     slots: {
       default: () => [
@@ -35,15 +28,15 @@ function mountFull(props: TestimonialProps = baseProps, photoSrc?: string) {
 describe('Testimonial', () => {
   it('renders as an <article> by default', () => {
     const wrapper = mountFull()
-    expect(wrapper.element.tagName).toBe('ARTICLE')
+    expect((wrapper.element as HTMLElement).tagName).toBe('ARTICLE')
   })
 
   it('renders as a custom element via as prop', () => {
-    const wrapper = mount(Testimonial, {
+    const wrapper = mountWithTheme(Testimonial, {
       props: { ...baseProps, as: 'div' },
       slots: { default: () => h(TestimonialContent, null, () => 'text') },
     })
-    expect(wrapper.element.tagName).toBe('DIV')
+    expect((wrapper.element as HTMLElement).tagName).toBe('DIV')
   })
 
   it('applies base variant classes', () => {
@@ -54,7 +47,7 @@ describe('Testimonial', () => {
   })
 
   it('merges a custom class', () => {
-    const wrapper = mount(Testimonial, {
+    const wrapper = mountWithTheme(Testimonial, {
       props: { ...baseProps, class: 'my-custom' },
       slots: { default: () => 'content' },
     })

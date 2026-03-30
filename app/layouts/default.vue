@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import ThemePicker from '~/components/ThemePicker'
 import { provideTheme } from '~/composables/useTheme'
+
+const {
+  data: siteInfo
+} = await useSiteInfo()
 
 provideTheme()
 
 // Inline script injected into <head> before first paint — prevents flash of
 // wrong theme on hard reload or first visit with a saved preference.
 useHead({
+  titleTemplate: (title) => {
+    const fullName = `${siteInfo.value?.firstName ?? ''} ${siteInfo.value?.lastName ?? ''}`.trim()
+    const base = siteInfo.value?.baseTitle ?? ''
+    return title ? `${title} | ${fullName} ${base}`.trim() : `${fullName} ${base}`.trim()
+  },
   script: [
     {
       key: 'theme-init',
@@ -18,8 +26,5 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <slot />
-    <ThemePicker class="fixed bottom-4 left-2 sm:left-4 z-50" />
-  </div>
+  <slot />
 </template>

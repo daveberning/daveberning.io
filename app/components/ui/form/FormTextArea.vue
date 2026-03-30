@@ -7,8 +7,16 @@ import { cn } from '~/lib/utils'
 
 const props = defineProps<FormTextAreaProps>()
 
-const { isDark } = useTheme()
-const { value, errorMessage, handleChange, handleBlur } = useField(() => props.name)
+const {
+  isDark
+} = useTheme()
+
+const {
+  value,
+  errorMessage,
+  handleChange,
+  handleBlur
+} = useField(() => props.name)
 
 const mode      = computed(() => isDark.value ? 'dark' : 'light')
 const state     = computed(() => errorMessage.value ? 'error' : 'default')

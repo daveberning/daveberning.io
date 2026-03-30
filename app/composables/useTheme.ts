@@ -73,11 +73,13 @@ export function provideTheme(): ThemeContext {
     if (localStorage.getItem(STORAGE_DARK) !== null) return
 
     const mq = window.matchMedia('(prefers-color-scheme: dark)')
+
     const handler = (e: MediaQueryListEvent) => {
       if (localStorage.getItem(STORAGE_DARK) !== null) return
       isDark.value = e.matches
       applyToDOM(color.value, isDark.value)
     }
+
     mq.addEventListener('change', handler)
     onUnmounted(() => mq.removeEventListener('change', handler))
   })
@@ -94,7 +96,13 @@ export function provideTheme(): ThemeContext {
     saveToStorage(color.value, isDark.value)
   }
 
-  const context: ThemeContext = { color, isDark, setColor, toggleDark }
+  const context: ThemeContext = {
+    color,
+    isDark,
+    setColor,
+    toggleDark
+  }
+
   provide(THEME_KEY, context)
   return context
 }

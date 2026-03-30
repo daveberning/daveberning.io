@@ -7,8 +7,16 @@ import { cn } from '~/lib/utils'
 
 const props = defineProps<FormSelectProps>()
 
-const { isDark } = useTheme()
-const { value, errorMessage, handleChange, handleBlur } = useField(() => props.name)
+const {
+  isDark
+} = useTheme()
+
+const {
+  value,
+  errorMessage,
+  handleChange,
+  handleBlur
+} = useField(() => props.name)
 
 const mode      = computed(() => isDark.value ? 'dark' : 'light')
 const state     = computed(() => errorMessage.value ? 'error' : 'default')
@@ -34,10 +42,6 @@ const messageId = computed(() => `field-${props.name}-message`)
         {{ option }}
       </option>
     </select>
-    <Icon
-      name="heroicons:chevron-down"
-      class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 size-4 text-text-muted"
-      aria-hidden="true"
-    />
+    <Icon name="heroicons:chevron-down" class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 size-4 text-text-muted" aria-hidden="true" />
   </div>
 </template>

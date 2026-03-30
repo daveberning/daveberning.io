@@ -1,7 +1,9 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'About' })
+useHead({
+  title: 'About'
+})
 
 /* Page Content
 --------------------------------- */
@@ -12,7 +14,7 @@ const [{ data: page }, { data: sidebar }] = await Promise.all([
 </script>
 
 <template>
-  <NuxtLayout name="internal">
+  <NuxtLayout name="sidebar">
     <ContentRenderer v-if="page" :value="page" />
     <template #aside>
       <Portrait size="small" class="rounded-lg mb-6" />
