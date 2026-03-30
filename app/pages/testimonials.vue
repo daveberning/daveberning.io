@@ -1,8 +1,14 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-useHead({
-  title: 'Testimonials'
+useHead({ title: 'Testimonials' })
+useSeoMeta({
+  description: 'What colleagues and clients say about working with Dave Berning, Front-End Software Engineer based in Cincinnati, OH.',
+  ogTitle: 'Testimonials',
+  ogDescription: 'What colleagues and clients say about working with Dave Berning, Front-End Software Engineer based in Cincinnati, OH.',
+  ogType: 'website',
+  twitterTitle: 'Testimonials',
+  twitterDescription: 'What colleagues and clients say about working with Dave Berning, Front-End Software Engineer based in Cincinnati, OH.',
 })
 
 /* Page Content

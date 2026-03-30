@@ -16,6 +16,11 @@ function createFilteredLogger() { // Ignoring sourcemap and lexical errors that 
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'https://daveberning.io',
+    },
+  },
   hooks: {
     'vite:extendConfig'(config) {
       Object.assign(config, { customLogger: createFilteredLogger() })
@@ -42,12 +47,19 @@ export default defineNuxtConfig({
   alias: {
     '@': './src',
   },
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL ?? 'https://daveberning.io',
+  },
   modules: [
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
+  sitemap: {
+    exclude: ['/storybook/**'],
+  },
   css: [
     '~/assets/css/main.css'
   ],

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
+const config = useRuntimeConfig()
 const route = useRoute()
+const siteUrl = config.public.siteUrl as string
 
 const {
   color
@@ -14,8 +16,50 @@ const { data: post } = await useAsyncData(route.path, () =>
 )
 
 if (post.value) {
+  const canonicalUrl = `${siteUrl}${route.path}`
+  const ogImage = post.value.featuredImage
+    ? post.value.featuredImage.startsWith('http')
+      ? post.value.featuredImage
+      : `${siteUrl}${post.value.featuredImage}`
+    : `${siteUrl}/portraits/dave-teal.png`
+
   useHead({
-    title: post.value.title
+    title: post.value.title,
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.value.title,
+          description: post.value.description,
+          url: canonicalUrl,
+          image: ogImage,
+          datePublished: post.value.publishedAt,
+          dateModified: post.value.updatedAt ?? post.value.publishedAt,
+          author: {
+            '@type': 'Person',
+            name: 'Dave Berning',
+            url: siteUrl,
+          },
+        }),
+      },
+    ],
+  })
+
+  useSeoMeta({
+    description: post.value.description,
+    ogTitle: post.value.title,
+    ogDescription: post.value.description,
+    ogType: 'article',
+    ogImage,
+    ogUrl: canonicalUrl,
+    twitterTitle: post.value.title,
+    twitterDescription: post.value.description,
+    twitterImage: ogImage,
+    articlePublishedTime: post.value.publishedAt,
+    articleModifiedTime: post.value.updatedAt ?? post.value.publishedAt,
+    articleTag: post.value.tags,
   })
 }
 

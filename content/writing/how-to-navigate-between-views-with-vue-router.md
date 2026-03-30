@@ -3,7 +3,7 @@ title: "How To Navigate Between Views with Vue Router"
 description: "A practical introduction to Vue Router — adding client-side routing to a Vue.js application, defining routes, navigating between views, and generating routes dynamically."
 publishedAt: "2021-03-22"
 updatedAt: "2026-03-20"
-featuredImage: "https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FVWgNzkr4k1aKz7fmAiXjy3Xp&width=1920"
+featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 5
 category: "Tutorial"

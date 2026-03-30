@@ -1,8 +1,14 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-useHead({
-  title: 'About'
+useHead({ title: 'About' })
+useSeoMeta({
+  description: 'Learn about Dave Berning, a Front-End Software Engineer based in Cincinnati, OH with expertise in Vue, TypeScript, and modern web development.',
+  ogTitle: 'About',
+  ogDescription: 'Learn about Dave Berning, a Front-End Software Engineer based in Cincinnati, OH with expertise in Vue, TypeScript, and modern web development.',
+  ogType: 'website',
+  twitterTitle: 'About',
+  twitterDescription: 'Learn about Dave Berning, a Front-End Software Engineer based in Cincinnati, OH with expertise in Vue, TypeScript, and modern web development.',
 })
 
 /* Page Content

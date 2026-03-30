@@ -3,7 +3,7 @@ title: "How To Create User Interactions with Events in Vue"
 description: "A hands-on guide to handling user interactions in Vue.js — covering native DOM events with v-on, inline handlers, method handlers, and building custom events for child-to-parent communication."
 publishedAt: "2021-05-28"
 updatedAt: "2026-03-20"
-featuredImage: "https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FVWgNzkr4k1aKz7fmAiXjy3Xp&width=1920"
+featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 5
 category: "Tutorial"

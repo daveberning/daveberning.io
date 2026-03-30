@@ -3,7 +3,7 @@ title: "How To Make Your Vue.js Application DRY with Slots, Mixins, and Composit
 description: "A practical guide to eliminating code duplication in Vue.js using three complementary techniques: layout components with slots, mixins, and the Composition API."
 publishedAt: "2021-12-03"
 updatedAt: "2026-03-20"
-featuredImage: "https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FVWgNzkr4k1aKz7fmAiXjy3Xp&width=1920"
+featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 6
 category: "Tutorial"

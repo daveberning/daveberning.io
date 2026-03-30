@@ -3,7 +3,7 @@ title: "How To Use Vue.js Environment Modes with a Node.js Mock Data Layer"
 description: "A practical guide to decoupling frontend and backend development in Vue.js — using environment modes and a lightweight Node.js mock server to build against realistic data before the real API exists."
 publishedAt: "2021-02-11"
 updatedAt: "2026-03-20"
-featuredImage: "https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FVWgNzkr4k1aKz7fmAiXjy3Xp&width=1920"
+featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "Node.js", "Web Development"]
 readingTime: 6
 category: "Tutorial"

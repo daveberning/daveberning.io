@@ -3,7 +3,7 @@ title: "How To Debug Components, State, and Events with Vue.js Devtools"
 description: "An exploration of why placeholder text matters in design and development workflows, and how to use it effectively without losing sight of real content goals."
 publishedAt: "2022-01-25"
 updatedAt: "2026-03-20"
-featuredImage: "https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FVWgNzkr4k1aKz7fmAiXjy3Xp&width=1920"
+featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "Web Development"]
 readingTime: 5
 category: "Tutorial"

@@ -4,8 +4,14 @@ import { FormInput, FormSelect, FormTextArea } from '~/components/ui/form'
 
 /* Page Meta Information
 --------------------------------- */
-useHead({
-  title: 'Contact'
+useHead({ title: 'Contact' })
+useSeoMeta({
+  description: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
+  ogTitle: 'Contact',
+  ogDescription: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
+  ogType: 'website',
+  twitterTitle: 'Contact',
+  twitterDescription: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
 })
 
 const {

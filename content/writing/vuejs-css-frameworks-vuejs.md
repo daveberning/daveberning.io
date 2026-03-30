@@ -3,7 +3,7 @@ title: "Integrating and Using CSS Frameworks with Vue.js"
 description: "A practical tour of installing and using Bootstrap 4, Bulma, and Foundation for Sites in a Vue.js application — with guidance on when each framework is the right tool for the job."
 publishedAt: "2018-04-01"
 updatedAt: "2026-03-20"
-featuredImage: "https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FVWgNzkr4k1aKz7fmAiXjy3Xp&width=1920"
+featuredImage: "/writing/vuejs.jpeg"
 tags: ["JavaScript", "Vue", "CSS", "Web Development"]
 readingTime: 5
 category: "Tutorial"

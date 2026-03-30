@@ -1,8 +1,14 @@
 <script setup lang="ts">
 /* Page Meta Information
 --------------------------------- */
-useHead({
-  title: 'Work'
+useHead({ title: 'Work' })
+useSeoMeta({
+  description: 'Explore Dave Berning\'s portfolio of front-end engineering work, including projects built with Vue, TypeScript, React, and more.',
+  ogTitle: 'Work',
+  ogDescription: 'Explore Dave Berning\'s portfolio of front-end engineering work, including projects built with Vue, TypeScript, React, and more.',
+  ogType: 'website',
+  twitterTitle: 'Work',
+  twitterDescription: 'Explore Dave Berning\'s portfolio of front-end engineering work, including projects built with Vue, TypeScript, React, and more.',
 })
 
 const {

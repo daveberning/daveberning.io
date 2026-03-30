@@ -5,3 +5,15 @@
 [functions]
   directory = ".netlify/functions-internal"
   node_bundler = "nft"
+
+# Block indexing on all non-production deploys (branch deploys, deploy previews)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# Allow indexing on production only
+[[context.production.headers]]
+  for = "/*"
+  [context.production.headers.values]
+    X-Robots-Tag = "index, follow"

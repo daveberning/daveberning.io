@@ -10,8 +10,14 @@ const { data: work } = await useAsyncData(route.path, () =>
 /* Page Meta Information
 --------------------------------- */
 if (work.value) {
-  useHead({
-    title: work.value.title
+  useHead({ title: work.value.title })
+  useSeoMeta({
+    description: work.value.description,
+    ogTitle: work.value.title,
+    ogDescription: work.value.description,
+    ogType: 'website',
+    twitterTitle: work.value.title,
+    twitterDescription: work.value.description,
   })
 }
 
