@@ -150,7 +150,7 @@ useSeoMeta({
               </div>
               <UiButton
                 as="a"
-                href="/api/resume.pdf"
+                href="/dave-berning-resume.pdf"
                 color="teal"
                 variant="outline"
                 class="resume-download-button self-start"

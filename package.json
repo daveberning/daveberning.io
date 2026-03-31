@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "generate:resume": "node scripts/generate-pdf.mjs",
     "preview": "nuxt preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o public/storybook",

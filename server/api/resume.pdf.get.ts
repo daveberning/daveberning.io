@@ -1,3 +1,11 @@
+/**
+ * DEV-ONLY: This route generates the resume PDF on-the-fly using Playwright.
+ * It works in `npm run dev` (local development) but is NOT deployed to production.
+ *
+ * In production (Netlify static deploy), the PDF is pre-generated during
+ * `npm run generate` by `scripts/generate-pdf.mjs` and served as a static file
+ * at /dave-berning-resume.pdf.
+ */
 import type { Browser } from 'playwright'
 import type { H3Event } from 'h3'
 import { createError, defineEventHandler, getHeader, getRequestURL } from 'h3'

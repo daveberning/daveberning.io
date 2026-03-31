@@ -78,17 +78,55 @@ jobs:
           path: .output/public
           retention-days: 1
 
+  generate-pdf:
+    name: Generate Resume PDF
+    runs-on: ubuntu-latest
+    needs: [build]
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: .output/public
+      - run: npx playwright install chromium --with-deps
+      - id: generate
+        run: npm run generate:resume
+        continue-on-error: true
+      - name: Fallback — download previous PDF from live site
+        if: steps.generate.outcome == 'failure'
+        run: |
+          curl -L https://daveberning.io/dave-berning-resume.pdf \
+            -o .output/public/dave-berning-resume.pdf \
+            --fail --silent || echo "Warning: fallback PDF download also failed"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          path: .output/public/dave-berning-resume.pdf
+          if-no-files-found: warn
+          retention-days: 1
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [build, generate-pdf]
     environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
-    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
+    if: always() && needs.build.result == 'success' && (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           name: dist
+          path: .output/public
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: resume-pdf
           path: .output/public
       - uses: nwtgck/actions-netlify@v3
         with:
