@@ -5,7 +5,7 @@ role: Front-End Software Engineer
 city: Cincinnati
 state: OH
 baseTitle: '| Front-End Software Engineer | Cincinnati, OH'
-resumeUrl: '#'
+resumeUrl: '/resume'
 navigation:
   - name: About
     to: /about

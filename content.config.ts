@@ -10,6 +10,31 @@ const workItemSchema = z.object({
   url:          z.string().optional(),
 })
 
+const resumeLinkSchema = z.object({
+  label: z.string(),
+  href:  z.string(),
+})
+
+const resumeEntrySchema = z.object({
+  title:       z.string(),
+  organization: z.string(),
+  period:      z.string(),
+  location:    z.string().optional(),
+  summary:     z.string().optional(),
+  highlights:  z.array(z.string()).optional(),
+})
+
+const resumeEducationSchema = z.object({
+  school:  z.string(),
+  degree:  z.string().optional(),
+  details: z.string().optional(),
+})
+
+const resumeSkillGroupSchema = z.object({
+  title: z.string(),
+  items: z.array(z.string()),
+})
+
 export default defineContentConfig({
   collections: {
     siteInfo: defineCollection({
@@ -42,6 +67,20 @@ export default defineContentConfig({
         description: z.string().optional(),
         works: z.array(workItemSchema).optional(),
         order: z.array(z.string()).optional(),
+        resume: z.object({
+          name:          z.string(),
+          role:          z.string(),
+          location:      z.string(),
+          summary:       z.string(),
+          highlights:    z.array(z.string()).optional(),
+          focusAreas:    z.array(z.string()).optional(),
+          selectedLinks: z.array(resumeLinkSchema).optional(),
+          skillGroups:   z.array(resumeSkillGroupSchema).optional(),
+          experience:    z.array(resumeEntrySchema).optional(),
+          teaching:      z.array(resumeEntrySchema).optional(),
+          writing:       z.array(resumeEntrySchema).optional(),
+          education:     z.array(resumeEducationSchema).optional(),
+        }).optional(),
       }),
     }),
     endorsements: defineCollection({

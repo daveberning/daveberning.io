@@ -26,7 +26,7 @@ useSwipeGesture(headerRef, 'down', open)
 
 <template>
   <div :class="cn('flex min-h-screen flex-col', isDark ? 'bg-theme-black' : 'bg-background')">
-    <Header ref="headerRef" :variant="color" class="px-0 justify-center">
+    <Header ref="headerRef" :variant="color" class="site-header px-0 justify-center">
       <div class="container flex items-center justify-between px-8">
         <HeaderBrand>
           <code>&lt;name&gt;</code>{{ siteInfo?.firstName }}<code>&lt;/name&gt;</code>
@@ -39,27 +39,27 @@ useSwipeGesture(headerRef, 'down', open)
         <HeaderHamburger :is-open="isOpen" class="md:hidden" @toggle="toggle" />
       </div>
     </Header>
-    <div class="flex-1 flex justify-center py-12">
+    <div class="site-layout-body flex-1 flex justify-center py-12">
       <div :class="cn('container grid grid-cols-1 gap-8 items-start px-8', $slots.aside && 'md:grid-cols-12')">
-        <main :class="$slots.aside ? 'col-span-12 md:col-span-8 xl:col-span-9' : 'col-span-12'">
+        <main :class="cn('site-layout-main', $slots.aside ? 'col-span-12 md:col-span-8 xl:col-span-9' : 'col-span-12')">
           <slot />
         </main>
-        <UiCard v-if="$slots.aside" as="aside" :color="color" class="col-span-12 md:col-span-4 xl:col-span-3 sticky top-[105px]">
+        <UiCard v-if="$slots.aside" as="aside" :color="color" class="site-layout-aside col-span-12 md:col-span-4 xl:col-span-3 sticky top-[105px]">
           <slot name="aside" />
         </UiCard>
       </div>
     </div>
-    <CtaBar class="text-center flex gap-4">
+    <CtaBar class="site-cta text-center flex gap-4">
       <UiText as="h3" color="white">Let's Work Together</UiText>
       <div class="m-4">
         <UiText color="white">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
       </div>
       <UiButton as="a" :href="siteInfo?.resumeUrl ?? '#'" color="white" variant="outline" size="large">
-        Download Résumé
+        View Resume
       </UiButton>
       <SocialLinks :links="siteInfo?.socialLinks ?? []" class="justify-center mt-4" />
     </CtaBar>
-    <Footer />
-    <MobileNav />
+    <Footer class="site-footer" />
+    <MobileNav class="site-mobile-nav" />
   </div>
 </template>
