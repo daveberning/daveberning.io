@@ -4,10 +4,11 @@ description: "Built a customizable Vue and Nuxt customer portal for EyeMed, supp
 role: "Web Engineer"
 year: 2022
 technologies: ["Vue", "Nuxt", "TypeScript", "Concise", "SCSS", "REST API", "Contentstack"]
+featuredImage: "/work/eyemed.png"
 url: "https://member.eyemedvisioncare.com/member/en-us#/member/en"
 ---
 
-![](/work/eyemed.png)
+![Screenshot of the EyeMed customer portal interface](/work/eyemed.png)
 
 ## Project Details
 

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl as string
 
 /* Page Content
 --------------------------------- */
@@ -10,14 +12,37 @@ const { data: work } = await useAsyncData(route.path, () =>
 /* Page Meta Information
 --------------------------------- */
 if (work.value) {
+  const ogImage = work.value.featuredImage
+    ? `${siteUrl}${work.value.featuredImage}`
+    : `${siteUrl}/portraits/dave-teal.png`
+
   useHead({ title: work.value.title })
   useSeoMeta({
     description: work.value.description,
     ogTitle: work.value.title,
     ogDescription: work.value.description,
     ogType: 'website',
+    ogImage,
     twitterTitle: work.value.title,
     twitterDescription: work.value.description,
+    twitterImage: ogImage,
+  })
+
+  useHead({
+    script: [
+      {
+        key: `work-schema-${route.path}`,
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          name: work.value.title,
+          description: work.value.description,
+          url: `${siteUrl}${route.path}`,
+          image: ogImage,
+        }),
+      },
+    ],
   })
 }
 
@@ -59,7 +84,12 @@ if (!work.value) {
           <UiText color="white">{{ work!.description }}</UiText>
         </UiAsideSection>
         <UiAsideSection v-if="work!.url">
-          <UiLink :to="work!.url" color="white" variant="outline" size="large" class="w-full align-center justify-center">
+          <UiLink
+            :to="work!.url"
+            variant="outline"
+            size="large"
+            class="w-full align-center justify-center border-white text-white hover:bg-white/10 hover:text-white"
+          >
             View Project
           </UiLink>
         </UiAsideSection>

@@ -1,9 +1,49 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl as string
+
 /* Page Data
 --------------------------------- */
 const {
   data: siteInfo
 } = await useSiteInfo()
+
+const homeTitle = computed(() =>
+  `${siteInfo.value?.firstName ?? 'Dave'} ${siteInfo.value?.lastName ?? 'Berning'} | Senior Front-End Software Engineer`
+)
+
+const homeDescription = computed(() =>
+  `Senior Front-End Software Engineer in ${siteInfo.value?.city ?? 'Cincinnati'}, ${siteInfo.value?.state ?? 'OH'} specializing in Vue, Nuxt, TypeScript, design systems, and front-end architecture.`
+)
+
+const homeImage = `${siteUrl}/portraits/dave-teal-sm.jpg`
+
+useSeoMeta({
+  description: () => homeDescription.value,
+  ogTitle: () => homeTitle.value,
+  ogDescription: () => homeDescription.value,
+  ogType: 'website',
+  ogImage: homeImage,
+  twitterTitle: () => homeTitle.value,
+  twitterDescription: () => homeDescription.value,
+  twitterImage: homeImage,
+})
+
+useHead({
+  script: [
+    {
+      key: 'home-website-schema',
+      type: 'application/ld+json',
+      innerHTML: () => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: `${siteInfo.value?.firstName ?? 'Dave'} ${siteInfo.value?.lastName ?? 'Berning'}`.trim(),
+        url: siteUrl,
+        description: homeDescription.value,
+      }),
+    },
+  ],
+})
 </script>
 
 <template>

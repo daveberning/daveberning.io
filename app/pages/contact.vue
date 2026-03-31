@@ -1,18 +1,23 @@
 <script setup lang="ts">
 import { object, string } from 'yup'
 import { FormInput, FormSelect, FormTextArea } from '~/components/ui/form'
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl as string
+const contactDescription = 'Contact Dave Berning about senior front-end engineering roles, front-end architecture, design systems, or collaboration opportunities.'
 
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'Contact' })
 
 useSeoMeta({
-  description: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
+  description: contactDescription,
   ogTitle: 'Contact',
-  ogDescription: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
+  ogDescription: contactDescription,
   ogType: 'website',
+  ogImage: `${siteUrl}/portraits/dave-teal.png`,
   twitterTitle: 'Contact',
-  twitterDescription: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
+  twitterDescription: contactDescription,
+  twitterImage: `${siteUrl}/portraits/dave-teal.png`,
 })
 
 const { color } = useTheme()
@@ -67,6 +72,22 @@ const schema = object({
 function onSubmit(_values: Record<string, unknown>) {
   // TODO: implement form submission
 }
+
+useHead({
+  script: [
+    {
+      key: 'contact-page-schema',
+      type: 'application/ld+json',
+      innerHTML: () => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contact',
+        description: contactDescription,
+        url: `${siteUrl}/contact`,
+      }),
+    },
+  ],
+})
 </script>
 
 <template>

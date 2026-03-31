@@ -1,14 +1,20 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl as string
+const aboutDescription = 'Learn about Dave Berning, a Senior Front-End Software Engineer specializing in Vue, Nuxt, design systems, mentoring, and front-end architecture.'
+
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'About' })
 useSeoMeta({
-  description: 'Learn about Dave Berning, a Front-End Software Engineer based in Cincinnati, OH with expertise in Vue, TypeScript, and modern web development.',
+  description: aboutDescription,
   ogTitle: 'About',
-  ogDescription: 'Learn about Dave Berning, a Front-End Software Engineer based in Cincinnati, OH with expertise in Vue, TypeScript, and modern web development.',
+  ogDescription: aboutDescription,
   ogType: 'website',
+  ogImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
   twitterTitle: 'About',
-  twitterDescription: 'Learn about Dave Berning, a Front-End Software Engineer based in Cincinnati, OH with expertise in Vue, TypeScript, and modern web development.',
+  twitterDescription: aboutDescription,
+  twitterImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
 })
 
 /* Page Content
@@ -17,6 +23,22 @@ const [{ data: page }, { data: sidebar }] = await Promise.all([
   useAsyncData('about', () => queryCollection('about').path('/about').first()),
   useAsyncData('about-sidebar', () => queryCollection('about').path('/about/sidebar').first()),
 ])
+
+useHead({
+  script: [
+    {
+      key: 'about-page-schema',
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: 'About',
+        description: aboutDescription,
+        url: `${siteUrl}/about`,
+      }),
+    },
+  ],
+})
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /storybook/
 Sitemap: https://daveberning.io/sitemap.xml
 
 User-agent: facebookexternalhit

@@ -1,14 +1,20 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl as string
+const endorsementsDescription = 'Read endorsements from colleagues, clients, and collaborators who have worked with Dave Berning on front-end engineering and cross-functional teams.'
+
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'Endorsements' })
 useSeoMeta({
-  description: 'What colleagues and clients say about working with Dave Berning, Front-End Software Engineer based in Cincinnati, OH.',
+  description: endorsementsDescription,
   ogTitle: 'Endorsements',
-  ogDescription: 'What colleagues and clients say about working with Dave Berning, Front-End Software Engineer based in Cincinnati, OH.',
+  ogDescription: endorsementsDescription,
   ogType: 'website',
+  ogImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
   twitterTitle: 'Endorsements',
-  twitterDescription: 'What colleagues and clients say about working with Dave Berning, Front-End Software Engineer based in Cincinnati, OH.',
+  twitterDescription: endorsementsDescription,
+  twitterImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
 })
 
 /* Page Content
@@ -28,6 +34,31 @@ const endorsements = computed(() => {
   return order
     .map(slug => items.find(t => t.path === `/endorsements/${slug}`))
     .filter(t => t != null)
+})
+
+useHead({
+  script: [
+    {
+      key: 'endorsements-page-schema',
+      type: 'application/ld+json',
+      innerHTML: () => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Endorsements',
+        description: endorsementsDescription,
+        url: `${siteUrl}/endorsements`,
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: endorsements.value.map((endorsement, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: endorsement.name,
+            url: `${siteUrl}${endorsement.path}`,
+          })),
+        },
+      }),
+    },
+  ],
 })
 </script>
 

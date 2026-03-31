@@ -1,14 +1,20 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl as string
+const workDescription = 'Explore front-end engineering case studies from Dave Berning, including Vue, Nuxt, TypeScript, design systems, and enterprise architecture work.'
+
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'Work' })
 useSeoMeta({
-  description: 'Explore front-end engineering case studies from Dave Berning, including Vue, Nuxt, TypeScript, design systems, and enterprise architecture work.',
+  description: workDescription,
   ogTitle: 'Work',
-  ogDescription: 'Explore front-end engineering case studies from Dave Berning, including Vue, Nuxt, TypeScript, design systems, and enterprise architecture work.',
+  ogDescription: workDescription,
   ogType: 'website',
+  ogImage: `${siteUrl}/work/wdsuite-servicing.png`,
   twitterTitle: 'Work',
-  twitterDescription: 'Explore front-end engineering case studies from Dave Berning, including Vue, Nuxt, TypeScript, design systems, and enterprise architecture work.',
+  twitterDescription: workDescription,
+  twitterImage: `${siteUrl}/work/wdsuite-servicing.png`,
 })
 
 const {
@@ -23,6 +29,33 @@ const works = computed(() => page.value?.works ?? [])
 const { data: page } = await useAsyncData('work', () =>
   queryCollection('content').path('/work').first()
 )
+
+useHead({
+  script: [
+    {
+      key: 'work-page-schema',
+      type: 'application/ld+json',
+      innerHTML: () => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Work',
+        description: workDescription,
+        url: `${siteUrl}/work`,
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: works.value.map((work, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: work.title,
+            url: typeof work.url === 'string' && work.url.startsWith('/')
+              ? `${siteUrl}${work.url}`
+              : work.url,
+          })),
+        },
+      }),
+    },
+  ],
+})
 </script>
 
 <template>

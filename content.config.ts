@@ -6,6 +6,7 @@ const workItemSchema = z.object({
   role:         z.string().optional(),
   year:         z.number().optional(),
   technologies: z.array(z.string()).optional(),
+  featuredImage: z.string().optional(),
   url:          z.string().optional(),
 })
 
@@ -37,6 +38,8 @@ export default defineContentConfig({
       type: 'page',
       source: '**/*.md',
       schema: z.object({
+        title: z.string().optional(),
+        description: z.string().optional(),
         works: z.array(workItemSchema).optional(),
         order: z.array(z.string()).optional(),
       }),
