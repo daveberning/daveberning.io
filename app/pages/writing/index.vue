@@ -4,6 +4,7 @@ import { cn } from '~/lib/utils'
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'Writing' })
+
 useSeoMeta({
   description: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
   ogTitle: 'Writing',

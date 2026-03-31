@@ -1,21 +1,17 @@
 ---
 title: "Creating Alias' For Package Imports in React"
-description: "How to eliminate fragile relative import paths in React by configuring Webpack aliases — cleaner imports, more resilient code, and a pattern that works for both your src directory and node_modules packages."
+description: "Learn how to use Webpack aliases in React to replace brittle relative imports, clean up create-react-app code, and simplify front-end maintenance."
 publishedAt: "2017-12-29"
 updatedAt: ""
-tags: ["JavaScript", "React", "Webpack", "Web Development"]
+tags: ["JavaScript", "React", "Webpack", "Create React App"]
 readingTime: 3
 category: "Article"
 externalUrl: "https://medium.com/front-end-weekly/creating-alias-for-package-imports-in-react-99d455284029"
 platform: "Medium"
 ---
 
-Anyone who has worked on a deeply nested React component knows the pain of an import that looks like `'./../../../../../components/anotherComponent/AnotherComponent'`. It works — until you move a file, restructure a directory, or hand the project to someone else. Webpack aliases solve the problem by replacing those relative paths with clean, absolute ones that never break regardless of where a file lives.
+This **React and Webpack article** focuses on a small workflow improvement that has a big impact on code quality: creating import aliases. Instead of scattering deep relative paths throughout a project, the tutorial shows how aliases make components, assets, and shared dependencies easier to import and easier to refactor later.
 
-Vue CLI ships with an `@` alias for the `src` directory out of the box, which inspired this article. React's create-react-app doesn't expose its Webpack config by default, so getting the same setup requires one extra step: running `npm run eject` to surface the configuration files.
+The article contrasts brittle relative imports with cleaner root-based imports, then walks through adding a **Webpack alias** in a create-react-app setup after ejecting. It also shows how the same idea can apply to common dependencies, not just application components.
 
-**Adding the alias** means opening `config/webpack.config.dev.js`, finding the existing alias object, and adding a single entry: `'@': path.resolve('src')`. From that point on, any import starting with `@/` resolves from the project root rather than relative to the current file. The ugly path above becomes `'@/components/anotherComponent/AnotherComponent'` — readable, stable, and refactor-proof.
-
-**The pattern extends to node_modules** as well. The article demonstrates aliasing a CSS library like Bulma to a short name, so instead of importing from a full `node_modules` path you write `import 'bulma'` and Webpack knows exactly where to look. The same technique applies to any package you want to reference by a custom name.
-
-It's a small configuration change with an outsized impact on code quality — the kind of thing that makes a codebase noticeably easier to navigate as it grows.
+If you are trying to improve **React import paths, create-react-app structure, Webpack aliases, and long-term maintainability**, this guide captures the core benefits of the pattern.

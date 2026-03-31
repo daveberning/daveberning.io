@@ -34,6 +34,9 @@ const endorsements = computed(() => {
 <template>
   <NuxtLayout name="sidebar">
     <UiText as="h1" class="mb-8">Endorsements</UiText>
+    <article v-if="index" class="prose max-w-none mb-8">
+      <ContentRenderer :value="index" />
+    </article>
     <div class="columns-1 lg:columns-2 xl:columns-3 gap-6">
       <Endorsement v-for="endorsement in endorsements" :key="endorsement.path" :name="endorsement.name ?? ''" class="break-inside-avoid mb-6">
         <EndorsementContent>

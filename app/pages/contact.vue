@@ -5,6 +5,7 @@ import { FormInput, FormSelect, FormTextArea } from '~/components/ui/form'
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'Contact' })
+
 useSeoMeta({
   description: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
   ogTitle: 'Contact',
@@ -14,9 +15,22 @@ useSeoMeta({
   twitterDescription: 'Get in touch with Dave Berning. Have a project in mind or want to collaborate? Fill out the contact form and I\'ll get back to you.',
 })
 
-const {
-  color
-} = useTheme()
+const { color } = useTheme()
+const { data: siteInfo } = await useSiteInfo()
+
+const whatToSend = [
+  'A quick overview of the project or role',
+  'Your timeline, team setup, and current stack',
+  'What kind of help you need most right now',
+]
+
+const tags = [
+  'Freelance',
+  'Collaboration',
+  'Open to Work',
+  'Open to Network',
+  'Remote Opportunities',
+]
 
 /* Form Fields
 --------------------------------- */
@@ -60,9 +74,6 @@ function onSubmit(_values: Record<string, unknown>) {
     <UiText as="h1" class="mb-4">
       Contact
     </UiText>
-    <UiText as="p" class="mb-8">
-      Have a project in mind or just want to say hello? Fill out the form below and I'll get back to you as soon as I can.
-    </UiText>
     <UiForm :validation-schema="schema" @submit="onSubmit">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div v-for="field in fields" :key="field.name" :class="field.class">
@@ -82,5 +93,52 @@ function onSubmit(_values: Record<string, unknown>) {
         </UiButton>
       </div>
     </UiForm>
+    <template #aside>
+      <UiAside class="py-8">
+        <UiAsideSection>
+          <ul class="flex flex-wrap gap-2 list-none">
+            <li v-for="tag in tags" :key="tag">
+              <UiPill color="white">{{ tag }}</UiPill>
+            </li>
+          </ul>
+        </UiAsideSection>
+        <UiAsideSection>
+          <UiAsideSubtitle>
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="lucide:send" class="size-3" aria-hidden="true" />
+              What To Send
+            </span>
+          </UiAsideSubtitle>
+          <UiAsideList :items="whatToSend" />
+        </UiAsideSection>
+        <UiAsideSection>
+          <UiAsideSubtitle>
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="lucide:clock-3" class="size-3" aria-hidden="true" />
+              Response Time
+            </span>
+          </UiAsideSubtitle>
+          <UiText color="white">Usually within 1–2 business days.</UiText>
+        </UiAsideSection>
+        <UiAsideSection v-if="siteInfo?.city && siteInfo?.state">
+          <UiAsideSubtitle>
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="lucide:map-pinned" class="size-3" aria-hidden="true" />
+              Location
+            </span>
+          </UiAsideSubtitle>
+          <UiText color="white">{{ siteInfo.city }}, {{ siteInfo.state }}</UiText>
+        </UiAsideSection>
+        <UiAsideSection v-if="siteInfo?.socialLinks?.length">
+          <UiAsideSubtitle>
+            <span class="inline-flex items-center gap-1.5">
+              <Icon name="lucide:messages-square" class="size-3" aria-hidden="true" />
+              Connect
+            </span>
+          </UiAsideSubtitle>
+          <SocialLinks :links="siteInfo.socialLinks" />
+        </UiAsideSection>
+      </UiAside>
+    </template>
   </NuxtLayout>
 </template>

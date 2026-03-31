@@ -1,6 +1,6 @@
 ---
 title: "How I Built This Website: A Behind-the-Scenes Look at My Development Process"
-description: "An exploration of why placeholder text matters in design and development workflows, and how to use it effectively without losing sight of real content goals."
+description: "A behind-the-scenes look at how I built my Nuxt portfolio with AI tools, Claude Code, Vue, and Tailwind CSS while staying hands-on in the process."
 publishedAt: "2026-01-15"
 updatedAt: "2026-03-20"
 featuredImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80"
