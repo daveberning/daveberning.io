@@ -205,6 +205,7 @@ This project is built using [Claude Code](https://claude.ai/code) and a set of s
 | `Front-End Engineer` | Builds Vue components, composables, and utilities in `app/` |
 | `QA Engineer` | Writes and runs Vitest unit, component, and browser tests |
 | `UI/UX Designer` | Reviews accessibility, layout, and design system consistency |
+| `SEO Copywriter` | Writes keyword-optimized copy, meta tags, Open Graph, and structured data (JSON-LD) |
 | `Explore` | Fast codebase exploration — finds files and answers structural questions |
 
 **Standard workflow for new features:**
