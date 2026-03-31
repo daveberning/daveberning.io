@@ -10,7 +10,7 @@ export const resumeVariants = cva(
 )
 
 export const resumeSectionVariants = cva(
-  'break-inside-avoid border-t border-border pt-6 first:border-t-0 first:pt-0 print:border-zinc-200/80',
+  'border-t border-border pt-6 first:border-t-0 first:pt-0 print:border-zinc-200/80',
 )
 
 export const resumeEntryVariants = cva(

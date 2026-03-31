@@ -2,9 +2,9 @@
   <NuxtRouteAnnouncer />
   <NuxtLayout>
     <NuxtPage />
-    <ThemePicker class="fixed bottom-4 left-2 z-50 md:left-4 print:hidden" />
+    <ThemePicker class="theme-picker fixed bottom-4 left-2 z-50 md:left-4 print:hidden" />
   </NuxtLayout>
   <ClientOnly>
-    <UiBreakpointReporter class="print:hidden" />
+    <UiBreakpointReporter class="breakpoint-reporter print:hidden" />
   </ClientOnly>
 </template>

@@ -50,13 +50,26 @@ resume:
         - Partner with designers, product managers, and engineers to deliver accessible, performant interfaces.
         - Support mentoring and technical alignment while improving consistency in the front-end development experience.
     - title: Front-End Engineer
-      organization: Oodle, Drees Homes, and Kalio Commerce
-      period: Previous roles
+      organization: Oodle
+      period: Previous role
       highlights:
-        - Built and maintained websites, portals, and internal tools across agency, product, and enterprise environments.
-        - Delivered front-end work with Vue, Nuxt, TypeScript, SCSS, REST APIs, Contentstack, and Prismic CMS.
-        - Contributed to projects including the EyeMed Member Portal, CTI, Kroger Wireless, and Drees Homes digital experiences.
-        - Helped modernize front-end stacks, create reusable libraries, and translate design direction into production-ready user interfaces.
+        - Built and maintained front-end experiences for client projects using Vue, TypeScript, SCSS, and modern CMS workflows.
+        - Contributed to larger projects including CTI and the EyeMed customer portal, translating design work into polished production interfaces.
+        - Worked with Prismic CMS and Contentstack integrations to support scalable content editing and reusable page-building patterns.
+    - title: Front-End Engineer
+      organization: Drees Homes
+      period: Previous role
+      highlights:
+        - Helped modernize front-end experiences for Drees Homes digital properties with a focus on maintainability and cleaner implementation patterns.
+        - Built responsive marketing and product-facing interfaces while collaborating with design and project stakeholders.
+        - Improved consistency across front-end code and UI implementation as the platform evolved.
+    - title: Front-End Engineer
+      organization: Kalio Commerce
+      period: Previous role
+      highlights:
+        - Delivered front-end work across customer-facing websites, portals, and internal tools in agency and enterprise environments.
+        - Built reusable UI patterns and production-ready interfaces with an emphasis on practical implementation and long-term flexibility.
+        - Supported projects such as Kroger Wireless while partnering across design, project, and engineering teams.
   teaching:
     - title: Adjunct Professor, Web Design & Development
       organization: University of Cincinnati
@@ -80,4 +93,7 @@ resume:
     - school: University of Cincinnati
       degree: BFA
       details: Studied media, design, and web development with coursework spanning video production, graphic design, motion graphics, media writing, web design and development, interactive design, and media theory.
+    - school: University of Washington
+      degree: Python Certificate
+      details: Completed certificate coursework focused on Python programming fundamentals and applied software development.
 ---

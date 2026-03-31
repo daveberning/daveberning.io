@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { resumeEntryVariants, type ResumeEntryProps } from '.'
-import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<ResumeEntryProps>(), {
   as: 'article',
@@ -8,7 +7,7 @@ const props = withDefaults(defineProps<ResumeEntryProps>(), {
 </script>
 
 <template>
-  <component :is="props.as" :class="cn(resumeEntryVariants(), props.class)">
+  <component :is="props.as" :class="[resumeEntryVariants(), props.class]">
     <div class="flex flex-col gap-3">
       <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div class="min-w-0">
