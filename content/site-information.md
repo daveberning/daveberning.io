@@ -13,8 +13,8 @@ navigation:
     to: /work
   - name: Writing
     to: /writing
-  - name: Testimonials
-    to: /testimonials
+  - name: Endorsements
+    to: /endorsements
   - name: Contact
     to: /contact
 socialLinks:

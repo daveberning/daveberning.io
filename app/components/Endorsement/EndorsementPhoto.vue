@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { testimonialPhotoVariants, injectTestimonialContext, type TestimonialPhotoProps } from '.'
+import { endorsementPhotoVariants, injectEndorsementContext, type EndorsementPhotoProps } from '.'
 import { cn } from '~/lib/utils'
 
-const props = defineProps<TestimonialPhotoProps>()
+const props = defineProps<EndorsementPhotoProps>()
 
-const { name } = injectTestimonialContext()
+const { name } = injectEndorsementContext()
 const imgError = ref(false)
 const showImage = computed(() => !!props.src && !imgError.value)
 </script>
 
 <template>
-  <div :class="cn(testimonialPhotoVariants(), props.class)">
+  <div :class="cn(endorsementPhotoVariants(), props.class)">
     <img
       v-if="showImage"
       :src="props.src"

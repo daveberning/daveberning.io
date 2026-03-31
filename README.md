@@ -10,7 +10,7 @@ The experiment covers the full stack: component design, variant systems, content
 |---|---|---|
 | Framework | [Nuxt 4](https://nuxt.com) | Full-stack Vue with file-based routing, auto-imports, and static generation. `compatibilityVersion: 4` keeps the source under `app/` for a cleaner project root. |
 | Styling | [Tailwind CSS v4](https://tailwindcss.com) | CSS-first configuration via `@theme` directives — no `tailwind.config.js` needed. Design tokens live directly in the stylesheet, which makes the system easier to audit and reason about. |
-| Content | [@nuxt/content](https://content.nuxt.com) | Markdown-driven pages with typed collection schemas. Portfolio pieces, blog posts, and testimonials are all content files, not hardcoded data. |
+| Content | [@nuxt/content](https://content.nuxt.com) | Markdown-driven pages with typed collection schemas. Portfolio pieces, blog posts, and endorsements are all content files, not hardcoded data. |
 | Components | CVA + `cn()` | [class-variance-authority](https://cva.style) for variant management, `clsx` + `tailwind-merge` for class merging. Follows a shadcn-style directory structure so every component is self-contained and independently testable. |
 | Forms | [vee-validate](https://vee-validate.logaretm.com) + [Yup](https://github.com/jquense/yup) | Declarative validation with schema-based rules. Keeps form logic out of components. |
 | Icons | [@nuxt/icon](https://github.com/nuxt/icon) | Access to the full Iconify catalog without bundling unused icons. |
@@ -121,7 +121,7 @@ Pages and data are driven by Markdown files in `content/`. Collection schemas ar
 | `content` | General pages |
 | `works` | Portfolio pieces — title, role, year, technologies, URL |
 | `writing` | Blog articles — title, tags, publishedAt, externalUrl, platform |
-| `testimonials` | Testimonials — name, role, company |
+| `endorsements` | Endorsements — name, role, company |
 | `about` | About page data — skills, education, favorites |
 
 Keeping content in Markdown rather than hardcoded in components means the data can be updated without touching Vue files, and agents can add or modify content entries without risking regressions in component logic.

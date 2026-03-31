@@ -1,5 +1,6 @@
 ---
 order:
+  - andres-pegado
   - gregory-howlett-gomez
   - jess-fitak
   - brett-valls

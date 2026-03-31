@@ -4,7 +4,7 @@ description: Design rationale and CVA structure for the WorkItem compound compon
 type: project
 ---
 
-The WorkItem component was designed as a dedicated compound component (not extending the existing Card primitive) because it introduces the `accent` dimension and uses Testimonial-style padding/gap layout rather than Card's sectioned header/content/footer with dividers.
+The WorkItem component was designed as a dedicated compound component (not extending the existing Card primitive) because it introduces the `accent` dimension and uses Reference-style padding/gap layout rather than Card's sectioned header/content/footer with dividers.
 
 Key decisions:
 

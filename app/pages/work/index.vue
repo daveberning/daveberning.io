@@ -34,7 +34,7 @@ const { data: page } = await useAsyncData('work', () =>
       <PortfolioPiece v-for="work in works" :key="work.title" :color="color" variant="solid">
         <PortfolioPieceHeader :title="work.title" :role="work.role" />
         <PortfolioPieceBody>
-          <UiText>{{ work.description }}</UiText>
+          <UiText color="muted">{{ work.description }}</UiText>
         </PortfolioPieceBody>
         <PortfolioPieceTech v-if="work.technologies?.length">
           <PortfolioPieceTechItem v-for="tech in work.technologies" :key="tech">
@@ -43,7 +43,7 @@ const { data: page } = await useAsyncData('work', () =>
         </PortfolioPieceTech>
         <PortfolioPieceFooter v-if="work.year || work.url">
           <span v-if="work.year" class="text-xs text-text-muted">{{ work.year }}</span>
-          <UiLink v-if="work.url" :to="work.url" variant="solid" size="small" class="ml-auto">
+          <UiLink v-if="work.url" :to="work.url" variant="solid" class="ml-auto">
             View Project
           </UiLink>
         </PortfolioPieceFooter>

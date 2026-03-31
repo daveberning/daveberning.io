@@ -41,9 +41,9 @@ export default defineContentConfig({
         order: z.array(z.string()).optional(),
       }),
     }),
-    testimonials: defineCollection({
+    endorsements: defineCollection({
       type: 'page',
-      source: 'testimonials/*.md',
+      source: 'endorsements/*.md',
       schema: z.object({
         name:    z.string().optional(),
         role:    z.string().optional(),
