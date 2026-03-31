@@ -3,7 +3,7 @@ defineProps<{ href: string; target?: string }>()
 </script>
 
 <template>
-  <UiLink :href="href" :target="target" as="a" variant="text" size="regular" radius="none" class="inline underline">
+  <UiLink :to="href" :target="target" variant="text" size="regular" class="inline underline p-0 text-base">
     <slot />
   </UiLink>
 </template>

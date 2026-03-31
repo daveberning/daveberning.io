@@ -1,9 +1,9 @@
 ---
-title: "WdSuite: Servicing"
-description: "I helped architype and build the front-end for the Servicing module of WDSuite, a comprehensive software platform for commercial lending operations. This was later injected into a larger application via module federation."
+title: "WDSuite: Servicing"
+description: "Built front-end architecture for the WDSuite Servicing platform using Vue, Tailwind, Vite, and module federation in an enterprise lending environment."
 role: "Senior Front-End Engineer"
 year: 2023
-technologies: ["Vue", "Typescript", "Tailwind", "Micro-frontends", "Module Federation", "Handsontable"]
+technologies: ["Vue", "TypeScript", "Tailwind", "Micro-frontends", "Module Federation", "Handsontable"]
 url: "https://suite.walkerdunlop.com/servicing"
 ---
 
@@ -11,18 +11,18 @@ url: "https://suite.walkerdunlop.com/servicing"
 
 ## Project Details
 
-As one of the lead front-end developers at Oodle, I worked alongside designers, project managers, and account executives from development through launch.
+WDSuite: Servicing was part of a larger enterprise platform built for commercial lending operations. I helped architect and build the front end for the servicing module, with a focus on creating a scalable experience that could plug into a broader application through **module federation**.
 
-The portal is built on ContentStack, with a robust set of configurable fields that make it possible to spin up fully scoped, branded portal instances for any of EyeMed's clients. The theming and configuration system we built means the number of supported branded portals is effectively unlimited.
+The stack centered on **Vue, TypeScript, Tailwind, Vite, micro-frontends, and Handsontable**, which meant balancing developer speed with the needs of a more complex enterprise product. A big part of the work was establishing front-end patterns that could support dense servicing workflows, large data sets, and integration into the larger WDSuite ecosystem without creating unnecessary friction for the teams maintaining it.
 
-One of the more notable technical contributions I brought to this project was Oodle.js — a JavaScript utility library I had created prior to this engagement — which was used extensively throughout the application.
+Because the module was designed to live inside a broader platform, architecture decisions mattered as much as implementation details. The work required thinking carefully about performance, maintainability, and how the front-end would behave inside a federated environment rather than as a standalone app.
 
-The project was also architected with a flexible data layer that allowed developers to toggle between a mock data layer and a live REST API. This made it possible to build and test the entire application in isolation, independent of backend availability, which significantly streamlined the development workflow.
+It was also the kind of project where cross-functional collaboration mattered. Building for enterprise teams means working through business rules, product needs, and technical constraints at the same time, and this project was a strong example of front-end architecture serving a larger operational platform.
 
 ## About WDSuite: Servicing
 
-EyeMed is America's fastest-growing vision benefits company, headquartered in Greater Cincinnati. With a vast network of private doctors and national providers — including LensCrafters®, Pearle Vision®, and Target Optical® — they serve millions of customers across the United States as part of Luxottica of America Inc.
+WDSuite is a commercial lending software platform, and the servicing module supports the operational work that happens after deals are active. That meant the product needed to handle complex workflows, dense interfaces, and high-value business processes with clarity and consistency.
 
-Oodle was contracted to design and build EyeMed's Member Web Portal, a full-featured online platform that gives customers direct control over their vision benefits. Members can view their plan details, manage dependents, locate nearby eye care providers, and more — all in one place.
+For front-end engineering, that kind of environment rewards strong system thinking. Clean architecture, reliable UI patterns, and careful integration work all matter more when the application is part of a larger enterprise ecosystem.
 
-Beyond individual member access, the portal also supports white-labeled, branded instances for third-party organizations that offer EyeMed benefits to their employees. Companies and institutions like Instagram, the University of Kentucky, Johnson & Johnson, and Aetna each have their own custom-branded portal experience — all powered by the same underlying platform.
+This project was a good fit for the kind of work I enjoy most: scalable front-end systems, thoughtful architecture, and collaboration across product and engineering teams.

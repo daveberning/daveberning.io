@@ -1,23 +1,23 @@
 ---
 works:
   - title: "WDSuite: Servicing"
-    description: "I helped architype and build the front-end for the Servicing module of WDSuite, a comprehensive software platform for commercial lending operations. This was later injected into a larger application via module federation."
+    description: "Enterprise servicing platform work focused on Vue architecture, module federation, and scalable front-end patterns for commercial lending teams."
     role: "Senior Front-End Engineer"
     year: 2023
-    technologies: ["Vue", "Typescript", "Tailwind", "Vite", "Vitest", "Module Federation"]
+    technologies: ["Vue", "TypeScript", "Tailwind", "Vite", "Vitest", "Module Federation"]
     url: "/work/wdsuite-servicing"
     
   - title: "EyeMed Customer Portal"
-    description: "A short description of the fourth project and the technologies involved."
-    role: "Front-End Web Developer"
-    year: 2019
-    technologies: ["Vue.js", "SCSS", "REST API", "TypeScript", "Headless CMS"]
+    description: "White-labeled customer portal work focused on Vue, Nuxt, theming, API integration, and reusable front-end systems for a large benefits platform."
+    role: "Web Engineer"
+    year: 2022
+    technologies: ["Vue", "Nuxt", "TypeScript", "SCSS", "REST API", "Contentstack"]
     url: "/work/eyemed"
     
   - title: "CTI"
-    description: "A short description of the first project, what it does, and why it matters."
-    role: "Front-End Web Developer"
+    description: "Marketing site and CMS build focused on Vue, TypeScript, and Prismic-powered content management for a global clinical research organization."
+    role: "Web Developer"
     year: 2019
-    technologies: ["Nuxt", "TypeScript", "Tailwind CSS", "SCSS", "Headless CMS"]
+    technologies: ["Vue.js", "TypeScript", "SCSS", "Prismic CMS"]
     url: "/work/cti"
 ---

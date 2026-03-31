@@ -3,12 +3,12 @@
 --------------------------------- */
 useHead({ title: 'Work' })
 useSeoMeta({
-  description: 'Explore Dave Berning\'s portfolio of front-end engineering work, including projects built with Vue, TypeScript, React, and more.',
+  description: 'Explore front-end engineering case studies from Dave Berning, including Vue, Nuxt, TypeScript, design systems, and enterprise architecture work.',
   ogTitle: 'Work',
-  ogDescription: 'Explore Dave Berning\'s portfolio of front-end engineering work, including projects built with Vue, TypeScript, React, and more.',
+  ogDescription: 'Explore front-end engineering case studies from Dave Berning, including Vue, Nuxt, TypeScript, design systems, and enterprise architecture work.',
   ogType: 'website',
   twitterTitle: 'Work',
-  twitterDescription: 'Explore Dave Berning\'s portfolio of front-end engineering work, including projects built with Vue, TypeScript, React, and more.',
+  twitterDescription: 'Explore front-end engineering case studies from Dave Berning, including Vue, Nuxt, TypeScript, design systems, and enterprise architecture work.',
 })
 
 const {
