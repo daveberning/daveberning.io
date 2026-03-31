@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { cn } from '~/lib/utils'
-
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl as string
 
@@ -19,26 +17,69 @@ const resumeData = page.value.resume
 if (!resumeData)
   throw createError({ statusCode: 500, statusMessage: 'Resume data missing' })
 
+const {
+  color,
+} = useTheme()
+
 const resumeTitle = page.value.title ?? 'Resume'
 const resumeDescription = page.value.description ?? 'View the resume of Dave Berning, a Senior Front-End Software Engineer specializing in front-end architecture, design systems, and Vue.'
 const resumeImage = `${siteUrl}/portraits/dave-teal-sm.jpg`
+const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.jpg`)
 const personName = resumeData.name
-const headerLinks = Array.from(new Map([
-  { href: siteUrl, label: siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') },
-  ...(siteInfo.value?.socialLinks?.map(link => ({
+const siteLabel = siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+
+const socialLinks = computed(() => siteInfo.value?.socialLinks ?? [])
+const headerLinks = computed(() => Array.from(new Map([
+  { href: siteUrl, label: siteLabel },
+  ...socialLinks.value.map(link => ({
     href: link.href,
     label: link.href.startsWith('mailto:')
       ? link.href.slice('mailto:'.length)
       : link.href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''),
-  })) ?? []),
-].map(link => [link.href, link])).values())
+  })),
+].map(link => [link.href, link])).values()))
 
-const sameAs = Array.from(new Set([
+const contactItems = computed(() => {
+  const items = [
+    {
+      label: 'Location',
+      value: resumeData.location,
+      href:  '',
+      icon:  'lucide:map-pin',
+    },
+    {
+      label: 'Website',
+      value: siteLabel,
+      href:  siteUrl,
+      icon:  'lucide:globe',
+    },
+  ]
+
+  return [
+    ...items,
+    ...socialLinks.value.map(link => ({
+      label: link.label,
+      value: link.href.startsWith('mailto:')
+        ? link.href.slice('mailto:'.length)
+        : link.href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''),
+      href: link.href,
+      icon: link.icon,
+    })),
+  ]
+})
+
+const keySkills = computed(() =>
+  (resumeData.skillGroups ?? [])
+    .flatMap(group => group.items)
+    .slice(0, 8)
+)
+
+const sameAs = computed(() => Array.from(new Set([
   `${siteUrl}/about`,
-  ...headerLinks
+  ...headerLinks.value
     .map(link => link.href)
     .filter(href => href.startsWith('http')),
-]))
+])))
 
 /* Page Meta Information
 --------------------------------- */
@@ -61,7 +102,7 @@ useHead({
           description: resumeDescription,
           url: `${siteUrl}/resume`,
           image: resumeImage,
-          sameAs,
+          sameAs: sameAs.value,
           address: {
             '@type': 'PostalAddress',
             addressLocality: siteInfo.value?.city ?? 'Cincinnati',
@@ -84,25 +125,13 @@ useSeoMeta({
   twitterDescription: resumeDescription,
   twitterImage: resumeImage,
 })
-
-const {
-  color,
-  isDark,
-} = useTheme()
 </script>
 
 <template>
   <div class="resume-page">
     <NuxtLayout name="sidebar">
-      <div class="flex flex-col gap-6 print:block">
-        <UiCard
-          variant="outline"
-          :color="color"
-          :class="cn(
-            'resume-page-intro border-theme/30 bg-gradient-to-br p-6 sm:p-8',
-            isDark ? 'from-theme-black via-surface to-theme-black' : 'from-white via-surface to-theme-light/20',
-          )"
-        >
+      <div class="flex flex-col gap-6 print:gap-0">
+        <UiCard variant="outline" :color="color" class="resume-page-intro border-theme/30 bg-gradient-to-br from-white via-surface to-theme-light/20 p-6 sm:p-8 print:hidden">
           <div class="flex flex-col gap-4">
             <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-text-muted">
               Resume
@@ -116,102 +145,124 @@ const {
                   {{ resumeData.role }}
                 </p>
                 <p class="mt-4 max-w-2xl text-sm leading-7 text-text-muted sm:text-base">
-                  This page keeps the site presentation on screen, but the print view collapses to a traditional resume for PDF export.
+                  This version mirrors a concise one-page resume layout while still living inside the website experience.
                 </p>
-              </div>
-              <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-text-muted lg:max-w-xs lg:justify-end lg:text-right">
-                <span>{{ resumeData.location }}</span>
-                <span class="hidden lg:inline text-border">/</span>
-                <a :href="siteUrl" class="underline decoration-theme/30 underline-offset-4 hover:decoration-theme">
-                  {{ siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') }}
-                </a>
               </div>
             </div>
           </div>
         </UiCard>
 
-        <Resume class="overflow-hidden">
-          <div class="px-6 py-7 sm:px-10 sm:py-10 print:px-0 print:py-0">
-            <header class="border-b border-border pb-8 print:border-zinc-200 print:pb-6">
-              <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-                <div class="max-w-3xl">
-                  <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-text-muted print:text-zinc-500">
-                    Resume
-                  </p>
-                  <h1 class="mt-3 text-4xl font-bold tracking-tight text-text sm:text-5xl print:text-[26pt] print:text-zinc-950">
-                    {{ resumeData.name }}
-                  </h1>
-                  <p class="mt-3 text-lg font-medium text-text print:text-[12pt] print:text-zinc-700">
-                    {{ resumeData.role }}
-                  </p>
-                  <p class="mt-4 max-w-2xl text-[0.97rem] leading-7 text-text-muted print:text-[11pt] print:leading-[1.55] print:text-zinc-700">
-                    {{ resumeData.summary }}
-                  </p>
-                </div>
-                <div class="lg:max-w-xs lg:text-right">
-                  <p class="text-sm font-medium text-text print:text-zinc-700">
-                    {{ resumeData.location }}
-                  </p>
-                  <ul role="list" class="mt-4 flex flex-col gap-2 text-sm leading-6 text-text-muted list-none print:text-zinc-700">
-                    <li v-for="link in headerLinks" :key="link.href">
-                      <a
-                        :href="link.href"
-                        class="text-text underline decoration-theme/30 underline-offset-4 transition-colors hover:decoration-theme print:text-zinc-700 print:decoration-zinc-300 print:hover:decoration-zinc-700"
-                      >
-                        {{ link.label }}
-                      </a>
-                    </li>
-                  </ul>
+        <Resume class="resume-shell overflow-hidden print:overflow-visible">
+          <div class="grid lg:grid-cols-[15rem_minmax(0,1fr)] print:grid-cols-[2.05in_minmax(0,1fr)]">
+            <header class="resume-hero relative border-b border-border bg-theme text-theme-fg lg:col-span-2 print:border-zinc-300 print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
+              <div class="hidden lg:block">
+                <img
+                  :src="portraitSrc"
+                  alt=""
+                  class="absolute left-8 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full border-4 border-background object-cover shadow-lg print:border-white"
+                >
+              </div>
+
+              <div class="flex flex-col gap-5 px-6 py-6 sm:px-8 lg:pl-48 lg:pr-10 print:pl-[2.45in] print:pr-8">
+                <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                  <div class="flex items-center gap-4 lg:hidden">
+                    <img
+                      :src="portraitSrc"
+                      alt=""
+                      class="h-20 w-20 rounded-full border-4 border-background object-cover shadow-lg print:hidden"
+                    >
+                    <div>
+                      <h1 class="font-['Space_Grotesk'] text-3xl font-bold tracking-tight sm:text-4xl print:text-[24pt]">
+                        {{ resumeData.name }}
+                      </h1>
+                      <p class="mt-1 text-sm font-semibold uppercase tracking-[0.16em] text-theme-fg/80 print:text-[10pt]">
+                        {{ resumeData.role }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="hidden lg:block">
+                    <h1 class="font-['Space_Grotesk'] text-5xl font-bold tracking-tight print:text-[24pt]">
+                      {{ resumeData.name }}
+                    </h1>
+                    <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-theme-fg/80 print:text-[10pt]">
+                      {{ resumeData.role }}
+                    </p>
+                  </div>
+
+                  <div class="grid gap-1 text-xs font-medium uppercase tracking-[0.16em] text-theme-fg/75 sm:text-right print:text-[9pt]">
+                    <span>{{ resumeData.location }}</span>
+                    <span>11+ Years Experience</span>
+                  </div>
                 </div>
               </div>
-              <ul v-if="resumeData.highlights?.length" role="list" class="mt-6 grid gap-3 text-sm text-text-muted list-none sm:grid-cols-3 print:text-zinc-700">
-                <li v-for="highlight in resumeData.highlights" :key="highlight" class="border-l-2 border-theme/25 pl-4 leading-6 print:border-zinc-200">
-                  {{ highlight }}
-                </li>
-              </ul>
             </header>
 
-            <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(16rem,0.95fr)] print:mt-6 print:gap-8">
-              <div class="flex flex-col gap-6">
-                <ResumeSection title="Experience">
+            <aside class="border-b border-border bg-surface px-6 py-6 lg:border-b-0 lg:border-r print:border-zinc-200 print:bg-zinc-50 print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
+              <div class="flex flex-col gap-7">
+                <section class="flex flex-col gap-3">
+                  <h2 class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme print:text-zinc-500">
+                    Personal Information
+                  </h2>
+                  <ul role="list" class="grid gap-3 list-none">
+                    <li v-for="item in contactItems" :key="`${item.label}-${item.value}`" class="flex items-start gap-3 text-sm leading-5 text-text-muted print:text-zinc-700">
+                      <span class="mt-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-theme/10 text-theme print:bg-zinc-200 print:text-zinc-700">
+                        <Icon :name="item.icon" class="size-3.5" aria-hidden="true" />
+                      </span>
+                      <div class="min-w-0">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-text print:text-zinc-900">
+                          {{ item.label }}
+                        </p>
+                        <a
+                          v-if="item.href"
+                          :href="item.href"
+                          class="break-words underline decoration-theme/30 underline-offset-4 hover:decoration-theme print:text-zinc-700 print:decoration-zinc-300"
+                        >
+                          {{ item.value }}
+                        </a>
+                        <p v-else class="break-words">
+                          {{ item.value }}
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+
+                <section v-if="resumeData.highlights?.length" class="flex flex-col gap-3">
+                  <h2 class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme print:text-zinc-500">
+                    Highlights
+                  </h2>
+                  <ul role="list" class="list-disc space-y-2 pl-4 text-sm leading-6 text-text-muted marker:text-theme print:text-zinc-700 print:marker:text-zinc-500">
+                    <li v-for="highlight in resumeData.highlights" :key="highlight">
+                      {{ highlight }}
+                    </li>
+                  </ul>
+                </section>
+
+                <section v-if="keySkills.length" class="flex flex-col gap-3">
+                  <h2 class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme print:text-zinc-500">
+                    Key Skills
+                  </h2>
+                  <ul role="list" class="list-disc space-y-2 pl-4 text-sm leading-6 text-text-muted marker:text-theme print:text-zinc-700 print:marker:text-zinc-500">
+                    <li v-for="skill in keySkills" :key="skill">
+                      {{ skill }}
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </aside>
+
+            <div class="px-6 py-6 sm:px-8 print:px-8">
+              <div class="flex flex-col gap-7">
+                <ResumeSection title="About Me">
+                  <p class="text-sm leading-7 text-text-muted print:text-zinc-700">
+                    {{ resumeData.summary }}
+                  </p>
+                </ResumeSection>
+
+                <ResumeSection title="Professional Experience">
                   <ResumeEntry
                     v-for="item in resumeData.experience ?? []"
-                    :key="`${item.title}-${item.organization}`"
-                    :title="item.title"
-                    :organization="item.organization"
-                    :period="item.period"
-                    :location="item.location"
-                    :summary="item.summary"
-                  >
-                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60 print:marker:text-zinc-400">
-                      <li v-for="highlight in item.highlights" :key="highlight">
-                        {{ highlight }}
-                      </li>
-                    </ul>
-                  </ResumeEntry>
-                </ResumeSection>
-
-                <ResumeSection v-if="resumeData.teaching?.length" title="Teaching & Mentorship">
-                  <ResumeEntry
-                    v-for="item in resumeData.teaching"
-                    :key="`${item.title}-${item.organization}`"
-                    :title="item.title"
-                    :organization="item.organization"
-                    :period="item.period"
-                    :location="item.location"
-                    :summary="item.summary"
-                  >
-                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60 print:marker:text-zinc-400">
-                      <li v-for="highlight in item.highlights" :key="highlight">
-                        {{ highlight }}
-                      </li>
-                    </ul>
-                  </ResumeEntry>
-                </ResumeSection>
-
-                <ResumeSection v-if="resumeData.writing?.length" title="Writing & Publications">
-                  <ResumeEntry
-                    v-for="item in resumeData.writing"
                     :key="`${item.title}-${item.organization}`"
                     :title="item.title"
                     :organization="item.organization"
@@ -244,58 +295,53 @@ const {
                     </p>
                   </article>
                 </ResumeSection>
-              </div>
 
-              <aside class="flex flex-col gap-6">
-                <ResumeSection v-if="resumeData.skillGroups?.length" title="Core Skills">
-                  <div class="grid gap-4">
-                    <article v-for="group in resumeData.skillGroups" :key="group.title" class="break-inside-avoid">
-                      <h3 class="text-sm font-semibold text-text print:text-zinc-950">
-                        {{ group.title }}
-                      </h3>
-                      <p class="mt-1 text-sm leading-6 text-text-muted print:text-zinc-700">
-                        {{ group.items.join(', ') }}
-                      </p>
-                    </article>
+                <ResumeSection v-if="resumeData.writing?.length || resumeData.teaching?.length" title="Additional Experience">
+                  <div class="grid gap-6 lg:grid-cols-2">
+                    <div v-if="resumeData.teaching?.length" class="flex flex-col gap-4">
+                      <ResumeEntry
+                        v-for="item in resumeData.teaching"
+                        :key="`${item.title}-${item.organization}`"
+                        :title="item.title"
+                        :organization="item.organization"
+                        :period="item.period"
+                        :location="item.location"
+                        :summary="item.summary"
+                        class="pb-0"
+                      >
+                        <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60 print:marker:text-zinc-400">
+                          <li v-for="highlight in item.highlights" :key="highlight">
+                            {{ highlight }}
+                          </li>
+                        </ul>
+                      </ResumeEntry>
+                    </div>
+
+                    <div v-if="resumeData.writing?.length" class="flex flex-col gap-4">
+                      <ResumeEntry
+                        v-for="item in resumeData.writing"
+                        :key="`${item.title}-${item.organization}`"
+                        :title="item.title"
+                        :organization="item.organization"
+                        :period="item.period"
+                        :location="item.location"
+                        :summary="item.summary"
+                        class="pb-0"
+                      >
+                        <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60 print:marker:text-zinc-400">
+                          <li v-for="highlight in item.highlights" :key="highlight">
+                            {{ highlight }}
+                          </li>
+                        </ul>
+                      </ResumeEntry>
+                    </div>
                   </div>
                 </ResumeSection>
-
-                <ResumeSection v-if="resumeData.focusAreas?.length" title="Focus Areas">
-                  <ul role="list" class="grid gap-2 text-sm leading-6 text-text-muted list-none print:text-zinc-700">
-                    <li
-                      v-for="focus in resumeData.focusAreas"
-                      :key="focus"
-                      class="border-b border-border pb-2 last:border-b-0 last:pb-0 print:border-zinc-200/70"
-                    >
-                      {{ focus }}
-                    </li>
-                  </ul>
-                </ResumeSection>
-              </aside>
+              </div>
             </div>
           </div>
         </Resume>
       </div>
-
-      <template #aside>
-        <div class="resume-page-aside flex flex-col gap-6 print:hidden">
-          <Portrait size="small" class="rounded-lg" />
-          <UiAside class="py-2">
-            <UiAsideSection>
-              <UiAsideSubtitle>Quick Snapshot</UiAsideSubtitle>
-              <ul role="list" class="grid gap-2 list-none">
-                <li v-for="highlight in resumeData.highlights ?? []" :key="highlight">
-                  <UiText color="white" class="leading-6">{{ highlight }}</UiText>
-                </li>
-              </ul>
-            </UiAsideSection>
-            <UiAsideSection v-if="resumeData.focusAreas?.length">
-              <UiAsideSubtitle>Focus Areas</UiAsideSubtitle>
-              <UiAsideList :items="resumeData.focusAreas" />
-            </UiAsideSection>
-          </UiAside>
-        </div>
-      </template>
     </NuxtLayout>
   </div>
 </template>
@@ -303,11 +349,9 @@ const {
 <style scoped>
 @media print {
   .resume-page :deep(.site-header),
-  .resume-page :deep(.site-layout-aside),
   .resume-page :deep(.site-cta),
   .resume-page :deep(.site-footer),
-  .resume-page :deep(.site-mobile-nav),
-  .resume-page :deep(.resume-page-intro) {
+  .resume-page :deep(.site-mobile-nav) {
     display: none !important;
   }
 
@@ -320,10 +364,6 @@ const {
     width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-  }
-
-  .resume-page :deep(.site-layout-main) {
-    grid-column: 1 / -1 !important;
   }
 }
 </style>
