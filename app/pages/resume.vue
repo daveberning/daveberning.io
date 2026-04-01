@@ -23,7 +23,7 @@ const {
 
 const resumeTitle = page.value.title ?? 'Resume'
 const resumeDescription = page.value.description ?? 'View the resume of Dave Berning, a Senior Front-End Software Engineer specializing in front-end architecture, design systems, and Vue.'
-const resumeImage = `${siteUrl}/portraits/dave-teal-sm.jpg`
+const resumeImage = computed(() => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`)
 const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.jpg`)
 const personName = resumeData.name
 const siteLabel = siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
@@ -86,7 +86,7 @@ useHead({
           jobTitle: resumeData.role,
           description: resumeDescription,
           url: `${siteUrl}/resume`,
-          image: resumeImage,
+          image: resumeImage.value,
           sameAs: sameAs.value,
           address: {
             '@type': 'PostalAddress',
@@ -105,10 +105,10 @@ useSeoMeta({
   ogTitle: `${resumeTitle} | ${personName}`,
   ogDescription: resumeDescription,
   ogType: 'profile',
-  ogImage: resumeImage,
+  ogImage: () => resumeImage.value,
   twitterTitle: `${resumeTitle} | ${personName}`,
   twitterDescription: resumeDescription,
-  twitterImage: resumeImage,
+  twitterImage: () => resumeImage.value,
 })
 </script>
 
@@ -121,11 +121,7 @@ useSeoMeta({
               <UiText class="mt-4">
                 This version mirrors a concise one-page resume layout while still living inside the website experience.
               </UiText>
-              <UiLink
-                to="/dave-berning-resume.pdf"
-                color="teal"
-                variant="outline"
-              >
+              <UiLink to="/dave-berning-resume.pdf" color="teal" variant="outline">
                 <Icon name="lucide:download" class="size-4" aria-hidden="true" />
                 Download PDF
               </UiLink>

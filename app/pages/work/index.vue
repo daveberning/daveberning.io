@@ -11,10 +11,10 @@ useSeoMeta({
   ogTitle: 'Work',
   ogDescription: workDescription,
   ogType: 'website',
-  ogImage: `${siteUrl}/work/wdsuite-servicing.png`,
+  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   twitterTitle: 'Work',
   twitterDescription: workDescription,
-  twitterImage: `${siteUrl}/work/wdsuite-servicing.png`,
+  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
 })
 
 const {

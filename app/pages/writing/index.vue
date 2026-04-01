@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { cn } from '~/lib/utils'
 
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl as string
+
+const {
+  color
+} = useTheme()
+
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'Writing' })
@@ -10,13 +17,11 @@ useSeoMeta({
   ogTitle: 'Writing',
   ogDescription: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
   ogType: 'website',
+  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   twitterTitle: 'Writing',
   twitterDescription: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
+  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
 })
-
-const {
-  color
-} = useTheme()
 
 /* Page Content
 --------------------------------- */

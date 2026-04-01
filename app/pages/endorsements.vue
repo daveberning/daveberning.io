@@ -5,16 +5,18 @@ const endorsementsDescription = 'Read endorsements from colleagues, clients, and
 
 /* Page Meta Information
 --------------------------------- */
+const { color } = useTheme()
+
 useHead({ title: 'Endorsements' })
 useSeoMeta({
   description: endorsementsDescription,
   ogTitle: 'Endorsements',
   ogDescription: endorsementsDescription,
   ogType: 'website',
-  ogImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
+  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   twitterTitle: 'Endorsements',
   twitterDescription: endorsementsDescription,
-  twitterImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
+  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
 })
 
 /* Page Content

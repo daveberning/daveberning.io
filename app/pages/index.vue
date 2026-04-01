@@ -16,17 +16,17 @@ const homeDescription = computed(() =>
   `Senior Front-End Software Engineer in ${siteInfo.value?.city ?? 'Cincinnati'}, ${siteInfo.value?.state ?? 'OH'} specializing in Vue, Nuxt, TypeScript, design systems, and front-end architecture.`
 )
 
-const homeImage = `${siteUrl}/portraits/dave-teal-sm.jpg`
+const { color } = useTheme()
 
 useSeoMeta({
   description: () => homeDescription.value,
   ogTitle: () => homeTitle.value,
   ogDescription: () => homeDescription.value,
   ogType: 'website',
-  ogImage: homeImage,
+  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   twitterTitle: () => homeTitle.value,
   twitterDescription: () => homeDescription.value,
-  twitterImage: homeImage,
+  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
 })
 
 useHead({

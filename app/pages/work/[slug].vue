@@ -11,21 +11,19 @@ const { data: work } = await useAsyncData(route.path, () =>
 
 /* Page Meta Information
 --------------------------------- */
-if (work.value) {
-  const ogImage = work.value.featuredImage
-    ? `${siteUrl}${work.value.featuredImage}`
-    : `${siteUrl}/portraits/dave-teal.png`
+const { color } = useTheme()
 
+if (work.value) {
   useHead({ title: work.value.title })
   useSeoMeta({
     description: work.value.description,
     ogTitle: work.value.title,
     ogDescription: work.value.description,
     ogType: 'website',
-    ogImage,
+    ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
     twitterTitle: work.value.title,
     twitterDescription: work.value.description,
-    twitterImage: ogImage,
+    twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   })
 
   useHead({
@@ -39,7 +37,7 @@ if (work.value) {
           name: work.value.title,
           description: work.value.description,
           url: `${siteUrl}${route.path}`,
-          image: ogImage,
+          image: `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
         }),
       },
     ],

@@ -5,16 +5,18 @@ const aboutDescription = 'Learn about Dave Berning, a Senior Front-End Software 
 
 /* Page Meta Information
 --------------------------------- */
+const { color } = useTheme()
+
 useHead({ title: 'About' })
 useSeoMeta({
   description: aboutDescription,
   ogTitle: 'About',
   ogDescription: aboutDescription,
   ogType: 'website',
-  ogImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
+  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   twitterTitle: 'About',
   twitterDescription: aboutDescription,
-  twitterImage: `${siteUrl}/portraits/dave-teal-sm.jpg`,
+  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
 })
 
 /* Page Content

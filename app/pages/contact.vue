@@ -5,6 +5,8 @@ const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl as string
 const contactDescription = 'Contact Dave Berning about senior front-end engineering roles, front-end architecture, design systems, or collaboration opportunities.'
 
+const { color } = useTheme()
+
 /* Page Meta Information
 --------------------------------- */
 useHead({ title: 'Contact' })
@@ -14,13 +16,11 @@ useSeoMeta({
   ogTitle: 'Contact',
   ogDescription: contactDescription,
   ogType: 'website',
-  ogImage: `${siteUrl}/portraits/dave-teal.png`,
+  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   twitterTitle: 'Contact',
   twitterDescription: contactDescription,
-  twitterImage: `${siteUrl}/portraits/dave-teal.png`,
+  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
 })
-
-const { color } = useTheme()
 const { data: siteInfo } = await useSiteInfo()
 
 const whatToSend = [

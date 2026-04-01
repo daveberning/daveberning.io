@@ -17,11 +17,6 @@ const { data: post } = await useAsyncData(route.path, () =>
 
 if (post.value) {
   const canonicalUrl = `${siteUrl}${route.path}`
-  const ogImage = post.value.featuredImage
-    ? post.value.featuredImage.startsWith('http')
-      ? post.value.featuredImage
-      : `${siteUrl}${post.value.featuredImage}`
-    : `${siteUrl}/portraits/dave-teal.png`
 
   useHead({
     title: post.value.title,
@@ -34,7 +29,6 @@ if (post.value) {
           headline: post.value.title,
           description: post.value.description,
           url: canonicalUrl,
-          image: ogImage,
           datePublished: post.value.publishedAt,
           dateModified: post.value.updatedAt ?? post.value.publishedAt,
           author: {
@@ -52,11 +46,11 @@ if (post.value) {
     ogTitle: post.value.title,
     ogDescription: post.value.description,
     ogType: 'article',
-    ogImage,
+    ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
     ogUrl: canonicalUrl,
     twitterTitle: post.value.title,
     twitterDescription: post.value.description,
-    twitterImage: ogImage,
+    twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
     articlePublishedTime: post.value.publishedAt,
     articleModifiedTime: post.value.updatedAt ?? post.value.publishedAt,
     articleTag: post.value.tags,
