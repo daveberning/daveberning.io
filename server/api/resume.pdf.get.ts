@@ -21,6 +21,7 @@ function getRequestOrigin(event: H3Event) {
   return url.origin
 }
 
+// NOTE: Keep in sync with scripts/generate-pdf.mjs
 const exportStyles = `
   @page {
     size: Letter;
@@ -89,11 +90,15 @@ const exportStyles = `
     gap: 0 !important;
   }
 
+  html, body {
+    height: 100% !important;
+  }
+
   .resume-shell {
     display: block !important;
     width: 100% !important;
     max-width: none !important;
-    min-height: 11in !important;
+    min-height: 100vh !important;
     border-radius: 0 !important;
     border-width: 0 !important;
     box-shadow: none !important;
@@ -102,70 +107,56 @@ const exportStyles = `
   .resume-grid {
     display: grid !important;
     grid-template-columns: 15rem minmax(0, 1fr) !important;
-    grid-template-rows: auto 1fr !important;
     align-items: stretch !important;
-    min-height: 11in !important;
+    min-height: 100vh !important;
   }
 
-  .resume-hero {
-    grid-column: 1 / -1 !important;
-  }
-
-  .resume-hero-portrait {
-    display: block !important;
-  }
-
-  .resume-hero-portrait img {
-    display: block !important;
-    left: 1.75rem !important;
-    width: 6.75rem !important;
-    height: 6.75rem !important;
-  }
-
-  .resume-hero-inner {
-    padding-left: 11.5rem !important;
-    padding-right: 1.75rem !important;
-  }
-
-  .resume-hero-mobile {
-    display: none !important;
-  }
-
-  .resume-hero-desktop {
-    display: block !important;
-  }
-
-  .resume-hero-desktop h1 {
-    font-size: 2.25rem !important;
-    line-height: 1 !important;
-  }
-
-  .resume-hero-desktop p {
-    font-size: 0.8rem !important;
-    margin-top: 0.4rem !important;
-  }
-
-  .resume-hero-meta {
-    text-align: right !important;
-    font-size: 0.65rem !important;
-  }
-
-  .resume-additional-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-
-  .resume-sidebar-rail {
+  .resume-sidebar {
     grid-column: 1 !important;
-    grid-row: 2 !important;
+    grid-row: 1 !important;
     align-self: stretch !important;
     height: 100% !important;
     min-height: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  .resume-main-column {
+  .resume-main {
     grid-column: 2 !important;
-    grid-row: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  /* Page-break spacing — items carry their own top-padding so
+     content at the top of continuation pages has breathing room */
+  .resume-main > div {
+    gap: 0 !important;
+  }
+
+  .resume-main section > div > div {
+    gap: 0 !important;
+  }
+
+  .resume-main article {
+    break-inside: avoid;
+    padding-top: 2rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  .resume-main article:first-child {
+    padding-top: 0 !important;
+  }
+
+  .resume-main section h2 {
+    break-after: avoid;
+  }
+
+  .resume-sidebar > div {
+    gap: 0 !important;
+  }
+
+  .resume-sidebar section {
+    break-inside: avoid;
+    padding-top: 2rem !important;
   }
 `
 

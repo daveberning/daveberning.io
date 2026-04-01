@@ -1,3 +1,4 @@
+import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 import Resume from './Resume.vue'
 import ResumeSection from './ResumeSection.vue'
@@ -10,11 +11,21 @@ export const resumeVariants = cva(
 )
 
 export const resumeSectionVariants = cva(
-  'border-t border-border pt-6 first:border-t-0 first:pt-0 print:border-zinc-200/80',
+  'first:pt-0', {
+    variants: {
+      location: {
+        main: 'border-t border-border pt-6 first:border-t-0 print:border-zinc-200/80',
+        sidebar: 'pt-6',
+      },
+    },
+    defaultVariants: { location: 'main' },
+  },
 )
 
+export type ResumeSectionVariants = VariantProps<typeof resumeSectionVariants>
+
 export const resumeEntryVariants = cva(
-  'break-inside-avoid pb-6 last:pb-0',
+  'break-inside-avoid pb-6 last:pb-0 print:pb-0 print:pt-8 print:first:pt-0',
 )
 
 /* Types
@@ -26,6 +37,7 @@ export interface ResumeProps {
 
 export interface ResumeSectionProps {
   title: string
+  location?: ResumeSectionVariants['location']
   class?: string
   as?: string
   contentClass?: string
