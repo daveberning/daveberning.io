@@ -117,34 +117,19 @@ useSeoMeta({
     <NuxtLayout name="sidebar">
       <div class="flex flex-col gap-6 print:gap-0">
         <UiCard variant="outline" :color="color" class="resume-page-intro border-theme/30 bg-gradient-to-br from-white via-surface to-theme-light/20 p-6 sm:p-8 print:hidden">
-          <div class="flex flex-col gap-4">
-            <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-text-muted">
-              Resume
-            </p>
             <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div class="max-w-3xl">
-                <h1 class="text-3xl font-bold tracking-tight text-text sm:text-4xl">
-                  {{ resumeData.name }}
-                </h1>
-                <p class="mt-2 text-lg font-medium text-text">
-                  {{ resumeData.role }}
-                </p>
-                <p class="mt-4 max-w-2xl text-sm leading-7 text-text-muted sm:text-base">
-                  This version mirrors a concise one-page resume layout while still living inside the website experience.
-                </p>
-              </div>
-              <UiButton
-                as="a"
-                href="/dave-berning-resume.pdf"
+              <UiText class="mt-4">
+                This version mirrors a concise one-page resume layout while still living inside the website experience.
+              </UiText>
+              <UiLink
+                to="/dave-berning-resume.pdf"
                 color="teal"
                 variant="outline"
-                class="resume-download-button self-start"
               >
                 <Icon name="lucide:download" class="size-4" aria-hidden="true" />
                 Download PDF
-              </UiButton>
+              </UiLink>
             </div>
-          </div>
         </UiCard>
 
         <Resume class="resume-shell overflow-hidden print:overflow-hidden print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
@@ -303,8 +288,8 @@ useSeoMeta({
 
 <style>
 @page {
-  margin-top: 0.5cm;
-  margin-bottom: 0.5cm;
+  size: Letter;
+  margin: 0 !important;
 }
 </style>
 
@@ -313,41 +298,108 @@ useSeoMeta({
   .resume-page :deep(.site-header),
   .resume-page :deep(.site-cta),
   .resume-page :deep(.site-footer),
-  .resume-page :deep(.site-mobile-nav) {
+  .resume-page :deep(.site-mobile-nav),
+  .resume-page :deep(.theme-picker),
+  .resume-page :deep(.breakpoint-reporter),
+  .resume-page :deep(.resume-page-intro),
+  .resume-page :deep(.resume-download-button) {
     display: none !important;
   }
 
   .resume-page :deep(.site-layout-body) {
+    display: block !important;
+    justify-content: stretch !important;
+    align-items: stretch !important;
     padding: 0 !important;
-  }
-
-  .resume-page :deep(.site-layout-main) {
+    margin: 0 !important;
     width: 100% !important;
   }
 
   .resume-page :deep(.container) {
+    display: block !important;
     max-width: none !important;
     width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    margin: 0 !important;
   }
 
-  .resume-page :deep(.resume-page-intro) {
-    display: none !important;
+  .resume-page :deep(.site-layout-main) {
+    display: block !important;
+    width: 100% !important;
+    grid-column: 1 / -1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-page {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .resume-page :deep(.resume-shell) {
-    box-shadow: none !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
     min-height: 100vh !important;
+    border-radius: 0 !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
   }
 
   .resume-page :deep(.resume-grid) {
+    display: grid !important;
     grid-template-columns: 15rem minmax(0, 1fr) !important;
+    align-items: stretch !important;
     min-height: 100vh !important;
   }
 
   .resume-page :deep(.resume-sidebar) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: stretch !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .resume-page :deep(.resume-main) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  /* Page-break spacing — zero out flex gaps, items carry their own padding */
+  .resume-page :deep(.resume-main > div) {
+    gap: 0 !important;
+  }
+
+  .resume-page :deep(.resume-main section > div > div) {
+    gap: 0 !important;
+  }
+
+  .resume-page :deep(.resume-main article) {
     break-inside: avoid;
+    padding-top: 2rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  .resume-page :deep(.resume-main article:first-child) {
+    padding-top: 0 !important;
+  }
+
+  .resume-page :deep(.resume-main section h2) {
+    break-after: avoid;
+  }
+
+  .resume-page :deep(.resume-sidebar > div) {
+    gap: 0 !important;
+  }
+
+  .resume-page :deep(.resume-sidebar section) {
+    break-inside: avoid;
+    padding-top: 2rem !important;
   }
 }
 </style>
