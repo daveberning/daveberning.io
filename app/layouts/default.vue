@@ -9,7 +9,7 @@ const {
   data: siteInfo
 } = await useSiteInfo()
 
-provideTheme()
+const { color } = provideTheme()
 
 const fullName = computed(() =>
   `${siteInfo.value?.firstName ?? ''} ${siteInfo.value?.lastName ?? ''}`.trim()
@@ -56,9 +56,9 @@ useHead({
 useSeoMeta({
   ogSiteName: () => fullName.value,
   ogUrl: () => `${siteUrl}${route.path}`,
-  ogImage: `${siteUrl}/portraits/dave-teal.png`,
+  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
   twitterCard: 'summary_large_image',
-  twitterImage: `${siteUrl}/portraits/dave-teal.png`,
+  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
 })
 </script>
 
