@@ -9,18 +9,19 @@ const [{ data: page }, { data: siteInfo }] = await Promise.all([
   useSiteInfo(),
 ])
 
-if (!page.value)
-  throw createError({ statusCode: 404, statusMessage: 'Resume not found' })
+if (!page.value) throw createError({
+  statusCode: 404,
+  statusMessage: 'Resume not found'
+})
 
 const resumeData = page.value.resume
 
-if (!resumeData)
-  throw createError({ statusCode: 500, statusMessage: 'Resume data missing' })
+if (!resumeData) throw createError({
+  statusCode: 500,
+  statusMessage: 'Resume data missing'
+})
 
-const {
-  color,
-} = useTheme()
-
+const { color } = useTheme()
 const resumeTitle = page.value.title ?? 'Resume'
 const resumeDescription = page.value.description ?? 'View the resume of Dave Berning, a Senior Front-End Software Engineer specializing in front-end architecture, design systems, and Vue.'
 const resumeImage = `${siteUrl}/bg/plaid-bg-teal.jpg`
@@ -29,34 +30,26 @@ const personName = resumeData.name
 const siteLabel = siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
 const socialLinks = computed(() => siteInfo.value?.socialLinks ?? [])
 
-const contactItems = computed(() => {
-  const items = [
-    {
-      label: 'Location',
-      value: resumeData.location,
-      href:  '',
-      icon:  'lucide:map-pin',
-    },
-    {
-      label: 'Website',
-      value: siteLabel,
-      href:  siteUrl,
-      icon:  'lucide:globe',
-    },
-  ]
-
-  return [
-    ...items,
-    ...socialLinks.value.map(link => ({
-      label: link.label,
-      value: link.href.startsWith('mailto:')
-        ? link.href.slice('mailto:'.length)
-        : link.href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''),
-      href: link.href,
-      icon: link.icon,
-    })),
-  ]
-})
+const contactItems = computed(() => ([
+  {
+    label: 'Location',
+    value: resumeData.location,
+    href:  '',
+    icon:  'lucide:map-pin',
+  },
+  {
+    label: 'Website',
+    value: siteLabel,
+    href:  siteUrl,
+    icon:  'lucide:globe',
+  },
+  ...socialLinks.value.map(link => ({
+    label: link.label,
+    value: link.href.startsWith('mailto:') ? link.href.slice('mailto:'.length) : link.href.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''),
+    href: link.href,
+    icon: link.icon,
+  })),
+]))
 
 const sameAs = computed(() => Array.from(new Set([
   `${siteUrl}/about`,
@@ -115,17 +108,15 @@ useSeoMeta({
   <div class="resume-page">
     <NuxtLayout name="sidebar">
       <div class="flex flex-col gap-6 print:gap-0">
-        <UiCard variant="outline" :color="color" class="resume-page-intro border-theme/30 bg-gradient-to-br from-white via-surface to-theme-light/20 p-6 sm:p-8 print:hidden">
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <UiText class="mt-4">
-              This version mirrors a concise one-page resume layout while still living inside the website experience.
-            </UiText>
-            <UiButton as="a" href="/dave-berning-resume.pdf" color="teal" variant="outline">
-              <Icon name="lucide:download" class="size-4" aria-hidden="true" />
-              Download PDF
-            </UiButton>
-          </div>
-        </UiCard>
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between resume-page-intro">
+          <UiText class="mt-4">
+            Want a paper copy? You can download a printer-friendly PDF version of my resume.
+          </UiText>
+          <UiButton as="a" href="/dave-berning-resume.pdf" color="teal" variant="outline">
+            <Icon name="lucide:download" class="size-4" aria-hidden="true" />
+            Download PDF
+          </UiButton>
+        </div>
         <Resume class="resume-shell overflow-hidden print:overflow-hidden print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
           <div class="resume-grid grid lg:grid-cols-[15rem_minmax(0,1fr)] print:grid-cols-[15rem_minmax(0,1fr)]">
             <aside class="resume-sidebar bg-theme-black text-theme-fg px-6 py-8 print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
@@ -155,7 +146,6 @@ useSeoMeta({
                     </li>
                   </ul>
                 </section>
-
                 <section v-for="group in resumeData.skillGroups" :key="group.title" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
                   <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
                     {{ group.title }}
@@ -166,7 +156,6 @@ useSeoMeta({
                     </li>
                   </ul>
                 </section>
-
                 <section v-if="resumeData.highlights?.length" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
                   <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
                     Highlights
@@ -179,7 +168,6 @@ useSeoMeta({
                 </section>
               </div>
             </aside>
-
             <div class="resume-main px-6 py-8 sm:px-8 print:px-8">
               <div class="flex flex-col gap-7 print:gap-0">
                 <ResumeSection title="Professional Summary">
@@ -187,7 +175,6 @@ useSeoMeta({
                     {{ resumeData.summary }}
                   </UiText>
                 </ResumeSection>
-
                 <ResumeSection title="Professional Experience">
                   <ResumeEntry
                     v-for="item in resumeData.experience ?? []"
@@ -205,7 +192,6 @@ useSeoMeta({
                     </ul>
                   </ResumeEntry>
                 </ResumeSection>
-
                 <ResumeSection title="Additional Experience">
                   <ResumeEntry
                     v-for="item in resumeData.teaching ?? []"
@@ -238,7 +224,6 @@ useSeoMeta({
                     </ul>
                   </ResumeEntry>
                 </ResumeSection>
-
                 <ResumeSection v-if="resumeData.education?.length" title="Education">
                   <article v-for="item in resumeData.education" :key="item.school" class="break-inside-avoid flex flex-col gap-1.5 text-sm leading-6 text-text-muted">
                     <UiText as="h4" class="text-base font-semibold leading-tight">
