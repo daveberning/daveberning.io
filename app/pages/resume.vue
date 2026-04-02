@@ -27,7 +27,6 @@ const resumeImage = `${siteUrl}/bg/plaid-bg-teal.jpg`
 const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.jpg`)
 const personName = resumeData.name
 const siteLabel = siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
-
 const socialLinks = computed(() => siteInfo.value?.socialLinks ?? [])
 
 const contactItems = computed(() => {
@@ -127,57 +126,41 @@ useSeoMeta({
             </UiButton>
           </div>
         </UiCard>
-
         <Resume class="resume-shell overflow-hidden print:overflow-hidden print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
           <div class="resume-grid grid lg:grid-cols-[15rem_minmax(0,1fr)] print:grid-cols-[15rem_minmax(0,1fr)]">
             <aside class="resume-sidebar bg-theme-black text-theme-fg px-6 py-8 print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
               <div class="flex flex-col gap-7 print:gap-0">
                 <div class="flex flex-col items-center gap-4">
-                  <img
-                    :src="portraitSrc"
-                    alt=""
-                    class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg"
-                  >
+                  <img :src="portraitSrc" alt="" class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg">
                   <div class="text-center">
-                    <h1 class="font-['Space_Grotesk'] text-2xl font-bold tracking-tight">
-                      {{ resumeData.name }}
-                    </h1>
-                    <p class="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-theme">
+                    <UiText as="h2" class="text-2xl" color="white">{{ resumeData.name }}</UiText>
+                    <UiText class="mt-1 text-xs font-semibold uppercase tracking-[0.1em]" :color="color">
                       {{ resumeData.role }}
-                    </p>
+                    </UiText>
                   </div>
                 </div>
-
                 <section class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <h2 class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.2em]" :color="color">
                     Details
-                  </h2>
+                  </UiText>
                   <ul role="list" class="grid gap-2.5 list-none">
-                    <li v-for="item in contactItems" :key="`${item.label}-${item.value}`" class="flex items-start gap-2.5 text-xs leading-5 text-theme-fg/80">
-                      <span class="mt-0.5 inline-flex shrink-0 items-center justify-center text-theme">
-                        <Icon :name="item.icon" class="size-3.5" aria-hidden="true" />
-                      </span>
-                      <div class="min-w-0">
-                        <a
-                          v-if="item.href"
-                          :href="item.href"
-                          class="break-words underline decoration-theme/30 underline-offset-4 hover:decoration-theme"
-                        >
-                          {{ item.value }}
-                        </a>
-                        <p v-else class="break-words">
-                          {{ item.value }}
-                        </p>
-                      </div>
+                    <li v-for="item in contactItems" :key="`${item.label}-${item.value}`" class="flex items-start gap-2.5 text-xs">
+                      <Icon :name="item.icon" aria-hidden="true" class="text-theme" />
+                      <UiLink v-if="item.href" :to="item.href" class="break-words p-0 h-4 text-white/80 text-[.75rem]">
+                        {{ item.value }}
+                      </UiLink>
+                      <UiText v-else class="break-words text-[.75rem]" color="white">
+                        {{ item.value }}
+                      </UiText>
                     </li>
                   </ul>
                 </section>
 
                 <section v-for="group in resumeData.skillGroups" :key="group.title" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <h2 class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
                     {{ group.title }}
-                  </h2>
-                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-theme-fg/80 marker:text-theme/60">
+                  </UiText>
+                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-white/80 marker:text-theme/60">
                     <li v-for="skill in group.items" :key="skill">
                       {{ skill }}
                     </li>
@@ -185,10 +168,10 @@ useSeoMeta({
                 </section>
 
                 <section v-if="resumeData.highlights?.length" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <h2 class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
                     Highlights
-                  </h2>
-                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-theme-fg/80 marker:text-theme/60">
+                  </UiText>
+                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-white/80 marker:text-theme/60">
                     <li v-for="highlight in resumeData.highlights" :key="highlight">
                       {{ highlight }}
                     </li>
@@ -200,9 +183,9 @@ useSeoMeta({
             <div class="resume-main px-6 py-8 sm:px-8 print:px-8">
               <div class="flex flex-col gap-7 print:gap-0">
                 <ResumeSection title="Professional Summary">
-                  <p class="text-sm leading-7 text-text-muted">
+                  <UiText class="text-sm leading-7 text-text-muted">
                     {{ resumeData.summary }}
-                  </p>
+                  </UiText>
                 </ResumeSection>
 
                 <ResumeSection title="Professional Experience">
@@ -257,20 +240,16 @@ useSeoMeta({
                 </ResumeSection>
 
                 <ResumeSection v-if="resumeData.education?.length" title="Education">
-                  <article
-                    v-for="item in resumeData.education"
-                    :key="item.school"
-                    class="break-inside-avoid flex flex-col gap-1.5 text-sm leading-6 text-text-muted"
-                  >
-                    <h3 class="text-base font-semibold leading-tight text-text">
+                  <article v-for="item in resumeData.education" :key="item.school" class="break-inside-avoid flex flex-col gap-1.5 text-sm leading-6 text-text-muted">
+                    <UiText as="h4" class="text-base font-semibold leading-tight">
                       {{ item.school }}
-                    </h3>
-                    <p v-if="item.degree" class="font-medium text-text">
+                    </UiText>
+                    <UiText v-if="item.degree" class="text-sm font-base text-muted">
                       {{ item.degree }}
-                    </p>
-                    <p v-if="item.details">
+                    </UiText>
+                    <UiText v-if="item.details" class="text-sm">
                       {{ item.details }}
-                    </p>
+                    </UiText>
                   </article>
                 </ResumeSection>
               </div>
