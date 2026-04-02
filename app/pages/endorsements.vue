@@ -5,9 +5,10 @@ const endorsementsDescription = 'Read endorsements from colleagues, clients, and
 
 /* Page Meta Information
 --------------------------------- */
-const { color } = useTheme()
+useTheme()
 
 useHead({ title: 'Endorsements' })
+
 useSeoMeta({
   description: endorsementsDescription,
   ogTitle: 'Endorsements',

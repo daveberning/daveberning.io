@@ -24,6 +24,4 @@ It was also the kind of project where cross-functional collaboration mattered. B
 
 WDSuite is a commercial lending software platform, and the servicing module supports the operational work that happens after deals are active. That meant the product needed to handle complex workflows, dense interfaces, and high-value business processes with clarity and consistency.
 
-For front-end engineering, that kind of environment rewards strong system thinking. Clean architecture, reliable UI patterns, and careful integration work all matter more when the application is part of a larger enterprise ecosystem.
-
 This project was a good fit for the kind of work I enjoy most: scalable front-end systems, thoughtful architecture, and collaboration across product and engineering teams.

@@ -9,14 +9,14 @@ const {
 } = await useSiteInfo()
 
 const homeTitle = computed(() =>
-  `${siteInfo.value?.firstName ?? 'Dave'} ${siteInfo.value?.lastName ?? 'Berning'} | Senior Front-End Software Engineer`
+  `${siteInfo.value?.firstName} ${siteInfo.value?.lastName} | Front-End Software Engineer`
 )
 
 const homeDescription = computed(() =>
   `Senior Front-End Software Engineer in ${siteInfo.value?.city ?? 'Cincinnati'}, ${siteInfo.value?.state ?? 'OH'} specializing in Vue, Nuxt, TypeScript, design systems, and front-end architecture.`
 )
 
-const { color } = useTheme()
+useTheme()
 
 useSeoMeta({
   description: () => homeDescription.value,
@@ -37,7 +37,7 @@ useHead({
       innerHTML: () => JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: `${siteInfo.value?.firstName ?? 'Dave'} ${siteInfo.value?.lastName ?? 'Berning'}`.trim(),
+        name: `${siteInfo.value?.firstName} ${siteInfo.value?.lastName}`.trim(),
         url: siteUrl,
         description: homeDescription.value,
       }),

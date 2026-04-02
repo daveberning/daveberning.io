@@ -1,8 +1,8 @@
 # About Dave
 
-I'm a **Senior Front-End Software Engineer** with 11+ years of experience building modern web applications, design systems, and front-end architecture for enterprise-scale teams. My strongest work sits at the intersection of **Vue, Nuxt, component libraries, and maintainable UI systems**. I care about building products that feel polished for users and practical for the teams who have to support them long after launch.
+I'm a **Senior Front-End Software Engineer** with 11+ years of experience building modern web applications, design systems, and standards setting for enterprise-scale teams. My strongest work sits at the intersection of **Vue, Nuxt, component libraries, and maintainable UI systems**. I care about building products that feel polished for users and practical for the teams who have to support them long after launch.
 
-Over the years, I've worked across agency, product, and enterprise environments, which has taught me how to balance code quality with real business needs. I also taught for two years at the University of Cincinnati, and that experience sharpened how I communicate technical ideas, mentor other developers, and help teams grow with more confidence.
+Over the years, I've worked across agency, product, and enterprise environments, which has taught me how to balance code quality with real business needs. I also taught for two years at the University of Cincinnati. That experience taught me a lot on how I communicate technical ideas, mentor other developers, and help teams grow.
 
 ## What I Specialize In
 
@@ -12,10 +12,12 @@ I'm especially drawn to front-end work where **maintainability, performance, acc
 
 ## How I Work With Teams
 
-I'm a collaborative engineer by default. I like working closely with designers, product partners, and other developers to make sure good ideas survive the trip from planning to implementation. A big part of my approach is setting standards that make teams more effective without making the work heavier than it needs to be.
+I'm a collaborative engineer by default. I like working closely with designers, product partners, and other developers to make sure ideas make it from planning to production. A big part of my approach is setting standards that make teams more effective without making the work heavier than it needs to be.
 
-At Walker & Dunlop, I lead the **Front-End Council**, a group focused on standardizing code practices across the organization. That work reflects a lot of what I care about professionally: aligning teams, improving consistency, mentoring other engineers, and creating front-end systems that support better work at scale.
+At Walker & Dunlop, I lead the **Front-End Council**, a group focused on standardizing code practices across the organization. In our council sessions, we talk through architecture decisions, share best practices, and make sure we're all aligned on how to build and maintain our front-end systems. Our goal is to have each project feel familiar to any engineer, in hopes to remove cognitive overhead and make it easier for teams to collaborate across projects. This is essential as we move our front-ends to a micro-frontend architecture.
+
+In the council, we have rolled out standardized ESLint configuration, a shared component library, a boilerplate, and documentation for how to use both. We also have a shared Storybook instance where we can document and share components across teams. This has been a great way to get everyone on the same page and make sure we're building things in a way that feels consistent and maintainable.
 
 ## Outside of Work
 
-Outside the editor, I spend a lot of my time with my two kids, Stella and Miles. I also play guitar, read whenever I can, and still make time for video games. That balance matters to me. It keeps me curious, creative, and grounded, which carries over into the way I work with people and the kind of teammate I want to be.
+Outside the editor, I spend a lot of my time with my two kids, Stella 🌸 and Miles 🚀. I also play guitar, read whenever I can. Occasionally, I like to play video games to blow off steam. I am particularly fond of Nintendo games, such as _The Legend of Zelda_, _Metroid_, _Fire Emblem_, and more.

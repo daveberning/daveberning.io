@@ -32,4 +32,7 @@ favoriteBands:
   - Blink-182
   - Rise Against
   - Temple of the Dog
+  - Angels & Airwaves
+  - Pearl Jam
+  - The Smashing Pumpkins
 ---

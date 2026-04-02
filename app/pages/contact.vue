@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { object, string } from 'yup'
-import { FormInput, FormSelect, FormTextArea } from '~/components/ui/form'
+import { type FormField, FormInput, FormSelect, FormTextArea } from '~/components/ui/form'
+
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl as string
 const contactDescription = 'Contact Dave Berning about senior front-end engineering roles, front-end architecture, design systems, or collaboration opportunities.'
-
 const { color } = useTheme()
 
 /* Page Meta Information
@@ -21,6 +21,7 @@ useSeoMeta({
   twitterDescription: contactDescription,
   twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })
+
 const { data: siteInfo } = await useSiteInfo()
 
 const whatToSend = [
@@ -37,23 +38,11 @@ const tags = [
   'Remote Opportunities',
 ]
 
-/* Form Fields
---------------------------------- */
-interface FormField {
-  name:         string
-  label:        string
-  component:    typeof FormInput | typeof FormSelect | typeof FormTextArea
-  type?:        string
-  placeholder?: string
-  options?:     string[]
-  class?:       string
-}
-
 const fields: FormField[] = [
-  { name: 'firstName',     label: 'First Name',                component: FormInput,    placeholder: 'Jane' },
-  { name: 'lastName',     label: 'Last Name',                 component: FormInput,    placeholder: 'Doe' },
+  { name: 'firstName',     label: 'First Name',                component: FormInput,    placeholder: 'Fox' },
+  { name: 'lastName',     label: 'Last Name',                 component: FormInput,    placeholder: 'McCloud' },
   { name: 'phone',        label: 'Phone Number',              component: FormInput,    placeholder: '(555) 123-4567' },
-  { name: 'emailAddress', label: 'Email Address',             component: FormInput,    placeholder: 'jane@example.com', type: 'email' },
+  { name: 'emailAddress', label: 'Email Address',             component: FormInput,    placeholder: 'fox@starfox.com', type: 'email' },
   { name: 'hearAboutMe',  label: 'How\'d you hear about me?', component: FormSelect,   placeholder: 'Select an option', class: 'sm:col-span-2', options: ['Facebook', 'Instagram', 'LinkedIn', 'Google', 'Other'] },
   { name: 'message',      label: 'Message',                   component: FormTextArea, placeholder: 'Your message...',  class: 'sm:col-span-2' },
 ]

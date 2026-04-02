@@ -121,6 +121,16 @@ export interface FormMessageProps {
   class?: string
 }
 
+export interface FormField {
+  name: string
+  label: string
+  component: typeof FormInput | typeof FormSelect | typeof FormTextArea
+  type?: string
+  placeholder?: string
+  options?: string[]
+  class?: string
+}
+
 /* Components
 --------------------------------------------------------------------- */
 export {
