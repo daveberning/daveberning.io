@@ -20,10 +20,10 @@ if (work.value) {
     ogTitle: work.value.title,
     ogDescription: work.value.description,
     ogType: 'website',
-    ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+    ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
     twitterTitle: work.value.title,
     twitterDescription: work.value.description,
-    twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+    twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
   })
 
   useHead({
@@ -37,7 +37,7 @@ if (work.value) {
           name: work.value.title,
           description: work.value.description,
           url: `${siteUrl}${route.path}`,
-          image: `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+          image: `${siteUrl}/bg/plaid-bg-teal.jpg`,
         }),
       },
     ],

@@ -23,10 +23,10 @@ useSeoMeta({
   ogTitle: () => homeTitle.value,
   ogDescription: () => homeDescription.value,
   ogType: 'website',
-  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
   twitterTitle: () => homeTitle.value,
   twitterDescription: () => homeDescription.value,
-  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })
 
 useHead({

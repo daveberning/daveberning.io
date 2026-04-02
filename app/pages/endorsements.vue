@@ -13,10 +13,10 @@ useSeoMeta({
   ogTitle: 'Endorsements',
   ogDescription: endorsementsDescription,
   ogType: 'website',
-  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
   twitterTitle: 'Endorsements',
   twitterDescription: endorsementsDescription,
-  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })
 
 /* Page Content

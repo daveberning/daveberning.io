@@ -13,10 +13,10 @@ useSeoMeta({
   ogTitle: 'About',
   ogDescription: aboutDescription,
   ogType: 'website',
-  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
   twitterTitle: 'About',
   twitterDescription: aboutDescription,
-  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })
 
 /* Page Content

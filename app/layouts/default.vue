@@ -56,9 +56,9 @@ useHead({
 useSeoMeta({
   ogSiteName: () => fullName.value,
   ogUrl: () => `${siteUrl}${route.path}`,
-  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
   twitterCard: 'summary_large_image',
-  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })
 </script>
 

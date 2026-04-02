@@ -28,13 +28,23 @@ const exportStyles = `
     margin: 0 !important;
   }
 
+  :root {
+    --pdf-export-min-height: 11in;
+  }
+
   html,
   body {
     margin: 0 !important;
     padding: 0 !important;
     background: #ffffff !important;
     width: 100% !important;
-    height: 100% !important;
+    min-height: var(--pdf-export-min-height) !important;
+  }
+
+  #__nuxt,
+  [data-v-app] {
+    width: 100% !important;
+    min-height: var(--pdf-export-min-height) !important;
   }
 
   .site-header,
@@ -55,6 +65,7 @@ const exportStyles = `
     padding: 0 !important;
     margin: 0 !important;
     width: 100% !important;
+    min-height: var(--pdf-export-min-height) !important;
   }
 
   .container {
@@ -72,11 +83,14 @@ const exportStyles = `
     grid-column: 1 / -1 !important;
     padding: 0 !important;
     margin: 0 !important;
+    min-height: var(--pdf-export-min-height) !important;
   }
 
   .resume-page {
     padding: 0 !important;
     margin: 0 !important;
+    width: 100% !important;
+    min-height: var(--pdf-export-min-height) !important;
   }
 
   .resume-page,
@@ -90,33 +104,36 @@ const exportStyles = `
     gap: 0 !important;
   }
 
-  html, body {
-    height: 100% !important;
-  }
-
   .resume-shell {
     display: block !important;
     width: 100% !important;
     max-width: none !important;
-    min-height: 100vh !important;
+    min-height: var(--pdf-export-min-height) !important;
     border-radius: 0 !important;
     border-width: 0 !important;
     box-shadow: none !important;
+    background: linear-gradient(
+      to right,
+      var(--theme-color-black) 0,
+      var(--theme-color-black) 15rem,
+      #ffffff 15rem,
+      #ffffff 100%
+    ) !important;
   }
 
   .resume-grid {
     display: grid !important;
     grid-template-columns: 15rem minmax(0, 1fr) !important;
     align-items: stretch !important;
-    min-height: 100vh !important;
+    min-height: var(--pdf-export-min-height) !important;
   }
 
   .resume-sidebar {
     grid-column: 1 !important;
     grid-row: 1 !important;
     align-self: stretch !important;
-    height: 100% !important;
-    min-height: 100% !important;
+    min-height: var(--pdf-export-min-height) !important;
+    background: transparent !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -200,6 +217,21 @@ export default defineEventHandler(async (event) => {
     })
 
     await page.addStyleTag({ content: exportStyles })
+
+    await page.evaluate(() => {
+      const PAGE_HEIGHT_PX = 11 * 96
+      const shell = document.querySelector<HTMLElement>('.resume-shell')
+      const contentHeight = Math.max(
+        shell?.scrollHeight ?? 0,
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight,
+      )
+      const pages = Math.max(1, Math.ceil(contentHeight / PAGE_HEIGHT_PX))
+      const minHeightPx = pages * PAGE_HEIGHT_PX
+
+      document.documentElement.style.setProperty('--pdf-export-min-height', `${minHeightPx}px`)
+      document.body.style.minHeight = `${minHeightPx}px`
+    })
 
     const pdf = await page.pdf({
       format: 'Letter',

@@ -17,10 +17,10 @@ useSeoMeta({
   ogTitle: 'Writing',
   ogDescription: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
   ogType: 'website',
-  ogImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
   twitterTitle: 'Writing',
   twitterDescription: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
-  twitterImage: () => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`,
+  twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })
 
 /* Page Content

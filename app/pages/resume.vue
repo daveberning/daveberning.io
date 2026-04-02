@@ -23,7 +23,7 @@ const {
 
 const resumeTitle = page.value.title ?? 'Resume'
 const resumeDescription = page.value.description ?? 'View the resume of Dave Berning, a Senior Front-End Software Engineer specializing in front-end architecture, design systems, and Vue.'
-const resumeImage = computed(() => `${siteUrl}/bg/plaid-bg-${color.value}.jpg`)
+const resumeImage = `${siteUrl}/bg/plaid-bg-teal.jpg`
 const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.jpg`)
 const personName = resumeData.name
 const siteLabel = siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
@@ -86,7 +86,7 @@ useHead({
           jobTitle: resumeData.role,
           description: resumeDescription,
           url: `${siteUrl}/resume`,
-          image: resumeImage.value,
+          image: resumeImage,
           sameAs: sameAs.value,
           address: {
             '@type': 'PostalAddress',
@@ -105,10 +105,10 @@ useSeoMeta({
   ogTitle: `${resumeTitle} | ${personName}`,
   ogDescription: resumeDescription,
   ogType: 'profile',
-  ogImage: () => resumeImage.value,
+  ogImage: resumeImage,
   twitterTitle: `${resumeTitle} | ${personName}`,
   twitterDescription: resumeDescription,
-  twitterImage: () => resumeImage.value,
+  twitterImage: resumeImage,
 })
 </script>
 
@@ -117,15 +117,15 @@ useSeoMeta({
     <NuxtLayout name="sidebar">
       <div class="flex flex-col gap-6 print:gap-0">
         <UiCard variant="outline" :color="color" class="resume-page-intro border-theme/30 bg-gradient-to-br from-white via-surface to-theme-light/20 p-6 sm:p-8 print:hidden">
-            <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <UiText class="mt-4">
-                This version mirrors a concise one-page resume layout while still living inside the website experience.
-              </UiText>
-              <UiLink to="/dave-berning-resume.pdf" color="teal" variant="outline">
-                <Icon name="lucide:download" class="size-4" aria-hidden="true" />
-                Download PDF
-              </UiLink>
-            </div>
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <UiText class="mt-4">
+              This version mirrors a concise one-page resume layout while still living inside the website experience.
+            </UiText>
+            <UiButton as="a" href="/dave-berning-resume.pdf" color="teal" variant="outline">
+              <Icon name="lucide:download" class="size-4" aria-hidden="true" />
+              Download PDF
+            </UiButton>
+          </div>
         </UiCard>
 
         <Resume class="resume-shell overflow-hidden print:overflow-hidden print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
