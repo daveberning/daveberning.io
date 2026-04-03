@@ -11,6 +11,7 @@ const { data: siteInfo } = await useSiteInfo()
 const headerRef = ref<ComponentPublicInstance | null>(null)
 const { color, isDark } = useTheme()
 const { isOpen, open, toggle } = provideMobileNav()
+const route = useRoute()
 
 useSwipeGesture(headerRef, 'down', open)
 </script>
@@ -45,9 +46,12 @@ useSwipeGesture(headerRef, 'down', open)
       <div class="m-4">
         <UiText color="white">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
       </div>
-      <UiButton as="a" :href="siteInfo?.resumeUrl ?? '#'" color="white" variant="outline" size="large">
+      <UiButton v-if="route.name !== 'resume'" as="a" :href="siteInfo?.resumeUrl ?? '#'" color="white" variant="outline" size="large">
         View Resume
       </UiButton>
+      <UiLink v-else to="/contact" color="white" variant="outline" size="large">
+        Contact Me
+      </UiLink>
       <SocialLinks :links="siteInfo?.socialLinks ?? []" class="justify-center mt-4" />
     </CtaBar>
     <Footer class="site-footer" />

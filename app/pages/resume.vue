@@ -94,7 +94,6 @@ useHead({
 
 useSeoMeta({
   description: resumeDescription,
-  keywords: 'CV, resume, front-end engineer, professional experience',
   ogTitle: `${resumeTitle} | ${personName}`,
   ogDescription: resumeDescription,
   ogType: 'profile',
@@ -113,7 +112,7 @@ useSeoMeta({
           <UiText class="mt-4">
             Want a paper copy? You can download a printer-friendly PDF version of my resume.
           </UiText>
-          <UiButton as="a" href="/dave-berning-resume.pdf" color="teal" variant="outline">
+          <UiButton as="a" href="/dave-berning-resume.pdf" :color="color" variant="outline">
             <Icon name="lucide:download" class="size-4" aria-hidden="true" />
             Download PDF
           </UiButton>

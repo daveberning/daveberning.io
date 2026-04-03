@@ -6,7 +6,7 @@ const props = defineProps<LinkProps>()
 </script>
 
 <template>
-  <NuxtLink :is="props.as" :to="props.to" :class="cn(linkVariants({ variant: props.variant, size: props.size, radius: props.radius }), props.class)">
+  <NuxtLink :is="props.as" :to="props.to" :class="cn(linkVariants({ variant: props.variant, color: props.color, size: props.size, radius: props.radius }), props.class)">
     <slot />
   </NuxtLink>
 </template>

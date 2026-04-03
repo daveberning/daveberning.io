@@ -4,13 +4,17 @@ import { cva } from 'class-variance-authority'
 /* Variants
 --------------------------------------------------------------------- */
 export const linkVariants = cva(
-  'inline-flex items-center gap-1 font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme focus-visible:ring-offset-2 cursor-pointer',
+  'inline-flex items-center gap-1 font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer',
   {
     variants: {
       variant: {
         solid:   'bg-theme text-theme-fg hover:bg-theme-dark active:bg-theme-dark',
-        outline: 'border-2 bg-transparent border-theme text-theme hover:bg-theme-light/50 dark:border-white dark:text-white',
-        text:    'bg-transparent hover:underline text-theme dark:text-white',
+        outline: 'border-2 bg-transparent border-theme text-theme hover:bg-theme-light/50',
+        text:    'bg-transparent hover:underline text-theme',
+      },
+      color: {
+        theme: 'focus-visible:ring-theme',
+        white: 'focus-visible:ring-white',
       },
       size: {
         small:   'h-8 px-3 text-xs',
@@ -24,8 +28,21 @@ export const linkVariants = cva(
         none:    'rounded-none',
       },
     },
+    compoundVariants: [
+      {
+        color: 'white',
+        variant: 'outline',
+        class: 'border-white text-white hover:bg-white/10',
+      },
+      {
+        color: 'white',
+        variant: 'text',
+        class: 'text-white',
+      },
+    ],
     defaultVariants: {
       variant: 'text',
+      color:   'theme',
       size:    'regular',
       radius:  'regular',
     },
@@ -38,6 +55,7 @@ export type LinkVariants = VariantProps<typeof linkVariants>
 
 export interface LinkProps {
   variant?: LinkVariants['variant']
+  color?: LinkVariants['color']
   size?: LinkVariants['size']
   radius?: LinkVariants['radius']
   to?: string | Record<string, unknown>
