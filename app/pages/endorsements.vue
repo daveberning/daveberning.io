@@ -7,11 +7,12 @@ const endorsementsDescription = 'Read endorsements from colleagues, clients, and
 --------------------------------- */
 useTheme()
 
+// SEO: Include keywords (Client & Colleague Testimonials) in page title for better rankings
 useHead({ title: 'Endorsements' })
 
 useSeoMeta({
   description: endorsementsDescription,
-  ogTitle: 'Endorsements',
+  ogTitle: 'Endorsements | Client & Colleague Testimonials',
   ogDescription: endorsementsDescription,
   ogType: 'website',
   ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,

@@ -13,7 +13,7 @@ useHead({ title: 'Contact' })
 
 useSeoMeta({
   description: contactDescription,
-  ogTitle: 'Contact',
+  ogTitle: 'Contact Dave Berning | Senior Front-End Engineer',
   ogDescription: contactDescription,
   ogType: 'website',
   ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,

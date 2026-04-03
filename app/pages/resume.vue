@@ -22,7 +22,7 @@ if (!resumeData) throw createError({
 })
 
 const { color } = useTheme()
-const resumeTitle = page.value.title ?? 'Resume'
+const resumeTitle = page.value.title
 const resumeDescription = page.value.description ?? 'View the resume of Dave Berning, a Senior Front-End Software Engineer specializing in front-end architecture, design systems, and Vue.'
 const resumeImage = `${siteUrl}/bg/plaid-bg-teal.jpg`
 const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.jpg`)
@@ -94,6 +94,7 @@ useHead({
 
 useSeoMeta({
   description: resumeDescription,
+  keywords: 'CV, resume, front-end engineer, professional experience',
   ogTitle: `${resumeTitle} | ${personName}`,
   ogDescription: resumeDescription,
   ogType: 'profile',
@@ -122,7 +123,7 @@ useSeoMeta({
             <aside class="resume-sidebar bg-theme-black text-theme-fg px-6 py-8 print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
               <div class="flex flex-col gap-7 print:gap-0">
                 <div class="flex flex-col items-center gap-4">
-                  <img :src="portraitSrc" alt="" class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg">
+                  <img :src="portraitSrc" alt="Dave Berning, Senior Front-End Software Engineer" class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg">
                   <div class="text-center">
                     <UiText as="h2" class="text-2xl" color="white">{{ resumeData.name }}</UiText>
                     <UiText class="mt-1 text-xs font-semibold uppercase tracking-[0.1em]" :color="color">

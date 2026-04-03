@@ -5,10 +5,11 @@ const aboutDescription = 'Learn about Dave Berning, a Senior Front-End Software 
 
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'About' })
+useHead({ title: 'About'})
+
 useSeoMeta({
   description: aboutDescription,
-  ogTitle: 'About',
+  ogTitle: 'About Dave Berning | Senior Front-End Engineer',
   ogDescription: aboutDescription,
   ogType: 'website',
   ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,

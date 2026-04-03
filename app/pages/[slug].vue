@@ -13,8 +13,11 @@ const { data: page } = await useAsyncData(route.path, () =>
 if (!page.value)
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
 
+const canonicalUrl = (page.value as any).externalUrl || `${siteUrl}${route.path}`
+
 useHead({
   title: page.value.title,
+  link: [{ rel: 'canonical', href: canonicalUrl }],
   script: [
     {
       key: `page-schema-${route.path}`,
@@ -24,7 +27,7 @@ useHead({
         '@type': 'WebPage',
         name: page.value.title,
         description: page.value.description ?? page.value.title,
-        url: `${siteUrl}${route.path}`,
+        url: canonicalUrl,
       }),
     },
   ],
@@ -35,6 +38,7 @@ useSeoMeta({
   ogTitle: page.value.title,
   ogDescription: page.value.description ?? page.value.title,
   ogType: 'website',
+  ogUrl: canonicalUrl,
   twitterTitle: page.value.title,
   twitterDescription: page.value.description ?? page.value.title,
 })

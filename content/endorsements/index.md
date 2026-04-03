@@ -1,4 +1,5 @@
 ---
+description: "Testimonials and endorsements from teammates, clients, and collaborators I've worked with across different roles and projects."
 order:
   - andres-pegado
   - gregory-howlett-gomez

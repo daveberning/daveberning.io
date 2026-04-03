@@ -10,11 +10,11 @@ const {
 
 /* Page Meta Information
 --------------------------------- */
-useHead({ title: 'Writing' })
+useHead({ title: 'Articles on Vue, Nuxt, TypeScript & Web Dev' })
 
 useSeoMeta({
   description: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
-  ogTitle: 'Writing',
+  ogTitle: 'Articles on Vue, Nuxt, TypeScript & Web Development',
   ogDescription: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
   ogType: 'website',
   ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,

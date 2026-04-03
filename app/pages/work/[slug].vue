@@ -14,13 +14,19 @@ const { data: work } = await useAsyncData(route.path, () =>
 const { color } = useTheme()
 
 if (work.value) {
-  useHead({ title: work.value.title })
+  const canonicalUrl = (work.value as any).externalUrl || `${siteUrl}${route.path}`
+
+  useHead({
+    title: work.value.title,
+    link: [{ rel: 'canonical', href: canonicalUrl }],
+  })
   useSeoMeta({
     description: work.value.description,
     ogTitle: work.value.title,
     ogDescription: work.value.description,
     ogType: 'website',
     ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
+    ogUrl: canonicalUrl,
     twitterTitle: work.value.title,
     twitterDescription: work.value.description,
     twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,

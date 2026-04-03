@@ -38,11 +38,18 @@ useHead({
         name: fullName.value,
         jobTitle: siteInfo.value?.role ?? 'Front-End Software Engineer',
         url: siteUrl,
+        image: `${siteUrl}/bg/plaid-bg-teal.png`,
         address: {
           '@type': 'PostalAddress',
           addressLocality: siteInfo.value?.city ?? 'Cincinnati',
           addressRegion: siteInfo.value?.state ?? 'OH',
           addressCountry: 'US',
+        },
+        // SEO: Added contactPoint for better E-E-A-T and contact accessibility
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'Customer Service',
+          url: `${siteUrl}/contact`,
         },
         sameAs: [
           'https://www.linkedin.com/in/davidberning/',
@@ -57,6 +64,7 @@ useSeoMeta({
   ogSiteName: () => fullName.value,
   ogUrl: () => `${siteUrl}${route.path}`,
   ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
+  ogLocale: 'en_US',
   twitterCard: 'summary_large_image',
   twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })

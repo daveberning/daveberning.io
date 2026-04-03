@@ -1,3 +1,7 @@
+---
+description: "Dave Berning is a Senior Front-End Software Engineer with 11+ years of experience in Vue, Nuxt, design systems, and front-end architecture for enterprise teams."
+---
+
 # About Dave
 
 I'm a **Senior Front-End Software Engineer** with 11+ years of experience building modern web applications, design systems, and standards setting for enterprise-scale teams. My strongest work sits at the intersection of **Vue, Nuxt, component libraries, and maintainable UI systems**. I care about building products that feel polished for users and practical for the teams who have to support them long after launch.
