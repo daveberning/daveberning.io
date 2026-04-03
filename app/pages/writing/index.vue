@@ -38,8 +38,8 @@ const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
 
 <template>
   <NuxtLayout name="sidebar">
-    <UiText as="h1" ref="titleRef" class="mb-8">Writing</UiText>
-    <div ref="listRef" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <UiText as="h1" class="mb-8">Writing</UiText>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <article v-for="post in posts" :key="post.path" :class="cn('flex flex-col bg-surface border border-border rounded-2xl overflow-hidden transition-colors hover:border-theme')">
         <div v-if="post.featuredImage" class="w-full shrink-0 overflow-hidden">
           <NuxtImg :src="post.featuredImage" :alt="post.title" class="w-full h-48 object-cover" />

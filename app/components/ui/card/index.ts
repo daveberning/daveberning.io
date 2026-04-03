@@ -3,9 +3,7 @@ import { cva } from 'class-variance-authority'
 import type { Ref } from 'vue'
 import { useCreateContext } from '~/composables/useCreateContext'
 import Card from './Card.vue'
-import CardHeader from './CardHeader.vue'
 import CardContent from './CardContent.vue'
-import CardFooter from './CardFooter.vue'
 
 /* Context
 --------------------------------------------------------------------- */
@@ -42,51 +40,7 @@ export const cardVariants = cva(
   },
 )
 
-export const cardHeaderVariants = cva(
-  'px-6 py-4',
-  {
-    variants: {
-      variant: {
-        solid:   'border-b border-border',
-        outline: 'border-b border-border',
-      },
-      color: {
-        teal:   'border-b border-brand-teal-dark dark:border-brand-teal',
-        red:    'border-b border-brand-red-dark dark:border-brand-red',
-        blue:   'border-b border-brand-blue-dark dark:border-brand-blue',
-        green:  'border-b border-brand-green-dark dark:border-brand-green',
-        purple: 'border-b border-brand-purple-dark dark:border-brand-purple',
-      },
-    },
-    defaultVariants: {
-      variant: 'solid',
-    },
-  },
-)
-
 export const cardContentVariants = cva('px-6 py-4')
-
-export const cardFooterVariants = cva(
-  'px-6 py-4',
-  {
-    variants: {
-      variant: {
-        solid:   'border-t border-border',
-        outline: 'border-t border-border',
-      },
-      color: {
-        teal:   'border-t border-brand-teal-dark dark:border-brand-teal',
-        red:    'border-t border-brand-red-dark dark:border-brand-red',
-        blue:   'border-t border-brand-blue-dark dark:border-brand-blue',
-        green:  'border-t border-brand-green-dark dark:border-brand-green',
-        purple: 'border-t border-brand-purple-dark dark:border-brand-purple',
-      },
-    },
-    defaultVariants: {
-      variant: 'solid',
-    },
-  },
-)
 
 /* Types
 --------------------------------------------------------------------- */
@@ -99,17 +53,7 @@ export interface CardProps {
   as?:      string
 }
 
-export interface CardHeaderProps {
-  class?: string
-  as?:    string
-}
-
 export interface CardContentProps {
-  class?: string
-  as?:    string
-}
-
-export interface CardFooterProps {
   class?: string
   as?:    string
 }
@@ -118,7 +62,5 @@ export interface CardFooterProps {
 --------------------------------------------------------------------- */
 export {
   Card as default,
-  CardHeader,
   CardContent,
-  CardFooter,
 }

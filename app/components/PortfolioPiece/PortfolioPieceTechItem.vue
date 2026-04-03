@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { injectPortfolioPieceContext, type PortfolioPieceTechItemProps } from '.'
-import Pill from '~/components/ui/pill/Pill.vue'
 
 const props = defineProps<PortfolioPieceTechItemProps>()
 

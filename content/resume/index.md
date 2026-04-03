@@ -48,7 +48,7 @@ resume:
         - Lead the Front-End Council, aligning front-end practices across multiple product teams.
         - Partner with designers, product managers, and engineers to deliver accessible, performant interfaces.
         - Support mentoring and technical alignment while improving consistency in the front-end development experience.
-    - title: Front-End Web Developer
+    - title: Developer
       organization: Oodle
       period: July 2019 - March 2021
       highlights:

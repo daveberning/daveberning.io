@@ -62,7 +62,6 @@ export const headerBrandVariants = cva('text-lg font-bold transition-opacity hov
 /* Types
 --------------------------------------------------------------------- */
 export type HeaderVariants = VariantProps<typeof headerVariants>
-export type HeaderBrandVariants = VariantProps<typeof headerBrandVariants>
 
 export interface HeaderProps {
   variant?: HeaderVariants['variant']

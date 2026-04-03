@@ -1,4 +1,3 @@
-import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 import type { Ref } from 'vue'
 import { useCreateContext } from '~/composables/useCreateContext'
@@ -40,8 +39,6 @@ export const endorsementRoleVariants = cva('text-xs text-text-muted')
 
 /* Types
 --------------------------------------------------------------------- */
-export type EndorsementVariants = VariantProps<typeof endorsementVariants>
-
 export interface EndorsementProps {
   name:   string
   class?: string

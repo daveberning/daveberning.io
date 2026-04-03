@@ -103,8 +103,6 @@ export interface PortfolioPieceTechItemProps {
 }
 
 export interface PortfolioPieceFooterProps {
-  year?: number
-  url?: string
   class?: string
   as?: string
 }

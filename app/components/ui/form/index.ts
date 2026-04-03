@@ -1,4 +1,3 @@
-import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 import Form from './Form.vue'
 import FormLabel from './FormLabel.vue'
@@ -9,18 +8,6 @@ import FormMessage from './FormMessage.vue'
 
 /* Variants
 --------------------------------------------------------------------- */
-export const formLabelVariants = cva('block text-sm font-medium mb-1.5', {
-  variants: {
-    state: { default: 'text-text', error: '' },
-    mode:  { light: '', dark: '' },
-  },
-  compoundVariants: [
-    { state: 'error', mode: 'light', class: 'text-brand-red' },
-    { state: 'error', mode: 'dark',  class: 'text-brand-red-light' },
-  ],
-  defaultVariants: { state: 'default', mode: 'light' },
-})
-
 export const formInputVariants = cva('w-full rounded-md border bg-surface text-text px-3 py-2.5 text-sm placeholder:text-text-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] focus-visible:ring-theme disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
   {
     variants: {
@@ -79,12 +66,6 @@ export const formMessageVariants = cva('block text-sm mt-1.5 min-h-[1.25rem]', {
 
 /* Types
 --------------------------------------------------------------------- */
-export type FormLabelVariants    = VariantProps<typeof formLabelVariants>
-export type FormInputVariants    = VariantProps<typeof formInputVariants>
-export type FormSelectVariants   = VariantProps<typeof formSelectVariants>
-export type FormTextAreaVariants = VariantProps<typeof formTextAreaVariants>
-export type FormMessageVariants  = VariantProps<typeof formMessageVariants>
-
 export interface FormProps {
   validationSchema: unknown
   class?:           string

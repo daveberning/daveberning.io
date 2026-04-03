@@ -19,7 +19,6 @@ useSeoMeta({
 
 const {
   color,
-  isDark,
 } = useTheme()
 
 const works = computed(() => page.value?.works ?? [])

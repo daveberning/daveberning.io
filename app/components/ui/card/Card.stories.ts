@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
-import Card, { CardHeader, CardContent, CardFooter } from '.'
+import Card, { CardContent } from '.'
 
 const meta: Meta<typeof Card> = {
   title: 'UI/Card',
@@ -19,20 +19,15 @@ const meta: Meta<typeof Card> = {
     variant: 'solid',
   },
   render: (args) => ({
-    components: { Card, CardHeader, CardContent, CardFooter },
+    components: { Card, CardContent },
     setup: () => ({ args }),
     template: `
       <Card v-bind="args" class="w-80">
-        <CardHeader>
+        <CardContent>
           <p class="text-sm font-semibold">Card Title</p>
           <p class="text-xs text-text-muted mt-0.5">Supporting subtitle text</p>
-        </CardHeader>
-        <CardContent>
-          <p class="text-sm">This is the main content area of the card. It can hold any content you need.</p>
+          <p class="text-sm mt-2">This is the main content area of the card. It can hold any content you need.</p>
         </CardContent>
-        <CardFooter>
-          <p class="text-xs text-text-muted">Footer metadata or actions</p>
-        </CardFooter>
       </Card>
     `,
   }),
@@ -71,32 +66,22 @@ export const ContentOnly: Story = {
 
 export const AllVariants: Story = {
   render: () => ({
-    components: { Card, CardHeader, CardContent, CardFooter },
+    components: { Card, CardContent },
     template: `
       <div class="flex flex-wrap gap-4">
         <Card v-for="variant in ['solid', 'outline']" :key="variant" :variant="variant" class="w-64">
-          <CardHeader>
+          <CardContent>
             <p class="text-sm font-semibold capitalize">{{ variant }}</p>
             <p class="text-xs text-text-muted mt-0.5">Subtitle</p>
-          </CardHeader>
-          <CardContent>
-            <p class="text-sm">Content for the {{ variant }} variant.</p>
+            <p class="text-sm mt-2">Content for the {{ variant }} variant.</p>
           </CardContent>
-          <CardFooter>
-            <p class="text-xs text-text-muted">Footer</p>
-          </CardFooter>
         </Card>
         <Card v-for="color in ['teal', 'red', 'blue', 'green', 'purple']" :key="color" :color="color" class="w-64">
-          <CardHeader>
+          <CardContent>
             <p class="text-sm font-semibold capitalize">{{ color }}</p>
             <p class="text-xs mt-0.5">Subtitle</p>
-          </CardHeader>
-          <CardContent>
-            <p class="text-sm">Content for the {{ color }} color.</p>
+            <p class="text-sm mt-2">Content for the {{ color }} color.</p>
           </CardContent>
-          <CardFooter>
-            <p class="text-xs">Footer</p>
-          </CardFooter>
         </Card>
       </div>
     `,

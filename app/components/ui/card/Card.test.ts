@@ -2,9 +2,7 @@ import { h, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import Card from './Card.vue'
-import CardHeader from './CardHeader.vue'
 import CardContent from './CardContent.vue'
-import CardFooter from './CardFooter.vue'
 
 vi.mock('~/composables/useTheme', () => ({
   useTheme: () => ({
@@ -125,26 +123,5 @@ describe('Card', () => {
       expect(wrapper.text()).toContain('content')
     })
 
-    it('CardHeader renders and gets variant/color from context', () => {
-      const wrapper = mount(Card, {
-        props: { color: 'teal' },
-        slots: {
-          default: () => h(CardHeader, null, () => 'title'),
-        },
-      })
-      const header = wrapper.findComponent(CardHeader)
-      expect(header.classes()).toContain('border-brand-teal-dark')
-    })
-
-    it('CardFooter renders and gets variant/color from context', () => {
-      const wrapper = mount(Card, {
-        props: { color: 'teal' },
-        slots: {
-          default: () => h(CardFooter, null, () => 'footer'),
-        },
-      })
-      const footer = wrapper.findComponent(CardFooter)
-      expect(footer.classes()).toContain('border-brand-teal-dark')
-    })
   })
 })

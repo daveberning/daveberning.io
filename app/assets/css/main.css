@@ -112,7 +112,6 @@
   /* Accent re-derivation: shift base lighter so it pops on dark bg */
   --theme-color:       oklch(from var(--theme-color-base) calc(l + 0.08) c h);
   --theme-color-dark:  oklch(from var(--theme-color-base) calc(l + 0.05) c h);
-  --theme-color-darker: oklch(from var(--theme-color-base) calc(l - 0.12) c h);
   --theme-color-light: oklch(from var(--theme-color-base) calc(l + 0.28) c h);
   --theme-fg:          oklch(from var(--theme-color-base) 0.10 0.02 h); /* near-black on lighter accent */
 

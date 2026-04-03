@@ -5,8 +5,6 @@ const aboutDescription = 'Learn about Dave Berning, a Senior Front-End Software 
 
 /* Page Meta Information
 --------------------------------- */
-const { color } = useTheme()
-
 useHead({ title: 'About' })
 useSeoMeta({
   description: aboutDescription,
