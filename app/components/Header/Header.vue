@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import { computed, toRef } from 'vue'
+import { toRef } from 'vue'
 import { headerVariants, provideHeaderContext, type HeaderProps } from '.'
-import { useTheme } from '~/composables/useTheme'
+import { useThemeMode } from '~/composables/useThemeMode'
 import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<HeaderProps>(), {
   variant: 'teal'
 })
 
-const {
-  isDark
-} = useTheme()
-
-const mode = computed(() => isDark.value ? 'dark' : 'light')
+const mode = useThemeMode()
 
 provideHeaderContext({
   variant: toRef(props, 'variant')

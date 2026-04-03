@@ -5,8 +5,8 @@ const workDescription = 'Explore front-end engineering case studies from Dave Be
 
 /* Page Meta Information
 --------------------------------- */
-// SEO: Include keywords (Portfolio, Vue, Nuxt, TypeScript Projects) in page title for better rankings
-useHead({ title: 'Portfolio – Vue, Nuxt & TypeScript Projects' })
+useHead({ title: 'Portfolio' })
+
 useSeoMeta({
   description: workDescription,
   keywords: 'portfolio projects, Vue applications, TypeScript, case studies',
@@ -19,10 +19,7 @@ useSeoMeta({
   twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
 })
 
-const {
-  color,
-} = useTheme()
-
+const { color } = useTheme()
 const works = computed(() => page.value?.works ?? [])
 
 /* Page Content

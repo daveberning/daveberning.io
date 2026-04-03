@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { cn } from '~/lib/utils'
 
-const {
-  isDark
-} = useTheme()
+const { isDark } = useTheme()
 </script>
 
 <template>

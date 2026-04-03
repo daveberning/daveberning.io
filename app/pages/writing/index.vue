@@ -3,10 +3,7 @@ import { cn } from '~/lib/utils'
 
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl as string
-
-const {
-  color
-} = useTheme()
+const { color } = useTheme()
 
 /* Page Meta Information
 --------------------------------- */
@@ -96,12 +93,12 @@ const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
           <UiText class="text-sm text-text-muted line-clamp-2 leading-relaxed">{{ post.description }}</UiText>
           <ul v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-auto list-none">
             <UiPill
-                v-for="tag in post.tags"
-                :key="tag"
-                as="li"
-                :color="color"
-                variant="outline"
-                size="small">
+              v-for="tag in post.tags"
+              :key="tag"
+              as="li"
+              :color="color"
+              variant="outline"
+              size="small">
               {{ tag }}
             </UiPill>
           </ul>

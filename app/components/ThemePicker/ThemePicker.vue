@@ -4,6 +4,7 @@ import { themePickerVariants, THEMES, type ThemePickerProps } from '.'
 import ThemePickerItem from './ThemePickerItem.vue'
 import { cn } from '~/lib/utils'
 import { useTheme } from '~/composables/useTheme'
+import { useKeyboardNavigation } from '~/composables/useKeyboardNavigation'
 
 const props = withDefaults(defineProps<ThemePickerProps>(), {
   orientation: 'vertical',
@@ -17,30 +18,7 @@ const {
 } = useTheme()
 
 const containerRef = ref<HTMLElement | null>(null)
-
-function getButtons(): HTMLButtonElement[] {
-  return Array.from(containerRef.value?.querySelectorAll('button') ?? [])
-}
-
-function onKeyDown(event: KeyboardEvent) {
-  const isVertical = props.orientation === 'vertical'
-  const isPrev = (isVertical && event.key === 'ArrowUp') || (!isVertical && event.key === 'ArrowLeft')
-  const isNext = (isVertical && event.key === 'ArrowDown') || (!isVertical && event.key === 'ArrowRight')
-
-  if (!isPrev && !isNext) return
-
-  event.preventDefault()
-  const buttons = getButtons()
-  const idx = buttons.indexOf(event.target as HTMLButtonElement)
-
-  if (idx === -1) return
-
-  const next = isPrev
-    ? (idx - 1 + buttons.length) % buttons.length
-    : (idx + 1) % buttons.length
-
-  buttons[next]?.focus()
-}
+const { onKeyDown } = useKeyboardNavigation(containerRef, { orientation: props.orientation || 'vertical' })
 </script>
 
 <template>

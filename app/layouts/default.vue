@@ -4,12 +4,9 @@ import { provideTheme } from '~/composables/useTheme'
 const config = useRuntimeConfig()
 const route = useRoute()
 const siteUrl = config.public.siteUrl as string
+const { data: siteInfo } = await useSiteInfo()
 
-const {
-  data: siteInfo
-} = await useSiteInfo()
-
-const { color } = provideTheme()
+provideTheme()
 
 const fullName = computed(() =>
   `${siteInfo.value?.firstName ?? ''} ${siteInfo.value?.lastName ?? ''}`.trim()

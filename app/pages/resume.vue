@@ -23,7 +23,7 @@ if (!resumeData) throw createError({
 
 const { color } = useTheme()
 const resumeTitle = page.value.title
-const resumeDescription = page.value.description ?? 'View the resume of Dave Berning, a Senior Front-End Software Engineer specializing in front-end architecture, design systems, and Vue.'
+const resumeDescription = page.value.description
 const resumeImage = `${siteUrl}/bg/plaid-bg-teal.jpg`
 const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.jpg`)
 const personName = resumeData.name

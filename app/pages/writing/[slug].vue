@@ -4,10 +4,7 @@
 const config = useRuntimeConfig()
 const route = useRoute()
 const siteUrl = config.public.siteUrl as string
-
-const {
-  color
-} = useTheme()
+const { color } = useTheme()
 
 /* Page Content
 --------------------------------- */
@@ -127,6 +124,10 @@ async function copyLink() {
         <span aria-hidden="true">&middot;</span>
         <span>Updated <time :datetime="post!.updatedAt">{{ formattedUpdatedAt }}</time></span>
       </template>
+      <UiText class="text-sm text-text-muted">
+        · Written by
+        <NuxtLink rel="author" href="/" class="text-theme hover:text-theme-dark transition-colors">Dave Berning</NuxtLink>
+      </UiText>
     </div>
     <ul v-if="post!.tags?.length" class="flex flex-wrap gap-2 mb-8 list-none">
       <UiPill v-for="tag in post!.tags" :key="tag" as="li" :color="color" variant="outline" size="small">
@@ -135,12 +136,6 @@ async function copyLink() {
     </ul>
     <article class="prose max-w-none">
       <ContentRenderer :value="post!" />
-      <div class="mt-8 pt-8 border-t border-border flex items-center gap-4">
-        <p class="text-sm text-text-muted">
-          Written by
-          <a rel="author" href="/" class="text-theme hover:text-theme-dark transition-colors">Dave Berning</a>
-        </p>
-      </div>
     </article>
     <ReadOriginal v-if="post!.externalUrl" :href="post!.externalUrl" :platform="post!.platform" class="mt-8" />
     <template #aside>

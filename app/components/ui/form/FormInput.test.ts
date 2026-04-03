@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import FormInput from './FormInput.vue'
@@ -6,25 +6,22 @@ import FormInput from './FormInput.vue'
 const isDarkRef      = ref(false)
 const errorMessageRef = ref<string | undefined>(undefined)
 
-vi.mock('~/composables/useTheme', () => ({
-  useTheme: () => ({
-    isDark:     isDarkRef,
-    color:      ref('teal'),
-    setColor:   vi.fn(),
-    toggleDark: vi.fn(),
-  }),
+vi.mock('~/composables/useThemeMode', () => ({
+  useThemeMode: () => {
+    return computed(() => isDarkRef.value ? 'dark' : 'light')
+  }
 }))
 
-vi.mock('vee-validate', () => ({
-  useField: (nameGetter: () => string) => {
-    nameGetter()
-    return {
-      value:        ref(''),
-      errorMessage: errorMessageRef,
-      handleChange: vi.fn(),
-      handleBlur:   vi.fn(),
-    }
-  },
+vi.mock('~/composables/useFormField', () => ({
+  useFormField: (fieldName: string) => ({
+    value:        ref(''),
+    errorMessage: errorMessageRef,
+    handleChange: vi.fn(),
+    handleBlur:   vi.fn(),
+    state:        computed(() => errorMessageRef.value ? 'error' : 'default'),
+    inputId:      computed(() => `field-${fieldName}`),
+    messageId:    computed(() => `field-${fieldName}-message`),
+  })
 }))
 
 function mountInput({
@@ -99,9 +96,9 @@ describe('FormInput', () => {
   })
 
   describe('event handling', () => {
-    it('does not throw when change event fires', async () => {
+    it('does not throw when input event fires', async () => {
       const wrapper = mountInput()
-      await expect(wrapper.find('input').trigger('change')).resolves.not.toThrow()
+      await expect(wrapper.find('input').trigger('input')).resolves.not.toThrow()
     })
 
     it('does not throw when blur event fires', async () => {

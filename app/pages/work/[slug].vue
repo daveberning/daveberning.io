@@ -11,7 +11,7 @@ const { data: work } = await useAsyncData(route.path, () =>
 
 /* Page Meta Information
 --------------------------------- */
-const { color } = useTheme()
+useTheme()
 
 if (work.value) {
   const canonicalUrl = (work.value as any).externalUrl || `${siteUrl}${route.path}`
@@ -126,12 +126,7 @@ if (!work.value) {
           <UiText color="white">{{ work!.description }}</UiText>
         </UiAsideSection>
         <UiAsideSection v-if="work!.url">
-          <UiLink
-            :to="work!.url"
-            variant="outline"
-            size="large"
-            class="w-full align-center justify-center border-white text-white hover:bg-white/10 hover:text-white"
-          >
+          <UiLink :to="work!.url" variant="outline" size="large" class="w-full align-center justify-center border-white text-white hover:bg-white/10 hover:text-white">
             View Project
           </UiLink>
         </UiAsideSection>

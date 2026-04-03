@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { buttonVariants, type ButtonProps } from '.'
-import { useTheme } from '~/composables/useTheme'
+import { useThemeMode } from '~/composables/useThemeMode'
 import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   as: 'button',
 })
 
-const {
-  isDark
-} = useTheme()
-
-const mode = computed(() => isDark.value ? 'dark' : 'light')
+const mode = useThemeMode()
 </script>
 
 <template>

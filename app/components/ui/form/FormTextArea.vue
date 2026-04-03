@@ -1,27 +1,13 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useField } from 'vee-validate'
 import { formTextAreaVariants, type FormTextAreaProps } from '.'
-import { useTheme } from '~/composables/useTheme'
+import { useThemeMode } from '~/composables/useThemeMode'
+import { useFormField } from '~/composables/useFormField'
 import { cn } from '~/lib/utils'
 
 const props = defineProps<FormTextAreaProps>()
 
-const {
-  isDark
-} = useTheme()
-
-const {
-  value,
-  errorMessage,
-  handleChange,
-  handleBlur
-} = useField(() => props.name)
-
-const mode      = computed(() => isDark.value ? 'dark' : 'light')
-const state     = computed(() => errorMessage.value ? 'error' : 'default')
-const inputId   = computed(() => `field-${props.name}`)
-const messageId = computed(() => `field-${props.name}-message`)
+const mode = useThemeMode()
+const { value, state, inputId, messageId, handleChange, handleBlur } = useFormField(props.name)
 </script>
 
 <template>

@@ -9,17 +9,8 @@ import { cn } from '~/lib/utils'
 
 const { data: siteInfo } = await useSiteInfo()
 const headerRef = ref<ComponentPublicInstance | null>(null)
-
-const {
-  color,
-  isDark
-} = useTheme()
-
-const {
-  isOpen,
-  open,
-  toggle
-} = provideMobileNav()
+const { color, isDark } = useTheme()
+const { isOpen, open, toggle } = provideMobileNav()
 
 useSwipeGesture(headerRef, 'down', open)
 </script>

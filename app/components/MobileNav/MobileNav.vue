@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { nextTick, watch } from 'vue'
+import { ref } from 'vue'
 import { useMobileNav } from '~/composables/useMobileNav'
+import { useFocusTrap } from '~/composables/useFocusTrap'
 import { cn } from '~/lib/utils'
 
 const { isOpen, close } = useMobileNav()
 const { data: siteInfo } = await useSiteInfo()
 const route = useRoute()
+
+const navDrawerRef = ref<HTMLElement | null>(null)
+useFocusTrap(isOpen, navDrawerRef, { autoFocus: true, restoreFocus: true })
 
 function isActive(item: { to: string }): boolean {
   return route.path === item.to || route.path.startsWith(item.to + '/')
@@ -25,49 +29,6 @@ function onTouchEnd(e: TouchEvent) {
   const endY = e.changedTouches[0]?.clientY ?? 0
   if (swipeStartY - endY >= 50) close()
 }
-
-function handleKeydown(e: KeyboardEvent) {
-  if (e.key !== 'Tab') return
-
-  const drawer = document.getElementById('mobile-nav-drawer')
-  if (!drawer) return
-
-  const focusable = Array.from(
-    drawer.querySelectorAll<HTMLElement>(
-      'a[href], button, [tabindex]:not([tabindex="-1"])'
-    )
-  )
-
-  if (focusable.length === 0) return
-
-  const first = focusable.at(0)
-  const last = focusable.at(-1)
-
-  if (!first || !last) return
-
-  if (e.shiftKey) {
-    if (document.activeElement === first) {
-      e.preventDefault()
-      last.focus()
-    }
-  } else {
-    if (document.activeElement === last) {
-      e.preventDefault()
-      first.focus()
-    }
-  }
-}
-
-watch(isOpen, async (open) => {
-  if (open) {
-    await nextTick()
-    const drawer = document.getElementById('mobile-nav-drawer')
-    if (drawer) {
-      const firstLink = drawer.querySelector<HTMLElement>('a[href]')
-      firstLink?.focus()
-    }
-  }
-})
 
 defineExpose({ isOpen, close })
 </script>
@@ -100,10 +61,10 @@ defineExpose({ isOpen, close })
     >
       <nav
         v-if="isOpen"
+        ref="navDrawerRef"
         id="mobile-nav-drawer"
         aria-label="Mobile navigation"
         :class="cn('fixed top-14 left-0 right-0 z-[49] bg-surface border-b border-border shadow-lg')"
-        @keydown="handleKeydown"
         @touchstart.passive="onTouchStart"
         @touchend.passive="onTouchEnd"
       >

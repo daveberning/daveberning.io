@@ -4,9 +4,9 @@ const siteUrl = config.public.siteUrl as string
 
 /* Page Data
 --------------------------------- */
-const {
-  data: siteInfo
-} = await useSiteInfo()
+useHead({ title: '' })
+
+const { data: siteInfo } = await useSiteInfo()
 
 const homeTitle = computed(() =>
   `${siteInfo.value?.firstName} ${siteInfo.value?.lastName} | Front-End Software Engineer`
@@ -19,7 +19,6 @@ const homeDescription = computed(() =>
 useTheme()
 
 useSeoMeta({
-  title: () => homeTitle.value,
   description: () => homeDescription.value,
   ogTitle: () => homeTitle.value,
   ogDescription: () => homeDescription.value,
@@ -54,12 +53,8 @@ useHead({
       <UiText as="h1" class="text-4xl sm:text-5xl lg:text-[4.5vw] lg:whitespace-nowrap xl:whitespace-normal xl:text-[6vw] 2xl:text-[7vw] font-black leading-none">
         {{ siteInfo?.firstName }} {{ siteInfo?.lastName }}
       </UiText>
-      <!-- SEO: Match page title "Front-End Software Engineer" with visible H2 for better E-E-A-T signals -->
       <UiText as="h2" class="text-xl text-center lg:text-[1.75vw] font-light leading-tight my-6 lg:my-10">
-        Front-End Software Engineer
-      </UiText>
-      <UiText as="p" class="text-lg text-center lg:text-[1.25vw] font-light leading-tight text-text-muted mb-6 lg:mb-10">
-        in {{ siteInfo?.city }}, {{ siteInfo?.state }}
+        Front-End Software Engineer in {{ siteInfo?.city }}, {{ siteInfo?.state }}
       </UiText>
       <Navigation dark-variant="outline" class="flex-wrap justify-center lg:flex-nowrap lg:justify-start">
         <NavigationItem v-for="item in siteInfo?.navigation ?? []" :key="item.to" :to="item.to">
