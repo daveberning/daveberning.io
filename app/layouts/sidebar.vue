@@ -23,7 +23,7 @@ useSwipeGesture(headerRef, 'down', open)
         <HeaderBrand>
           <code>&lt;name&gt;</code>{{ siteInfo?.firstName }}<code>&lt;/name&gt;</code>
         </HeaderBrand>
-        <Navigation dark-variant="text" class="hidden md:flex">
+        <Navigation variant="text" color="white" class="hidden md:flex">
           <NavigationItem v-for="item in siteInfo?.navigation ?? []" :key="item.to" :to="item.to">
             {{ item.name }}
           </NavigationItem>

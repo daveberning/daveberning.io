@@ -7,7 +7,10 @@ import NavigationItem from './NavigationItem.vue'
 /* Context
 --------------------------------------------------------------------- */
 interface NavigationContext {
+  variant: Ref<'text' | 'outline' | 'solid' | undefined>
   darkVariant: Ref<'text' | 'outline'>
+  color: Ref<'white' | 'theme' | undefined>
+  darkColor: Ref<'white' | 'theme' | undefined>
 }
 
 export const [
@@ -22,7 +25,10 @@ export const navigationVariants = cva('flex items-center gap-2')
 /* Types
 --------------------------------------------------------------------- */
 export interface NavigationProps {
+  variant?: 'text' | 'outline' | 'solid'
   darkVariant?: 'text' | 'outline'
+  color?: 'white' | 'theme'
+  darkColor?: 'white' | 'theme'
   class?: string
 }
 

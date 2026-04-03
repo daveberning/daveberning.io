@@ -8,7 +8,10 @@ const props = withDefaults(defineProps<NavigationProps>(), {
 })
 
 provideNavigationContext({
-  darkVariant: toRef(props, 'darkVariant')
+  variant: toRef(props, 'variant'),
+  darkVariant: toRef(props, 'darkVariant'),
+  color: toRef(props, 'color'),
+  darkColor: toRef(props, 'darkColor'),
 })
 </script>
 

@@ -56,7 +56,7 @@ useHead({
       <UiText as="h2" class="text-xl text-center lg:text-[1.75vw] font-light leading-tight my-6 lg:my-10">
         Front-End Software Engineer in {{ siteInfo?.city }}, {{ siteInfo?.state }}
       </UiText>
-      <Navigation dark-variant="outline" class="flex-wrap justify-center lg:flex-nowrap lg:justify-start">
+      <Navigation dark-variant="outline" dark-color="white" class="flex-wrap justify-center lg:flex-nowrap lg:justify-start">
         <NavigationItem v-for="item in siteInfo?.navigation ?? []" :key="item.to" :to="item.to">
           {{ item.name }}
         </NavigationItem>
