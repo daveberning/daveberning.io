@@ -100,17 +100,22 @@ useHead({
     <UiText as="h1" class="mb-4">
       Contact
     </UiText>
-    <div v-if="formStatus === 'success'" class="p-4 rounded-md bg-brand-green bg-opacity-10 border border-brand-green">
-      <UiText class="text-brand-green">
-        Thanks for reaching out! I'll get back to you as soon as possible.
-      </UiText>
-    </div>
-    <div v-if="formStatus === 'error'" class="p-4 rounded-md bg-brand-red bg-opacity-10 border border-brand-red mb-4">
-      <UiText class="text-brand-red">
-        Something went wrong. Please try again later or contact me directly via email.
-      </UiText>
-    </div>
-    <UiForm v-if="formStatus !== 'success'" name="contact" :validation-schema="schema" @submit="onSubmit">
+    <template v-if="formStatus ==='success' || formStatus === 'error'">
+      <div v-if="formStatus ==='success'" class="p-4 rounded-md bg-brand-green bg-opacity-10 border border-brand-green">
+        <UiText color="white">
+          Thanks for reaching out! I'll get back to you as soon as possible.
+        </UiText>
+      </div>
+      <div v-if="formStatus ==='error'" class="p-4 rounded-md bg-brand-red bg-opacity-10 border border-brand-red mb-4">
+        <UiText color="white">
+          Something went wrong. Please try again later or contact me directly via email.
+        </UiText>
+      </div>
+      <UiButton @click="formStatus = 'idle'" size="large" :color="color" class="mt-4">
+        Send Another Message
+      </UiButton>
+    </template>
+    <UiForm v-else name="contact" :validation-schema="schema" @submit="onSubmit">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div v-for="field in fields" :key="field.name" :class="field.class">
           <UiFormLabel :name="field.name">
