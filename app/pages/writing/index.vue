@@ -29,6 +29,40 @@ const { data: posts } = await useAsyncData('writing', () =>
   queryCollection('writing').order('publishedAt', 'DESC').all()
 )
 
+useHead({
+  script: [
+    {
+      key: 'writing-collection-schema',
+      type: 'application/ld+json',
+      innerHTML: () => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Writing',
+        description: 'Articles and tutorials by Dave Berning on front-end development, JavaScript, TypeScript, Vue, React, and modern web technologies.',
+        url: `${siteUrl}/writing`,
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: posts.value?.length ?? 0,
+          itemListElement: (posts.value ?? []).map((post, idx) => ({
+            '@type': 'ListItem',
+            position: idx + 1,
+            name: post.title,
+            description: post.description,
+            url: `${siteUrl}${post.path}`,
+            image: post.featuredImage ? `${siteUrl}${post.featuredImage}` : undefined,
+            datePublished: post.publishedAt,
+            author: {
+              '@type': 'Person',
+              name: 'Dave Berning',
+              url: siteUrl,
+            },
+          })),
+        },
+      }),
+    },
+  ],
+})
+
 const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
   month: 'long',

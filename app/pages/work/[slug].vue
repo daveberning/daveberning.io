@@ -15,6 +15,7 @@ const { color } = useTheme()
 
 if (work.value) {
   const canonicalUrl = (work.value as any).externalUrl || `${siteUrl}${route.path}`
+  const workImage = work.value.featuredImage ? `${siteUrl}${work.value.featuredImage}` : `${siteUrl}/bg/plaid-bg-teal.jpg`
 
   useHead({
     title: work.value.title,
@@ -25,11 +26,11 @@ if (work.value) {
     ogTitle: work.value.title,
     ogDescription: work.value.description,
     ogType: 'website',
-    ogImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
+    ogImage: workImage,
     ogUrl: canonicalUrl,
     twitterTitle: work.value.title,
     twitterDescription: work.value.description,
-    twitterImage: `${siteUrl}/bg/plaid-bg-teal.jpg`,
+    twitterImage: workImage,
   })
 
   useHead({
@@ -39,11 +40,20 @@ if (work.value) {
         type: 'application/ld+json',
         innerHTML: JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'CreativeWork',
+          '@type': 'SoftwareApplication',
           name: work.value.title,
           description: work.value.description,
-          url: `${siteUrl}${route.path}`,
-          image: `${siteUrl}/bg/plaid-bg-teal.jpg`,
+          url: canonicalUrl,
+          image: workImage,
+          applicationCategory: 'WebApplication',
+          developer: {
+            '@type': 'Person',
+            name: 'Dave Berning',
+            url: siteUrl,
+          },
+          ...(work.value.technologies && {
+            keywords: work.value.technologies.join(', '),
+          }),
         }),
       },
     ],

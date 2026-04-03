@@ -35,6 +35,10 @@ if (post.value) {
             '@type': 'Person',
             name: 'Dave Berning',
             url: siteUrl,
+            sameAs: [
+              'https://www.linkedin.com/in/davidberning/',
+              'https://github.com/daveberning',
+            ],
           },
         }),
       },

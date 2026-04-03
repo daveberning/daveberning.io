@@ -40,6 +40,24 @@ const endorsements = computed(() => {
     .filter(t => t != null)
 })
 
+const extractTextFromMarkdown = (body: any): string => {
+  if (!body) return ''
+  if (typeof body === 'string') return body
+  if (body.children && Array.isArray(body.children)) {
+    return body.children
+      .map((node: any) => {
+        if (node.children && Array.isArray(node.children)) {
+          return node.children
+            .map((child: any) => child.value || '')
+            .join('')
+        }
+        return node.value || ''
+      })
+      .join(' ')
+  }
+  return ''
+}
+
 useHead({
   script: [
     {
@@ -53,12 +71,25 @@ useHead({
         url: `${siteUrl}/endorsements`,
         mainEntity: {
           '@type': 'ItemList',
-          itemListElement: endorsements.value.map((endorsement, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            name: endorsement.name,
-            url: `${siteUrl}${endorsement.path}`,
-          })),
+          itemListElement: endorsements.value.map((endorsement, index) => {
+            const textContent = extractTextFromMarkdown(endorsement.body)
+            const excerpt = textContent.substring(0, 160).trim() + (textContent.length > 160 ? '...' : '')
+
+            return {
+              '@type': 'ListItem',
+              position: index + 1,
+              name: endorsement.name,
+              description: excerpt || endorsement.name,
+              author: {
+                '@type': 'Person',
+                name: endorsement.name,
+                jobTitle: endorsement.role,
+                affiliation: endorsement.company,
+                ...(endorsement.image && { image: `${siteUrl}${endorsement.image}` }),
+              },
+              url: `${siteUrl}${endorsement.path}`,
+            }
+          }),
         },
       }),
     },
