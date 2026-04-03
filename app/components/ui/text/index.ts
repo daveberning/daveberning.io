@@ -7,12 +7,12 @@ import Text from './Text.vue'
 export const textVariants = cva('', {
   variants: {
     as: {
-      h1: 'text-5xl font-black',
-      h2: 'text-4xl font-black',
-      h3: 'text-3xl font-bold',
-      h4: 'text-2xl font-bold',
-      h5: 'text-xl font-bold',
-      h6: 'text-lg font-bold',
+      h1: 'text-5xl font-black leading-tight tracking-tight',
+      h2: 'text-4xl font-black leading-tight tracking-tight',
+      h3: 'text-3xl font-bold leading-snug tracking-tight',
+      h4: 'text-2xl font-bold leading-snug tracking-tight',
+      h5: 'text-xl font-bold leading-normal',
+      h6: 'text-lg font-bold leading-normal',
       p:  'text-base font-normal',
     },
     color: {

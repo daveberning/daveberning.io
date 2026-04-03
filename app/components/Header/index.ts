@@ -17,7 +17,7 @@ export const [
 /* Variants
 --------------------------------------------------------------------- */
 export const headerVariants = cva(
-  'sticky top-0 z-50 flex justify-center p-2 border-b border-theme-dark',
+  'sticky top-0 z-50 flex justify-center p-2 border-b border-theme-dark backdrop-blur-md',
   {
     variants: {
       variant: {
@@ -28,8 +28,8 @@ export const headerVariants = cva(
         purple: '',
       },
       mode: {
-        light: 'bg-theme',
-        dark:  'bg-theme-dark',
+        light: 'bg-theme/90',
+        dark:  'bg-theme-dark/90',
       },
     },
     defaultVariants: {

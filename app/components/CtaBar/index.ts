@@ -4,7 +4,7 @@ import { cva } from 'class-variance-authority'
 /* Variants
 --------------------------------------------------------------------- */
 export const ctaBarVariants = cva(
-  'w-full flex justify-center px-4 py-18 bg-theme',
+  'w-full flex justify-center px-4 py-18',
   {
     variants: {
       color: {
@@ -16,7 +16,7 @@ export const ctaBarVariants = cva(
       },
       mode: {
         light: 'bg-theme',
-        dark:  'bg-theme',
+        dark:  'bg-theme-dark',
       },
     },
     defaultVariants: {

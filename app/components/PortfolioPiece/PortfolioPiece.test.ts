@@ -66,11 +66,11 @@ describe('PortfolioPiece', () => {
     expect(wrapper.classes()).toContain('border-l-4')
   })
 
-  it('applies all color variants', () => {
+  it('applies all color variants with grey idle border', () => {
     const colors = ['teal', 'red', 'blue', 'green', 'purple'] as const
     for (const color of colors) {
       const wrapper = mountRoot({ color })
-      expect(wrapper.classes()).toContain(`border-brand-${color}-dark`)
+      expect(wrapper.classes()).toContain('border-border')
     }
   })
 

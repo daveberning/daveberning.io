@@ -24,7 +24,7 @@ export const [
 /* Variants
 --------------------------------------------------------------------- */
 export const portfolioPieceVariants = cva(
-  'rounded-2xl overflow-hidden border transition-colors flex flex-col',
+  'rounded-2xl overflow-hidden border transition-colors flex flex-col hover:border-theme',
   {
     variants: {
       variant: {
@@ -32,11 +32,11 @@ export const portfolioPieceVariants = cva(
         outline: 'bg-transparent border-2 border-border text-text',
       },
       color: {
-        teal: 'border-brand-teal-dark dark:border-brand-teal',
-        red: 'border-brand-red-dark dark:border-brand-red',
-        blue: 'border-brand-blue-dark dark:border-brand-blue',
-        green: 'border-brand-green-dark dark:border-brand-green',
-        purple: 'border-brand-purple-dark dark:border-brand-purple',
+        teal:   '',
+        red:    '',
+        blue:   '',
+        green:  '',
+        purple: '',
       },
       accent: {
         none: '',
