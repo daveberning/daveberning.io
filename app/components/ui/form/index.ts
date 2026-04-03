@@ -68,6 +68,7 @@ export const formMessageVariants = cva('block text-sm mt-1.5 min-h-[1.25rem]', {
 --------------------------------------------------------------------- */
 export interface FormProps {
   validationSchema: unknown
+  name?:            string
   class?:           string
 }
 

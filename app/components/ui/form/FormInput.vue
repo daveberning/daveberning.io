@@ -13,6 +13,7 @@ const { value, state, inputId, messageId, handleChange, handleBlur } = useFormFi
 <template>
   <input
     :id="inputId"
+    :name="props.name"
     :type="props.type ?? 'text'"
     :value="value as string"
     :placeholder="props.placeholder"

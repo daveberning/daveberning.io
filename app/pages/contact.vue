@@ -58,8 +58,24 @@ const schema = object({
   message:      string().required('Message is required'),
 })
 
-function onSubmit(_values: Record<string, unknown>) {
-  // TODO: implement form submission
+const formStatus = ref<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+async function onSubmit(values: Record<string, unknown>) {
+  formStatus.value = 'submitting'
+  try {
+    const body = new URLSearchParams({ 'form-name': 'contact' })
+    for (const [key, val] of Object.entries(values)) {
+      body.append(key, String(val ?? ''))
+    }
+    await $fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+    })
+    formStatus.value = 'success'
+  } catch {
+    formStatus.value = 'error'
+  }
 }
 
 useHead({
@@ -84,7 +100,17 @@ useHead({
     <UiText as="h1" class="mb-4">
       Contact
     </UiText>
-    <UiForm :validation-schema="schema" @submit="onSubmit">
+    <div v-if="formStatus === 'success'" class="p-4 rounded-md bg-brand-green bg-opacity-10 border border-brand-green">
+      <UiText class="text-brand-green">
+        Thanks for reaching out! I'll get back to you as soon as possible.
+      </UiText>
+    </div>
+    <div v-if="formStatus === 'error'" class="p-4 rounded-md bg-brand-red bg-opacity-10 border border-brand-red mb-4">
+      <UiText class="text-brand-red">
+        Something went wrong. Please try again later or contact me directly via email.
+      </UiText>
+    </div>
+    <UiForm v-if="formStatus !== 'success'" name="contact" :validation-schema="schema" @submit="onSubmit">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div v-for="field in fields" :key="field.name" :class="field.class">
           <UiFormLabel :name="field.name">
@@ -95,11 +121,11 @@ useHead({
         </div>
       </div>
       <div class="mt-6 flex flex-col-reverse sm:flex-row justify-end gap-3">
-        <UiButton type="reset" variant="text" :color="color" size="large" class="w-full sm:w-auto">
+        <UiButton type="reset" variant="text" :color="color" size="large" class="w-full sm:w-auto" :disabled="formStatus === 'submitting'">
           Clear
         </UiButton>
-        <UiButton type="submit" variant="solid" :color="color" size="large" class="w-full sm:w-auto">
-          Send Message
+        <UiButton type="submit" variant="solid" :color="color" size="large" class="w-full sm:w-auto" :disabled="formStatus === 'submitting'">
+          {{ formStatus === 'submitting' ? 'Sending...' : 'Send Message' }}
         </UiButton>
       </div>
     </UiForm>

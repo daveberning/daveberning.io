@@ -18,7 +18,8 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <form :class="props.class" @submit.prevent="onSubmit" @reset.prevent="resetForm()">
+  <form :name="props.name" :data-netlify="props.name ? 'true' : undefined" :class="props.class" @submit.prevent="onSubmit" @reset.prevent="resetForm()">
+    <input v-if="props.name" type="hidden" name="form-name" :value="props.name">
     <slot />
   </form>
 </template>

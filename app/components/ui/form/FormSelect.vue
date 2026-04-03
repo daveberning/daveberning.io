@@ -14,6 +14,7 @@ const { value, state, inputId, messageId, handleChange, handleBlur } = useFormFi
   <div class="relative">
     <select
       :id="inputId"
+      :name="props.name"
       :value="value as string"
       :aria-describedby="messageId"
       :aria-invalid="state === 'error' || undefined"
