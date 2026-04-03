@@ -56,6 +56,34 @@ if (work.value) {
           }),
         }),
       },
+      {
+        key: 'breadcrumb-schema',
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: siteUrl,
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Work',
+              item: `${siteUrl}/work`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: work.value.title,
+              item: canonicalUrl,
+            },
+          ],
+        }),
+      },
     ],
   })
 }

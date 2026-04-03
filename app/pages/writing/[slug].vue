@@ -22,6 +22,7 @@ if (post.value) {
     title: post.value.title,
     script: [
       {
+        key: 'article-schema',
         type: 'application/ld+json',
         innerHTML: JSON.stringify({
           '@context': 'https://schema.org',
@@ -40,6 +41,34 @@ if (post.value) {
               'https://github.com/daveberning',
             ],
           },
+        }),
+      },
+      {
+        key: 'breadcrumb-schema',
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: siteUrl,
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Writing',
+              item: `${siteUrl}/writing`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: post.value.title,
+              item: canonicalUrl,
+            },
+          ],
         }),
       },
     ],
@@ -106,6 +135,12 @@ async function copyLink() {
     </ul>
     <article class="prose max-w-none">
       <ContentRenderer :value="post!" />
+      <div class="mt-8 pt-8 border-t border-border flex items-center gap-4">
+        <p class="text-sm text-text-muted">
+          Written by
+          <a rel="author" href="/" class="text-theme hover:text-theme-dark transition-colors">Dave Berning</a>
+        </p>
+      </div>
     </article>
     <ReadOriginal v-if="post!.externalUrl" :href="post!.externalUrl" :platform="post!.platform" class="mt-8" />
     <template #aside>

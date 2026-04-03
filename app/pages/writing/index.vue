@@ -51,6 +51,9 @@ useHead({
             url: `${siteUrl}${post.path}`,
             image: post.featuredImage ? `${siteUrl}${post.featuredImage}` : undefined,
             datePublished: post.publishedAt,
+            ...(post.readingTime && {
+              duration: `PT${post.readingTime}M`,
+            }),
             author: {
               '@type': 'Person',
               name: 'Dave Berning',
