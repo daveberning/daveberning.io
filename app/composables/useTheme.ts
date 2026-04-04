@@ -114,6 +114,6 @@ export function provideTheme(): ThemeContext {
  */
 export function useTheme(): ThemeContext {
   const context = inject(THEME_KEY)
-  if (!context) throw new Error('[useTheme] Missing provider — call provideTheme() in a parent component.')
+  if (!context) return provideTheme()
   return context
 }

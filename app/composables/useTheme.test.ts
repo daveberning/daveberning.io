@@ -76,15 +76,16 @@ describe('useTheme', () => {
     vi.unstubAllGlobals()
   })
 
-  it('throws when no provider is present', () => {
+  it('auto-provides when no parent provider is present', () => {
     const Consumer = defineComponent({
       setup() {
-        useTheme()
-        return () => h('div')
+        const theme = useTheme()
+        return () => h('div', `${theme.color.value}:${String(theme.isDark.value)}`)
       },
     })
 
-    expect(() => mount(Consumer)).toThrow('[useTheme] Missing provider')
+    const wrapper = mount(Consumer)
+    expect(wrapper.text()).toBe('teal:false')
   })
 
   it('reads persisted theme values on mount without subscribing to matchMedia changes', async () => {

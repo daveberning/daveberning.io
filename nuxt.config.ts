@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'https://daveberning.netlify.app', // https://daveberning.io
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'https://daveberning.io',
     },
   },
   hooks: {

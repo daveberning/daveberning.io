@@ -33,13 +33,13 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'Person',
         name: fullName.value,
-        jobTitle: siteInfo.value?.role ?? 'Front-End Software Engineer',
+        jobTitle: siteInfo.value?.role,
         url: siteUrl,
-        image: `${siteUrl}/bg/plaid-bg-teal.png`,
+        image: `${siteUrl}/bg/plaid-bg-teal.jpg`,
         address: {
           '@type': 'PostalAddress',
-          addressLocality: siteInfo.value?.city ?? 'Cincinnati',
-          addressRegion: siteInfo.value?.state ?? 'OH',
+          addressLocality: siteInfo.value?.city,
+          addressRegion: siteInfo.value?.state,
           addressCountry: 'US',
         },
         // SEO: Added contactPoint for better E-E-A-T and contact accessibility
