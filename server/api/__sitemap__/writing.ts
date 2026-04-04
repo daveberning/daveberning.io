@@ -1,5 +1,7 @@
-export default defineSitemapEventHandler(async () => {
-  const posts = await queryCollection('writing')
+import { queryCollection } from '@nuxt/content/server'
+
+export default defineSitemapEventHandler(async (event) => {
+  const posts = await queryCollection(event, 'writing')
     .where('status', '=', 'published')
     .all()
 

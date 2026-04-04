@@ -47,7 +47,7 @@ const exportStyles = `
     min-height: var(--pdf-export-min-height) !important;
   }
 
-  .print\:hidden,
+  .print\\:hidden,
   .site-header,
   .site-cta,
   .site-footer,

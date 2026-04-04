@@ -97,7 +97,8 @@ export function useFocusTrap(isActive: Ref<boolean>, containerRef: Ref<HTMLEleme
   }
 
   watch(isActive, (active) => {
-    active ? attach() : detach()
+    if (active) attach()
+    else detach()
   })
 
   onUnmounted(() => {
