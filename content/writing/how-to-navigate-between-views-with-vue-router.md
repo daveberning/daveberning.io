@@ -9,6 +9,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-navigate-between-views-with-vue-router"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Vue Router tutorial** walks through the essentials of client-side navigation in a Vue single-page application. It starts with the routing problem that SPAs need to solve, then shows how Vue Router gives structure to multiple views rendered inside one browser page.

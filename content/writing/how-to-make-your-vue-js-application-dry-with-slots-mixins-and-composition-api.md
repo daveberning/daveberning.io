@@ -9,6 +9,7 @@ readingTime: 6
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-make-your-vue-js-application-dry-with-slots-mixins-and-composition-api"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This article is about keeping a **Vue.js application DRY** by choosing the right reuse strategy for the problem in front of you. Rather than repeating template code or duplicating component logic, it compares several of Vue’s built-in patterns for sharing behavior more intelligently.

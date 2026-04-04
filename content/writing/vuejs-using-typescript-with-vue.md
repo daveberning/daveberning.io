@@ -9,6 +9,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/vuejs-using-typescript-with-vue"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **TypeScript with Vue** tutorial explains how to bring stronger typing into a Vue project without losing the simplicity of Single-File Components. It walks through generating a Vue CLI app with TypeScript support, configuring the compiler, and using typed data structures inside `.vue` files.

@@ -9,6 +9,7 @@ readingTime: 6
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-manage-state-in-a-vue-js-application-with-vuex"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Vuex state management tutorial** is a practical walkthrough of how to manage shared data in a growing Vue.js application. Using a favorites-based example, it explains the single source of truth pattern and shows how Vuex helps keep application state predictable as more components need access to the same data.

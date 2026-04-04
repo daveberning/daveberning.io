@@ -9,6 +9,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/vuejs-css-frameworks-vuejs"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This article explores how to integrate **CSS frameworks with Vue.js** while still preserving clean component design. Using Bootstrap 4 as the primary example and touching on Bulma and Foundation, it shows the setup process and the shared ideas behind bringing a framework into a Vue project.

@@ -9,6 +9,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-create-user-interactions-with-events-in-vue"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Vue events tutorial** explains how user interactions move through a Vue application, from simple DOM clicks to communication between components. It starts with the role of browser events, then shows how Vue simplifies common interaction patterns inside templates.

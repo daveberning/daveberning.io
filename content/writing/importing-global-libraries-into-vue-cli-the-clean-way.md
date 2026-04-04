@@ -9,6 +9,7 @@ readingTime: 3
 category: "Article"
 externalUrl: "https://medium.com/front-end-weekly/importing-global-libraries-into-vue-cli-the-clean-way-9a7945213fa0"
 platform: "Medium"
+status: "published"
 ---
 
 This **Vue CLI and Webpack tutorial** focuses on a cleaner way to import global libraries into a Vue project. Instead of relying on awkward relative paths or dropping global styles into the wrong place, the article uses Bulma to show how a small alias configuration can make dependency imports more readable and maintainable.

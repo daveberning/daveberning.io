@@ -8,6 +8,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/vuejs-vue-chart-js"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Chart.js with Vue.js tutorial** shows how to turn reactive application data into polished charts inside a Vue component. It starts with project setup, then walks through building a reusable chart component that can render canvas-based visualizations without a lot of ceremony.

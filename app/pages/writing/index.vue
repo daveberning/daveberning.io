@@ -22,9 +22,12 @@ useSeoMeta({
 
 /* Page Content
 --------------------------------- */
-const { data: posts } = await useAsyncData('writing', () =>
-  queryCollection('writing').order('publishedAt', 'DESC').all()
-)
+const { data: posts } = await useAsyncData('writing', () => {
+  if (import.meta.dev) {
+    return queryCollection('writing').order('publishedAt', 'DESC').all()
+  }
+  return queryCollection('writing').where('status', '=', 'published').order('publishedAt', 'DESC').all()
+})
 
 useHead({
   script: [
@@ -83,6 +86,7 @@ const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
         </div>
         <div class="flex flex-col gap-3 p-6">
           <div class="flex items-center gap-3">
+            <span v-if="post.status === 'draft'" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-400">Draft</span>
             <time :datetime="post.publishedAt" class="text-xs text-text-muted">{{ formatDate(post.publishedAt) }}</time>
             <span v-if="post.readingTime" aria-hidden="true" class="text-text-muted text-xs">&middot;</span>
             <span v-if="post.readingTime" class="text-xs text-text-muted">{{ post.readingTime }} min read</span>

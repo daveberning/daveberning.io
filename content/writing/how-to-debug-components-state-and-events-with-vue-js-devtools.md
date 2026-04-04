@@ -9,6 +9,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-debug-components-state-and-events-with-vue-js-devtools"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Vue Devtools tutorial** focuses on one of the fastest ways to debug a Vue.js application: inspecting components, state, and events directly in the browser. Instead of constantly switching between source files and the running app, the guide shows how Vue Devtools shortens the feedback loop for everyday debugging work.

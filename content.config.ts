@@ -128,6 +128,7 @@ export default defineContentConfig({
         category:      z.string().optional(),
         externalUrl:   z.string().url().optional(),
         platform:      z.string().optional(),
+        status:        z.enum(['draft', 'published']).default('published'),
       }),
     }),
   },

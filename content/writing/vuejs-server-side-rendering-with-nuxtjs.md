@@ -8,6 +8,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/vuejs-server-side-rendering-with-nuxtjs"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Nuxt.js server-side rendering tutorial** introduces the core ideas behind building universal Vue applications with better first-load performance and stronger SEO potential. It explains why SSR matters, how Nuxt simplifies the setup, and why the framework became such a popular entry point for Vue developers exploring server-rendered apps.

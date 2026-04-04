@@ -12,6 +12,9 @@ const { data: post } = await useAsyncData(route.path, () =>
   queryCollection('writing').path(route.path).first()
 )
 
+if (post.value?.status === 'draft' && !import.meta.dev)
+  throw createError({ statusCode: 404, statusMessage: 'Post not found' })
+
 if (post.value) {
   const canonicalUrl = `${siteUrl}${route.path}`
 
@@ -118,6 +121,9 @@ async function copyLink() {
   <NuxtLayout name="sidebar">
     <NuxtImg v-if="post!.featuredImage" :src="post!.featuredImage" :alt="post!.title" class="w-full rounded-xl object-cover aspect-[16/9] mb-8"/>
     <UiText as="h1" class="mb-3">{{ post!.title }}</UiText>
+    <div v-if="post!.status === 'draft'" class="inline-flex items-center mb-4">
+      <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-400">Draft — not published</span>
+    </div>
     <div class="flex items-center gap-2 text-sm text-text-muted mb-6">
       <time :datetime="post!.publishedAt">{{ formattedPublishedAt }}</time>
       <template v-if="post!.updatedAt && post!.updatedAt !== post!.publishedAt">

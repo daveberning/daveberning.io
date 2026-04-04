@@ -8,6 +8,7 @@ readingTime: 3
 category: "Article"
 externalUrl: "https://medium.com/front-end-weekly/creating-alias-for-package-imports-in-react-99d455284029"
 platform: "Medium"
+status: "published"
 ---
 
 This **React and Webpack article** focuses on a small workflow improvement that has a big impact on code quality: creating import aliases. Instead of scattering deep relative paths throughout a project, the tutorial shows how aliases make components, assets, and shared dependencies easier to import and easier to refactor later.

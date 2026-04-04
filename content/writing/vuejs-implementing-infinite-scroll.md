@@ -8,6 +8,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/vuejs-implementing-infinite-scroll"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Vue infinite scroll tutorial** shows how to load more content automatically as the user reaches the bottom of the page. That pattern replaces traditional pagination with a smoother experience that feels more natural on mobile devices and content-heavy interfaces.

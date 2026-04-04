@@ -8,6 +8,7 @@ readingTime: 3
 category: "Article"
 externalUrl: "https://medium.com/parsec-digital/which-is-better-for-seo-www-or-non-www-871edd4fe5aa"
 platform: "Medium"
+status: "published"
 ---
 
 This **technical SEO article** answers a question that still comes up in client work and site migrations: should you use `www` or a non-`www` domain? The core takeaway is straightforward. Google does not rank one version above the other, so the real SEO issue is not preference but consistency.

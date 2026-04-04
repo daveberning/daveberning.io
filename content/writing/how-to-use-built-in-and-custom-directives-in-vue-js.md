@@ -9,6 +9,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-use-built-in-and-custom-directives-in-vue-js"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Vue.js directives tutorial** breaks down the built-in template features that make Vue feel fast, expressive, and productive for frontend development. It explains when to use `v-if`, `v-else-if`, and `v-show` for conditional rendering, how `v-on` handles event listeners, how `v-bind` and `v-model` power dynamic attributes and form input binding, and where `v-html` fits when you need to render raw markup carefully.

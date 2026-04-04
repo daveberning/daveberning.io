@@ -9,6 +9,7 @@ readingTime: 6
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-use-vue-js-environment-modes-with-a-node-js-mock-data-layer"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This tutorial tackles a common frontend workflow problem: building a Vue.js interface before the real backend is ready. It shows how to use **Vue environment modes** to swap configurations cleanly and pair the app with a lightweight Node.js mock data layer during development.

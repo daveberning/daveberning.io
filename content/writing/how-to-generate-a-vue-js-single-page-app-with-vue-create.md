@@ -9,6 +9,7 @@ readingTime: 5
 category: "Tutorial"
 externalUrl: "https://www.digitalocean.com/community/tutorials/how-to-generate-a-vue-js-single-page-app-with-vue-create"
 platform: "DigitalOcean"
+status: "published"
 ---
 
 This **Vue CLI tutorial** shows how to generate a Vue.js single-page application and then shape it into a cleaner component-based project. It begins with installing Vue CLI and scaffolding a new app, which makes it a useful starting point for developers who are new to modern Vue project setup.

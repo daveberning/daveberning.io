@@ -66,6 +66,7 @@ export default defineNuxtConfig({
   ],
   sitemap: {
     exclude: ['/storybook/**'],
+    sources: ['/api/__sitemap__/writing'],
   },
   css: [
     '~/assets/css/main.css'
