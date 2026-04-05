@@ -21,6 +21,9 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
+      link: [
+        { rel: 'manifest', href: '/manifest.webmanifest' },
+      ],
     },
   },
   runtimeConfig: {

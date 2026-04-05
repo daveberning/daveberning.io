@@ -25,7 +25,7 @@ const { color } = useTheme()
 const resumeTitle = page.value.title
 const resumeDescription = page.value.description
 const resumeImage = `${siteUrl}/bg/plaid-bg-teal.jpg`
-const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.jpg`)
+const portraitSrc = computed(() => `/portraits/dave-${color.value}-sm.webp`)
 const personName = resumeData.name
 const siteLabel = siteUrl.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
 const socialLinks = computed(() => siteInfo.value?.socialLinks ?? [])
