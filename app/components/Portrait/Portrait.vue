@@ -18,6 +18,7 @@ const src = computed(() =>
 
 <template>
   <NuxtPicture
+    :key="src"
     :src="src"
     v-bind="props.size === 'small' ? { width: 500, height: 500 } : { sizes: 'sm:100vw md:100vw lg:560px xl:608px' }"
     :img-attrs="{ class: cn(portraitVariants({ size: props.size }), props.class), alt: 'Portrait of Dave Berning, a Senior Front-End Software Engineer' }" />

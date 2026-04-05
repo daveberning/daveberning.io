@@ -7,13 +7,13 @@ import { mount } from '@vue/test-utils'
  * and trigger native events (e.g. error) without a live Nuxt app instance.
  */
 const NuxtPictureStub = defineComponent({
-  props: ['src', 'alt', 'class'],
+  props: ['src', 'alt', 'class', 'imgAttrs'],
   emits: ['error'],
   setup(props, { emit }) {
     return () => h('img', {
       src: props.src,
-      alt: props.alt,
-      class: props.class,
+      alt: props.alt ?? props.imgAttrs?.alt,
+      class: props.class ?? props.imgAttrs?.class,
       onError: () => emit('error'),
     })
   },
