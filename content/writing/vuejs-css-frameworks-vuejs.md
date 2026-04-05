@@ -3,7 +3,7 @@ title: "Integrating and Using CSS Frameworks with Vue.js"
 description: "Learn how to integrate Bootstrap, Bulma, and Foundation with Vue.js while keeping your component architecture clean, reusable, and maintainable."
 publishedAt: "2018-04-01"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "CSS Frameworks", "CSS"]
 readingTime: 5
 category: "Tutorial"

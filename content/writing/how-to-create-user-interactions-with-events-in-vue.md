@@ -3,7 +3,7 @@ title: "How To Create User Interactions with Events in Vue"
 description: "Learn how to handle Vue events with v-on, event modifiers, key modifiers, and custom events so components respond cleanly to user interactions."
 publishedAt: "2021-05-28"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "Events", "Component Communication"]
 readingTime: 5
 category: "Tutorial"

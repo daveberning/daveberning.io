@@ -3,7 +3,7 @@ title: "How To Debug Components, State, and Events with Vue.js Devtools"
 description: "Learn how to use Vue Devtools to inspect components, trace events, debug Vuex state, and speed up troubleshooting in Vue.js applications."
 publishedAt: "2022-01-25"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "Vuex", "Vue Devtools", "Debugging"]
 readingTime: 5
 category: "Tutorial"

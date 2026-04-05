@@ -122,7 +122,15 @@ useSeoMeta({
             <aside class="resume-sidebar bg-theme-black text-theme-fg px-6 py-8 print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
               <div class="flex flex-col gap-7 print:gap-0">
                 <div class="flex flex-col items-center gap-4">
-                  <img :src="portraitSrc" alt="Dave Berning, Senior Front-End Software Engineer" class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg">
+                  <NuxtImg
+                    :src="portraitSrc"
+                    width="112"
+                    height="112"
+                    format="webp"
+                    quality="80"
+                    alt="Dave Berning, Senior Front-End Software Engineer"
+                    class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg"
+                  />
                   <div class="text-center">
                     <UiText as="h2" class="text-2xl" color="white">{{ resumeData.name }}</UiText>
                     <UiText class="mt-1 text-xs font-semibold uppercase tracking-[0.1em]" :color="color">

@@ -2,7 +2,7 @@
 name: "Fran Frye"
 role: "Project Manager"
 company: "Upright Communications"
-image: "/portraits/fran.jpeg"
+image: "/portraits/fran.webp"
 ---
 
 Dave is an awesome person to work with! He is constantly upbeat and ready to tackle any job that comes his way. You're always met with a smile when working with Dave.

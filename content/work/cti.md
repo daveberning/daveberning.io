@@ -4,11 +4,11 @@ description: "Built a Vue and Prismic CMS website for CTI, turning detailed desi
 role: "Web Developer"
 year: 2019
 technologies: ["Vue.js", "TypeScript", "SCSS", "Prismic CMS"]
-featuredImage: "/work/cti.png"
+featuredImage: "/work/cti.webp"
 url: "http://www.ctifacts.com/"
 ---
 
-![Screenshot of the CTI clinical research website homepage](/work/cti.png)
+![Screenshot of the CTI clinical research website homepage](/work/cti.webp)
 
 ## Project Details
 

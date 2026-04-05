@@ -4,11 +4,11 @@ description: "Built front-end architecture for the WDSuite Servicing platform us
 role: "Senior Front-End Engineer"
 year: 2023
 technologies: ["Vue", "TypeScript", "Tailwind", "Micro-frontends", "Module Federation", "Handsontable"]
-featuredImage: "/work/wdsuite-servicing.png"
+featuredImage: "/work/wdsuite-servicing.webp"
 url: "https://suite.walkerdunlop.com/servicing"
 ---
 
-![Screenshot of the WDSuite Servicing platform interface](/work/wdsuite-servicing.png)
+![Screenshot of the WDSuite Servicing platform interface](/work/wdsuite-servicing.webp)
 
 ## Project Details
 

@@ -7,21 +7,18 @@ const props = withDefaults(defineProps<PortraitProps>(), {
   size: 'large',
 })
 
-const {
-  color
-} = useTheme()
+const { color } = useTheme()
 
 const src = computed(() =>
   props.size === 'small'
-    ? `/portraits/dave-${color.value}-sm.jpg`
-    : `/portraits/dave-${color.value}.png`,
+    ? `/portraits/dave-${color.value}-sm.webp`
+    : `/portraits/dave-${color.value}.webp`,
 )
 </script>
 
 <template>
-  <img
+  <NuxtPicture
     :src="src"
-    :alt="`Front-end engineer, Dave Berning in a ${color} plaid flannel shirt and grey pants with his hands in his pockets, smiling and looking at the camera.`"
-    :class="cn(portraitVariants({ size: props.size }), props.class)"
-  />
+    v-bind="props.size === 'small' ? { width: 500, height: 500 } : { sizes: 'sm:100vw md:100vw lg:560px xl:608px' }"
+    :img-attrs="{ class: cn(portraitVariants({ size: props.size }), props.class), alt: 'Portrait of Dave Berning, a Senior Front-End Software Engineer' }" />
 </template>

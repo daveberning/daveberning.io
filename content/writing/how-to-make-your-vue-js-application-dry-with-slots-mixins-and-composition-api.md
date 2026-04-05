@@ -3,7 +3,7 @@ title: "How To Make Your Vue.js Application DRY with Slots, Mixins, and Composit
 description: "Learn how to keep Vue applications DRY with slots, mixins, and the Composition API so you can reuse logic, reduce duplication, and scale cleanly."
 publishedAt: "2021-12-03"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "Composition API", "Component Reuse"]
 readingTime: 6
 category: "Tutorial"

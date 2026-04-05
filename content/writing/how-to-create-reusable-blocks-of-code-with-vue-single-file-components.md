@@ -3,7 +3,7 @@ title: "How To Create Reusable Blocks of Code with Vue Single-File Components"
 description: "Learn how Vue Single-File Components, props, and slots help you build reusable UI blocks, cleaner component architecture, and more maintainable Vue apps."
 publishedAt: "2021-04-07"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "Single-File Components", "Component Architecture"]
 readingTime: 5
 category: "Tutorial"

@@ -3,7 +3,7 @@ title: "How To Generate a Vue.js Single Page App With the Vue CLI"
 description: "Learn how to scaffold a Vue.js single-page application with the Vue CLI, understand the project structure, and start building reusable Vue components."
 publishedAt: "2021-01-11"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "Vue CLI", "Single-Page Applications"]
 readingTime: 5
 category: "Tutorial"

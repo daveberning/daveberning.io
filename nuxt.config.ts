@@ -57,6 +57,18 @@ export default defineNuxtConfig({
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL ?? 'https://daveberning.io',
   },
+  image: {
+    format: ['webp'],
+    quality: 80,
+    screens: {
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      '2xl': 1536,
+    },
+    densities: [1, 2],
+  },
   modules: [
     '@nuxt/image',
     '@nuxt/fonts',

@@ -2,7 +2,7 @@
 name: "Andrès Pegado-Boureghida"
 role: "Principal Software Engineer"
 company: "HelloData.ai"
-image: "/portraits/andres.jpeg"
+image: "/portraits/andres.webp"
 ---
 
 I had the pleasure of working with Dave at Walker & Dunlop, where he was a Senior Frontend Engineer on my team.

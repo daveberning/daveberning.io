@@ -12,7 +12,7 @@ const showImage = computed(() => !!props.src && !imgError.value)
 
 <template>
   <div :class="cn(endorsementPhotoVariants(), props.class)">
-    <img
+    <NuxtPicture
       v-if="showImage"
       :src="props.src"
       :alt="`${name}'s photo`"

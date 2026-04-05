@@ -2,7 +2,7 @@
 name: "Jess Fitak"
 role: "Head of Customer Success"
 company: "HelloData.ai"
-image: "/portraits/jess.jpeg"
+image: "/portraits/jess.webp"
 ---
 
 I've had the pleasure of working with Dave for several years across multiple projects. It's rare to find a person with superb technical abilities who can communicate their value and vision to non-technical teams. Dave keeps everyone in mind when working towards solutions and goes out of his way to ensure the team, as a whole, is on the same page.

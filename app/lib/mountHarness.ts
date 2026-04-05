@@ -3,6 +3,23 @@ import { provideTheme } from '~/composables/useTheme'
 import { mount } from '@vue/test-utils'
 
 /**
+ * Stub for NuxtPicture that renders a plain <img> so tests can assert on src/alt
+ * and trigger native events (e.g. error) without a live Nuxt app instance.
+ */
+const NuxtPictureStub = defineComponent({
+  props: ['src', 'alt', 'class'],
+  emits: ['error'],
+  setup(props, { emit }) {
+    return () => h('img', {
+      src: props.src,
+      alt: props.alt,
+      class: props.class,
+      onError: () => emit('error'),
+    })
+  },
+})
+
+/**
  * A simple wrapper component that provides the theme context to its children.
  * Useful for testing components that rely on the theme context.
  */
@@ -45,7 +62,13 @@ export function mountWithTheme(component: unknown, options: Parameters<typeof mo
     slots: {
       default: () => h(component as never, options?.props ?? {}, options?.slots ?? {}),
     },
-    global: options.global,
+    global: {
+      ...options.global,
+      stubs: {
+        NuxtPicture: NuxtPictureStub,
+        ...options.global?.stubs,
+      },
+    },
   })
 
   return wrapper.findComponent(component as never)

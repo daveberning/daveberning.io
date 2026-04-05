@@ -3,7 +3,7 @@ title: "How To Use Built-In and Custom Directives in Vue.js"
 description: "Learn how to use Vue.js directives like v-if, v-show, v-bind, v-model, and custom directives to build dynamic, interactive front-end components."
 publishedAt: "2021-08-12"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "Vue Directives", "Frontend"]
 readingTime: 5
 category: "Tutorial"

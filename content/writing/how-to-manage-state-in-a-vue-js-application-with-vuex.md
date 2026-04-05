@@ -3,7 +3,7 @@ title: "How To Manage State in a Vue.js Application with Vuex"
 description: "Learn how to manage state in Vue.js with Vuex using stores, actions, mutations, and modules to build predictable, scalable front-end applications."
 publishedAt: "2021-09-30"
 updatedAt: ""
-featuredImage: "/writing/vuejs.jpeg"
+featuredImage: "/writing/vuejs.webp"
 tags: ["JavaScript", "Vue", "Vuex", "State Management"]
 readingTime: 6
 category: "Tutorial"
