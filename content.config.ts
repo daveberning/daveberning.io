@@ -1,7 +1,9 @@
+import { existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const testContentPath = fileURLToPath(new URL('./test/fixtures/content', import.meta.url))
+const siblingContentRepoPath = fileURLToPath(new URL('../daveberning.io-content', import.meta.url))
 
 /**
  * Determines whether to use local test content based on environment variables.
@@ -12,13 +14,38 @@ function shouldUseLocalTestContent() {
 }
 
 /**
+ * Helper function to determine the local content path based on environment variables and testing conditions.
+ * It checks for the presence of LOCAL_CONTENT_PATH, whether it's running in a test environment, and if a sibling content repository exists.
+ */
+function getLocalContentPath() {
+  if (process.env.LOCAL_CONTENT_PATH)
+    return process.env.LOCAL_CONTENT_PATH
+
+  if (shouldUseLocalTestContent())
+    return testContentPath
+
+  if (existsSync(siblingContentRepoPath))
+    return siblingContentRepoPath
+}
+
+/**
+ * Helper function to get authentication details for the content repository.
+ * It checks for environment variables CONTENT_REPO_TOKEN and CONTENT_REPO_USERNAME to determine the appropriate credentials.
+ */
+function getContentRepoAuth() {
+  return {
+    username: process.env.CONTENT_REPO_USERNAME ?? 'daveberning',
+    token: process.env.CONTENT_REPO_TOKEN ?? ''
+  }
+}
+
+/**
  * Helper function to determine content source based on environment variables.
  * If LOCAL_CONTENT_PATH is set, it will use the local filesystem for content.
  * Otherwise, it will fetch content from the specified GitHub repository.
  */
 function githubSource(include: string) {
-  const localContentPath = process.env.LOCAL_CONTENT_PATH
-    ?? (shouldUseLocalTestContent() ? testContentPath : undefined)
+  const localContentPath = getLocalContentPath()
 
   if (localContentPath) {
     return { cwd: localContentPath, include }
@@ -28,10 +55,7 @@ function githubSource(include: string) {
     repository: {
       url: 'https://github.com/daveberning/daveberning.io-content',
       branch: 'main',
-      auth: {
-        username: 'daveberning',
-        token: process.env.CONTENT_REPO_TOKEN ?? '',
-      },
+      auth: getContentRepoAuth(),
     },
     include,
   }

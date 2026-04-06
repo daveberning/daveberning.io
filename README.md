@@ -31,6 +31,10 @@ npm run dev
 The dev server starts at `http://localhost:3000`.
 
 > Requires Node 22+.
+>
+> Local content resolution order is:
+> `LOCAL_CONTENT_PATH` → sibling `../daveberning.io-content` checkout → remote GitHub content repo.
+> For tests, `test/fixtures/content` is used automatically.
 
 ## Commands
 
