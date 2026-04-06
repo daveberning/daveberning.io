@@ -17,9 +17,8 @@ const src = computed(() =>
 </script>
 
 <template>
-  <NuxtPicture
-    :key="src"
+  <img
     :src="src"
-    v-bind="props.size === 'small' ? { width: 500, height: 500 } : { sizes: 'sm:100vw md:100vw lg:560px xl:608px' }"
-    :img-attrs="{ class: cn(portraitVariants({ size: props.size }), props.class), alt: 'Portrait of Dave Berning, a Senior Front-End Software Engineer' }" />
+    :alt="`Front-end engineer, Dave Berning in a ${color} plaid flannel shirt and grey pants with his hands in his pockets, smiling and looking at the camera.`"
+    :class="cn(portraitVariants({ size: props.size }), props.class)" />
 </template>
