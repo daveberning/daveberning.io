@@ -23,7 +23,7 @@ jobs:
     name: Test Coverage
     runs-on: ubuntu-latest
     env:
-      CONTENT_REPO_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
+      LOCAL_CONTENT_PATH: ./test/fixtures/content
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -36,6 +36,8 @@ jobs:
   browser-tests:
     name: Browser Test (${{ matrix.browser }})
     runs-on: ubuntu-latest
+    env:
+      LOCAL_CONTENT_PATH: ./test/fixtures/content
     strategy:
       fail-fast: false
       matrix:
@@ -53,6 +55,8 @@ jobs:
   typecheck:
     name: Typecheck
     runs-on: ubuntu-latest
+    env:
+      LOCAL_CONTENT_PATH: ./test/fixtures/content
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

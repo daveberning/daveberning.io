@@ -1,8 +1,27 @@
+import { fileURLToPath } from 'node:url'
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
+const testContentPath = fileURLToPath(new URL('./test/fixtures/content', import.meta.url))
+
+/**
+ * Determines whether to use local test content based on environment variables.
+ * This is useful for testing scenarios where you want to use a local directory instead of fetching from GitHub.
+ */
+function shouldUseLocalTestContent() {
+  return process.env.VITEST === 'true' || process.env.NODE_ENV === 'test'
+}
+
+/**
+ * Helper function to determine content source based on environment variables.
+ * If LOCAL_CONTENT_PATH is set, it will use the local filesystem for content.
+ * Otherwise, it will fetch content from the specified GitHub repository.
+ */
 function githubSource(include: string) {
-  if (process.env.LOCAL_CONTENT_PATH) {
-    return { cwd: process.env.LOCAL_CONTENT_PATH, include }
+  const localContentPath = process.env.LOCAL_CONTENT_PATH
+    ?? (shouldUseLocalTestContent() ? testContentPath : undefined)
+
+  if (localContentPath) {
+    return { cwd: localContentPath, include }
   }
 
   return {
