@@ -5,7 +5,7 @@ const { isDark } = useTheme()
 </script>
 
 <template>
-  <main :class="cn('flex flex-col-reverse lg:flex-row items-center lg:items-stretch h-dvh lg:h-screen lg:overflow-hidden 2xl:justify-center', isDark ? 'bg-theme-black' : 'bg-background')">
+  <main :class="cn('homepage-layout flex flex-col-reverse lg:flex-row items-center lg:items-stretch h-dvh lg:h-screen lg:overflow-hidden 2xl:justify-center', isDark ? 'bg-theme-black' : 'bg-background')">
     <slot />
   </main>
 </template>
