@@ -1,5 +1,23 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
+function githubSource(include: string) {
+  if (process.env.LOCAL_CONTENT_PATH) {
+    return { cwd: process.env.LOCAL_CONTENT_PATH, include }
+  }
+
+  return {
+    repository: {
+      url: 'https://github.com/daveberning/daveberning.io-content',
+      branch: 'main',
+      auth: {
+        username: 'daveberning',
+        token: process.env.CONTENT_REPO_TOKEN ?? '',
+      },
+    },
+    include,
+  }
+}
+
 const workItemSchema = z.object({
   title:        z.string(),
   description:  z.string(),
@@ -39,7 +57,7 @@ export default defineContentConfig({
   collections: {
     siteInfo: defineCollection({
       type: 'page',
-      source: 'site-information.md',
+      source: githubSource('site-information.md'),
       schema: z.object({
         firstName:  z.string(),
         lastName:   z.string(),
@@ -61,7 +79,7 @@ export default defineContentConfig({
     }),
     content: defineCollection({
       type: 'page',
-      source: '**/*.md',
+      source: githubSource('**/*.md'),
       schema: z.object({
         title: z.string().optional(),
         description: z.string().optional(),
@@ -85,7 +103,7 @@ export default defineContentConfig({
     }),
     endorsements: defineCollection({
       type: 'page',
-      source: 'endorsements/*.md',
+      source: githubSource('endorsements/*.md'),
       schema: z.object({
         name:    z.string().optional(),
         role:    z.string().optional(),
@@ -95,12 +113,12 @@ export default defineContentConfig({
     }),
     works: defineCollection({
       type: 'page',
-      source: 'work/*.md',
+      source: githubSource('work/*.md'),
       schema: workItemSchema,
     }),
     about: defineCollection({
       type: 'page',
-      source: 'about/*.md',
+      source: githubSource('about/*.md'),
       schema: z.object({
         specializations:  z.array(z.string()).optional(),
         location:         z.string().optional(),
@@ -116,7 +134,7 @@ export default defineContentConfig({
     }),
     writing: defineCollection({
       type: 'page',
-      source: 'writing/*.md',
+      source: githubSource('writing/*.md'),
       schema: z.object({
         title:         z.string(),
         description:   z.string(),
