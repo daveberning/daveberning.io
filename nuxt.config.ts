@@ -104,5 +104,18 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+          },
+          langs: ['javascript', 'typescript', 'vue', 'html', 'css', 'bash', 'json', 'yaml', 'markdown', 'shell'],
+        },
+      },
+    },
+  },
   compatibilityDate: '2025-03-19',
 })
