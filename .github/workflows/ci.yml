@@ -22,6 +22,8 @@ jobs:
   test-coverage:
     name: Test Coverage
     runs-on: ubuntu-latest
+    env:
+      CONTENT_REPO_TOKEN: ${{ secrets.CONTENT_REPO_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -134,7 +136,7 @@ jobs:
         with:
           publish-dir: .output/public
           production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.CONTENT_REPO_TOKEN }}
           deploy-message: ${{ github.event.head_commit.message }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
