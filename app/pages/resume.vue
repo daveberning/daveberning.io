@@ -200,7 +200,7 @@ useSeoMeta({
                     </ul>
                   </ResumeEntry>
                 </ResumeSection>
-                <ResumeSection title="Additional Experience">
+                <ResumeSection title="Teaching">
                   <ResumeEntry
                     v-for="item in resumeData.teaching ?? []"
                     :key="`${item.title}-${item.organization}`"
@@ -216,8 +216,10 @@ useSeoMeta({
                       </li>
                     </ul>
                   </ResumeEntry>
+                </ResumeSection>
+                <ResumeSection v-if="resumeData.writing?.length" title="Publications">
                   <ResumeEntry
-                    v-for="item in resumeData.writing ?? []"
+                    v-for="item in resumeData.writing"
                     :key="`${item.title}-${item.organization}`"
                     :title="item.title"
                     :organization="item.organization"
