@@ -183,6 +183,14 @@ pre .shiki {
 }
 
 /* =====================================================================
+   Prose blockquote children
+   ===================================================================== */
+.prose blockquote footer,
+.prose blockquote cite {
+  @apply not-italic text-sm text-text-muted mt-3 block;
+}
+
+/* =====================================================================
    Page transitions
    - Header, footer, CTA bar are NOT targeted — they appear instantly.
    - .site-layout-main > * and .site-layout-aside stagger in/out.

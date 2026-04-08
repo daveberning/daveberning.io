@@ -6,3 +6,4 @@
 - [navigator.clipboard stubbing](./feedback_clipboard_stub.md) — use vi.stubGlobal, not Object.assign; clipboard is getter-only in happy-dom
 - [Text span selector ambiguity with Icon stub](./feedback_span_text_selector.md) — use wrapper.text() not find('span') when Icon is stubbed as a span
 - [CodeBlock coverage status](./project_code_block_coverage.md) — all 362 tests pass; known V8 branch quirk on CodeBlock.vue line 36; pre-existing gaps in Form.vue and mountHarness.ts
+- [Blockquote and ProseImg coverage](./project_blockquote_proseimg_coverage.md) — both at 100%; no mocks needed; ProseImg left/right variants include extra responsive classes beyond spec

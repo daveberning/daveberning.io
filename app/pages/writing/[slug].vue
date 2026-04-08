@@ -76,12 +76,12 @@ if (post.value) {
 
   useSeoMeta({
     description: post.value.description,
-    ogTitle: post.value.title,
+    ogTitle: `${post.value.title} | Dave Berning`,
     ogDescription: post.value.description,
     ogType: 'article',
     ogImage: post.value.featuredImage ?? `${siteUrl}/bg/plaid-bg-teal.jpg`,
     ogUrl: canonicalUrl,
-    twitterTitle: post.value.title,
+    twitterTitle: `${post.value.title} | Dave Berning`,
     twitterDescription: post.value.description,
     twitterImage: post.value.featuredImage ?? `${siteUrl}/bg/plaid-bg-teal.jpg`,
     articlePublishedTime: post.value.publishedAt,

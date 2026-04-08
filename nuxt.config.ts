@@ -16,6 +16,30 @@ function createFilteredLogger() { // Ignoring sourcemap and lexical errors that 
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // Legacy redirects for blog posts that were moved to the /writing section
+  routeRules: {
+    '/how-to-stay-ahead-of-googles-non-intrusive-popup-update': {
+      redirect: { to: '/writing/how-to-stay-ahead-of-googles-non-intrusive-popup-update', statusCode: 301 },
+    },
+    '/which-is-better-for-seo-www-or-non-www': {
+      redirect: { to: '/writing/which-is-better-for-seo-www-or-non-www', statusCode: 301 },
+    },
+    '/best-way-to-learn-find-a-topic-run-with-it': {
+      redirect: { to: '/writing/best-way-to-learn-find-a-topic-run-with-it', statusCode: 301 },
+    },
+    '/setting-up-and-getting-rest-service-data-with-firebase-and-axios': {
+      redirect: { to: '/writing/setting-up-and-getting-rest-service-data-with-firebase-and-axios', statusCode: 301 },
+    },
+    '/creating-alias-for-package-imports-in-react': {
+      redirect: { to: '/writing/creating-alias-for-package-imports-in-react', statusCode: 301 },
+    },
+    '/importing-global-libraries-into-vue-cli-the-clean-way': {
+      redirect: { to: '/writing/importing-global-libraries-into-vue-cli-the-clean-way', statusCode: 301 },
+    },
+    '/five-things-every-new-web-developer-should-do': {
+      redirect: { to: '/writing/five-things-every-new-web-developer-should-do', statusCode: 301 },
+    },
+  },
   app: {
     pageTransition: { name: 'page' },
     head: {
