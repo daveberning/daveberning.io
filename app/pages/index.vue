@@ -16,7 +16,13 @@ const homeDescription = computed(() =>
   `Senior Front-End Software Engineer in ${siteInfo.value?.city}, ${siteInfo.value?.state} specializing in Vue, Nuxt, TypeScript, design systems, and front-end architecture.`
 )
 
-useTheme()
+const { isDark } = useTheme()
+
+const homeSocialLinkClass = computed(() =>
+  isDark.value
+    ? ''
+    : 'border-theme-black/30 text-theme-black hover:border-theme-black hover:bg-theme-black/8 active:bg-theme-black/14'
+)
 
 useSeoMeta({
   description: () => homeDescription.value,
@@ -61,7 +67,10 @@ useHead({
           {{ item.name }}
         </NavigationItem>
       </Navigation>
-      <SocialLinks :links="siteInfo?.socialLinks ?? []" class="mt-6 lg:mt-4" />
+      <SocialLinks
+        :links="siteInfo?.socialLinks ?? []"
+        :link-class="homeSocialLinkClass"
+        class="mt-6 lg:mt-4" />
     </div>
   </NuxtLayout>
 </template>

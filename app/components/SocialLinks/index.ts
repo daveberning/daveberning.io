@@ -7,8 +7,9 @@ export interface SocialLink {
 }
 
 export interface SocialLinksProps {
-  links?: SocialLink[]
-  class?: string
+  links?:     SocialLink[]
+  class?:     string
+  linkClass?: string
 }
 
 /* Components

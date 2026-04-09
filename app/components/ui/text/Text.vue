@@ -21,7 +21,7 @@ const mode = computed(() => isDark.value ? 'dark' : 'light')
 </script>
 
 <template>
-  <component :is="props.as" :class="cn(textVariants({ as: props.as as TextAs, color: props.color as TextVariants['color'], mode }), attrs.class)">
+  <component :is="props.as" v-bind="{ ...attrs, class: cn(textVariants({ as: props.as as TextAs, color: props.color as TextVariants['color'], mode }), attrs.class) }">
     <slot />
   </component>
 </template>

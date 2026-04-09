@@ -15,7 +15,10 @@ const props = withDefaults(defineProps<SocialLinksProps>(), {
         :aria-label="link.label"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center justify-center w-11 h-11 rounded-full border border-white/40 text-white hover:border-white hover:bg-white/10 active:bg-white/20 transition-colors">
+        :class="cn(
+          'flex items-center justify-center w-11 h-11 rounded-full border border-white/40 text-white hover:border-white hover:bg-white/10 active:bg-white/20 transition-colors',
+          props.linkClass,
+        )">
         <Icon :name="link.icon" class="w-4 h-4" />
       </a>
     </li>
