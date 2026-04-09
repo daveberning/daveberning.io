@@ -139,7 +139,7 @@ useSeoMeta({
                   </div>
                 </div>
                 <section class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.2em]" :color="color">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[--tracking-widest-resume]" :color="color">
                     Details
                   </UiText>
                   <ul role="list" class="grid gap-2.5 list-none">
@@ -155,7 +155,7 @@ useSeoMeta({
                   </ul>
                 </section>
                 <section v-for="group in resumeData.skillGroups" :key="group.title" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[--tracking-widest-resume] text-theme">
                     {{ group.title }}
                   </UiText>
                   <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-white/80 marker:text-theme/60">
@@ -165,7 +165,7 @@ useSeoMeta({
                   </ul>
                 </section>
                 <section v-if="resumeData.highlights?.length" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[--tracking-widest-resume] text-theme">
                     Highlights
                   </UiText>
                   <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-white/80 marker:text-theme/60">

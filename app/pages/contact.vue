@@ -101,15 +101,21 @@ useHead({
       Contact
     </UiText>
     <template v-if="formStatus ==='success' || formStatus === 'error'">
-      <div v-if="formStatus ==='success'" class="p-4 rounded-md bg-brand-green bg-opacity-10 border border-brand-green">
-        <UiText color="white">
-          Thanks for reaching out! I'll get back to you as soon as possible.
-        </UiText>
+      <div v-if="formStatus ==='success'" role="alert" class="p-4 rounded-md bg-brand-green bg-opacity-10 border border-brand-green">
+        <div class="flex items-start gap-3">
+          <Icon name="lucide:check-circle" class="size-5 shrink-0 text-brand-green mt-0.5" aria-hidden="true" />
+          <UiText color="white">
+            <strong>Success</strong> — Thanks for reaching out! I'll get back to you as soon as possible.
+          </UiText>
+        </div>
       </div>
-      <div v-if="formStatus ==='error'" class="p-4 rounded-md bg-brand-red bg-opacity-10 border border-brand-red mb-4">
-        <UiText color="white">
-          Something went wrong. Please try again later or contact me directly via email.
-        </UiText>
+      <div v-if="formStatus ==='error'" role="alert" class="p-4 rounded-md bg-brand-red bg-opacity-10 border border-brand-red mb-4">
+        <div class="flex items-start gap-3">
+          <Icon name="lucide:alert-circle" class="size-5 shrink-0 text-brand-red mt-0.5" aria-hidden="true" />
+          <UiText color="white">
+            <strong>Error</strong> — Something went wrong. Please try again later or contact me directly via email.
+          </UiText>
+        </div>
       </div>
       <UiButton @click="formStatus = 'idle'" size="large" :color="color" class="mt-4">
         Send Another Message

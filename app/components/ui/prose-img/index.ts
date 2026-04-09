@@ -25,6 +25,7 @@ export type ProseImgVariants = VariantProps<typeof proseImgVariants>
 export interface ProseImgProps {
   src: string
   alt: string
+  caption?: string
   align?: ProseImgVariants['align']
   width?: string | number
   height?: string | number

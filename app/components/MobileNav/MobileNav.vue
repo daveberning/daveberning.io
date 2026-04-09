@@ -64,7 +64,7 @@ defineExpose({ isOpen, close })
         ref="navDrawerRef"
         id="mobile-nav-drawer"
         aria-label="Mobile navigation"
-        :class="cn('fixed top-14 left-0 right-0 z-[49] bg-surface border-b border-border shadow-lg')"
+        :class="cn('fixed top-14 left-0 right-0 z-[49] bg-surface border-b border-border shadow-lg max-h-[calc(100dvh-3.5rem)] overflow-y-auto')"
         @touchstart.passive="onTouchStart"
         @touchend.passive="onTouchEnd"
       >

@@ -77,7 +77,7 @@ const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
   <NuxtLayout name="sidebar">
     <UiText as="h1" class="mb-8">Writing</UiText>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article v-for="post in posts" :key="post.path" :class="cn('flex flex-col bg-surface border border-border rounded-2xl overflow-hidden transition-colors hover:border-theme')">
+      <article v-for="post in posts" :key="post.path" :class="cn('relative flex flex-col bg-surface border border-border rounded-2xl overflow-hidden transition-colors hover:border-theme')">
         <div v-if="post.featuredImage" class="w-full shrink-0 overflow-hidden">
           <NuxtImg :src="post.featuredImage" :alt="post.title" class="w-full h-48 object-cover" />
         </div>
@@ -91,8 +91,8 @@ const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', {
             <span v-if="post.readingTime" aria-hidden="true" class="text-text-muted text-xs">&middot;</span>
             <span v-if="post.readingTime" class="text-xs text-text-muted">{{ post.readingTime }} min read</span>
           </div>
-          <NuxtLink :to="post.path" class="text-text hover:text-theme transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:rounded-sm focus-visible:outline-theme">
-            <UiText as="h2" class="text-xl font-semibold leading-snug">{{ post.title }}</UiText>
+          <NuxtLink :to="post.path" class="text-text hover:text-theme transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:rounded-sm focus-visible:outline-theme after:absolute after:inset-0 after:content-['']">
+            <UiText as="p" role="heading" aria-level="2" class="text-xl font-semibold leading-snug">{{ post.title }}</UiText>
           </NuxtLink>
           <UiText class="text-sm text-text-muted line-clamp-2 leading-relaxed">{{ post.description }}</UiText>
           <ul v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-auto list-none">

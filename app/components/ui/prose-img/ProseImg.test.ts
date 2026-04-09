@@ -22,13 +22,6 @@ describe('ProseImg', () => {
       expect(img.attributes('alt')).toBe('Test image')
     })
 
-    it('renders <figcaption> with the alt text when alt is non-empty', () => {
-      const wrapper = mount(ProseImg, { props: { src: '/img/test.jpg', alt: 'Caption text' } })
-      const caption = wrapper.find('figcaption')
-      expect(caption.exists()).toBe(true)
-      expect(caption.text()).toBe('Caption text')
-    })
-
     it('does not render <figcaption> when alt is an empty string', () => {
       const wrapper = mount(ProseImg, { props: { src: '/img/test.jpg', alt: '' } })
       expect(wrapper.find('figcaption').exists()).toBe(false)

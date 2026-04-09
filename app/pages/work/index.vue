@@ -61,7 +61,7 @@ useHead({
     <UiText as="h1" class="mb-8">
       Work
     </UiText>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
       <PortfolioPiece v-for="work in works" :key="work.title" :color="color" variant="solid">
         <PortfolioPieceHeader :title="work.title" :role="work.role" />
         <PortfolioPieceBody>

@@ -7,13 +7,15 @@ import Text from './Text.vue'
 export const textVariants = cva('', {
   variants: {
     as: {
-      h1: 'text-5xl font-black leading-tight tracking-tight',
-      h2: 'text-4xl font-black leading-tight tracking-tight',
-      h3: 'text-3xl font-bold leading-snug tracking-tight',
-      h4: 'text-2xl font-bold leading-snug tracking-tight',
-      h5: 'text-xl font-bold leading-normal',
-      h6: 'text-lg font-bold leading-normal',
-      p:  'text-base font-normal',
+      h1:   'text-5xl font-black leading-tight tracking-tight',
+      h2:   'text-4xl font-black leading-tight tracking-tight',
+      h3:   'text-3xl font-bold leading-snug tracking-tight',
+      h4:   'text-2xl font-bold leading-snug tracking-tight',
+      h5:   'text-xl font-bold leading-normal',
+      h6:   'text-lg font-bold leading-normal',
+      p:    'text-base font-normal',
+      div:  'text-base font-normal',
+      span: 'text-base font-normal',
     },
     color: {
       default: '',       // resolved via compound variants + mode
@@ -47,7 +49,7 @@ export const textVariants = cva('', {
 --------------------------------------------------------------------- */
 export type TextVariants = VariantProps<typeof textVariants>
 
-export type TextAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
+export type TextAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div' | 'span'
 
 export interface TextProps {
   as?:    TextAs

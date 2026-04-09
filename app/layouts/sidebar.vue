@@ -42,16 +42,16 @@ useSwipeGesture(headerRef, 'down', open)
       </div>
     </div>
     <CtaBar class="site-cta text-center flex gap-4">
-      <UiText as="h3" color="white">Let's Work Together</UiText>
-      <div class="m-4">
-        <UiText color="white">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
+      <UiText as="h3" color="white" class="mb-4">Let's Work Together</UiText>
+      <UiText color="white" class="leading-relaxed max-w-prose mx-auto mb-4">I'm always open to new opportunities, freelance projects, and meaningful collaborations. Whether you have an idea or just want to connect, I'd love to hear from you.</UiText>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <UiButton v-if="route.name !== 'resume'" as="a" :href="siteInfo?.resumeUrl ?? '#'" color="white" variant="outline" size="large">
+          View Resume
+        </UiButton>
+        <UiLink v-else to="/contact" color="white" variant="outline" size="large">
+          Contact Me
+        </UiLink>
       </div>
-      <UiButton v-if="route.name !== 'resume'" as="a" :href="siteInfo?.resumeUrl ?? '#'" color="white" variant="outline" size="large">
-        View Resume
-      </UiButton>
-      <UiLink v-else to="/contact" color="white" variant="outline" size="large">
-        Contact Me
-      </UiLink>
       <SocialLinks :links="siteInfo?.socialLinks ?? []" class="justify-center mt-4" />
     </CtaBar>
     <Footer class="site-footer" />
