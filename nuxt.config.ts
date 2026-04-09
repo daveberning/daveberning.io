@@ -141,5 +141,10 @@ export default defineNuxtConfig({
       },
     },
   },
+  nitro: {
+    prerender: {
+      ignore: [/^\/writing\?/],
+    },
+  },
   compatibilityDate: '2025-03-19',
 })
