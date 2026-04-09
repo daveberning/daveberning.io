@@ -52,7 +52,12 @@ jobs:
           cache: npm
       - run: npm install
       - run: npx playwright install --with-deps ${{ matrix.browser }}
-      - run: npm run test:browser:${{ matrix.browser }}
+      - run: |
+          if [ "${{ matrix.browser }}" = "webkit" ]; then
+            xvfb-run --auto-servernum npm run test:browser:webkit
+          else
+            npm run test:browser:${{ matrix.browser }}
+          fi
 
   typecheck:
     name: Typecheck
