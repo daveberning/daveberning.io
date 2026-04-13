@@ -120,7 +120,7 @@ useSeoMeta({
         <Resume class="resume-shell overflow-hidden print:overflow-hidden print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
           <div class="resume-grid grid lg:grid-cols-[15rem_minmax(0,1fr)] print:grid-cols-[15rem_minmax(0,1fr)]">
             <aside class="resume-sidebar bg-theme-black text-theme-fg px-6 py-8 print:[print-color-adjust:exact] print:[-webkit-print-color-adjust:exact]">
-              <div class="flex flex-col gap-7 print:gap-0">
+              <div class="flex flex-col gap-7 print:gap-3">
                 <div class="flex flex-col items-center gap-4">
                   <NuxtImg
                     :src="portraitSrc"
@@ -129,17 +129,17 @@ useSeoMeta({
                     format="webp"
                     quality="80"
                     alt="Dave Berning, Senior Front-End Software Engineer"
-                    class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg"
+                    class="h-28 w-28 rounded-full border-4 border-theme object-cover shadow-lg print:h-20 print:w-20"
                   />
                   <div class="text-center">
-                    <UiText as="h2" class="text-2xl" color="white">{{ resumeData.name }}</UiText>
+                    <UiText as="h2" class="text-2xl print:text-xl" color="white">{{ resumeData.name }}</UiText>
                     <UiText class="mt-1 text-xs font-semibold uppercase tracking-[0.1em]" :color="color">
                       {{ resumeData.role }}
                     </UiText>
                   </div>
                 </div>
-                <section class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[--tracking-widest-resume]" :color="color">
+                <section class="break-inside-avoid flex flex-col gap-3 print:pt-5">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest" :color="color">
                     Details
                   </UiText>
                   <ul role="list" class="grid gap-2.5 list-none">
@@ -154,21 +154,21 @@ useSeoMeta({
                     </li>
                   </ul>
                 </section>
-                <section v-for="group in resumeData.skillGroups" :key="group.title" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[--tracking-widest-resume] text-theme">
+                <section v-for="group in resumeData.skillGroups" :key="group.title" class="break-inside-avoid flex flex-col gap-3 print:pt-5">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest text-theme">
                     {{ group.title }}
                   </UiText>
-                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-white/80 marker:text-theme/60">
+                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-4 text-white/80 marker:text-theme/60 print:space-y-0.5">
                     <li v-for="skill in group.items" :key="skill">
                       {{ skill }}
                     </li>
                   </ul>
                 </section>
-                <section v-if="resumeData.highlights?.length" class="break-inside-avoid flex flex-col gap-3 print:pt-8">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-[--tracking-widest-resume] text-theme">
+                <section v-if="resumeData.highlights?.length" class="break-inside-avoid flex flex-col gap-3 print:pt-5">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest text-theme">
                     Highlights
                   </UiText>
-                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-5 text-white/80 marker:text-theme/60">
+                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-4 text-white/80 marker:text-theme/60 print:space-y-0.5">
                     <li v-for="highlight in resumeData.highlights" :key="highlight">
                       {{ highlight }}
                     </li>
@@ -176,10 +176,10 @@ useSeoMeta({
                 </section>
               </div>
             </aside>
-            <div class="resume-main px-6 py-8 sm:px-8 print:px-8">
-              <div class="flex flex-col gap-7 print:gap-0">
+            <div class="resume-main px-6 py-8 sm:px-8 print:px-8 print:py-5">
+              <div class="flex flex-col gap-7 print:gap-2">
                 <ResumeSection title="Professional Summary">
-                  <UiText class="text-sm leading-7 text-text-muted">
+                  <UiText class="text-xs leading-5 text-text-muted">
                     {{ resumeData.summary }}
                   </UiText>
                 </ResumeSection>
@@ -193,7 +193,7 @@ useSeoMeta({
                     :location="item.location"
                     :summary="item.summary"
                   >
-                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60">
+                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60 print:space-y-0.5">
                       <li v-for="highlight in item.highlights" :key="highlight">
                         {{ highlight }}
                       </li>
@@ -210,7 +210,7 @@ useSeoMeta({
                     :location="item.location"
                     :summary="item.summary"
                   >
-                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60">
+                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60 print:space-y-0.5">
                       <li v-for="highlight in item.highlights" :key="highlight">
                         {{ highlight }}
                       </li>
@@ -227,7 +227,7 @@ useSeoMeta({
                     :location="item.location"
                     :summary="item.summary"
                   >
-                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60">
+                    <ul v-if="item.highlights?.length" role="list" class="list-disc space-y-1.5 pl-5 marker:text-theme/60 print:space-y-0.5">
                       <li v-for="highlight in item.highlights" :key="highlight">
                         {{ highlight }}
                       </li>
@@ -235,14 +235,14 @@ useSeoMeta({
                   </ResumeEntry>
                 </ResumeSection>
                 <ResumeSection v-if="resumeData.education?.length" title="Education">
-                  <article v-for="item in resumeData.education" :key="item.school" class="break-inside-avoid flex flex-col gap-1.5 text-sm leading-6 text-text-muted">
-                    <UiText as="h4" class="text-base font-semibold leading-tight">
+                  <article v-for="item in resumeData.education" :key="item.school" class="break-inside-avoid flex flex-col gap-1.5 text-xs leading-5 text-text-muted">
+                    <UiText as="h4" class="text-sm font-semibold leading-tight">
                       {{ item.school }}
                     </UiText>
-                    <UiText v-if="item.degree" class="text-sm font-base text-muted">
+                    <UiText v-if="item.degree" class="text-xs font-base text-muted">
                       {{ item.degree }}
                     </UiText>
-                    <UiText v-if="item.details" class="text-sm">
+                    <UiText v-if="item.details" class="text-xs">
                       {{ item.details }}
                     </UiText>
                   </article>
@@ -351,7 +351,7 @@ useSeoMeta({
 
   .resume-page :deep(.resume-main article) {
     break-inside: avoid;
-    padding-top: 2rem !important;
+    padding-top: 1.25rem !important;
     padding-bottom: 0 !important;
   }
 
@@ -369,7 +369,7 @@ useSeoMeta({
 
   .resume-page :deep(.resume-sidebar section) {
     break-inside: avoid;
-    padding-top: 2rem !important;
+    padding-top: 1.25rem !important;
   }
 }
 </style>

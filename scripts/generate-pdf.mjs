@@ -217,7 +217,7 @@ const exportStyles = `
   /* Page-break spacing — items carry their own top-padding so
      content at the top of continuation pages has breathing room */
   .resume-main > div {
-    gap: 0 !important;
+    gap: 0.5rem !important;
   }
 
   .resume-main section > div > div {
@@ -226,7 +226,7 @@ const exportStyles = `
 
   .resume-main article {
     break-inside: avoid;
-    padding-top: 2rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0 !important;
   }
 
@@ -244,7 +244,7 @@ const exportStyles = `
 
   .resume-sidebar section {
     break-inside: avoid;
-    padding-top: 2rem !important;
+    padding-top: 1.25rem !important;
   }
 `
 
@@ -317,11 +317,9 @@ async function main() {
     await page.evaluate(() => {
       const PAGE_HEIGHT_PX = 11 * 96
       const shell = document.querySelector('.resume-shell')
-      const contentHeight = Math.max(
-        shell?.scrollHeight ?? 0,
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-      )
+      // Use only the shell's own scrollHeight — doc/body scrollHeight is always
+      // >= viewport height (2200px) and falsely inflates the page count.
+      const contentHeight = shell?.scrollHeight ?? PAGE_HEIGHT_PX
       const pages = Math.max(1, Math.ceil(contentHeight / PAGE_HEIGHT_PX))
       const minHeightPx = pages * PAGE_HEIGHT_PX
 

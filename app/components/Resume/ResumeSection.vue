@@ -10,8 +10,8 @@ const props = withDefaults(defineProps<ResumeSectionProps>(), {
 
 <template>
   <component :is="props.as" :class="cn(resumeSectionVariants({ location: props.location }), props.class)">
-    <div class="flex flex-col gap-4">
-      <h2 class="text-[0.72rem] font-bold uppercase tracking-[0.24em] text-theme print:break-after-avoid print:text-zinc-500">
+    <div class="flex flex-col gap-4 print:gap-2">
+      <h2 class="text-[0.72rem] font-bold uppercase tracking-widest text-theme print:break-after-avoid print:text-zinc-500">
         {{ props.title }}
       </h2>
       <div :class="cn('flex flex-col gap-4 print:gap-0', props.contentClass)">
