@@ -7,7 +7,7 @@ import ResumeEntry from './ResumeEntry.vue'
 /* Variants
 --------------------------------------------------------------------- */
 export const resumeVariants = cva(
-  'w-full rounded-lg border border-border bg-background text-text print:max-w-none print:rounded-none print:border-0 print:bg-white print:text-zinc-950',
+  'w-full max-w-[8.5in] mx-auto rounded-lg border border-border bg-background text-text print:max-w-none print:rounded-none print:border-0 print:bg-white print:text-zinc-950',
 )
 
 export const resumeSectionVariants = cva(
