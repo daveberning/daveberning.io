@@ -36,7 +36,7 @@ const displayedTopicOptions = computed(() =>
 const basePillClass = 'inline-flex items-center justify-center rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent'
 const optionPillClass = 'inline-flex max-w-full items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent'
 const activePillClass = 'border-theme-light bg-theme-light text-theme-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.18),0_0_0_2px_rgba(255,255,255,0.12)] hover:bg-theme-light/90'
-const inactivePillClass = 'border-theme-black/20 bg-theme-black/12 text-theme-fg hover:border-theme-fg/35 hover:bg-theme-black/18'
+const inactivePillClass = 'border-theme-black/20 bg-theme-black/12 text-white hover:border-white/35 hover:bg-theme-black/18'
 </script>
 
 <template>
@@ -54,7 +54,7 @@ const inactivePillClass = 'border-theme-black/20 bg-theme-black/12 text-theme-fg
         <button
           v-if="hasHiddenTopics"
           type="button"
-          class="text-xs font-medium text-theme-fg transition-colors hover:text-theme-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
+          class="text-xs font-medium text-white transition-colors hover:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
           @click="showAllTopics = !showAllTopics">
           {{ showAllTopics ? 'Show less' : `Show ${hiddenTopicOptions.length} more` }}
         </button>
@@ -106,9 +106,9 @@ const inactivePillClass = 'border-theme-black/20 bg-theme-black/12 text-theme-fg
     </UiAsideSection>
 
     <UiAsideSection v-if="activeFilters.topic.length || activeFilters.year.length || activeFilters.category.length || activeFilters.source.length">
-      <NuxtLink
+        <NuxtLink
         :to="clearFiltersLocation"
-        class="inline-flex items-center justify-center rounded-full border border-theme-black/20 bg-theme-black/12 px-3 py-1.5 text-xs font-medium text-theme-fg transition-colors hover:border-theme-fg/35 hover:bg-theme-black/18 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
+        class="inline-flex items-center justify-center rounded-full border border-theme-black/20 bg-theme-black/12 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/35 hover:bg-theme-black/18 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
         Clear all filters
       </NuxtLink>
     </UiAsideSection>

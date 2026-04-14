@@ -21,7 +21,7 @@ export const [
 
 /* Variants
 --------------------------------------------------------------------- */
-export const asideVariants = cva('flex flex-col gap-4', {
+export const asideVariants = cva('flex flex-col gap-4 text-white', {
   variants: {
     color: {
       teal:   '',

@@ -60,6 +60,7 @@ describe('Aside', () => {
     expect(wrapper.classes()).toContain('flex')
     expect(wrapper.classes()).toContain('flex-col')
     expect(wrapper.classes()).toContain('gap-4')
+    expect(wrapper.classes()).toContain('text-white')
   })
 
   it('applies default teal color variant (no extra classes emitted)', () => {
