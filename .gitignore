@@ -5,6 +5,9 @@ _drafts
 CNAME
 berning-resume.pdf
 coverage
+test-results
+playwright-report
+app/components/ui/__screenshots__
 
 # Nuxt build
 .nuxt

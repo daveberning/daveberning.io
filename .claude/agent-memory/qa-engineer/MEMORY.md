@@ -7,3 +7,5 @@
 - [Text span selector ambiguity with Icon stub](./feedback_span_text_selector.md) — use wrapper.text() not find('span') when Icon is stubbed as a span
 - [CodeBlock coverage status](./project_code_block_coverage.md) — all 362 tests pass; known V8 branch quirk on CodeBlock.vue line 36; pre-existing gaps in Form.vue and mountHarness.ts
 - [Blockquote and ProseImg coverage](./project_blockquote_proseimg_coverage.md) — both at 100%; no mocks needed; ProseImg left/right variants include extra responsive classes beyond spec
+- [axe-core a11y browser test setup](./project_a11y_setup.md) — helper at app/lib/a11y.ts, tests at app/components/ui/a11y.browser.test.ts, coverage exclusion, useAttrs auto-import gotcha
+- [Playwright e2e a11y setup](./project_e2e_a11y_playwright.md) — page-level WCAG 2.1 AA scans via @playwright/test; config at playwright.config.ts, spec at test/a11y.spec.ts, 9 pages covered

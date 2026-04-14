@@ -27,8 +27,8 @@
   --color-text-muted:     var(--text-muted);
 
   /* Static per-theme palette (independent of active theme selection) */
-  --color-brand-teal:        #2d8a7e;
-  --color-brand-teal-dark:   #2a7a6f;
+  --color-brand-teal:        #297a6e;
+  --color-brand-teal-dark:   #256f64;
   --color-brand-red:         #a83c44;
   --color-brand-red-dark:    #7a2a30;
   --color-brand-blue:        #2e5186;
@@ -39,7 +39,7 @@
   --color-brand-purple-dark: #5e3d6b;
 
   /* Light brand variants — oklch relative color shift */
-  --color-brand-teal-light:   oklch(from #2d8a7e calc(l + 0.12) c h);
+  --color-brand-teal-light:   oklch(from #297a6e calc(l + 0.12) c h);
   --color-brand-red-light:    oklch(from #a83c44 calc(l + 0.12) c h);
   --color-brand-blue-light:   oklch(from #2e5186 calc(l + 0.12) c h);
   --color-brand-green-light:  oklch(from #2f7040 calc(l + 0.12) c h);
@@ -56,8 +56,8 @@
 /* =====================================================================
    Theme base colors — one hex per theme, everything else is derived
    ===================================================================== */
-:root                 { --theme-color-base: #2d8a7e; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; } /* teal — default */
-[data-theme="teal"]   { --theme-color-base: #2d8a7e; --theme-color-light: #7dccc2; --theme-color-dark: #2a7a6f; --theme-color-black: #0e1e25; }
+:root                 { --theme-color-base: #297a6e; --theme-color-light: #7dccc2; --theme-color-dark: #256f64; --theme-color-black: #0e1e25; } /* teal — default */
+[data-theme="teal"]   { --theme-color-base: #297a6e; --theme-color-light: #7dccc2; --theme-color-dark: #256f64; --theme-color-black: #0e1e25; }
 [data-theme="red"]    { --theme-color-base: #a83c44; --theme-color-light: #d97880; --theme-color-dark: #7a2a30; --theme-color-black: #1e0e11; }
 [data-theme="blue"]   { --theme-color-base: #2e5186; --theme-color-light: #7a9bc7; --theme-color-dark: #1e3a63; --theme-color-black: #0e1622; }
 [data-theme="green"]  { --theme-color-base: #2f7040; --theme-color-light: #7ec08e; --theme-color-dark: #2a6035; --theme-color-black: #0e1b11; }

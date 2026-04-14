@@ -57,7 +57,9 @@ describe('CodeBlock', () => {
         global: { stubs: globalStubs },
       })
       expect(wrapper.classes()).toContain('rounded-lg')
-      expect(wrapper.classes()).toContain('bg-surface')
+      expect(wrapper.classes()).toContain('bg-background')
+      expect(wrapper.classes()).toContain('border')
+      expect(wrapper.classes()).toContain('border-border')
       expect(wrapper.classes()).toContain('overflow-hidden')
     })
 

@@ -133,18 +133,18 @@ useSeoMeta({
                   />
                   <div class="text-center">
                     <UiText as="h2" class="text-2xl print:text-xl dark:text-theme-fg" color="white">{{ resumeData.name }}</UiText>
-                    <UiText class="mt-1 text-xs font-semibold uppercase tracking-[0.1em] dark:text-theme-black" :color="color">
+                    <UiText class="mt-1 text-xs font-semibold uppercase tracking-[0.1em] text-theme-fg/80">
                       {{ resumeData.role }}
                     </UiText>
                   </div>
                 </div>
                 <section class="break-inside-avoid flex flex-col gap-3 print:pt-5">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest dark:text-theme-black" :color="color">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest text-theme-fg/80">
                     Details
                   </UiText>
                   <ul role="list" class="grid gap-2.5 list-none">
                     <li v-for="item in contactItems" :key="`${item.label}-${item.value}`" class="flex items-start gap-2.5 text-xs">
-                      <Icon :name="item.icon" aria-hidden="true" class="text-theme dark:text-theme-black" />
+                      <Icon :name="item.icon" aria-hidden="true" class="text-theme-fg/80" />
                       <UiLink v-if="item.href" :to="item.href" class="break-words p-0 h-4 text-white/80 dark:text-theme-fg text-[.75rem]">
                         {{ item.value }}
                       </UiLink>
@@ -155,20 +155,20 @@ useSeoMeta({
                   </ul>
                 </section>
                 <section v-for="group in resumeData.skillGroups" :key="group.title" class="break-inside-avoid flex flex-col gap-3 print:pt-5">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest text-theme dark:text-theme-black">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest text-theme-fg/80">
                     {{ group.title }}
                   </UiText>
-                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-4 text-white/80 dark:text-theme-fg/80 marker:text-theme/60 dark:marker:text-theme-black/60 print:space-y-0.5">
+                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-4 text-white/80 dark:text-theme-fg/80 marker:text-theme-fg/60 print:space-y-0.5">
                     <li v-for="skill in group.items" :key="skill">
                       {{ skill }}
                     </li>
                   </ul>
                 </section>
                 <section v-if="resumeData.highlights?.length" class="break-inside-avoid flex flex-col gap-3 print:pt-5">
-                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest text-theme dark:text-theme-black">
+                  <UiText as="h3" class="text-[0.72rem] font-bold uppercase tracking-widest text-theme-fg/80">
                     Highlights
                   </UiText>
-                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-4 text-white/80 dark:text-theme-fg/80 marker:text-theme/60 dark:marker:text-theme-black/60 print:space-y-0.5">
+                  <ul role="list" class="list-disc space-y-1.5 pl-4 text-xs leading-4 text-white/80 dark:text-theme-fg/80 marker:text-theme-fg/60 print:space-y-0.5">
                     <li v-for="highlight in resumeData.highlights" :key="highlight">
                       {{ highlight }}
                     </li>

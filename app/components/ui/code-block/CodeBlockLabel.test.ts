@@ -43,13 +43,13 @@ describe('CodeBlockLabel', () => {
   })
 
   describe('agent color classes', () => {
-    it('applies a cyan label background with white bold text for agent="front-end-software-engineer"', () => {
+    it('applies a cyan label background with theme-black bold text for agent="front-end-software-engineer"', () => {
       const wrapper = mount(CodeBlockLabel, {
         props: { agent: 'front-end-software-engineer' },
       })
       const label = wrapper.find('p')
       expect(label.classes()).toContain('bg-cyan-400')
-      expect(label.classes()).toContain('text-white')
+      expect(label.classes()).toContain('text-theme-black')
       expect(label.classes()).toContain('font-bold')
     })
 
@@ -59,7 +59,7 @@ describe('CodeBlockLabel', () => {
       })
       const label = wrapper.find('p')
       expect(label.classes()).toContain('bg-green-500')
-      expect(label.classes()).toContain('text-white')
+      expect(label.classes()).toContain('text-theme-black')
     })
 
     it('applies an amber label background for agent="seo-copywriter"', () => {
@@ -68,7 +68,7 @@ describe('CodeBlockLabel', () => {
       })
       const label = wrapper.find('p')
       expect(label.classes()).toContain('bg-pink-500')
-      expect(label.classes()).toContain('text-white')
+      expect(label.classes()).toContain('text-theme-black')
     })
 
     it('applies a pink label background for agent="ui-designer"', () => {
@@ -77,7 +77,7 @@ describe('CodeBlockLabel', () => {
       })
       const label = wrapper.find('p')
       expect(label.classes()).toContain('bg-amber-400')
-      expect(label.classes()).toContain('text-white')
+      expect(label.classes()).toContain('text-theme-black')
     })
   })
 

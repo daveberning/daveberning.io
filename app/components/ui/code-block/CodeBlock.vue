@@ -32,6 +32,6 @@ const showHeader = computed(() => props.variant === 'block' && (!!props.language
       <CodeBlockCopyButton v-if="props.code" :code="props.code" />
     </div>
 
-    <pre :class="cn('overflow-x-auto p-4 text-sm leading-relaxed font-mono m-0', props.preClass)" :style="props.preStyle"><slot /></pre>
+    <pre tabindex="0" :class="cn('overflow-x-auto p-4 text-sm leading-relaxed font-mono m-0', props.preClass)" :style="props.preStyle"><slot /></pre>
   </div>
 </template>

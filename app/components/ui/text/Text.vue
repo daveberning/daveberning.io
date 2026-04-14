@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, useAttrs } from 'vue'
 import { textVariants, type TextAs, type TextVariants } from '.'
 import { useTheme } from '~/composables/useTheme'
 import { cn } from '~/lib/utils'

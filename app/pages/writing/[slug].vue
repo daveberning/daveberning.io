@@ -178,15 +178,15 @@ async function copyLink() {
         <UiAsideSection>
           <UiAsideSubtitle>Share</UiAsideSubtitle>
           <div class="flex flex-col gap-2">
-            <a :href="shareLinks.x" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2">
+            <a :href="shareLinks.x" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2">
               <Icon name="simple-icons:x" class="size-4 shrink-0" />
               Share on X
             </a>
-            <a :href="shareLinks.linkedin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2">
+            <a :href="shareLinks.linkedin" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2">
               <Icon name="simple-icons:linkedin" class="size-4 shrink-0" />
               Share on LinkedIn
             </a>
-            <button type="button" class="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors text-left rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2" @click="copyLink">
+            <button type="button" class="flex items-center gap-2 text-sm text-white transition-colors text-left rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2" @click="copyLink">
               <Icon :name="copied ? 'lucide:check' : 'lucide:link'" class="size-4 shrink-0" />
               {{ copied ? 'Copied!' : 'Copy link' }}
             </button>

@@ -9,7 +9,7 @@ export const codeBlockVariants = cva('', {
   variants: {
     variant: {
       inline: 'bg-surface rounded-sm px-1.5 py-0.5 text-sm font-mono',
-      block:  'rounded-lg bg-surface border border-border overflow-hidden my-4',
+      block:  'rounded-lg bg-background border border-border overflow-hidden my-4',
     },
     agent: {
       'none':                        '',
@@ -21,10 +21,10 @@ export const codeBlockVariants = cva('', {
   },
   compoundVariants: [
     /* Inline + agent: colored background on the <code> element */
-    { variant: 'inline', agent: 'front-end-software-engineer', class: 'font-bold bg-cyan-400 text-white dark:bg-cyan-500' },
-    { variant: 'inline', agent: 'qa-engineer',                 class: 'font-bold bg-green-500 text-white dark:bg-green-600' },
-    { variant: 'inline', agent: 'seo-copywriter',              class: 'font-bold bg-pink-400 text-white dark:bg-pink-500' },
-    { variant: 'inline', agent: 'ui-designer',                 class: 'font-bold bg-amber-500 text-white dark:bg-amber-600' },
+    { variant: 'inline', agent: 'front-end-software-engineer', class: 'font-bold bg-cyan-400 text-theme-black dark:bg-cyan-500' },
+    { variant: 'inline', agent: 'qa-engineer',                 class: 'font-bold bg-green-500 text-theme-black dark:bg-green-600' },
+    { variant: 'inline', agent: 'seo-copywriter',              class: 'font-bold bg-pink-400 text-theme-black dark:bg-pink-500' },
+    { variant: 'inline', agent: 'ui-designer',                 class: 'font-bold bg-amber-500 text-theme-black dark:bg-amber-600' },
   ],
   defaultVariants: {
     variant: 'inline',
@@ -33,7 +33,7 @@ export const codeBlockVariants = cva('', {
 })
 
 export const codeBlockLabelVariants = cva(
-  'flex items-center gap-2 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white border-b border-border',
+  'flex items-center gap-2 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-theme-black border-b border-border',
   {
     variants: {
       agent: {

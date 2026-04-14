@@ -13,12 +13,17 @@ export default defineVitestConfig({
     exclude: [
       ...configDefaults.exclude,
       '**/*.browser.test.ts',
+      '**/*.spec.ts',
     ],
     coverage: {
       provider: 'v8',
       include: [
         'app/lib/**',
         'app/components/**',
+      ],
+      exclude: [
+        // Browser-only utility — axe-core requires real layout; cannot be exercised in happy-dom
+        'app/lib/a11y.ts',
       ],
       thresholds: {
         lines: 100,

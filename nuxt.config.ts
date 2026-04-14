@@ -133,8 +133,8 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           theme: {
-            default: 'github-light',
-            dark: 'github-dark',
+            default: 'github-light-high-contrast',
+            dark: 'github-dark-high-contrast',
           },
           langs: ['javascript', 'typescript', 'vue', 'html', 'css', 'bash', 'json', 'yaml', 'markdown', 'shell'],
         },

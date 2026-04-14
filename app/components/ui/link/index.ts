@@ -8,7 +8,7 @@ export const linkVariants = cva(
   {
     variants: {
       variant: {
-        solid:   'bg-theme text-theme-fg hover:bg-theme-dark active:bg-theme-dark',
+        solid:   'bg-theme text-white hover:bg-theme-dark active:bg-theme-black',
         outline: 'border-2 bg-transparent border-theme text-theme hover:bg-theme-light/50',
         text:    'bg-transparent hover:underline text-theme',
       },
