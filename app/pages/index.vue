@@ -59,7 +59,7 @@ useHead({
       <UiText as="h1" class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-none">
         {{ siteInfo?.firstName }} {{ siteInfo?.lastName }}
       </UiText>
-      <UiText as="h2" class="text-xl text-center lg:text-[clamp(1.1rem,1.75vw,1.75rem)] font-light leading-tight mt-6 lg:mt-10 mb-2 lg:mb-3">
+      <UiText as="h2" class="text-xl text-center lg:text-[clamp(1.1rem,1.75vw,1.75rem)] font-light leading-tight mt-6 mb-2 lg:mb-3">
         Senior Front-End Software Engineer
       </UiText>
       <UiText as="p" class="text-sm text-center lg:text-[clamp(0.8rem,1vw,1rem)] font-light text-text-muted leading-tight mb-6 lg:mb-10">

@@ -60,6 +60,10 @@ useHead({
           <UiAsideSubtitle>Location</UiAsideSubtitle>
           <UiText color="white">{{ sidebar.location }}</UiText>
         </UiAsideSection>
+        <UiAsideSection v-if="sidebar?.availability">
+          <UiAsideSubtitle>Availability</UiAsideSubtitle>
+          <UiText color="white">{{ sidebar.availability }}</UiText>
+        </UiAsideSection>
         <UiAsideSection v-if="sidebar?.currentlyAt">
           <UiAsideSubtitle>Currently At</UiAsideSubtitle>
           <UiText color="white">{{ sidebar.currentlyAt }}</UiText>

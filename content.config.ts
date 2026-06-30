@@ -165,6 +165,7 @@ export default defineContentConfig({
       schema: z.object({
         specializations:  z.array(z.string()).optional(),
         location:         z.string().optional(),
+        availability:     z.string().optional(),
         currentlyAt:      z.string().optional(),
         previouslyAt:     z.array(z.string()).optional(),
         currentlyAtLogo:  z.string().optional(),
